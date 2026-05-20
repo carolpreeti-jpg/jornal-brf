@@ -2,20 +2,21 @@ import { useScrollReveal } from './hooks/useScrollReveal.js'
 import Header    from './components/layout/Header.jsx'
 import Footer    from './components/layout/Footer.jsx'
 
-import MenuIndex     from './components/sections/MenuIndex.jsx'
-import Hero          from './components/sections/Hero.jsx'
-import Editorial     from './components/sections/Editorial.jsx'
-import Diretor       from './components/sections/Diretor.jsx'
-import VireOJogo     from './components/sections/VireOJogo.jsx'
-import Unidades      from './components/sections/Unidades.jsx'
-import Elas          from './components/sections/Elas.jsx'
-import NovoSite      from './components/sections/NovoSite.jsx'
-import Eventos       from './components/sections/Eventos.jsx'
-import Pesquisa      from './components/sections/Pesquisa.jsx'
-import Rentabilidade from './components/sections/Rentabilidade.jsx'
-import Estatuto      from './components/sections/Estatuto.jsx'
-import LevelUp       from './components/sections/LevelUp.jsx'
-import Redes         from './components/sections/Redes.jsx'
+import MenuIndex      from './components/sections/MenuIndex.jsx'
+import Hero           from './components/sections/Hero.jsx'
+import Editorial      from './components/sections/Editorial.jsx'
+import Diretor        from './components/sections/Diretor.jsx'
+import Compromisso    from './components/sections/Compromisso.jsx'
+import FalePresidente from './components/sections/FalePresidente.jsx'
+import Historias      from './components/sections/Historias.jsx'
+import RelatorioAnual from './components/sections/RelatorioAnual.jsx'
+import WebinarIR      from './components/sections/WebinarIR.jsx'
+import Encontros      from './components/sections/Encontros.jsx'
+import Patrimonio     from './components/sections/Patrimonio.jsx'
+import Aportes        from './components/sections/Aportes.jsx'
+import Rentabilidade  from './components/sections/Rentabilidade.jsx'
+import RendaCerta     from './components/sections/RendaCerta.jsx'
+import Redes          from './components/sections/Redes.jsx'
 
 export default function App() {
   useScrollReveal()
@@ -28,15 +29,16 @@ export default function App() {
         <MenuIndex />
         <Editorial />
         <Diretor />
-        <VireOJogo />
-        <Unidades />
-        <Elas />
-        <NovoSite />
-        <Eventos />
-        <Pesquisa />
+        <Compromisso />
+        <FalePresidente />
+        <Historias />
+        <RelatorioAnual />
+        <WebinarIR />
+        <Encontros />
+        <Patrimonio />
+        <Aportes />
         <Rentabilidade />
-        <Estatuto />
-        <LevelUp />
+        <RendaCerta />
         <Redes />
       </main>
 

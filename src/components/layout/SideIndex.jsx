@@ -1,18 +1,18 @@
 import { useSideIndex } from '../../hooks/useSideIndex.js'
 
 const items = [
-  { href: '#editorial',     label: '01 Editorial' },
-  { href: '#diretor',       label: '02 Diretor' },
-  { href: '#vire-o-jogo',   label: '03 Vire o jogo' },
-  { href: '#unidades',      label: '04 Unidades' },
-  { href: '#elas',          label: '05 Elas' },
-  { href: '#novo-site',     label: '06 Novo site' },
-  { href: '#eventos',       label: '07 Eventos' },
-  { href: '#pesquisa',      label: '08 Pesquisa' },
-  { href: '#rentabilidade', label: '09 Rentabilidade' },
-  { href: '#estatuto',      label: '10 Estatuto' },
-  { href: '#levelup',       label: '11 Level Up' },
-  { href: '#redes',         label: '12 Redes' },
+  { href: '#editorial',       label: '01 Editorial' },
+  { href: '#diretor',         label: '02 Diretor' },
+  { href: '#compromisso',     label: '03 Compromisso' },
+  { href: '#fale-presidente', label: '04 Fale c/ Presidente' },
+  { href: '#historias',       label: '05 Histórias' },
+  { href: '#relatorio',       label: '06 Relatório Anual' },
+  { href: '#webinar',         label: '07 Webinar IR' },
+  { href: '#encontros',       label: '08 Encontros' },
+  { href: '#patrimonio',      label: '09 Patrimônio' },
+  { href: '#aportes',         label: '10 Aportes' },
+  { href: '#rentabilidade',   label: '11 Rentabilidade' },
+  { href: '#renda-certa',     label: '12 Renda Certa' },
 ]
 
 const sectionIds = items.map((i) => i.href.replace('#', ''))
