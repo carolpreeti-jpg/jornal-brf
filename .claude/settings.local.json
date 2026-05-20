@@ -15,7 +15,9 @@
       "PowerShell($git = \"C:\\\\Program Files\\\\Git\\\\cmd\\\\git.exe\"; cd C:\\\\www\\\\jornalbrf; & $git log --oneline --format=\"%h %ai %s\" -5 2>&1; Write-Host \"---\"; & $git show --stat HEAD 2>&1 | Select-Object -First 20)",
       "PowerShell($git = \"C:\\\\Program Files\\\\Git\\\\cmd\\\\git.exe\"; cd C:\\\\www\\\\jornalbrf; & $git status 2>&1; Write-Host \"---push status---\"; & $git log origin/jornal-brf..HEAD --oneline 2>&1)",
       "PowerShell($git = \"C:\\\\Program Files\\\\Git\\\\cmd\\\\git.exe\"; cd C:\\\\www\\\\jornalbrf; & $git remote -v 2>&1; Write-Host \"---branches remotas---\"; & $git branch -a 2>&1; Write-Host \"---nested repo---\"; & $git -C jornal-brf remote -v 2>&1; & $git -C jornal-brf branch -a 2>&1)",
-      "PowerShell($git = \"C:\\\\Program Files\\\\Git\\\\cmd\\\\git.exe\"; cd C:\\\\www\\\\jornalbrf; & $git log --oneline origin/jornal-brf 2>&1; Write-Host \"--- diff main vs jornal-brf ---\"; & $git log --oneline main..jornal-brf 2>&1; Write-Host \"--- diff master vs jornal-brf ---\"; & $git log --oneline master..jornal-brf 2>&1)"
+      "PowerShell($git = \"C:\\\\Program Files\\\\Git\\\\cmd\\\\git.exe\"; cd C:\\\\www\\\\jornalbrf; & $git log --oneline origin/jornal-brf 2>&1; Write-Host \"--- diff main vs jornal-brf ---\"; & $git log --oneline main..jornal-brf 2>&1; Write-Host \"--- diff master vs jornal-brf ---\"; & $git log --oneline master..jornal-brf 2>&1)",
+      "PowerShell($git = \"C:\\\\Program Files\\\\Git\\\\cmd\\\\git.exe\"; cd C:\\\\www\\\\jornalbrf; & $git status 2>&1; Write-Host \"---\"; Get-ChildItem -Directory | Select-Object Name)",
+      "PowerShell(Get-ChildItem C:\\\\www\\\\jornalbrf | ForEach-Object { $_.Name })"
     ]
   }
 }
