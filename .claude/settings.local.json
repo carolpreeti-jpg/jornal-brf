@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Get-ChildItem -Path \"C:\\\\www\\\\jornalbrf\" -Depth 0 | Get-ChildItem -ErrorAction SilentlyContinue | Where-Object { $_.Name -notmatch '^node_modules$' } | Format-List FullName)",
+      "PowerShell(Find-Item *)",
+      "PowerShell(Head *)",
+      "PowerShell(Get-ChildItem -Path \"C:\\\\www\\\\jornalbrf\" -File -Depth 0 | Where-Object { $_.Name -notmatch \"^NotoSans|^Co Headline\" } | Select-Object Name, @{Name='SizeMB';Expression={[math]::Round\\($_.Length/1MB,2\\)}} | Sort-Object Name)",
+      "PowerShell(Get-ChildItem -Path \"C:\\\\www\\\\jornalbrf\" -File | Where-Object { $_.Extension -notmatch \"ttf|otf\" } | Select-Object Name, @{Name='SizeMB';Expression={[math]::Round\\($_.Length/1MB,2\\)}})"
+    ]
+  }
+}
