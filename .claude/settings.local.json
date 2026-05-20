@@ -5,7 +5,17 @@
       "PowerShell(Find-Item *)",
       "PowerShell(Head *)",
       "PowerShell(Get-ChildItem -Path \"C:\\\\www\\\\jornalbrf\" -File -Depth 0 | Where-Object { $_.Name -notmatch \"^NotoSans|^Co Headline\" } | Select-Object Name, @{Name='SizeMB';Expression={[math]::Round\\($_.Length/1MB,2\\)}} | Sort-Object Name)",
-      "PowerShell(Get-ChildItem -Path \"C:\\\\www\\\\jornalbrf\" -File | Where-Object { $_.Extension -notmatch \"ttf|otf\" } | Select-Object Name, @{Name='SizeMB';Expression={[math]::Round\\($_.Length/1MB,2\\)}})"
+      "PowerShell(Get-ChildItem -Path \"C:\\\\www\\\\jornalbrf\" -File | Where-Object { $_.Extension -notmatch \"ttf|otf\" } | Select-Object Name, @{Name='SizeMB';Expression={[math]::Round\\($_.Length/1MB,2\\)}})",
+      "PowerShell($git = \"C:\\\\Program Files\\\\Git\\\\cmd\\\\git.exe\"; cd C:\\\\www\\\\jornalbrf; & $git remote -v 2>&1; & $git status 2>&1; & $git log --oneline -5 2>&1)",
+      "PowerShell($git = \"C:\\\\Program Files\\\\Git\\\\cmd\\\\git.exe\"; cd C:\\\\www\\\\jornalbrf; & $git status --short 2>&1)",
+      "PowerShell($git = \"C:\\\\Program Files\\\\Git\\\\cmd\\\\git.exe\"; cd C:\\\\www\\\\jornalbrf; & $git status --short --ignored 2>&1 | Select-Object -First 30; Write-Host \"---\"; & $git config --list | Where-Object { $_ -match \"remote|url|worktree\" } 2>&1)",
+      "PowerShell($git = \"C:\\\\Program Files\\\\Git\\\\cmd\\\\git.exe\"; cd C:\\\\www\\\\jornalbrf; Get-Content .gitignore 2>&1; Write-Host \"===\"; & $git ls-files --others --exclude-standard | Select-Object -First 20 2>&1; Write-Host \"===\"; Test-Path \"jornal-brf\"; Get-ChildItem \"jornal-brf\" -ErrorAction SilentlyContinue | Select-Object -First 5)",
+      "PowerShell($git = \"C:\\\\Program Files\\\\Git\\\\cmd\\\\git.exe\"; cd C:\\\\www\\\\jornalbrf; & $git diff --stat HEAD 2>&1; Write-Host \"===\"; & $git ls-files src/ | Select-Object -First 30 2>&1; Write-Host \"===\"; Get-ChildItem \"jornal-brf\" | Select-Object Name)",
+      "PowerShell($git = \"C:\\\\Program Files\\\\Git\\\\cmd\\\\git.exe\"; cd C:\\\\www\\\\jornalbrf\\\\jornal-brf; & $git remote -v 2>&1; & $git log --oneline -3 2>&1; & $git branch -a 2>&1)",
+      "PowerShell($git = \"C:\\\\Program Files\\\\Git\\\\cmd\\\\git.exe\"; cd C:\\\\www\\\\jornalbrf; & $git log --oneline --format=\"%h %ai %s\" -5 2>&1; Write-Host \"---\"; & $git show --stat HEAD 2>&1 | Select-Object -First 20)",
+      "PowerShell($git = \"C:\\\\Program Files\\\\Git\\\\cmd\\\\git.exe\"; cd C:\\\\www\\\\jornalbrf; & $git status 2>&1; Write-Host \"---push status---\"; & $git log origin/jornal-brf..HEAD --oneline 2>&1)",
+      "PowerShell($git = \"C:\\\\Program Files\\\\Git\\\\cmd\\\\git.exe\"; cd C:\\\\www\\\\jornalbrf; & $git remote -v 2>&1; Write-Host \"---branches remotas---\"; & $git branch -a 2>&1; Write-Host \"---nested repo---\"; & $git -C jornal-brf remote -v 2>&1; & $git -C jornal-brf branch -a 2>&1)",
+      "PowerShell($git = \"C:\\\\Program Files\\\\Git\\\\cmd\\\\git.exe\"; cd C:\\\\www\\\\jornalbrf; & $git log --oneline origin/jornal-brf 2>&1; Write-Host \"--- diff main vs jornal-brf ---\"; & $git log --oneline main..jornal-brf 2>&1; Write-Host \"--- diff master vs jornal-brf ---\"; & $git log --oneline master..jornal-brf 2>&1)"
     ]
   }
 }
