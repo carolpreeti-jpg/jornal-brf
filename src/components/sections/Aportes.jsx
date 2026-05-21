@@ -10,6 +10,9 @@ export default function Aportes() {
           <span className="eyebrow">Planejamento · Reserva Previdenciária</span>
           <h2>{aportes.titulo}</h2>
           <p>{aportes.descricao}</p>
+          {aportes.descricaoExtra && (
+            <p style={{ color: 'var(--text-secondary)', marginTop: 8 }}>{aportes.descricaoExtra}</p>
+          )}
         </div>
 
         {/* Modalidades */}
@@ -19,7 +22,9 @@ export default function Aportes() {
               <div className="unit-body" style={{ padding: 24 }}>
                 <span className="unit-loc">{m.planos}</span>
                 <h3>{m.titulo}</h3>
-                <p style={{ fontSize: 14, color: 'var(--text-secondary)' }}>{m.descricao}</p>
+                {m.descricao.split('\n\n').map((p, j) => (
+                  <p key={j} style={{ fontSize: 14, color: 'var(--text-secondary)', marginTop: j > 0 ? 10 : 0 }}>{p}</p>
+                ))}
                 <ul style={{ marginTop: 12, paddingLeft: 0, listStyle: 'none' }}>
                   {m.beneficios.map((b, j) => (
                     <li key={j} style={{
@@ -51,7 +56,7 @@ export default function Aportes() {
             Quando vale a pena fazer um aporte extra ou contribuição suplementar?
           </span>
           <p style={{ color: 'var(--text-secondary)', marginTop: 8, marginBottom: 16 }}>
-            Contribuições ocasionais podem fazer diferença no saldo acumulado no longo prazo. Alguns momentos podem ser boas oportunidades para reforçar sua reserva previdenciária:
+            Contribuições ocasionais podem fazer diferença no saldo acumulado no longo prazo e alguns momentos podem ser boas oportunidades para reforçar sua reserva previdenciária, como:
           </p>
           <ul style={{ paddingLeft: 0, listStyle: 'none', display: 'flex', gap: 12, flexWrap: 'wrap' }}>
             {aportes.oportunidades.map((o, i) => (
@@ -83,6 +88,11 @@ export default function Aportes() {
           <p style={{ color: 'var(--text-secondary)', fontSize: 14, margin: 0 }}>
             {aportes.beneficioFiscal}
           </p>
+          {aportes.beneficioFiscalExtra && (
+            <p style={{ color: 'var(--text-secondary)', fontSize: 14, marginTop: 8, marginBottom: 0 }}>
+              {aportes.beneficioFiscalExtra}
+            </p>
+          )}
         </div>
 
         {/* Canais */}

@@ -23,9 +23,36 @@ export default function Patrimonio() {
               </h2>
             </div>
 
-            <p style={{ color: 'rgba(255,255,255,.85)', fontSize: 15, maxWidth: 540, marginBottom: 28 }}>
-              {patrimonio.descricao}
-            </p>
+            {patrimonio.descricao.split('\n\n').map((p, i) => (
+              <p key={i} style={{ color: 'rgba(255,255,255,.85)', fontSize: 15, maxWidth: 540, marginBottom: 16 }}>
+                {p}
+              </p>
+            ))}
+
+            {/* O que é patrimônio */}
+            {patrimonio.oQueEPatrimonio && (
+              <div style={{
+                background: 'rgba(255,255,255,.07)',
+                borderRadius: 12,
+                padding: '16px 20px',
+                marginBottom: 24,
+                borderLeft: '3px solid var(--brand-yellow)',
+              }}>
+                <p style={{ color: 'var(--brand-yellow)', fontWeight: 700, fontSize: 13, marginBottom: 8 }}>
+                  {patrimonio.oQueEPatrimonio.titulo}
+                </p>
+                <p style={{ color: 'rgba(255,255,255,.8)', fontSize: 13, margin: 0 }}>
+                  {patrimonio.oQueEPatrimonio.texto}
+                </p>
+              </div>
+            )}
+
+            {/* Intro analogias */}
+            {patrimonio.analogiasIntro && (
+              <p style={{ color: 'rgba(255,255,255,.75)', fontSize: 13, marginBottom: 12 }}>
+                {patrimonio.analogiasIntro}
+              </p>
+            )}
 
             {/* Analogias */}
             <div className="lu-rules">
@@ -37,8 +64,15 @@ export default function Patrimonio() {
               ))}
             </div>
 
+            {/* Contexto das analogias */}
+            {patrimonio.analogiasContexto && (
+              <p style={{ color: 'rgba(255,255,255,.75)', fontSize: 13, marginTop: 16, marginBottom: 24 }}>
+                {patrimonio.analogiasContexto}
+              </p>
+            )}
+
             <blockquote style={{
-              marginTop: 28,
+              marginTop: 4,
               borderLeft: '3px solid var(--brand-yellow)',
               paddingLeft: 16,
               color: 'rgba(255,255,255,.85)',
@@ -50,6 +84,13 @@ export default function Patrimonio() {
                 — {patrimonio.citacaoAutor}
               </cite>
             </blockquote>
+
+            {/* Fechamento */}
+            {patrimonio.fechamento && (
+              <p style={{ color: 'rgba(255,255,255,.75)', fontSize: 13, marginTop: 20 }}>
+                {patrimonio.fechamento}
+              </p>
+            )}
           </div>
 
           {/* Arte decorativa */}
