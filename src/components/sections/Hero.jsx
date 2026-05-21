@@ -62,16 +62,16 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Separador wave */}
+      {/* Separador wave — fill combina com o fundo do menu-index */}
       <svg
         className="wave-divider"
-        viewBox="0 0 1440 100"
+        viewBox="0 0 1440 80"
         preserveAspectRatio="none"
         aria-hidden="true"
       >
         <path
-          fill="#ffffff"
-          d="M0,40 C240,100 480,0 720,40 C960,80 1200,20 1440,60 L1440,100 L0,100 Z"
+          fill="#F5F3F0"
+          d="M0,30 C240,80 480,0 720,32 C960,64 1200,14 1440,46 L1440,80 L0,80 Z"
         />
       </svg>
     </section>

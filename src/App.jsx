@@ -1,6 +1,6 @@
 import { useScrollReveal } from './hooks/useScrollReveal.js'
-import Header    from './components/layout/Header.jsx'
-import Footer    from './components/layout/Footer.jsx'
+import Header       from './components/layout/Header.jsx'
+import Footer       from './components/layout/Footer.jsx'
 
 import MenuIndex      from './components/sections/MenuIndex.jsx'
 import Hero           from './components/sections/Hero.jsx'
@@ -14,6 +14,8 @@ import WebinarIR      from './components/sections/WebinarIR.jsx'
 import Encontros      from './components/sections/Encontros.jsx'
 import Patrimonio     from './components/sections/Patrimonio.jsx'
 import Aportes        from './components/sections/Aportes.jsx'
+import BRFPrevEmFoco  from './components/sections/BRFPrevEmFoco.jsx'
+import AppBRFPrev     from './components/sections/AppBRFPrev.jsx'
 import Rentabilidade  from './components/sections/Rentabilidade.jsx'
 import RendaCerta     from './components/sections/RendaCerta.jsx'
 import Redes          from './components/sections/Redes.jsx'
@@ -37,6 +39,8 @@ export default function App() {
         <Encontros />
         <Patrimonio />
         <Aportes />
+        <BRFPrevEmFoco />
+        <AppBRFPrev />
         <Rentabilidade />
         <RendaCerta />
         <Redes />

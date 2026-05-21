@@ -1,14 +1,15 @@
 import { useState } from 'react'
 import { useStickyHeader } from '../../hooks/useStickyHeader.js'
 import { edition } from '../../data/edition.js'
+import logoHorizontal from '../../../LOGO-horizontal-1.png'
 
 const navLinks = [
-  { href: '#top',           label: 'Início' },
-  { href: '#editorial',     label: 'Editorial' },
-  { href: '#unidades',      label: 'Unidades' },
-  { href: '#estatuto',      label: 'Benefícios' },
+  { href: '#top', label: 'Início' },
+  { href: '#editorial', label: 'Editorial' },
+  { href: '#unidades', label: 'Unidades' },
+  { href: '#estatuto', label: 'Benefícios' },
   { href: '#rentabilidade', label: 'Rentabilidade' },
-  { href: '#contato',       label: 'Contato' },
+  { href: '#contato', label: 'Contato' },
 ]
 
 export default function Header() {
@@ -19,16 +20,15 @@ export default function Header() {
     <header id="site-header">
       <div className="wrap nav">
         <a href="#top" className="brand" aria-label="BRF Previdência">
-          <div className="brand-logo">
-            <span className="b1">BRF</span>
-            <span className="b2">previdência</span>
-          </div>
+          <img src={logoHorizontal} alt="BRF Previdência" className="brand-logo" />
           <span className="brand-tag">O informativo dos participantes</span>
         </a>
 
         <nav className="nav-links" aria-label="Navegação principal">
           {navLinks.map((l) => (
-            <a key={l.href} href={l.href}>{l.label}</a>
+            <a key={l.href} href={l.href}>
+              {l.label}
+            </a>
           ))}
         </nav>
 
@@ -45,7 +45,9 @@ export default function Header() {
           aria-expanded={menuOpen}
           onClick={() => setMenuOpen((v) => !v)}
         >
-          <span /><span /><span />
+          <span />
+          <span />
+          <span />
         </button>
       </div>
 

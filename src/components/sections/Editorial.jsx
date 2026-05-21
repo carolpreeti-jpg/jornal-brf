@@ -10,12 +10,12 @@ export default function Editorial() {
       {/* Wave superior */}
       <svg
         className="wave-divider"
-        style={{ transform: 'rotate(180deg)', background: '#fff' }}
+        style={{ transform: 'rotate(180deg)', background: '#F5F3F0' }}
         viewBox="0 0 1440 80"
         preserveAspectRatio="none"
         aria-hidden="true"
       >
-        <path fill="#1E3A8A" d="M0,30 C240,80 480,0 720,30 C960,60 1200,10 1440,40 L1440,80 L0,80 Z" />
+        <path fill="#1B46B2" d="M0,30 C240,80 480,0 720,30 C960,60 1200,10 1440,40 L1440,80 L0,80 Z" />
       </svg>
 
       <div className="wrap inner">

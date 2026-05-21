@@ -13,7 +13,9 @@ export default function FalePresidente() {
               Novo canal · Relacionamento
             </span>
             <h2 style={{ color: 'var(--brand-blue)', marginTop: 10 }}>
-              {falePresidente.titulo}
+              {falePresidente.titulo.split('\n').map((linha, i) => (
+                <span key={i} style={{ display: 'block' }}>{linha}</span>
+              ))}
             </h2>
             <p style={{ color: 'var(--text-secondary)', fontSize: 16, marginTop: 14, maxWidth: 520 }}>
               {falePresidente.descricao}
@@ -35,6 +37,21 @@ export default function FalePresidente() {
             <a className="btn btn-primary" style={{ marginTop: 20 }} href={`mailto:${falePresidente.email}`}>
               Acessar o canal <span className="arrow">→</span>
             </a>
+
+            {/* Citação do Presidente */}
+            <blockquote style={{
+              marginTop: 32,
+              borderLeft: '3px solid var(--brand-blue-mid)',
+              paddingLeft: 16,
+              color: 'var(--text-secondary)',
+              fontStyle: 'italic',
+              fontSize: 15,
+            }}>
+              "{falePresidente.citacao}"
+              <cite style={{ display: 'block', marginTop: 8, fontStyle: 'normal', fontWeight: 600, color: 'var(--text-primary)', fontSize: 13 }}>
+                — {falePresidente.citacaoAutor.split('\n').join(', ')}
+              </cite>
+            </blockquote>
           </div>
 
           {/* Mockup decorativo */}

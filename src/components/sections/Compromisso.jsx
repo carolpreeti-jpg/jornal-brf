@@ -2,72 +2,111 @@ import { edition } from '../../data/edition.js'
 
 const { compromisso } = edition
 
+const statusLabel = {
+  realizado: 'Realizado',
+  proxima:   'Próxima visita',
+  confirmar: 'A confirmar',
+}
+
 export default function Compromisso() {
+  const { acoesRealizadas } = compromisso
+
   return (
-    <section className="section units" id="compromisso" data-screen-label="Compromisso">
+    <section className="section" id="compromisso" data-screen-label="Compromisso"
+      style={{ background: '#fff' }}>
       <div className="wrap">
+
+        {/* Cabeçalho */}
         <div className="section-head reveal">
           <span className="eyebrow">Programa · Atendimento Presencial</span>
           <h2>{compromisso.titulo}</h2>
           <p>{compromisso.intro}</p>
         </div>
 
-        {/* Resultados da 1ª ação */}
-        <div className="reveal" style={{ marginBottom: 40 }}>
-          <span className="eyebrow" style={{ color: 'var(--brand-blue-mid)' }}>
-            1ª ação · {compromisso.primeiraAcao.local} · {compromisso.primeiraAcao.periodo}
+        {/* Ações realizadas */}
+        <div className="reveal" style={{ marginBottom: 48 }}>
+          <span className="eyebrow" style={{ color: 'var(--brand-blue-mid)', marginBottom: 8, display: 'block' }}>
+            {acoesRealizadas.label} · {acoesRealizadas.local} · {acoesRealizadas.periodo}
           </span>
-          <p style={{ color: 'var(--text-secondary)', marginTop: 8 }}>
-            {compromisso.primeiraAcao.descricao}
-          </p>
-        </div>
-
-        <div className="elas-stats reveal d2">
-          {compromisso.primeiraAcao.resultados.map((r, i) => (
-            <div key={i} className={`stat-card${i > 0 ? ` reveal d${i + 1}` : ''}`}>
-              <div className="v">{r.valor}</div>
-              <div className="l">{r.label}</div>
-            </div>
+          {acoesRealizadas.descricao.split('\n\n').map((p, i) => (
+            <p key={i} style={{ color: 'var(--text-secondary)', marginTop: i === 0 ? 0 : 12 }}>
+              {p}
+            </p>
           ))}
+
+          {/* Stats em cards claros */}
+          <div className="elas-stats" style={{ marginTop: 24 }}>
+            {acoesRealizadas.resultados.map((r, i) => (
+              <div key={i} className="stat-card light reveal" style={{ '--delay': `${i * 0.08}s` }}>
+                <div className="v">{r.valor}</div>
+                <div className="l">{r.label}</div>
+              </div>
+            ))}
+          </div>
         </div>
 
-        <blockquote className="quote reveal" style={{ marginTop: 40 }}>
+        {/* Contexto dos resultados */}
+        <p className="reveal" style={{ color: 'var(--text-secondary)', marginBottom: 32 }}>
+          {compromisso.resultadosContexto}
+        </p>
+
+        {/* Citação */}
+        <blockquote className="quote reveal" style={{ marginBottom: 56 }}>
           "{compromisso.citacao}"
           <cite>— {compromisso.citacaoAutor}</cite>
         </blockquote>
 
-        {/* Próxima visita */}
-        <div className="reveal" style={{ marginTop: 40, marginBottom: 24 }}>
-          <span className="eyebrow" style={{ color: 'var(--brand-teal)' }}>Próxima visita</span>
-          <p style={{ marginTop: 8, fontWeight: 600, color: 'var(--text-primary)' }}>
-            {compromisso.proximaVisita}
-          </p>
-          <p style={{ color: 'var(--text-secondary)', fontSize: 14, marginTop: 4 }}>
-            O calendário das próximas ações presenciais está em fase de organização. As datas serão divulgadas oportunamente pelos canais oficiais da BRF Prev.
+        {/* Cabeçalho do calendário */}
+        <div className="reveal">
+          <span className="eyebrow" style={{ color: 'var(--brand-coral)', marginBottom: 6, display: 'block' }}>
+            Calendário 2026
+          </span>
+          <h3 style={{ fontSize: 22, color: 'var(--text-primary)', marginBottom: 4 }}>
+            Próximas visitas às unidades
+          </h3>
+          <p style={{ color: 'var(--text-secondary)', fontSize: 14, margin: 0 }}>
+            O calendário está em fase de organização. As datas serão divulgadas oportunamente pelos canais oficiais da BRF Prev e RH's locais.
           </p>
         </div>
 
-        {/* Calendário */}
-        <div className="rent-table-wrap reveal d2">
-          <table className="rent-table">
-            <thead>
-              <tr>
-                <th>Mês</th>
-                <th>Unidade</th>
-                <th>Datas</th>
-              </tr>
-            </thead>
-            <tbody>
-              {compromisso.calendario.map((item, i) => (
-                <tr key={i}>
-                  <td>{item.mes}</td>
-                  <td>{item.unidade}</td>
-                  <td>{item.datas}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        {/* Grid de cards de calendário */}
+        <div className="calendar-grid">
+          {compromisso.calendario.map((item, i) => (
+            <div
+              key={i}
+              className="cal-card reveal"
+              style={{ '--delay': `${(i % 3) * 0.07}s` }}
+            >
+              {/* Área de imagem/gradient */}
+              <div className="cal-img">
+                <div
+                  className="cal-img-bg"
+                  style={{ background: item.gradient }}
+                />
+                <div className="cal-img-overlay">
+                  <span className="cal-location-label">
+                    {item.unidade}
+                  </span>
+                </div>
+              </div>
+
+              {/* Corpo do card */}
+              <div className="cal-body">
+                <p className="cal-city">
+                  {item.unidade}
+                  <span style={{ color: 'var(--text-muted)', fontWeight: 400, fontSize: 13 }}>
+                    {' '}· {item.estado}
+                  </span>
+                </p>
+                <span className="cal-date">{item.datas}</span>
+                <span className={`cal-status ${item.status}`}>
+                  {statusLabel[item.status]}
+                </span>
+              </div>
+            </div>
+          ))}
         </div>
+
       </div>
     </section>
   )
