@@ -12,7 +12,6 @@ import Historias      from './components/sections/Historias.jsx'
 import RelatorioAnual from './components/sections/RelatorioAnual.jsx'
 import WebinarIR      from './components/sections/WebinarIR.jsx'
 import Encontros      from './components/sections/Encontros.jsx'
-import Patrimonio     from './components/sections/Patrimonio.jsx'
 import Aportes        from './components/sections/Aportes.jsx'
 import BRFPrevEmFoco  from './components/sections/BRFPrevEmFoco.jsx'
 import AppBRFPrev     from './components/sections/AppBRFPrev.jsx'
@@ -37,7 +36,6 @@ export default function App() {
         <RelatorioAnual />
         <WebinarIR />
         <Encontros />
-        <Patrimonio />
         <Aportes />
         <BRFPrevEmFoco />
         <AppBRFPrev />
