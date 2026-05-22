@@ -28,11 +28,7 @@ export default function Hero() {
         <div className="hero-art" aria-hidden="true">
           <div className="hero-card main" />
 
-<div className="hero-card mini">
-            <span className="e">{hero.miniCard.edicao}</span>
-            <span className="t">{hero.miniCard.chamada}</span>
-            <span className="arrow-circle">→</span>
-          </div>
+<div className="hero-card mini" />
         </div>
       </div>
 

@@ -21,18 +21,8 @@ export const edition = {
       placeholderLabel: 'Editorial',
     },
     {
-      id: 'diretor',
-      n: '02',
-      tag: 'Liderança',
-      titulo: 'Mensagem do Diretor-Presidente',
-      subtitulo: null,
-      imagem: null,
-      gradient: 'linear-gradient(135deg, #0F172A 0%, #1E3A8A 100%)',
-      placeholderLabel: 'Diretor',
-    },
-    {
       id: 'compromisso',
-      n: '03',
+      n: '02',
       tag: 'Programa',
       titulo: 'BRF Prev Compromisso com Você',
       subtitulo: 'Visitas presenciais às unidades',
@@ -42,7 +32,7 @@ export const edition = {
     },
     {
       id: 'fale-presidente',
-      n: '04',
+      n: '03',
       tag: 'Canal',
       titulo: 'Fale com o Presidente',
       subtitulo: 'Novo canal de relacionamento',
@@ -52,7 +42,7 @@ export const edition = {
     },
     {
       id: 'historias',
-      n: '05',
+      n: '04',
       tag: 'Inspiração',
       titulo: 'Histórias que inspiram',
       subtitulo: 'Dra. Ivone Delazari',
@@ -62,7 +52,7 @@ export const edition = {
     },
     {
       id: 'relatorio',
-      n: '06',
+      n: '05',
       tag: 'Transparência',
       titulo: 'Relatório Anual 2025',
       subtitulo: 'Resultados que conectam',
@@ -72,7 +62,7 @@ export const edition = {
     },
     {
       id: 'webinar',
-      n: '07',
+      n: '06',
       tag: 'Educação',
       titulo: 'Webinar IR 2026',
       subtitulo: 'Declaração na prática',
@@ -82,7 +72,7 @@ export const edition = {
     },
     {
       id: 'encontros',
-      n: '08',
+      n: '07',
       tag: 'Resultados',
       titulo: 'Encontros de Resultados',
       subtitulo: '33ª edição trimestral',
@@ -92,7 +82,7 @@ export const edition = {
     },
     {
       id: 'patrimonio',
-      n: '09',
+      n: '08',
       tag: 'Marco',
       titulo: 'R$ 5 bilhões em patrimônio',
       subtitulo: 'Uma marca histórica',
@@ -102,7 +92,7 @@ export const edition = {
     },
     {
       id: 'aportes',
-      n: '10',
+      n: '09',
       tag: 'Aporte',
       titulo: 'Aportes extras e contribuições',
       subtitulo: 'Aumente sua reserva',
@@ -112,7 +102,7 @@ export const edition = {
     },
     {
       id: 'brfprev-em-foco',
-      n: '11',
+      n: '10',
       tag: 'Canal',
       titulo: 'BRF Prev em Foco',
       subtitulo: 'Vídeo mensal de novidades',
@@ -122,7 +112,7 @@ export const edition = {
     },
     {
       id: 'app-brf-prev',
-      n: '12',
+      n: '11',
       tag: 'Digital',
       titulo: 'App BRF Prev',
       subtitulo: 'Sua previdência na palma da mão',
@@ -132,7 +122,7 @@ export const edition = {
     },
     {
       id: 'rentabilidade',
-      n: '13',
+      n: '12',
       tag: 'Resultados',
       titulo: 'Desempenho dos Planos',
       subtitulo: null,
@@ -142,7 +132,7 @@ export const edition = {
     },
     {
       id: 'renda-certa',
-      n: '14',
+      n: '13',
       tag: 'Educação',
       titulo: 'Programa Renda Certa',
       subtitulo: 'Educação financeira digital',
@@ -176,19 +166,18 @@ export const edition = {
   // ─── Sumário ──────────────────────────────────────────────────────────────
   sumario: [
     { n: '01', tag: 'Editorial',     titulo: 'Editorial — a edição em foco',                  href: '#editorial',       variante: '' },
-    { n: '02', tag: 'Liderança',     titulo: 'Mensagem do Diretor-Presidente',                 href: '#diretor',         variante: 'alt' },
-    { n: '03', tag: 'Programa',      titulo: 'BRF Prev Compromisso com Você',                 href: '#compromisso',     variante: 'alt2' },
-    { n: '04', tag: 'Canal',         titulo: 'Fale com o Presidente',                          href: '#fale-presidente', variante: 'alt3' },
-    { n: '05', tag: 'Inspiração',    titulo: 'Histórias que inspiram — Dra. Ivone Delazari',  href: '#historias',       variante: 'alt' },
-    { n: '06', tag: 'Transparência', titulo: 'Relatório Anual 2025',                           href: '#relatorio',       variante: 'alt2' },
-    { n: '07', tag: 'Educação',      titulo: 'Webinar IR 2026',                                href: '#webinar',         variante: 'alt3' },
-    { n: '08', tag: 'Resultados',    titulo: 'Encontros de Resultados — 33ª edição',           href: '#encontros',       variante: '' },
-    { n: '09', tag: 'Marco',         titulo: 'R$ 5 bilhões em patrimônio',                     href: '#patrimonio',      variante: 'alt2' },
-    { n: '10', tag: 'Aporte',        titulo: 'Aportes extras e contribuições suplementares',   href: '#aportes',         variante: 'alt3' },
-    { n: '11', tag: 'Canal',         titulo: 'BRF Prev em Foco',                               href: '#brfprev-em-foco', variante: '' },
-    { n: '12', tag: 'Digital',       titulo: 'App BRF Prev',                                   href: '#app-brf-prev',    variante: 'alt' },
-    { n: '13', tag: 'Resultados',    titulo: 'Desempenho dos planos',                          href: '#rentabilidade',   variante: 'alt2' },
-    { n: '14', tag: 'Educação',      titulo: 'Programa Renda Certa',                           href: '#renda-certa',     variante: 'alt3' },
+    { n: '02', tag: 'Programa',      titulo: 'BRF Prev Compromisso com Você',                 href: '#compromisso',     variante: 'alt2' },
+    { n: '03', tag: 'Canal',         titulo: 'Fale com o Presidente',                          href: '#fale-presidente', variante: 'alt3' },
+    { n: '04', tag: 'Inspiração',    titulo: 'Histórias que inspiram — Dra. Ivone Delazari',  href: '#historias',       variante: 'alt' },
+    { n: '05', tag: 'Transparência', titulo: 'Relatório Anual 2025',                           href: '#relatorio',       variante: 'alt2' },
+    { n: '06', tag: 'Educação',      titulo: 'Webinar IR 2026',                                href: '#webinar',         variante: 'alt3' },
+    { n: '07', tag: 'Resultados',    titulo: 'Encontros de Resultados — 33ª edição',           href: '#encontros',       variante: '' },
+    { n: '08', tag: 'Marco',         titulo: 'R$ 5 bilhões em patrimônio',                     href: '#patrimonio',      variante: 'alt2' },
+    { n: '09', tag: 'Aporte',        titulo: 'Aportes extras e contribuições suplementares',   href: '#aportes',         variante: 'alt3' },
+    { n: '10', tag: 'Canal',         titulo: 'BRF Prev em Foco',                               href: '#brfprev-em-foco', variante: '' },
+    { n: '11', tag: 'Digital',       titulo: 'App BRF Prev',                                   href: '#app-brf-prev',    variante: 'alt' },
+    { n: '12', tag: 'Resultados',    titulo: 'Desempenho dos planos',                          href: '#rentabilidade',   variante: 'alt2' },
+    { n: '13', tag: 'Educação',      titulo: 'Programa Renda Certa',                           href: '#renda-certa',     variante: 'alt3' },
   ],
 
   // ─── Editorial ────────────────────────────────────────────────────────────

@@ -18,8 +18,13 @@ export default function Compromisso() {
 
         {/* Cabeçalho */}
         <div className="section-head reveal">
-          <span className="eyebrow">Programa · Atendimento Presencial</span>
-          <h2>{compromisso.titulo}</h2>
+          <h2>
+            {compromisso.titulo.split('Compromisso com Você').map((part, i, arr) => (
+              i < arr.length - 1
+                ? <>{part}<span style={{ color: 'var(--brand-coral)' }}>Compromisso com Você</span></>
+                : part
+            ))}
+          </h2>
           <p>{compromisso.intro}</p>
         </div>
 
@@ -61,10 +66,10 @@ export default function Compromisso() {
           <span className="eyebrow" style={{ color: 'var(--brand-coral)', marginBottom: 6, display: 'block' }}>
             Calendário 2026
           </span>
-          <h3 style={{ fontSize: 22, color: 'var(--text-primary)', marginBottom: 4 }}>
+          <h3 style={{ color: 'var(--text-primary)', marginBottom: 4 }}>
             Próximas visitas às unidades
           </h3>
-          <p style={{ color: 'var(--text-secondary)', fontSize: 14, margin: 0 }}>
+          <p style={{ color: 'var(--text-secondary)', margin: 0 }}>
             O calendário está em fase de organização. As datas serão divulgadas oportunamente pelos canais oficiais da BRF Prev e RH's locais.
           </p>
         </div>

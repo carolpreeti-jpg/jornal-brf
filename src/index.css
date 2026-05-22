@@ -3,6 +3,57 @@
    Redesign moderno inspirado em referência visual editorial
    ============================================================ */
 
+/* ── Fontes locais ── */
+@font-face {
+  font-family: 'Co Headline';
+  src: url('/fonts/CoHeadline-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Co Headline';
+  src: url('/fonts/CoHeadline-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Co Headline';
+  src: url('/fonts/CoHeadline-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('/fonts/NotoSans-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('/fonts/NotoSans-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('/fonts/NotoSans-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('/fonts/NotoSans-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
 :root {
   --brand-blue:       #1B46B2;
   --brand-blue-dark:  #0D2A6E;
@@ -32,8 +83,8 @@
   --radius-card-lg: 24px;
   --radius-pill:    999px;
 
-  --font-display: 'Sora', system-ui, sans-serif;
-  --font-body:    'DM Sans', system-ui, sans-serif;
+  --font-display: 'Sora', 'Noto Sans', system-ui, sans-serif;
+  --font-body:    'Noto Sans', system-ui, sans-serif;
   --font-mono:    'DM Mono', ui-monospace, monospace;
 
   --header-h: 72px;
@@ -60,8 +111,8 @@ section[id] { scroll-margin-top: calc(var(--header-h) + 12px) }
 
 /* ---------- Layout ---------- */
 .wrap { max-width: 1240px; margin: 0 auto; padding: 0 32px }
-.section { padding: 100px 0 }
-.section.tight { padding: 72px 0 }
+.section { padding: 140px 0 }
+.section.tight { padding: 100px 0 }
 .section-head { margin-bottom: 56px; max-width: 760px }
 .section-head .eyebrow { color: var(--brand-coral) }
 .section-head h2 { margin-top: 12px; color: var(--text-primary) }
@@ -249,10 +300,7 @@ header.scrolled .hamburger span { background: var(--gray-900) }
   background: linear-gradient(135deg, #EE686D, #C53B6C);
 }
 .hero-card.main::after {
-  content: 'família · participantes';
-  position: absolute; left: 18px; bottom: 14px;
-  font-family: var(--font-mono); font-size: 11px; color: rgba(255,255,255,.9);
-  background: rgba(0,0,0,.22); padding: 4px 10px; border-radius: 99px; backdrop-filter: blur(6px);
+  content: none;
 }
 .hero-card.float {
   right: -10px; top: 8%; width: 56%; aspect-ratio: 1;
@@ -269,8 +317,8 @@ header.scrolled .hamburger span { background: var(--gray-900) }
 .hero-card.float .tag  { font-size: 10px; font-weight: 600; padding: 3px 8px; border-radius: 99px; background: var(--brand-blue-light); color: var(--brand-blue) }
 .hero-card.mini {
   left: -8px; bottom: -4%; width: 48%;
-  background: rgba(13,42,110,.95); color: #fff; padding: 18px 20px; border-radius: 20px;
-  display: flex; flex-direction: column; gap: 6px; backdrop-filter: blur(20px);
+  background: var(--brand-purple); color: #fff; padding: 18px 20px; border-radius: 20px;
+  display: flex; flex-direction: column; gap: 6px;
 }
 .hero-card.mini .e { font-family: var(--font-mono); font-size: 11px; color: rgba(255,255,255,.55); letter-spacing: .06em }
 .hero-card.mini .t { font-family: var(--font-display); font-weight: 700; font-size: 16px; line-height: 1.25 }
@@ -351,7 +399,7 @@ header.scrolled .hamburger span { background: var(--gray-900) }
 .mi-arrow {
   position: absolute;
   top: 148px;    /* proporcional a top:176px na imagem de 220px → escala para 185px */
-  right: 16px;
+  right: 2%;
   z-index: 5;
   width: 58px; height: 58px;
   border-radius: 50%;
@@ -402,31 +450,207 @@ header.scrolled .hamburger span { background: var(--gray-900) }
 /* ============================================================
    EDITORIAL
    ============================================================ */
-.editorial { background: var(--brand-blue); color: #fff; position: relative; padding: 0; overflow: hidden }
-.editorial::before {
-  content: ''; position: absolute; inset: 0; pointer-events: none;
-  background:
-    radial-gradient(ellipse 60% 50% at 90% 10%, rgba(125,148,252,.2), transparent 50%),
-    radial-gradient(ellipse 40% 40% at 10% 90%, rgba(238,104,109,.1), transparent 50%);
+.editorial {
+  background: var(--brand-blue);
+  color: #fff;
+  position: relative;
+  padding: 0;
+  overflow: visible;
 }
-.editorial .inner { padding: 120px 0; position: relative }
-.editorial .eyebrow { color: var(--brand-coral); letter-spacing: .18em }
-.editorial h2 { color: #fff; margin-top: 16px; max-width: 760px; line-height: 1.15 }
-.editorial h2::after {
-  content: ''; display: block; width: 56px; height: 3px; border-radius: 99px;
-  background: var(--brand-coral); margin-top: 24px;
+
+/* Grid principal: texto (maior) | fotos (menor) */
+.editorial-grid {
+  display: grid;
+  grid-template-columns: 3fr 2fr;   /* texto leva 60 %, fotos 40 % */
+  width: 100%;
+  min-height: 560px;
 }
-.editorial .cols { display: grid; grid-template-columns: 1fr; gap: 32px; margin-top: 56px }
-@media(min-width:880px) { .editorial .cols { grid-template-columns: 1fr 1fr; gap: 56px } }
-.editorial p { color: rgba(255,255,255,.82); font-size: 16px; line-height: 1.9 }
-.editorial .quote {
-  margin: 56px 0 0; padding: 32px 40px;
-  background: rgba(255,255,255,.06); border-left: 3px solid var(--brand-coral);
-  border-radius: 0 20px 20px 0;
-  font-family: var(--font-display); font-style: italic; font-size: 21px; line-height: 1.6; color: rgba(255,255,255,.95);
+
+/* ── Coluna de texto ── */
+.editorial-col-text {
+  background: var(--brand-blue);
+  padding: 96px 56px 96px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+  z-index: 2;
 }
-.editorial .quote cite { display: block; margin-top: 16px; font-family: var(--font-body); font-size: 12px; color: rgba(255,255,255,.5); font-style: normal; letter-spacing: .07em; text-transform: uppercase }
-.editorial .cta { margin-top: 40px }
+
+.editorial-label {
+  position: absolute;
+  top: 68px;
+  right: -40px;
+  min-width: 210px;
+  max-width: 260px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 34px;
+  border-radius: 999px;
+  background: var(--brand-coral);
+  color: #fff;
+  font-family: 'Co Headline', 'Sora', sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  transform: rotate(-3deg);
+  box-shadow: 0 18px 30px rgba(0, 0, 0, .16);
+  z-index: 2;
+}
+
+.editorial-eyebrow {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--brand-coral);
+  margin-bottom: 16px;
+}
+
+.editorial-headline {
+  font-family: 'Co Headline', 'Sora', sans-serif;
+  font-weight: 700;
+  font-size: clamp(20px, 2.2vw, 36px);
+  line-height: 1.25;
+  color: #fff;
+  text-transform: none;
+  margin: 0 0 24px;
+  max-width: 480px;
+}
+
+/* sobrescreve regra global de h2 */
+.editorial .editorial-headline::after { display: none }
+
+.editorial-body { margin-bottom: 24px }
+.editorial-body p {
+  font-family: var(--font-body);
+  font-size: 15px;       /* padrão de corpo em todo o jornal */
+  line-height: 1.8;
+  color: rgba(255,255,255,.82);
+  margin-bottom: 14px;
+}
+.editorial-body p:last-child { margin-bottom: 0 }
+
+.editorial-quote {
+  margin: 24px 0 28px;
+  padding: 16px 20px;
+  border-left: 3px solid var(--brand-coral);
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-style: italic;
+  line-height: 1.7;
+  color: rgba(255,255,255,.88);
+  background: rgba(255,255,255,.06);
+  border-radius: 0 8px 8px 0;
+}
+.editorial-quote cite {
+  display: block;
+  margin-top: 10px;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.5);
+}
+
+.editorial-cta {
+  display: inline-block;
+  align-self: flex-start;
+  margin-top: auto;
+  padding: 12px 26px;
+  background: var(--brand-coral);
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: var(--radius-pill);
+  transition: background .2s, transform .15s;
+}
+.editorial-cta:hover { background: #d95257; transform: translateY(-2px) }
+
+/* ── Coluna de fotos (direita) — duas fotos empilhadas em largura total ── */
+.editorial-col-photos {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 6px 6px 6px 6px;
+  position: relative;
+  z-index: 1;
+}
+
+.editorial-col-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.editorial-photo-small { position: relative; flex: 1 }
+
+.editorial-placeholder {
+  width: 100%;
+  height: 100%;
+  min-height: 220px;
+  background: rgba(255,255,255,.12);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: rgba(255,255,255,.45);
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.editorial-placeholder svg { opacity: .4 }
+
+.editorial-photo-label {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: var(--brand-coral);
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  z-index: 1;
+}
+
+/* ── Responsividade ── */
+@media (max-width: 700px) {
+  .editorial-grid {
+    grid-template-columns: 1fr;
+    min-height: unset;
+  }
+  .editorial-col-text {
+    padding: 64px 32px 32px;
+  }
+  .editorial-label {
+    position: static;
+    margin: 24px 0 0;
+    right: auto;
+    top: auto;
+    box-shadow: none;
+    background: var(--brand-coral);
+  }
+  .editorial-col-photos {
+    padding-top: 6px;
+    min-height: 320px;
+  }
+}
 
 /* ============================================================
    DIRETOR
@@ -940,8 +1164,30 @@ blockquote.quote {
 blockquote.quote cite { display: block; margin-top: 14px; font-family: var(--font-body); font-size: 13px; color: var(--text-muted); font-style: normal; letter-spacing: .05em; text-transform: uppercase }
 
 /* ============================================================
-   COMPROMISSO — grid de cards de calendário (estilo foto/evento)
+   COMPROMISSO — padronização de fontes + grid de calendário
    ============================================================ */
+
+/* Títulos → Co Headline Bold */
+#compromisso h2,
+#compromisso h3 {
+  font-family: 'Co Headline', 'Sora', sans-serif;
+  font-weight: 700;
+}
+
+/* Corpo → Noto Sans 15px (mesmo padrão do editorial) */
+#compromisso p {
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* Títulos dos cards → Co Headline Bold */
+.cal-city,
+.cal-location-label {
+  font-family: 'Co Headline', 'Sora', sans-serif;
+  font-weight: 700;
+}
+
 .calendar-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -1015,9 +1261,9 @@ blockquote.quote cite { display: block; margin-top: 14px; font-family: var(--fon
    AJUSTES MOBILE
    ============================================================ */
 @media(max-width:640px) {
-  .section { padding: 72px 0 }
+  .section { padding: 96px 0 }
   .wrap { padding: 0 20px }
-  .editorial .inner, .elas .inner { padding: 80px 0 }
+  .elas .inner { padding: 80px 0 }
   .countdown .grid { grid-template-columns: repeat(4,1fr) }
   .hero-inner { padding: 64px 0 100px }
   .hero-art { display: none }

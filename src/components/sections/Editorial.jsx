@@ -3,61 +3,53 @@ import { edition } from '../../data/edition.js'
 const { editorial } = edition
 
 export default function Editorial() {
-  const metade = Math.ceil(editorial.paragrafos.length / 2)
-
   return (
     <section className="editorial" id="editorial" data-screen-label="Editorial">
-      {/* Wave superior */}
-      <svg
-        className="wave-divider"
-        style={{ transform: 'rotate(180deg)', background: '#F5F3F0' }}
-        viewBox="0 0 1440 80"
-        preserveAspectRatio="none"
-        aria-hidden="true"
-      >
-        <path fill="#1B46B2" d="M0,30 C240,80 480,0 720,30 C960,60 1200,10 1440,40 L1440,80 L0,80 Z" />
-      </svg>
 
-      <div className="wrap inner">
-        <div className="reveal">
-          <span className="eyebrow">Editorial</span>
-          <h2>{editorial.titulo}</h2>
-        </div>
+      <div className="editorial-grid">
 
-        <div className="cols">
-          <div className="reveal">
-            {editorial.paragrafos.slice(0, metade).map((p, i) => (
-              <p key={i}>{p}</p>
-            ))}
-          </div>
-          <div className="reveal d2">
-            {editorial.paragrafos.slice(metade).map((p, i) => (
+        {/* ── Coluna esquerda: texto ── */}
+        <div className="editorial-col-text reveal">
+          <h2 className="editorial-headline">{editorial.titulo}</h2>
+          <span className="editorial-label">Editorial</span>
+
+          <div className="editorial-body">
+            {editorial.paragrafos.map((p, i) => (
               <p key={i}>{p}</p>
             ))}
           </div>
         </div>
 
-        <blockquote className="quote reveal">
-          "{editorial.citacao}"
-          <cite>{editorial.citacaoAutor}</cite>
-        </blockquote>
+        {/* ── Coluna direita: duas fotos em largura total ── */}
+        <div className="editorial-col-photos">
+          <div className="editorial-col-stack">
 
-        <div className="cta">
-          <a className="btn btn-light" href="#">
-            Leia o editorial completo <span className="arrow">→</span>
-          </a>
+            <div className="editorial-photo-small">
+              <div className="editorial-placeholder">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
+                  <rect x="3" y="3" width="18" height="18" rx="2"/>
+                  <circle cx="8.5" cy="8.5" r="1.5"/>
+                  <polyline points="21 15 16 10 5 21"/>
+                </svg>
+                Foto 1
+              </div>
+            </div>
+
+            <div className="editorial-photo-small">
+              <div className="editorial-placeholder">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
+                  <rect x="3" y="3" width="18" height="18" rx="2"/>
+                  <circle cx="8.5" cy="8.5" r="1.5"/>
+                  <polyline points="21 15 16 10 5 21"/>
+                </svg>
+                Foto 2
+              </div>
+            </div>
+
+          </div>
         </div>
+
       </div>
-
-      {/* Wave inferior */}
-      <svg
-        className="wave-divider"
-        viewBox="0 0 1440 80"
-        preserveAspectRatio="none"
-        aria-hidden="true"
-      >
-        <path fill="#F8FAFC" d="M0,40 C240,80 480,0 720,30 C960,60 1200,20 1440,50 L1440,80 L0,80 Z" />
-      </svg>
     </section>
   )
 }

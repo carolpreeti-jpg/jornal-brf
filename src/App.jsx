@@ -5,7 +5,6 @@ import Footer       from './components/layout/Footer.jsx'
 import MenuIndex      from './components/sections/MenuIndex.jsx'
 import Hero           from './components/sections/Hero.jsx'
 import Editorial      from './components/sections/Editorial.jsx'
-import Diretor        from './components/sections/Diretor.jsx'
 import Compromisso    from './components/sections/Compromisso.jsx'
 import FalePresidente from './components/sections/FalePresidente.jsx'
 import Historias      from './components/sections/Historias.jsx'
@@ -29,7 +28,6 @@ export default function App() {
         <Hero />
         <MenuIndex />
         <Editorial />
-        <Diretor />
         <Compromisso />
         <FalePresidente />
         <Historias />
