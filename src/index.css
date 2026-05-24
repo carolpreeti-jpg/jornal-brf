@@ -1167,6 +1167,11 @@ blockquote.quote cite { display: block; margin-top: 14px; font-family: var(--fon
    COMPROMISSO — padronização de fontes + grid de calendário
    ============================================================ */
 
+/* Cabeçalho ocupa toda a largura disponível */
+#compromisso .section-head {
+  max-width: 100%;
+}
+
 /* Títulos → Co Headline Bold */
 #compromisso h2,
 #compromisso h3 {
