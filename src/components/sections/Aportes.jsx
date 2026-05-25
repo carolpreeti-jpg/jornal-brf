@@ -9,24 +9,53 @@ export default function Aportes() {
   return (
     <section className="section game" id="aportes" data-screen-label="Aportes">
       <div className="wrap">
-        <div className="section-head reveal">
-          <h2>
-            {aportes.titulo
-              .split(/(aportes extras|contribuições suplementares)/i)
-              .map((part, i) =>
-                /aportes extras|contribuições suplementares/i.test(part)
-                  ? <span key={i} style={{ color: '#EE686D' }}>{part}</span>
-                  : part
-              )}
-          </h2>
-          <p style={{ ...P, marginTop: 40 }}>{aportes.descricao}</p>
-          {aportes.descricaoExtra && (
-            <p style={{ ...P, marginTop: 8 }}>{aportes.descricaoExtra}</p>
-          )}
+        {/* Cabeçalho: imagem esquerda + título/texto direita */}
+        <div style={{ display: 'grid', gridTemplateColumns: '1.5fr 3.5fr', gap: 48, marginBottom: 56, alignItems: 'stretch' }}>
+
+          {/* Coluna esquerda — imagem com overlay de dinheiro */}
+          <div style={{ position: 'relative', minHeight: 320, marginTop: '-15%' }}>
+            <img
+              src="/homem2.png"
+              alt=""
+              style={{ width: '100%', height: 'auto', display: 'block' }}
+            />
+            <img
+              src="/dinheiro.png"
+              alt=""
+              aria-hidden="true"
+              className="float-money"
+              style={{
+                position: 'absolute',
+                top: '-2%',
+                left: '3%',
+                width: '120%',
+                height: 'auto',
+                pointerEvents: 'none',
+              }}
+            />
+          </div>
+
+          {/* Coluna direita — título e descrição */}
+          <div className="section-head" style={{ maxWidth: '100%', marginBottom: 0 }}>
+            <h2 style={{ fontSize: 'clamp(29px, 3.78vw, 47px)' }}>
+              {aportes.titulo
+                .split(/(aportes extras|contribuições suplementares)/i)
+                .map((part, i) =>
+                  /aportes extras|contribuições suplementares/i.test(part)
+                    ? <span key={i} style={{ color: '#EE686D' }}>{part}</span>
+                    : part
+                )}
+            </h2>
+            <p style={{ ...P, marginTop: 40 }}>{aportes.descricao}</p>
+            {aportes.descricaoExtra && (
+              <p style={{ ...P, marginTop: 8 }}>{aportes.descricaoExtra}</p>
+            )}
+          </div>
+
         </div>
 
         {/* Modalidades */}
-        <div className="units-grid reveal d2">
+        <div className="units-grid reveal d2" style={{ marginTop: '-6%' }}>
           {aportes.modalidades.map((m, i) => (
             <article key={i} className="unit-card">
               <div className="unit-body" style={{ padding: '40px 28px 28px' }}>
@@ -85,7 +114,7 @@ export default function Aportes() {
             Quando vale a pena fazer um{' '}
             <span style={{ color: '#EE686D' }}>aporte extra</span>
             {' '}ou{' '}
-            <span style={{ color: '#EE686D' }}>contribuição suplementar</span>?
+            <span style={{ color: '#EE686D' }}>contribuição suplementar</span><span style={{ color: '#EE686D' }}>?</span>
           </h3>
           <p style={{ ...P }}>
             Contribuições ocasionais podem fazer diferença no saldo acumulado no longo prazo e alguns momentos podem ser boas oportunidades para reforçar sua reserva previdenciária, como:
@@ -123,30 +152,20 @@ export default function Aportes() {
           {/* Layout duas colunas: imagem | conteúdo */}
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 48, alignItems: 'stretch', marginTop: 56 }}>
 
-            {/* Coluna esquerda — placeholder de imagem */}
-            <div style={{
-              background: '#F1F5F9',
-              borderRadius: 16,
-              border: '2px dashed #CBD5E1',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              minHeight: 0,
-              color: '#94A3B8',
-              fontFamily: "'Noto Sans', sans-serif",
-              fontSize: 14,
-              flexDirection: 'column',
-              gap: 8,
-            }}>
-              <span style={{ fontSize: 36 }}>🖼</span>
-              <span>Imagem</span>
+            {/* Coluna esquerda — imagem da atendente */}
+            <div style={{ borderRadius: 16, overflow: 'hidden', minHeight: 0 }}>
+              <img
+                src="/atendente.jpg"
+                alt="Atendente de suporte ao participante"
+                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+              />
             </div>
 
             {/* Coluna direita — texto */}
             <div>
               <h3 style={{ fontFamily: "'Co Headline', sans-serif", fontWeight: 400, fontSize: 26, lineHeight: 1.3, marginBottom: 16, color: 'var(--text-primary)' }}>
                 Como realizar aportes<br />
-                e <span style={{ color: '#EE686D' }}>contribuições suplementares</span>?
+                e <span style={{ color: '#EE686D' }}>contribuições suplementares?</span>
               </h3>
               <p style={{ ...P }}>
                 O processo pode ser feito de forma simples pelo autoatendimento no site ou pelos canais de atendimento:

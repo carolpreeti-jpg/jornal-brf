@@ -72,10 +72,10 @@ export default function Historias() {
             )}
           </div>
 
-          {/* Foto — ivone-delazari.jpg duplicada ao lado do bloco 3 */}
-          <div className="elas-photo" style={{ alignSelf: 'stretch', clipPath: 'inset(0 0 15% 0 round 24px)' }} aria-hidden="true">
+          {/* Foto — ivone 3 ao lado do bloco 3 */}
+          <div className="elas-photo elas-photo--flip" style={{ alignSelf: 'stretch', clipPath: 'inset(0 0 15% 0 round 24px)' }} aria-hidden="true">
             <img
-              src="/ivone-delazari.jpg"
+              src="/ivone-3.jpg"
               alt="Dra. Ivone Delazari"
               style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', display: 'block' }}
             />
@@ -84,7 +84,7 @@ export default function Historias() {
         </div>
 
         {/* Um exemplo que fica — largura total */}
-        <div style={{ marginTop: 32 }}>
+        <div style={{ marginTop: '-5%' }}>
           <h3 style={{ color: '#fff', marginBottom: 18 }}>Um exemplo que fica</h3>
           <p style={{ opacity: 0.88 }}>
             {historias.fechamento}

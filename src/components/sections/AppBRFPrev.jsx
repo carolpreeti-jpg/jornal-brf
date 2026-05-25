@@ -5,38 +5,65 @@ const { appBRFPrev } = edition
 export default function AppBRFPrev() {
   return (
     <section className="section" id="app-brf-prev" data-screen-label="App BRF Prev"
-      style={{ background: 'var(--brand-blue)' }}>
+      style={{ background: 'var(--brand-blue)', position: 'relative', overflow: 'visible' }}>
+
+      <style>{`
+        @keyframes floatUpDown {
+          0%   { transform: translateY(0); }
+          50%  { transform: translateY(24px); }
+          100% { transform: translateY(0); }
+        }
+      `}</style>
+
+      {/* Imagem do app — flutua acima de tudo, não interfere nos textos */}
+      <img
+        src="/app.png"
+        alt="App BRF Prev"
+        style={{
+          position: 'absolute',
+          top: '7%',
+          right: '13%',
+          width: 541,
+          display: 'block',
+          zIndex: 10,
+          pointerEvents: 'none',
+          animation: 'floatUpDown 4s ease-in-out infinite',
+        }}
+      />
+
       <div className="wrap">
 
-        <div className="section-head reveal">
-          <h2 style={{ color: '#fff', fontSize: 'clamp(44px, 5vw, 64px)' }}>
-            {appBRFPrev.titulo.split(/^(App BRF Prev:)/).filter(Boolean).map((part, i) =>
-              part === 'App BRF Prev:'
-                ? <span key={i} style={{ color: '#97aaff' }}>{part}</span>
-                : part
-            )}
-          </h2>
-          {appBRFPrev.descricao.split('\n\n').map((p, i) => (
-            <p key={i} style={{ color: 'rgba(255,255,255,0.85)', marginTop: i === 0 ? 20 : 12, marginBottom: 0 }}>
-              {p.split(/(acompanhar)/i).map((part, j) =>
-                /acompanhar/i.test(part)
-                  ? <span key={j}><br />{part}</span>
+        <div>
+          <div className="section-head" style={{ marginBottom: 0 }}>
+            <h2 style={{ color: '#fff', fontSize: 'clamp(44px, 5vw, 64px)' }}>
+              {appBRFPrev.titulo.split(/^(App BRF Prev:)/).filter(Boolean).map((part, i) =>
+                part === 'App BRF Prev:'
+                  ? <span key={i} style={{ color: '#97aaff' }}>{part}</span>
                   : part
               )}
-            </p>
-          ))}
-        </div>
+            </h2>
+            {appBRFPrev.descricao.split('\n\n').map((p, i) => (
+              <p key={i} style={{ color: 'rgba(255,255,255,0.85)', marginTop: i === 0 ? 20 : 12, marginBottom: 0 }}>
+                {p.split(/(acompanhar)/i).map((part, j) =>
+                  /acompanhar/i.test(part)
+                    ? <span key={j}><br />{part}</span>
+                    : part
+                )}
+              </p>
+            ))}
+          </div>
 
-        <p style={{
-          fontFamily: "'Co Headline', sans-serif",
-          fontWeight: 400,
-          fontSize: 30,
-          color: '#fff',
-          marginTop: -24,
-        }}>
-          <span style={{ color: '#97aaff' }}>Confira algumas </span>
-          <span style={{ color: '#fff' }}>funcionalidades disponíveis:</span>
-        </p>
+          <p style={{
+            fontFamily: "'Co Headline', sans-serif",
+            fontWeight: 400,
+            fontSize: 30,
+            color: '#fff',
+            marginTop: 24,
+          }}>
+            <span style={{ color: '#97aaff' }}>Confira algumas </span>
+            <span style={{ color: '#fff' }}>funcionalidades disponíveis:</span>
+          </p>
+        </div>
 
         {/* Cards de funcionalidades */}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 20, marginTop: 24 }}>
@@ -63,81 +90,83 @@ export default function AppBRFPrev() {
           </p>
 
           <div style={{ display: 'flex', flexDirection: 'row', gap: 12 }}>
-            <img src="/google.png" alt="Google Play" style={{ height: 58, objectFit: 'contain' }} />
-            <img src="/apple.png"  alt="App Store"   style={{ height: 58, objectFit: 'contain' }} />
+            <a
+              href="https://play.google.com/store/apps/details?id=br.com.sinqiaprevidencia.participante.brf&hl=pt"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ display: 'inline-block', borderRadius: 8, overflow: 'hidden', transition: 'opacity .2s, transform .2s' }}
+              onMouseEnter={e => { e.currentTarget.style.opacity = '0.8'; e.currentTarget.style.transform = 'scale(1.05)' }}
+              onMouseLeave={e => { e.currentTarget.style.opacity = '1';   e.currentTarget.style.transform = 'scale(1)' }}
+            >
+              <img src="/google.png" alt="Google Play" style={{ height: 51, objectFit: 'contain', display: 'block' }} />
+            </a>
+            <a
+              href="https://apps.apple.com/br/app/brf-previd%C3%AAncia/id6496354261"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ display: 'inline-block', borderRadius: 8, overflow: 'hidden', transition: 'opacity .2s, transform .2s' }}
+              onMouseEnter={e => { e.currentTarget.style.opacity = '0.8'; e.currentTarget.style.transform = 'scale(1.05)' }}
+              onMouseLeave={e => { e.currentTarget.style.opacity = '1';   e.currentTarget.style.transform = 'scale(1)' }}
+            >
+              <img src="/apple.png" alt="App Store" style={{ height: 51, objectFit: 'contain', display: 'block' }} />
+            </a>
           </div>
         </div>
 
-        {/* Dois colunas: imagem esquerda | texto direita */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 48, alignItems: 'start', marginTop: 90 }}>
-
-          {/* Coluna esquerda — reservada para imagem */}
-          <div />
-
-          {/* Coluna direita — Primeiro acesso */}
-          <div>
-            <h3 style={{
-              fontFamily: "'Co Headline', sans-serif",
-              fontWeight: 400,
-              fontSize: 30,
-              color: '#fff',
-              marginBottom: 16,
-            }}>
-              {appBRFPrev.primeiroAcesso.titulo}
-            </h3>
-            <p style={{
-              fontFamily: "'Noto Sans', sans-serif",
-              fontSize: 17,
-              lineHeight: 1.8,
-              color: 'rgba(255,255,255,0.85)',
-              margin: 0,
-            }}>
-              {appBRFPrev.primeiroAcesso.descricao}
-            </p>
-          </div>
-
+        {/* Primeiro acesso — alinhado à esquerda */}
+        <div style={{ marginTop: 48 }}>
+          <h3 style={{
+            fontFamily: "'Co Headline', sans-serif",
+            fontWeight: 400,
+            fontSize: 30,
+            color: '#fff',
+            marginBottom: 16,
+          }}>
+            {appBRFPrev.primeiroAcesso.titulo}
+          </h3>
+          <p style={{
+            fontFamily: "'Noto Sans', sans-serif",
+            fontSize: 17,
+            lineHeight: 1.8,
+            color: 'rgba(255,255,255,0.85)',
+            margin: 0,
+          }}>
+            {appBRFPrev.primeiroAcesso.descricao}
+          </p>
         </div>
 
-        {/* Dois colunas: imagem esquerda | Esqueceu sua senha */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 48, alignItems: 'start', marginTop: 48 }}>
-
-          {/* Coluna esquerda — reservada para imagem */}
-          <div />
-
-          {/* Coluna direita — Esqueceu sua senha */}
-          <div>
-            <h3 style={{
-              fontFamily: "'Co Headline', sans-serif",
-              fontWeight: 400,
-              fontSize: 30,
-              color: '#fff',
-              marginBottom: 16,
-            }}>
-              {appBRFPrev.esqueceuSenha.titulo.split(/(sua senha\?)/i).map((part, i) =>
-                /sua senha\?/i.test(part)
-                  ? <span key={i} style={{ color: '#97aaff' }}>{part}</span>
-                  : part
-              )}
-            </h3>
-            <p style={{
-              fontFamily: "'Noto Sans', sans-serif",
-              fontSize: 17,
-              lineHeight: 1.8,
-              color: 'rgba(255,255,255,0.85)',
-              margin: 0,
-            }}>
-              {appBRFPrev.esqueceuSenha.descricao.split('\n\n').map((p, i) => (
-                <span key={i} style={{ display: 'block', marginBottom: i < appBRFPrev.esqueceuSenha.descricao.split('\n\n').length - 1 ? 24 : 0 }}>
-                  {p.split(/(Importante!)/i).map((part, j) =>
-                    /Importante!/i.test(part)
-                      ? <span key={j} style={{ fontWeight: 700, textTransform: 'uppercase' }}>{part}</span>
-                      : part
-                  )}
-                </span>
-              ))}
-            </p>
-          </div>
-
+        {/* Esqueceu sua senha — alinhado à esquerda */}
+        <div style={{ marginTop: 48 }}>
+          <h3 style={{
+            fontFamily: "'Co Headline', sans-serif",
+            fontWeight: 400,
+            fontSize: 30,
+            color: '#fff',
+            marginBottom: 16,
+          }}>
+            {appBRFPrev.esqueceuSenha.titulo.split(/(sua senha\?)/i).map((part, i) =>
+              /sua senha\?/i.test(part)
+                ? <span key={i} style={{ color: '#97aaff' }}>{part}</span>
+                : part
+            )}
+          </h3>
+          <p style={{
+            fontFamily: "'Noto Sans', sans-serif",
+            fontSize: 17,
+            lineHeight: 1.8,
+            color: 'rgba(255,255,255,0.85)',
+            margin: 0,
+          }}>
+            {appBRFPrev.esqueceuSenha.descricao.split('\n\n').map((p, i) => (
+              <span key={i} style={{ display: 'block', marginBottom: i < appBRFPrev.esqueceuSenha.descricao.split('\n\n').length - 1 ? 24 : 0 }}>
+                {p.split(/(Importante!)/i).map((part, j) =>
+                  /Importante!/i.test(part)
+                    ? <span key={j} style={{ fontWeight: 700, textTransform: 'uppercase' }}>{part}</span>
+                    : part
+                )}
+              </span>
+            ))}
+          </p>
         </div>
 
       </div>

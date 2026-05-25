@@ -441,7 +441,7 @@ export const edition = {
       'A BRF Prev atingiu uma marca histórica em 2026, alcançando R$ 5 bilhões de patrimônio. O resultado reflete a confiança depositada pelos participantes, que, em diferentes fases da vida, contam com a Entidade para apoiar o planejamento de longo prazo e a construção de um futuro mais seguro.',
       'Esse volume expressivo de recursos evidencia o crescimento da entidade e, também, a consistência de sua gestão ao longo do tempo, pautada pela responsabilidade, transparência e foco no participante.',
     ],
-    fotoUrl: null,
+    fotoUrl: '/business-women.jpg',
     paragrafoFoto: '[Texto do parágrafo ao lado da foto — edite em edition.js]',
     tituloExtra: 'Um número difícil de imaginar',
     paragrafosExtra: [

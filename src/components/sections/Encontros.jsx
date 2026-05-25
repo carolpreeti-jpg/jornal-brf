@@ -5,8 +5,39 @@ const { encontros } = edition
 export default function Encontros() {
   return (
     <section className="section survey" id="encontros" data-screen-label="Encontros"
-      style={{ padding: '200px 0 160px', minHeight: '1300px', display: 'flex', alignItems: 'flex-start' }}>
-      <div style={{ width: '100%', padding: '0 200px' }}>
+      style={{ padding: '200px 0 160px', minHeight: '1300px', display: 'flex', alignItems: 'flex-start', position: 'relative', overflow: 'hidden' }}>
+
+      {/* Degradê de transição com WebinarIR */}
+      <div style={{
+        position: 'absolute',
+        top: 0, left: 0, right: 0,
+        height: 400,
+        background: 'linear-gradient(to bottom, #6F91FB 0%, rgba(111,145,251,.6) 35%, rgba(111,145,251,.2) 65%, transparent 100%)',
+        zIndex: 2,
+        pointerEvents: 'none',
+      }} />
+
+      {/* Vídeo de fundo */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        style={{
+          position: 'absolute',
+          inset: 0,
+          width: '100%',
+          height: '100%',
+          objectFit: 'cover',
+          opacity: 0.65,
+          pointerEvents: 'none',
+          zIndex: 0,
+        }}
+      >
+        <source src="/azul2.mp4" type="video/mp4" />
+      </video>
+
+      <div style={{ width: '100%', padding: '0 200px', position: 'relative', zIndex: 1 }}>
         {/* Imagem sobreposta na borda azul/branco */}
         <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '-90px', position: 'relative', zIndex: 2 }}>
           <img

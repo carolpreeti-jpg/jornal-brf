@@ -224,7 +224,7 @@ export default function WebinarIR({ bg, hideTitle, hideCarousel, topImage, custo
         )}
 
         {!hideTitle && (
-          <div className="section-head reveal" style={{ maxWidth: '100%', marginBottom: 24 }}>
+          <div className="section-head" style={{ maxWidth: '100%', marginBottom: 24 }}>
             <h2 style={{ maxWidth: '100%', color: '#fff' }}>
               <span style={{ color: '#fff' }}>Webinar BRF Prev</span>
               {' '}orienta participantes sobre a{' '}

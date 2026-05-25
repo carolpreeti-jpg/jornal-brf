@@ -147,10 +147,11 @@ export default function CompromissoUnidades() {
         {/* Citação Mauricio Manduca */}
         <div className="testimonial-card testimonial-card--horizontal">
           <div className="card-top">
-            <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="#888" strokeWidth="1.2" aria-hidden="true">
-              <circle cx="12" cy="8" r="4"/>
-              <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
-            </svg>
+            <img
+              src="/mauricio-manduca.jpg"
+              alt="Mauricio Manduca"
+              style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', display: 'block', borderRadius: '16px 0 0 16px' }}
+            />
           </div>
           <div className="quote-badge">"</div>
           <div className="card-bottom">

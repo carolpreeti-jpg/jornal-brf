@@ -9,10 +9,10 @@ export default function BRFPrevEmFoco() {
       <div className="wrap">
 
         <div className="section-head reveal" style={{ marginBottom: 16 }}>
-          <h2 style={{ fontSize: 'clamp(44px, 5vw, 64px)' }}>
+          <h2 style={{ fontSize: 'clamp(32px, 3.8vw, 52px)', whiteSpace: 'nowrap' }}>
             {brfPrevEmFoco.titulo.split(/^(BRF Prev em Foco:)/).filter(Boolean).map((part, i) =>
               part === 'BRF Prev em Foco:'
-                ? <span key={i} style={{ color: 'var(--brand-blue)' }}>{part}</span>
+                ? <><span key={i} style={{ color: 'var(--brand-blue)' }}>{part}</span><br /></>
                 : part
             )}
           </h2>
@@ -43,24 +43,40 @@ export default function BRFPrevEmFoco() {
           marginTop: 40,
           background: 'var(--brand-blue)',
           borderRadius: 16,
-          padding: '48px 40px 60px',
+          overflow: 'hidden',
+          position: 'relative',
+          minHeight: 360,
           display: 'grid',
           gridTemplateColumns: '1fr 1fr',
-          alignItems: 'start',
+          alignItems: 'center',
           gap: 40,
         }}>
-          {/* Coluna esquerda — reservada para foto */}
+          {/* Imagem cobrindo todo o retângulo */}
+          <img
+            src="/celular.png"
+            alt=""
+            style={{
+              position: 'absolute',
+              inset: 0,
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              display: 'block',
+            }}
+          />
+
+          {/* Coluna esquerda vazia (espaço visual da imagem) */}
           <div />
 
           {/* Coluna direita — texto + botão */}
-          <div style={{ paddingTop: 80 }}>
+          <div style={{ position: 'relative', zIndex: 1, padding: '48px 40px 48px 0', marginLeft: '20%' }}>
             <p style={{
               fontFamily: "'Co Headline', sans-serif",
               fontWeight: 400,
-              fontSize: 26,
+              fontSize: 22,
               lineHeight: 1.5,
               color: '#ffffff',
-              margin: '0 0 28px',
+              margin: '0 0 24px',
             }}>
               {brfPrevEmFoco.paragrafos[brfPrevEmFoco.paragrafos.length - 1]}
             </p>
@@ -74,8 +90,8 @@ export default function BRFPrevEmFoco() {
                 color: '#ffffff',
                 fontFamily: "'Noto Sans', sans-serif",
                 fontWeight: 700,
-                fontSize: 24,
-                padding: '9px 26px',
+                fontSize: 20,
+                padding: '8px 22px',
                 borderRadius: 999,
                 textDecoration: 'none',
                 letterSpacing: '0.3px',
