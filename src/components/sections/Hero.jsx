@@ -7,12 +7,7 @@ export default function Hero() {
     <section className="hero" data-screen-label="Hero">
       <div className="wrap hero-inner">
         {/* Conteúdo esquerdo */}
-        <div>
-          <span className="badge-pill">
-            <span className="dot" />
-            {hero.badge}
-          </span>
-
+        <div style={{ marginTop: '-40px' }}>
           <h1>
             {hero.titulo}
             <span className="accent">{hero.subtitulo}</span>

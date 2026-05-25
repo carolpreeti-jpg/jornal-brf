@@ -1,7 +1,8 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useStickyHeader } from '../../hooks/useStickyHeader.js'
 import { edition } from '../../data/edition.js'
-const logo = '/imagem05.png'
+const logoDefault  = '/logo-horizontal-1.png'
+const logoScrolled = '/logo-horizontal-2.png'
 
 const navLinks = [
   { href: '#top', label: 'Início' },
@@ -14,23 +15,24 @@ const navLinks = [
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
   useStickyHeader()
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8)
+    window.addEventListener('scroll', onScroll, { passive: true })
+    onScroll()
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
 
   return (
     <header id="site-header">
-      <div className="wrap nav">
-        <a href="#top" className="brand" aria-label="BRF Previdência">
-          <img src={logo} alt="BRF Previdência" className="brand-logo" style={{ height: 20 }} />
-          <span className="brand-tag">O informativo dos participantes</span>
+      <div className="wrap nav" style={{ justifyContent: 'space-between' }}>
+        <a href="#top" className="brand" aria-label="BRF Previdência"
+          style={{ flexDirection: 'row', alignItems: 'center', gap: 10, marginLeft: -32 }}>
+          <img src={scrolled ? logoScrolled : logoDefault} alt="BRF Previdência" className="brand-logo" style={{ height: 40 }} />
+          <span className="brand-tag" style={{ paddingLeft: 0, borderLeft: 'none' }}>Jornal BRF Previdência</span>
         </a>
-
-        <nav className="nav-links" aria-label="Navegação principal">
-          {navLinks.map((l) => (
-            <a key={l.href} href={l.href}>
-              {l.label}
-            </a>
-          ))}
-        </nav>
 
         <div className="edition-meta">
           <span className="edition-dot" />

@@ -68,7 +68,12 @@ export default function Compromisso() {
               </p>
               {i === 0 && (
                 <div key="action-photos" style={{ display: 'flex', gap: 8, width: '100%', margin: '40px 0', alignItems: 'stretch' }}>
-                  {[0, 1, 2, 3, 4].map(j => (
+                  {[
+                    '/acao-curitiba-1.jfif',
+                    '/acao-curitiba-2.jfif',
+                    '/acao-curitiba-3.jpg',
+                    '/acao-curitiba-4.jpg',
+                  ].map((src, j) => (
                     <div
                       key={j}
                       style={{
@@ -78,10 +83,17 @@ export default function Compromisso() {
                         flex: hoveredPhoto === j ? '1.6 1 0' : hoveredPhoto !== null ? '0.85 1 0' : '1 1 0',
                         transition: 'flex 0.35s cubic-bezier(.4,0,.2,1)',
                         cursor: 'pointer',
+                        overflow: 'hidden',
                       }}
                       onMouseEnter={() => setHoveredPhoto(j)}
                       onMouseLeave={() => setHoveredPhoto(null)}
-                    />
+                    >
+                      <img
+                        src={src}
+                        alt={`Ação Curitiba ${j + 1}`}
+                        style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                      />
+                    </div>
                   ))}
                 </div>
               )}
@@ -95,10 +107,17 @@ export default function Compromisso() {
           {/* Depoimento Rose Zanutto */}
           <div className="testimonial-card testimonial-card--horizontal">
             <div className="card-top">
-              <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="#888" strokeWidth="1.2" aria-hidden="true">
-                <circle cx="12" cy="8" r="4"/>
-                <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
-              </svg>
+              <img
+                src="/rose-zanutto.jpg"
+                alt="Rose Zanutto"
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  objectPosition: 'center top',
+                  display: 'block',
+                }}
+              />
             </div>
             <div className="quote-badge">"</div>
             <div className="card-bottom">

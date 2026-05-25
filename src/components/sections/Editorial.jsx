@@ -10,14 +10,23 @@ export default function Editorial() {
 
         {/* ── Coluna esquerda: texto ── */}
         <div className="editorial-col-text reveal">
-          <h2 className="editorial-headline">{editorial.titulo}</h2>
           <span className="editorial-label">Editorial</span>
+
+          <h2 className="editorial-headline">
+            {editorial.titulo.split(/(estar cada vez mais próximos de você)/i).map((part, i) =>
+              /estar cada vez mais próximos de você/i.test(part)
+                ? <span key={i} style={{ color: '#b8c6ff' }}>{part}</span>
+                : part
+            )}
+          </h2>
 
           <div className="editorial-body">
             {editorial.paragrafos.map((p, i) => (
               <p key={i}>{p}</p>
             ))}
           </div>
+
+
         </div>
 
         {/* ── Coluna direita: duas fotos em largura total ── */}
@@ -25,25 +34,13 @@ export default function Editorial() {
           <div className="editorial-col-stack">
 
             <div className="editorial-photo-small">
-              <div className="editorial-placeholder">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
-                  <rect x="3" y="3" width="18" height="18" rx="2"/>
-                  <circle cx="8.5" cy="8.5" r="1.5"/>
-                  <polyline points="21 15 16 10 5 21"/>
-                </svg>
-                Foto 1
-              </div>
+              <img src="/foto-editorial-1.jpg" alt="Participante BRF Previdência"
+                style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: 'inherit', display: 'block' }} />
             </div>
 
             <div className="editorial-photo-small">
-              <div className="editorial-placeholder">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
-                  <rect x="3" y="3" width="18" height="18" rx="2"/>
-                  <circle cx="8.5" cy="8.5" r="1.5"/>
-                  <polyline points="21 15 16 10 5 21"/>
-                </svg>
-                Foto 2
-              </div>
+              <img src="/foto-editorial-2.jpg" alt="Família BRF Previdência"
+                style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: '20% center', borderRadius: 'inherit', display: 'block' }} />
             </div>
 
           </div>

@@ -113,7 +113,11 @@ export default function AppBRFPrev() {
               color: '#fff',
               marginBottom: 16,
             }}>
-              {appBRFPrev.esqueceuSenha.titulo}
+              {appBRFPrev.esqueceuSenha.titulo.split(/(sua senha\?)/i).map((part, i) =>
+                /sua senha\?/i.test(part)
+                  ? <span key={i} style={{ color: '#97aaff' }}>{part}</span>
+                  : part
+              )}
             </h3>
             <p style={{
               fontFamily: "'Noto Sans', sans-serif",
@@ -123,7 +127,13 @@ export default function AppBRFPrev() {
               margin: 0,
             }}>
               {appBRFPrev.esqueceuSenha.descricao.split('\n\n').map((p, i) => (
-                <span key={i} style={{ display: 'block', marginBottom: i < appBRFPrev.esqueceuSenha.descricao.split('\n\n').length - 1 ? 24 : 0 }}>{p}</span>
+                <span key={i} style={{ display: 'block', marginBottom: i < appBRFPrev.esqueceuSenha.descricao.split('\n\n').length - 1 ? 24 : 0 }}>
+                  {p.split(/(Importante!)/i).map((part, j) =>
+                    /Importante!/i.test(part)
+                      ? <span key={j} style={{ fontWeight: 700, textTransform: 'uppercase' }}>{part}</span>
+                      : part
+                  )}
+                </span>
               ))}
             </p>
           </div>

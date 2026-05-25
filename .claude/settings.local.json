@@ -36,7 +36,8 @@
       "Bash(netstat -ano)",
       "Bash(n  fontSize: 9.5, display: 'flex'\\\\\")",
       "Bash(powershell -Command \"\\(Get-Content 'C:/www/jornalbrf/src/components/sections/RentCarousel.jsx' -Raw\\) -replace 'fontSize: 9\\\\.5, fontWeight: 700, display: .flex.', \\\\\"fontFamily: \\\\\\\\\"'Co Headline', sans-serif\\\\\\\\\", fontWeight: 400,`n  fontSize: 9.5, display: 'flex'\\\\\")",
-      "Bash(Set-Content 'C:/www/jornalbrf/src/components/sections/RentCarousel.jsx' -Encoding utf8\")"
+      "Bash(Set-Content 'C:/www/jornalbrf/src/components/sections/RentCarousel.jsx' -Encoding utf8\")",
+      "Bash(git checkout *)"
     ]
   }
 }

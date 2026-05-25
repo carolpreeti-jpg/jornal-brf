@@ -278,6 +278,24 @@ header.scrolled .hamburger span { background: var(--gray-900) }
 .badge-pill .dot { width: 7px; height: 7px; background: var(--brand-coral); border-radius: 99px; animation: pulse 1.6s ease-in-out infinite; flex-shrink: 0 }
 @keyframes pulse { 0%,100% { transform: scale(1); opacity: 1 } 50% { transform: scale(1.4); opacity: .6 } }
 
+@keyframes entrar {
+  0%   { opacity: 0; transform: scale(0.3) rotate(-15deg); }
+  60%  { opacity: 1; transform: scale(1.08) rotate(3deg); }
+  80%  {             transform: scale(0.96) rotate(-1deg); }
+  100% { opacity: 1; transform: scale(1)    rotate(0deg); }
+}
+.animar {
+  animation: entrar 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  transform-origin: center center;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+.note-hidden { opacity: 0; }
+.note-visible { animation: fadeIn 1.2s ease forwards; }
+
 .hero h1 { margin-top: 24px; color: #fff; font-size: clamp(42px, 5.8vw, 72px); line-height: 1.04; letter-spacing: -.03em }
 .hero h1 .accent { display: block; color: var(--brand-coral) }
 .hero .lead { margin-top: 22px; font-size: 17px; color: rgba(255,255,255,.75); max-width: 560px; line-height: 1.82 }
@@ -469,7 +487,7 @@ header.scrolled .hamburger span { background: var(--gray-900) }
 /* ── Coluna de texto ── */
 .editorial-col-text {
   background: var(--brand-blue);
-  padding: 96px 56px 96px 80px;
+  padding: 83px 56px 48px 80px;
   display: flex;
   flex-direction: column;
   gap: 0;
@@ -480,7 +498,7 @@ header.scrolled .hamburger span { background: var(--gray-900) }
 .editorial-label {
   position: absolute;
   top: 68px;
-  right: -40px;
+  right: -80px;
   min-width: 210px;
   max-width: 260px;
   display: inline-flex;
@@ -717,6 +735,7 @@ header.scrolled .hamburger span { background: var(--gray-900) }
   height: 44px;
   background: #fff;
   border-radius: 50%;
+  border: 2px solid var(--brand-coral);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -877,12 +896,29 @@ header.scrolled .hamburger span { background: var(--gray-900) }
   min-height: 320px; border-radius: 24px; overflow: hidden; position: relative;
   background: linear-gradient(135deg, var(--brand-coral), #C53B6C);
   box-shadow: 0 30px 60px -20px rgba(0,0,0,.5);
+  transition: transform 0.45s cubic-bezier(.4,0,.2,1), box-shadow 0.45s cubic-bezier(.4,0,.2,1);
+  transform-origin: bottom right;
 }
-.elas-photo::after {
-  content: 'foto · grupo de mulheres BRF Prev'; position: absolute; bottom: 12px; left: 14px;
-  font-family: var(--font-mono); font-size: 11px; color: rgba(255,255,255,.9);
-  background: rgba(0,0,0,.3); padding: 4px 10px; border-radius: 99px;
+.elas-photo:hover {
+  transform: rotate(-4deg);
+  box-shadow: 0 44px 72px -16px rgba(0,0,0,.55);
 }
+.elas-photo--right {
+  transform-origin: top left;
+  max-height: 520px;
+  transform: scaleY(1.18);
+}
+.elas-photo--right:hover {
+  box-shadow: 0 44px 72px -16px rgba(0,0,0,.55);
+}
+.elas-photo--right img {
+  transform-origin: bottom center;
+  transition: transform 0.45s cubic-bezier(.4,0,.2,1);
+}
+.elas-photo--right:hover img {
+  transform: rotate(4deg);
+}
+.elas-photo::after { display: none; }
 .elas-text p { color: rgba(255,255,255,.85); font-size: 16px; line-height: 1.9 }
 .elas-text h3,
 .elas .inner h3 { font-size: 26px; font-family: 'Co Headline', 'Sora', sans-serif; font-weight: 700; }
@@ -1018,7 +1054,7 @@ header.scrolled .hamburger span { background: var(--gray-900) }
 .fale-content-grid {
   display: grid;
   grid-template-columns: 1fr 360px;
-  gap: 56px;
+  gap: 100px;
   align-items: start;
   margin-top: 32px;
 }
@@ -1031,6 +1067,25 @@ header.scrolled .hamburger span { background: var(--gray-900) }
 /* card um pouco maior neste contexto */
 .fale-card-col .testimonial-card {
   max-width: 100%;
+  overflow: visible;
+}
+.fale-card-col .card-top {
+  aspect-ratio: 1 / 1;
+  height: auto;
+  position: relative;
+  overflow: visible;
+}
+
+/* Badge reposicionado: fica na borda inferior do retângulo cinza, acima de tudo */
+.fale-quote-badge {
+  position: absolute !important;
+  top: auto !important;
+  bottom: 0 !important;
+  left: 28px !important;
+  transform: translateY(50%) !important;
+  border: 2px solid #EE686D !important;
+  box-shadow: 0 2px 12px rgba(238,104,109,.25) !important;
+  z-index: 20 !important;
 }
 
 @media(max-width: 960px) {
@@ -1457,6 +1512,7 @@ blockquote.quote cite { display: block; margin-top: 14px; font-family: 'Co Headl
 }
 
 .testimonial-card {
+  position: relative;
   background: #ffffff;
   border-radius: 16px;
   display: flex;
@@ -1545,10 +1601,10 @@ blockquote.quote cite { display: block; margin-top: 14px; font-family: 'Co Headl
   flex-shrink: 0;
 }
 .testimonial-card--horizontal .quote-badge {
-  top: -20px;
+  top: 50%;
   left: 260px;
-  transform: translateX(-50%);
-  border: 1.5px solid #EE686D;
+  transform: translate(-50%, -50%);
+  border: 2px solid var(--brand-coral);
 }
 .testimonial-card--horizontal .card-bottom {
   padding: 48px 40px;

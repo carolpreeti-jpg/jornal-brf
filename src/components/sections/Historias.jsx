@@ -23,11 +23,17 @@ export default function Historias() {
         <div className="elas-hero-grid">
 
           {/* Coluna esquerda — foto */}
-          <div className="elas-photo" aria-hidden="true" />
+          <div className="elas-photo" style={{ alignSelf: 'stretch', clipPath: 'inset(0 0 15% 0 round 24px)' }} aria-hidden="true">
+            <img
+              src="/ivone-delazari.jpg"
+              alt="Dra. Ivone Delazari"
+              style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', display: 'block' }}
+            />
+          </div>
 
           {/* Coluna direita — badge, título, primeiro parágrafo */}
           <div>
-            <div className="hist-badge" style={{ marginTop: 40 }}>Histórias que Inspiram</div>
+            <div className="hist-badge" style={{ marginTop: 40, marginLeft: '-260px', position: 'relative', zIndex: 10 }}>Histórias que Inspiram</div>
             <h2 style={{ marginTop: 2 }}>{historias.subtitulo}</h2>
             <p style={{ opacity: 0.9, marginTop: 32 }}>{historias.intro}</p>
           </div>
@@ -35,7 +41,7 @@ export default function Historias() {
         </div>
 
         {/* Blocos de história abaixo */}
-        <div className="elas-text" style={{ marginTop: 72 }}>
+        <div className="elas-text" style={{ marginTop: '-2%' }}>
           {historias.blocos.slice(0, 2).map((bloco, i) => (
             <div key={i} style={{ marginBottom: 64 }}>
               <h3 style={{ color: '#fff', marginBottom: 18 }}>{bloco.titulo}</h3>
@@ -53,7 +59,7 @@ export default function Historias() {
         </div>
 
         {/* Bloco 3 · texto à esquerda · foto à direita — termina em "trajetória coletiva" */}
-        <div className="elas-hero-grid" style={{ marginTop: 40, alignItems: 'stretch' }}>
+        <div className="elas-hero-grid" style={{ marginTop: 40, alignItems: 'start' }}>
 
           <div style={{ paddingRight: 48 }}>
             <h3 style={{ color: '#fff', marginBottom: 18 }}>{historias.blocos[2].titulo}</h3>
@@ -66,13 +72,11 @@ export default function Historias() {
             )}
           </div>
 
-          {/* Foto — alinha com o conteúdo do bloco 3 apenas */}
-          <div className="elas-photo" aria-hidden="true" />
 
         </div>
 
         {/* Um exemplo que fica — largura total */}
-        <div style={{ marginTop: 64 }}>
+        <div style={{ marginTop: 32 }}>
           <h3 style={{ color: '#fff', marginBottom: 18 }}>Um exemplo que fica</h3>
           <p style={{ opacity: 0.88 }}>
             {historias.fechamento}

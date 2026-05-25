@@ -6,15 +6,39 @@ export default function RelatorioAnual() {
   return (
     <section className="section events" id="relatorio" data-screen-label="Relatório Anual">
       <div className="wrap">
-        <div className="section-head reveal">
-          <img
-            src="/imagem06.png"
-            alt="Relatório Anual 2025"
-            style={{ width: '75%', borderRadius: 12, display: 'block' }}
-          />
-          {relatorio.descricao.split('\n\n').map((p, i) => (
-            <p key={i} style={{ marginTop: i === 0 ? 32 : 16 }}>{p}</p>
-          ))}
+        <div className="section-head reveal" style={{ position: 'relative', zIndex: 10 }}>
+          <div style={{ display: 'flex', alignItems: 'flex-start', gap: 24 }}>
+
+            {/* Coluna esquerda: banner + texto */}
+            <div style={{ flex: '0 0 72%' }}>
+              <img
+                src="/imagem06.png"
+                alt="Relatório Anual 2025"
+                style={{ width: '100%', borderRadius: 12, display: 'block' }}
+              />
+              {relatorio.descricao.split('\n\n').map((p, i) => (
+                <p key={i} style={{ marginTop: i === 0 ? 32 : 16 }}>{p}</p>
+              ))}
+            </div>
+
+            {/* Coluna direita: notebook alinhado ao topo */}
+            <div style={{ flex: 1, overflow: 'visible', position: 'relative', zIndex: 10 }}>
+              <div className="animar">
+                <img
+                  src="/note.png"
+                  alt="Notebook"
+                  style={{
+                    width: '100%',
+                    objectFit: 'contain',
+                    display: 'block',
+                    transform: 'translateX(-1%) translateY(-18%) scale(3.24)',
+                    transformOrigin: 'top left',
+                  }}
+                />
+              </div>
+            </div>
+
+          </div>
         </div>
 
         <div className="relatorio-grid reveal">
@@ -28,10 +52,11 @@ export default function RelatorioAnual() {
 
         <div className="testimonial-card testimonial-card--horizontal reveal" style={{ marginTop: 72 }}>
           <div className="card-top">
-            <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="#888" strokeWidth="1.2" aria-hidden="true">
-              <circle cx="12" cy="8" r="4"/>
-              <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
-            </svg>
+            <img
+              src="/vivian-fonseca.jpg"
+              alt="Vivian Fonseca"
+              style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', display: 'block', borderRadius: '16px 0 0 16px' }}
+            />
           </div>
           <div className="quote-badge">"</div>
           <div className="card-bottom">

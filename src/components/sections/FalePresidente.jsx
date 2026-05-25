@@ -14,10 +14,11 @@ export default function FalePresidente() {
             alt=""
             style={{ width: '25%', borderRadius: 12, marginBottom: 28, display: 'block' }}
           />
-          <h2 style={{ marginTop: 0 }}>
-            <span style={{ color: 'var(--brand-blue)' }}>Fale com o Presidente:</span>
-            {' '}
-            <span style={{ color: 'var(--gray-700)' }}>um novo canal de escuta<br />e proximidade com os participantes</span>
+          <h2 style={{ marginTop: 0, fontSize: 'clamp(28px, 3.2vw, 44px)', lineHeight: 1.15 }}>
+            <span style={{ color: 'var(--brand-blue)', display: 'block' }}>Fale com o Presidente:</span>
+            <span style={{ color: 'var(--gray-700)', display: 'block' }}>um novo canal de escuta</span>
+            <span style={{ color: 'var(--gray-700)', display: 'block' }}>e proximidade com</span>
+            <span style={{ color: 'var(--gray-700)', display: 'block' }}>os participantes</span>
           </h2>
         </div>
 
@@ -50,15 +51,16 @@ export default function FalePresidente() {
           </div>
 
           {/* Coluna direita — card sticky */}
-          <div className="fale-card-col">
+          <div className="fale-card-col" style={{ marginTop: '-220px' }}>
             <div className="testimonial-card">
-              <div className="card-top">
-                <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="#888" strokeWidth="1.2" aria-hidden="true">
-                  <circle cx="12" cy="8" r="4"/>
-                  <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
-                </svg>
+              <div className="card-top" style={{ position: 'relative' }}>
+                <img
+                  src="/mauricio-manduca.jpg"
+                  alt="Maurício Manduca"
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', display: 'block', borderRadius: '16px 16px 0 0' }}
+                />
+                <div className="quote-badge fale-quote-badge">"</div>
               </div>
-              <div className="quote-badge">"</div>
               <div className="card-bottom">
                 <p className="card-text">{falePresidente.citacao}</p>
                 <div>
