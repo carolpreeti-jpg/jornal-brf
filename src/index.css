@@ -83,7 +83,7 @@
   --radius-card-lg: 24px;
   --radius-pill:    999px;
 
-  --font-display: 'Sora', 'Noto Sans', system-ui, sans-serif;
+  --font-display: 'Co Headline', 'Sora', system-ui, sans-serif;
   --font-body:    'Noto Sans', system-ui, sans-serif;
   --font-mono:    'DM Mono', ui-monospace, monospace;
 
@@ -490,7 +490,7 @@ header.scrolled .hamburger span { background: var(--gray-900) }
   border-radius: 999px;
   background: var(--brand-coral);
   color: #fff;
-  font-family: 'Co Headline', 'Sora', sans-serif;
+  font-family: var(--font-display);
   font-size: 20px;
   font-weight: 800;
   line-height: 1.1;
@@ -512,14 +512,14 @@ header.scrolled .hamburger span { background: var(--gray-900) }
 }
 
 .editorial-headline {
-  font-family: 'Co Headline', 'Sora', sans-serif;
+  font-family: var(--font-display);
   font-weight: 700;
   font-size: clamp(20px, 2.2vw, 36px);
   line-height: 1.25;
   color: #fff;
   text-transform: none;
-  margin: 0 0 24px;
-  max-width: 480px;
+  margin: 0 0 24px 0;
+  max-width: 620px;
 }
 
 /* sobrescreve regra global de h2 */
@@ -683,6 +683,83 @@ header.scrolled .hamburger span { background: var(--gray-900) }
 .signature .n { font-family: var(--font-display); font-weight: 700; color: var(--gray-900); font-size: 18px }
 .signature .r { color: var(--text-muted); font-size: 13px }
 
+/* ── Director quote card (vertical) ── */
+.director-quote-card {
+  background: #fff;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 300px;
+  position: relative;
+  box-shadow: 0 2px 24px rgba(0,0,0,.07);
+  overflow: visible;
+  align-self: flex-start;
+}
+
+.dqc-top {
+  background: #ccc9c1;
+  border-radius: 16px 16px 0 0;
+  overflow: hidden;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dqc-top svg { opacity: .35 }
+
+.dqc-badge {
+  position: absolute;
+  top: 200px;
+  left: 28px;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 8px rgba(0,0,0,.12);
+  z-index: 10;
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--brand-coral);
+  line-height: 1;
+}
+
+.dqc-body {
+  padding: 32px 24px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.dqc-text {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  color: #111;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.dqc-name {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 700;
+  color: #111;
+  margin: 0;
+}
+
+.dqc-role {
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: #aaa;
+  margin: 3px 0 0;
+}
+
 /* ============================================================
    SEÇÃO GENÉRICA — fundo cinza
    ============================================================ */
@@ -767,7 +844,7 @@ header.scrolled .hamburger span { background: var(--gray-900) }
 /* ============================================================
    ELAS
    ============================================================ */
-.elas { background: #0D1B3E; color: #fff; position: relative; overflow: hidden }
+.elas { background: #1B46B2; color: #fff; position: relative; overflow: hidden }
 .elas::before {
   content: ''; position: absolute; inset: 0; pointer-events: none;
   background:
@@ -786,8 +863,18 @@ header.scrolled .hamburger span { background: var(--gray-900) }
 }
 .elas .row { display: grid; grid-template-columns: 1fr; gap: 48px; margin-top: 56px; align-items: start }
 @media(min-width:880px) { .elas .row { grid-template-columns: 1.1fr .9fr; gap: 72px } }
+
+.elas-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 72px;
+  align-items: stretch;
+}
+@media(max-width:880px) {
+  .elas-hero-grid { grid-template-columns: 1fr; gap: 40px; }
+}
 .elas-photo {
-  aspect-ratio: 4/3; border-radius: 24px; overflow: hidden; position: relative;
+  min-height: 320px; border-radius: 24px; overflow: hidden; position: relative;
   background: linear-gradient(135deg, var(--brand-coral), #C53B6C);
   box-shadow: 0 30px 60px -20px rgba(0,0,0,.5);
 }
@@ -797,6 +884,76 @@ header.scrolled .hamburger span { background: var(--gray-900) }
   background: rgba(0,0,0,.3); padding: 4px 10px; border-radius: 99px;
 }
 .elas-text p { color: rgba(255,255,255,.85); font-size: 16px; line-height: 1.9 }
+.elas-text h3,
+.elas .inner h3 { font-size: 26px; font-family: 'Co Headline', 'Sora', sans-serif; font-weight: 700; }
+.elas blockquote {
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 1.75;
+  font-style: italic;
+}
+
+/* ── Quote block (citações Dra. Ivone) ── */
+.quote-block {
+  position: relative;
+  padding: 32px 90px 4px 60px;
+  margin: 16px 0 0;
+}
+.open-quote,
+.close-quote {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 110px;
+  font-weight: 900;
+  line-height: 1;
+  user-select: none;
+  letter-spacing: -6px;
+  position: absolute;
+}
+.open-quote {
+  top: 0;
+  left: 0;
+  background: linear-gradient(135deg, rgba(220,230,255,.80) 0%, rgba(180,200,255,.50) 40%, rgba(140,160,255,.20) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.close-quote {
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(315deg, rgba(220,230,255,.75) 0%, rgba(180,200,255,.45) 40%, rgba(140,160,255,.15) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.quote-text {
+  position: relative;
+  z-index: 1;
+  font-size: clamp(15px, 1.8vw, 17px);
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: 700;
+  line-height: 1.7;
+  color: rgba(255,255,255,.92);
+  letter-spacing: 0.1px;
+  font-style: italic;
+  margin: 0;
+}
+/* ── Citação em retângulo gradiente ── */
+.hist-quote {
+  display: inline-block;
+  width: fit-content;
+  background: linear-gradient(90deg, #ED676D 0%, #2A52C4 80%, rgba(27,70,178,0) 100%);
+  border: none;
+  border-radius: 10px;
+  padding: 20px 40px 20px 24px;
+  margin: 18px 0 0;
+  font-style: italic;
+  color: #fff;
+  font-size: clamp(14px, 1.6vw, 16px);
+  font-family: var(--font-body);
+  line-height: 1.75;
+}
+
 .elas-stats { margin-top: 56px; display: grid; grid-template-columns: 1fr; gap: 16px }
 @media(min-width:720px) { .elas-stats { grid-template-columns: repeat(3,1fr) } }
 .stat-card {
@@ -824,7 +981,7 @@ header.scrolled .hamburger span { background: var(--gray-900) }
 .newsite .check-list { list-style: none; padding: 0; margin: 24px 0 32px; display: flex; flex-direction: column; gap: 14px }
 .newsite .check-list li { display: flex; gap: 14px; align-items: flex-start; font-size: 15px; color: var(--text-primary) }
 .newsite .check-list .ck {
-  flex: 0 0 24px; width: 24px; height: 24px; border-radius: 99px; background: var(--brand-blue-mid); color: #fff;
+  flex: 0 0 24px; width: 24px; height: 24px; border-radius: 99px; background: var(--brand-blue); color: #fff;
   display: grid; place-items: center; font-weight: 700; font-size: 13px; margin-top: 1px;
 }
 .browser {
@@ -856,6 +1013,131 @@ header.scrolled .hamburger span { background: var(--gray-900) }
 .browser-body .cards .c.a { background: var(--brand-blue-light) }
 .browser-body .cards .c.b { background: rgba(125,148,252,.2) }
 .browser-body .cards .c.c { background: rgba(238,104,109,.1) }
+
+/* ── Fale com o Presidente — grid texto + card ── */
+.fale-content-grid {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 56px;
+  align-items: start;
+  margin-top: 32px;
+}
+
+.fale-card-col {
+  position: sticky;
+  top: calc(var(--header-h) + 32px);
+}
+
+/* card um pouco maior neste contexto */
+.fale-card-col .testimonial-card {
+  max-width: 100%;
+}
+
+@media(max-width: 960px) {
+  .fale-content-grid {
+    grid-template-columns: 1fr;
+  }
+  .fale-card-col {
+    position: static;
+  }
+}
+
+/* ── Fale com o Presidente — padronização de fontes ── */
+#fale-presidente h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+}
+#fale-presidente p,
+#fale-presidente .check-list li,
+#fale-presidente blockquote {
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* ── Relatório Anual — 3 faixas horizontais empilhadas ── */
+.relatorio-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  margin: 40px auto 0;
+}
+
+/* faixa: título à esq com divisória · texto à dir */
+.relatorio-grid .cell {
+  background: var(--brand-blue);
+  border-radius: 12px;
+  padding: 26px 32px;
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  align-items: center;
+  gap: 0 32px;
+  position: relative;
+  transition:
+    transform     0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    filter        0.35s ease,
+    border-radius 0.35s ease,
+    box-shadow    0.35s ease;
+  cursor: default;
+}
+
+/* faixa hoverada: expande levemente */
+.relatorio-grid .cell:hover {
+  transform: scale(1.025);
+  z-index: 2;
+  filter: brightness(1.14);
+  border-radius: 18px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.28);
+}
+
+/* faixas não hoveradas: recuam para dar espaço */
+.relatorio-grid:has(.cell-1:hover) .cell-2,
+.relatorio-grid:has(.cell-1:hover) .cell-3 { transform: scale(0.978); filter: brightness(0.86); }
+.relatorio-grid:has(.cell-2:hover) .cell-1,
+.relatorio-grid:has(.cell-2:hover) .cell-3 { transform: scale(0.978); filter: brightness(0.86); }
+.relatorio-grid:has(.cell-3:hover) .cell-1,
+.relatorio-grid:has(.cell-3:hover) .cell-2 { transform: scale(0.978); filter: brightness(0.86); }
+
+/* título — co headline bold, coluna esquerda */
+.relatorio-grid .cell-titulo {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.2;
+  margin: 0;
+  padding-right: 32px;
+  border-right: 1.5px solid rgba(255, 255, 255, 0.2);
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+}
+
+/* texto corrido — coluna direita */
+.relatorio-grid .cell-texto {
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.86);
+  margin: 0;
+}
+
+
+/* ── Relatório Anual — padronização de fontes ── */
+#relatorio h2,
+#relatorio h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+}
+#relatorio p,
+#relatorio blockquote,
+#relatorio cite,
+#relatorio .tag {
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.8;
+}
 
 /* ============================================================
    EVENTOS
@@ -1159,23 +1441,145 @@ blockquote.quote {
   margin: 48px 0 0; padding: 28px 36px;
   background: var(--gray-50); border-left: 3px solid var(--brand-coral);
   border-radius: 0 18px 18px 0;
-  font-family: var(--font-display); font-style: italic; font-size: 19px; line-height: 1.6; color: var(--text-primary);
+  font-family: 'Noto Sans', sans-serif; font-style: italic; font-size: 15px; line-height: 1.75; color: var(--text-primary);
 }
-blockquote.quote cite { display: block; margin-top: 14px; font-family: var(--font-body); font-size: 13px; color: var(--text-muted); font-style: normal; letter-spacing: .05em; text-transform: uppercase }
+blockquote.quote cite { display: block; margin-top: 14px; font-family: 'Co Headline', sans-serif; font-weight: 400; font-size: 15px; color: var(--text-primary); font-style: normal; }
 
 /* ============================================================
    COMPROMISSO — padronização de fontes + grid de calendário
    ============================================================ */
 
+/* ── Testimonial card — vertical ── */
+.testimonial-wrap {
+  display: flex;
+  justify-content: center;
+  margin: 48px 0 56px;
+}
+
+.testimonial-card {
+  background: #ffffff;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 340px;
+  position: relative;
+  box-shadow: 0 2px 24px rgba(0,0,0,.07);
+  overflow: visible;
+}
+
+.card-top {
+  background: #ccc9c1;
+  border-radius: 16px 16px 0 0;
+  overflow: hidden;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card-top svg { opacity: .35; }
+
+.quote-badge {
+  position: absolute;
+  top: 200px;
+  left: 28px;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  background: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 8px rgba(0,0,0,.12);
+  z-index: 10;
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--brand-coral);
+  line-height: 1;
+}
+
+.card-bottom {
+  padding: 32px 28px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card-text {
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: #111;
+  line-height: 1.75;
+  margin: 0;
+}
+
+.card-author-name {
+  font-family: 'Co Headline', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #111;
+  margin: 0;
+}
+
+.card-author-role {
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 13px;
+  color: #aaa;
+  margin: 3px 0 0;
+  font-weight: 400;
+}
+
+/* ── Card horizontal (depoimento Rose Zanutto) ── */
+.testimonial-card--horizontal {
+  flex-direction: row;
+  max-width: 100%;
+  margin: 40px 0 0;
+}
+.testimonial-card--horizontal .card-top {
+  border-radius: 16px 0 0 16px;
+  height: auto;
+  width: 260px;
+  flex-shrink: 0;
+}
+.testimonial-card--horizontal .quote-badge {
+  top: -20px;
+  left: 260px;
+  transform: translateX(-50%);
+  border: 1.5px solid #EE686D;
+}
+.testimonial-card--horizontal .card-bottom {
+  padding: 48px 40px;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  gap: 40px;
+}
+.testimonial-card--horizontal .card-bottom > div {
+  align-self: center;
+  flex-shrink: 0;
+}
+.testimonial-card--horizontal .card-bottom > p.card-text {
+  border-left: 1.5px solid rgba(238, 104, 109, 0.4);
+  padding-left: 36px;
+  align-self: center;
+}
+
 /* Cabeçalho ocupa toda a largura disponível */
 #compromisso .section-head {
   max-width: 100%;
+  margin-bottom: 24px;
+}
+#compromisso .section-head p {
+  margin-top: 48px;
 }
 
 /* Títulos → Co Headline Bold */
 #compromisso h2,
 #compromisso h3 {
-  font-family: 'Co Headline', 'Sora', sans-serif;
+  font-family: var(--font-display);
   font-weight: 700;
 }
 
@@ -1186,81 +1590,353 @@ blockquote.quote cite { display: block; margin-top: 14px; font-family: var(--fon
   line-height: 1.8;
 }
 
-/* Títulos dos cards → Co Headline Bold */
-.cal-city,
-.cal-location-label {
-  font-family: 'Co Headline', 'Sora', sans-serif;
+/* ── Layout: grid de fotos à esquerda + parágrafo de intro à direita ── */
+.compromisso-body {
+  display: grid;
+  grid-template-columns: 44% 56%;
+  gap: 36px;
+  align-items: stretch;
+  margin: 32px 0 28px;
+}
+
+/* parágrafo alinhado à base para terminar junto ao fundo do grid */
+.compromisso-lead-wrap {
+  display: flex;
+  align-items: flex-end;
+}
+
+.compromisso-lead-wrap p {
+  margin: 0;
+}
+
+/* ── Grid de fotos — layout 5/3 com célula grande à esquerda ── */
+.action-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 8px;
+  width: 100%;
+  max-width: 700px;
+  aspect-ratio: 5 / 3;
+  margin: 20px 0;
+}
+
+.action-grid .cell {
+  background: #2a5fc4;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: filter 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Foto grande: linha 1, colunas 1–2 */
+.action-grid .cell-1 { grid-column: 1 / 3; grid-row: 1 / 2; }
+
+/* Foto topo direita: linha 1, coluna 3 */
+.action-grid .cell-2 { grid-column: 3 / 4; grid-row: 1 / 2; }
+
+/* Foto baixo esquerda: linha 2, coluna 1 */
+.action-grid .cell-3 { grid-column: 1 / 2; grid-row: 2 / 3; }
+
+/* Foto baixo centro: linha 2, coluna 2 */
+.action-grid .cell-4 { grid-column: 2 / 3; grid-row: 2 / 3; }
+
+/* Foto baixo direita: linha 2, coluna 3 */
+.action-grid .cell-5 { grid-column: 3 / 4; grid-row: 2 / 3; }
+
+/* hover */
+.action-grid .cell:hover {
+  filter: brightness(1.13);
+  box-shadow: 0 8px 24px rgba(27, 70, 178, 0.38);
+}
+
+@media(max-width: 880px) {
+  .compromisso-body { grid-template-columns: 1fr; }
+  .compromisso-lead-wrap { align-items: flex-start; }
+  .action-grid { max-width: 100%; }
+}
+
+/* ── Calendar — carousel com setas ── */
+.cal-carousel {
+  margin-top: 8px;
+}
+
+.cal-track-wrap {
+  overflow: hidden;
+}
+
+.cal-track {
+  display: flex;
+  gap: 16px;
+  transition: transform 0.4s cubic-bezier(.4,0,.2,1);
+  will-change: transform;
+}
+
+.cal-card {
+  flex: 0 0 calc((100% - 48px) / 4);
+  height: 220px;
+  border-radius: 12px;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  transition: filter .2s;
+}
+.cal-card:hover { filter: brightness(1.08); }
+
+.cal-month {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.6);
+  margin: 0 0 8px;
+}
+
+.cal-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 26px;
+  color: #fff;
+  line-height: 1.25;
+  margin: 0;
+}
+
+.cal-footer {
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 18px;
+  color: rgba(255,255,255,.90);
   font-weight: 700;
 }
 
-.calendar-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
-  margin-top: 40px;
-}
-@media(min-width: 540px)  { .calendar-grid { grid-template-columns: repeat(3, 1fr) } }
-@media(min-width: 1024px) { .calendar-grid { grid-template-columns: repeat(3, 1fr) } }
+.cal-category { display: none; }
 
-.cal-card {
-  border-radius: var(--radius-card);
+/* Navegação do carousel */
+.cal-nav {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.cal-arrow {
+  background: var(--brand-blue);
+  color: #fff;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: background .2s, opacity .2s;
+  flex-shrink: 0;
+}
+.cal-arrow:disabled { opacity: 0.3; cursor: default; }
+.cal-arrow:not(:disabled):hover { background: var(--brand-blue-mid); }
+
+.cal-dots {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.cal-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: var(--gray-300);
+  cursor: pointer;
+  padding: 0;
+  transition: background .2s, transform .2s;
+}
+.cal-dot.active {
+  background: var(--brand-blue);
+  transform: scale(1.3);
+}
+
+@media(max-width: 880px) {
+  .cal-card { flex: 0 0 calc((100% - 32px) / 3); }
+}
+@media(max-width: 640px) {
+  .cal-card { flex: 0 0 calc((100% - 16px) / 2); }
+}
+@media(max-width: 540px) {
+  .cal-card { flex: 0 0 100%; }
+}
+
+/* ── Badge "Histórias que Inspiram" ── */
+.hist-badge {
+  display: inline-block;
+  background: var(--brand-coral);
+  color: #fff;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 26px;
+  padding: 2px 44px 10px;
+  border-radius: 999px;
+  transform: rotate(-4deg);
+  transform-origin: left center;
+  margin-bottom: 28px;
+  letter-spacing: 0.03em;
+}
+
+/* ============================================================
+   HISTÓRIAS QUE INSPIRAM — novo layout hero
+   ============================================================ */
+.hist-section {
+  background: var(--white);
   overflow: hidden;
-  background: #fff;
-  border: 1px solid var(--gray-200);
+}
+
+/* ── Hero area ── */
+.hist-hero-area {
+  position: relative;
+  background: var(--white);
   display: flex;
   flex-direction: column;
-  transition: transform .25s ease, box-shadow .25s ease;
-}
-.cal-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 48px -12px rgba(0,14,31,.18);
 }
 
-.cal-img {
-  position: relative;
-  aspect-ratio: 4/3;
-  overflow: hidden;
+.hist-nav {
+  padding: 48px 48px 0;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: rgba(0,0,0,.4);
 }
-.cal-img-bg {
-  position: absolute; inset: 0;
-  background-size: cover; background-position: center;
-  transition: transform .5s ease;
-}
-.cal-card:hover .cal-img-bg { transform: scale(1.05) }
+.hist-nav::before { content: '↗  '; }
 
-.cal-img-overlay {
-  position: absolute; inset: 0;
-  display: flex; align-items: center; justify-content: center;
-  padding: 12px;
-}
-.cal-location-label {
-  font-family: var(--font-display); font-weight: 700; font-size: 13px;
-  letter-spacing: .12em; text-transform: uppercase;
-  color: rgba(255,255,255,.75); text-align: center;
+.hist-hero {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  align-items: start;
+  padding: 36px 48px 80px;
+  gap: 48px;
 }
 
-.cal-body {
-  padding: 14px 16px 18px;
-  display: flex; flex-direction: column; gap: 6px;
-  background: #fff;
+.hist-headline {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 4.2vw, 58px);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -.02em;
+  color: #111;
+  margin: 0;
 }
-.cal-city {
-  font-family: var(--font-display); font-weight: 700; font-size: 15px;
-  color: var(--text-primary); margin: 0; line-height: 1.2;
+
+/* Highlight lilás que segue cada linha do texto */
+.hist-highlight {
+  display: inline;
+  background-color: #7990F8;
+  color: #fff;
+  padding: 4px 0;
+  padding-right: 16px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
 }
-.cal-date {
-  font-family: var(--font-mono); font-size: 12px;
-  color: var(--text-muted); letter-spacing: .03em;
+
+.hist-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 6px;
+  padding-left: 24px;
+  gap: 24px;
+  max-width: 320px;
+  margin-left: auto;
 }
-.cal-status {
-  display: inline-flex; align-items: center; gap: 5px;
-  font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
-  padding: 3px 10px; border-radius: 99px; align-self: flex-start; margin-top: 2px;
+
+.hist-body {
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.8;
+  color: #111;
+  opacity: .72;
+  margin: 0;
 }
-.cal-status.realizado { background: rgba(13,148,136,.12); color: #0D7A72 }
-.cal-status.proxima   { background: rgba(27,70,178,.1); color: var(--brand-blue); border: 1px solid rgba(27,70,178,.2) }
-.cal-status.confirmar { background: var(--gray-100); color: var(--text-muted) }
-.cal-status::before { content: ''; width: 5px; height: 5px; border-radius: 99px; background: currentColor; flex-shrink: 0 }
+
+.hist-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #111;
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 11px 22px;
+  border-radius: 100px;
+  text-decoration: none;
+  transition: transform .2s;
+}
+.hist-btn:hover { transform: scale(1.04); }
+
+/* ── Faixa escura ── */
+.hist-dark {
+  background: var(--brand-blue-dark);
+  padding: 72px 0 80px;
+}
+
+.hist-blocos {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.hist-bloco {
+  padding: 36px 0;
+  border-bottom: 1px solid rgba(255,255,255,.1);
+}
+.hist-bloco:first-child { padding-top: 0; }
+
+.hist-bloco-titulo {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 18px;
+  color: #fff;
+  margin: 0 0 12px;
+}
+
+.hist-bloco-texto {
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.8;
+  color: rgba(255,255,255,.78);
+  margin: 0 0 10px;
+}
+
+.hist-bloco-quote {
+  border-left: 3px solid rgba(255,255,255,.3);
+  padding-left: 16px;
+  margin: 16px 0 0;
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 14px;
+  line-height: 1.75;
+  color: rgba(255,255,255,.65);
+}
+
+.hist-fechamento {
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.8;
+  color: rgba(255,255,255,.72);
+  margin-top: 40px;
+}
+
+@media(max-width: 860px) {
+  .hist-hero { grid-template-columns: 1fr; padding: 32px 24px 60px; }
+  .hist-nav  { padding: 24px 24px 0; }
+  .hist-right { margin-left: 0; padding-left: 0; max-width: 100%; margin-top: 28px; }
+  .hist-hero-area { min-height: auto; }
+}
 
 /* ============================================================
    AJUSTES MOBILE
@@ -1272,4 +1948,19 @@ blockquote.quote cite { display: block; margin-top: 14px; font-family: var(--fon
   .countdown .grid { grid-template-columns: repeat(4,1fr) }
   .hero-inner { padding: 64px 0 100px }
   .hero-art { display: none }
+}
+
+/* ── Cards de analogias (Compromisso Unidades) ── */
+.analogia-card {
+  background: var(--gray-50);
+  border-radius: var(--radius-card);
+  padding: 28px 20px;
+  border-top: 4px solid #8b8fe8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.25s ease;
+}
+.analogia-card:hover {
+  border-top-color: #EE686D;
 }

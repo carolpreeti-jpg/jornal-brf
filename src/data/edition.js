@@ -218,7 +218,7 @@ export const edition = {
       label: 'Ações realizadas',
       local: 'Curitiba · Itajaí · Campinas',
       periodo: 'mar/abr – mai 2026',
-      descricao: 'A primeira ação do programa aconteceu na unidade de Curitiba, entre os dias 30 de março e 2 de abril.  Também estivemos presentes em Itajaí, de 11 e 15 de maio, e em Campinas, nos dias 18 e 19 de maio.\n\nDurante os eventos de atendimento presencial, os participantes puderam esclarecer dúvidas, conhecer melhor os planos administrados pela entidade, receber orientações sobre educação previdenciária e obter apoio em diferentes demandas relacionadas aos serviços da BRF Prev.\n\nOs resultados das ações reforçam a relevância da iniciativa e o forte interesse dos participantes pelo atendimento presencial. As principais metas foram atingidas e superadas.',
+      descricao: 'A primeira ação do programa aconteceu na unidade de Curitiba, entre os dias 30 de março e 2 de abril.  Também estivemos presentes em Itajaí, de 11 e 15 de maio, e em Campinas, nos dias 18 e 19 de maio.\n\nDurante os eventos de atendimento presencial, os participantes puderam esclarecer dúvidas, conhecer melhor os planos administrados pela entidade, receber orientações sobre educação previdenciária e obter apoio em diferentes demandas relacionadas aos serviços da BRF Prev.\n\nOs resultados das ações reforçam a relevância da iniciativa e o forte interesse dos participantes pelo atendimento presencial. As principais metas foram atingidas e superadas. No total, foram mais de 200 atendimentos, 125 adesões aos planos previdenciários e 40 aportes e contribuições suplementares. Durante os encontros, os participantes são convidados a responder e avaliar o atendimento, que alcançou a meta de 90 pontos, refletindo a percepção positiva sobre a experiência proporcionada.',
       resultados: [
         { valor: '+200', label: 'atendimentos' },
         { valor: '125',  label: 'adesões aos planos previdenciários' },
@@ -228,7 +228,7 @@ export const edition = {
     },
     resultadosContexto: 'Os resultados demonstram não apenas o alcance da ação, mas principalmente a força do contato direto e da escuta ativa na construção de uma relação mais próxima com nossos participantes. Quando estamos presentes, orientando e apoiando de forma personalizada, geramos mais clareza e segurança na tomada de decisão.',
     citacao: 'O Programa BRF Prev – Compromisso com Você foi desenvolvido com esse propósito: aproximar a BRF Prev das pessoas com consistência, qualidade e um atendimento que realmente faça sentido para cada participante, fortalecendo o vínculo e gerando resultados sustentáveis para o plano',
-    citacaoAutor: 'Rose Zanutto, coordenadora de Comunicação e Facilities da BRF Previdência',
+    citacaoAutor: 'Rose Zanutto, Coordenadora de Comunicação\ne Facilities da BRF Previdência',
     proximaVisita: 'Lucas do Rio Verde, MT — 25 a 29 de maio',
     calendario: [
       {
@@ -301,7 +301,7 @@ export const edition = {
 
   // ─── Fale com o Presidente ────────────────────────────────────────────────
   falePresidente: {
-    titulo: 'Fale com o Presidente\nUm novo canal de escuta e proximidade com os participantes',
+    titulo: 'Fale com o Presidente: um novo canal de escuta e proximidade com os participantes',
     descricao: 'A BRF Prev lançou, em maio, um novo canal de relacionamento com os participantes. O "Fale com o Presidente" é uma iniciativa criada para fortalecer e ampliar ainda mais os espaços de escuta dentro da BRF Prev.',
     paragrafos: [
       'O novo canal foi desenvolvido como um complemento aos meios tradicionais de atendimento, oferecendo uma alternativa adicional para participantes que desejam aprofundar suas solicitações após utilizarem os canais convencionais.',
@@ -328,12 +328,13 @@ export const edition = {
       {
         titulo: 'Aposentadoria não significa parar',
         texto: 'Para a Dra. Ivone, a aposentadoria nunca foi sinônimo de pausa, mas de reinvenção. Hoje, ela atua como consultora, elaborando dossiês completos sobre higiene e segurança dos alimentos para diferentes tipos de produtos e indústrias. E faz questão de destacar: "Pra mim, isso é uma diversão". Além disso, novos planos já estão em construção e carregam um forte propósito social como a dedicação à pequena indústria.',
-        citacao: 'A pequena indústria faz comida para o povo. Por isso, quero produzir conteúdo gratuito para que tenham acesso às normas de segurança dos alimentos. Se necessário, quero contribuir pessoalmente. Ajudar pequenos empreendedores vai fazer eu me sentir honrada.',
+        citacao: '"A pequena indústria faz comida para o povo. Por isso, quero produzir conteúdo gratuito para que tenham acesso às normas de segurança dos alimentos. Se necessário, quero contribuir pessoalmente. Ajudar pequenos empreendedores vai fazer eu me sentir honrada". A ideia de compartilhar conhecimento de forma acessível, seja por meio de um blog ou podcast, reforça um traço marcante de sua trajetória, marcada pelo compromisso com o coletivo.',
       },
       {
         titulo: 'Uma relação que continua: BRF Previdência',
         texto: 'Mesmo após mais de duas décadas de aposentadoria, Dra. Ivone mantém uma relação ativa com a BRF Previdência, um vínculo que reforça o sentimento de pertencimento construído ao longo dos anos. Participante da ASBEF (Associação dos Beneficiários da BRF Previdência), ela acompanha as novidades do plano, participa de grupos e segue conectada com a comunidade.\n\nPara ela, a BRF Previdência representa muito mais do que segurança financeira.',
         citacao: 'O plano de previdência tem me proporcionado um grande conforto, porque me sinto amparada. É algo que traz muita tranquilidade para a minha vida, já que não preciso me preocupar com essa parte financeira, a BRF Previdência cuida disso para mim. Com isso, consigo realizar tudo o que venho construindo até agora',
+        complemento: 'Esse engajamento mostra que a previdência vai além do planejamento financeiro, representando continuidade, conexão e reconhecimento de histórias que fazem parte da construção da nossa trajetória coletiva.',
       },
     ],
     fechamento: 'A história da Dra. Ivone Delazari é, acima de tudo, um convite à reflexão sobre propósito, sobre legado e sobre a importância de seguir em movimento, independentemente da fase da vida. Seu exemplo nos lembra que conhecimento compartilhado transforma realidades, e que o verdadeiro reconhecimento está em impactar positivamente a vida das pessoas. Para a BRF Previdência, é uma honra contar com histórias como a dela, que inspiram, conectam e reforçam o orgulho de fazer parte dessa jornada.',
@@ -344,13 +345,27 @@ export const edition = {
   relatorio: {
     titulo: 'Relatório Anual 2025 conecta resultados da BRF Prev com os participantes',
     tema: 'resultados que conectam',
-    descricao: 'A BRF Previdência apresenta o Relatório Anual 2025, um material que vai além dos números e itens exigidos pela legislação, reforçando o compromisso da Entidade com a transparência, as melhores práticas de governança e proximidade com seus participantes.',
+    descricao: 'A BRF Previdência apresenta o Relatório Anual 2025, um material que vai além dos números e itens exigidos pela legislação, reforçando o compromisso da Entidade com a transparência, as melhores práticas de governança e proximidade com seus participantes.\n\nCom o tema "resultados que conectam", o documento reúne os principais destaques da gestão no último ano, evidenciando a evolução contínua da experiência do participante, os avanços em eficiência operacional e a consistência dos resultados dos planos.',
     destaques: [
       { ic: '💻', texto: 'Lançamento de novos canais digitais como o site, portal de autoatendimento e aplicativo. Em 2025, a BRF Prev renovou a identidade visual e desenvolveu campanhas voltadas ao incentivo de aportes adicionais.' },
       { ic: '⚙️', texto: 'Internamente, houve revisão de processos e a migração do sistema de gestão, com foco em simplificar o acesso às informações e fortalecer a jornada do participante.' },
       { ic: '📈', texto: 'No campo dos investimentos, os Planos II, III e FAF superaram suas metas de rentabilidade no ano, mantendo desempenho consistente também no horizonte de longo prazo.' },
       { ic: '💰', texto: 'A gestão eficiente de recursos resultou, ainda, na redução de custos com investimentos e no controle das despesas administrativas, reforçando a responsabilidade na administração dos recursos.' },
       { ic: '⭐', texto: 'A experiência do participante também evoluiu de forma significativa, com melhorias nos canais digitais e redução expressiva no tempo médio de atendimento. O índice de satisfação alcançou 83%, alinhado às melhores práticas do segmento.' },
+    ],
+    celulas: [
+      {
+        titulo: 'Inovação & Comunicação',
+        texto: 'Ao longo de 2025, a Entidade promoveu importantes iniciativas, como o lançamento de novos canais digitais como o site, portal de autoatendimento e aplicativo. Em 2025, a BRF Prev renovou a identidade visual e desenvolveu campanhas voltadas ao incentivo de aportes adicionais. Internamente, houve revisão de processos e a migração do sistema de gestão, com foco em simplificar o acesso às informações e fortalecer a jornada do participante.',
+      },
+      {
+        titulo: 'Investimentos & Gestão',
+        texto: 'No campo dos investimentos, os Planos II, III e FAF superaram suas metas de rentabilidade no ano, mantendo desempenho consistente também no horizonte de longo prazo. A gestão eficiente de recursos resultou, ainda, na redução de custos com investimentos e no controle das despesas administrativas, reforçando a responsabilidade na administração dos recursos.',
+      },
+      {
+        titulo: 'Experiência do Participante',
+        texto: 'A experiência do participante também evoluiu de forma significativa, com melhorias nos canais digitais e redução expressiva no tempo médio de atendimento, refletindo maior agilidade e qualidade no suporte. Como resultado, o índice de satisfação alcançou 83%, alinhado às melhores práticas do segmento.',
+      },
     ],
     citacao: 'O Relatório Anual 2025 consolida nossas entregas e reafirma o compromisso com uma gestão responsável, transparente e orientada para resultados sustentáveis. Ele traduz como as decisões de gestão impactam diretamente a vida dos participantes. Em 2025, reforçamos nosso compromisso com uma governança sólida, resultados consistentes e, principalmente, com a evolução contínua da experiência de quem confia na BRF Previdência para planejar o seu futuro.',
     citacaoAutor: 'Vivian Fonseca, Diretora de Administração e Seguridade',
@@ -363,6 +378,11 @@ export const edition = {
   webinar: {
     titulo: 'Webinar BRF Prev orienta participantes sobre a Declaração de IR 2026 na prática',
     descricao: 'Com o início do período de entrega da Declaração do Imposto de Renda 2026, a BRF Prev promoveu um webinar especial com o objetivo de apoiar seus participantes no correto preenchimento das informações, especialmente no que se refere à previdência complementar.',
+    paragrafos: [
+      'O encontro foi conduzido pela Diretora de Administração e Seguridade, Vivian Fonseca, e contou com a participação da contadora Jessica Maia, fundadora da Domus Contábil, responsável por apresentar, de forma prática e didática, o passo a passo da declaração.',
+      'Durante o webinar, foram abordados os principais pontos de atenção para o contribuinte, com destaque para as atualizações das regras do IR 2026, possibilidades de deduções e orientações específicas sobre como declarar corretamente as contribuições e benefícios relacionados à previdência.',
+      'A iniciativa reforça a importância do planejamento financeiro e do correto cumprimento das obrigações fiscais, contribuindo para evitar inconsistências na declaração, reduzir a carga tributária quando aplicável e garantir maior tranquilidade junto à Receita Federal.',
+    ],
     condutores: [
       'Vivian Fonseca, Diretora de Administração e Seguridade',
       'Jessica Maia, fundadora da Domus Contábil',
@@ -376,6 +396,13 @@ export const edition = {
       'Orientações práticas sobre a previdência complementar',
     ],
     destaque: 'Um dos principais pontos de atenção para quem faz a declaração completa do IR é a possibilidade de dedução das contribuições realizadas para planos de aposentadoria até o limite de 12% dos rendimentos tributáveis, conforme previsto na legislação vigente. Esse benefício fiscal é um dos principais incentivos para o planejamento de longo prazo dos participantes.',
+    subtitulo2: 'Benefício fiscal possibilita dedução de até 12%',
+    paragrafos2: [
+      'Um dos principais pontos de atenção para quem faz a declaração completa do IR é a possibilidade de dedução das contribuições realizadas para planos de aposentadoria até o limite de 12% dos rendimentos tributáveis, conforme previsto na legislação vigente. Esse benefício fiscal é um dos principais incentivos para o planejamento de longo prazo dos participantes.',
+      'O webinar foi realizado ao vivo no dia 24 de abril e contou com espaço para esclarecimento de dúvidas, proporcionando uma abordagem prática e alinhada às necessidades dos participantes.',
+      'Com essas apresentações, a BRF Prev reforça seu compromisso em oferecer conteúdos educativos e orientações qualificadas, contribuindo para que seus participantes tomem decisões mais informadas sobre sua vida financeira e previdenciária.',
+    ],
+    paragrafos2Youtube: 'Para quem não pôde acompanhar ao vivo ou deseja revisar o conteúdo, a gravação está disponível no canal da BRF Prev no YouTube.',
     data: '24 de abril',
     urlYoutube: '#',
     urlLabel: 'Assistir gravação no YouTube',
@@ -387,15 +414,52 @@ export const edition = {
     intro: 'Entre os dias 27 e 29 de abril, a BRF Prev realizou a 33ª edição do Encontro Trimestral de Resultados. Os eventos, em formato online, foram transmitidos pela plataforma Teams e as gravações já estão disponíveis no canal do YouTube, organizadas por plano.',
     descricao: 'Foram três dias de conversa aberta para apresentar os resultados dos planos, comentar o cenário econômico atual, compartilhar as perspectivas para 2026 e esclarecer dúvidas dos participantes.  Uma oportunidade para acompanhar de perto a situação dos planos.',
     gravacoes: [
-      { titulo: 'Planos II e Família',  href: '#' },
-      { titulo: 'Planos III e Família', href: '#' },
-      { titulo: 'Planos FAF e Família', href: '#' },
+      { plano: 'Plano FAF', img: '/plano-faf.png', videoId: 'VWyshOJb7dA' },
+      { plano: 'Plano III', img: '/plano-3.png',   videoId: 'axahpDtmHZA' },
+      { plano: 'Plano II',  img: '/plano-2.png',   videoId: 'uY6Xgyu_oLs' },
     ],
     proximasDatas: [
       '27 de julho: Planos II e Família',
       '28 de julho: Planos III e Família',
       '29 de julho: Plano FAF e Família',
     ],
+    proximoEncontro: {
+      edicao: '34ª edição',
+      descricao: 'Já reserve na agenda: a próxima edição do Conexão BRF Prev acontece em julho, trazendo as atualizações mais recentes da gestão dos planos.',
+      datas: [
+        { plano: 'Planos II e Família',  data: '27 de julho' },
+        { plano: 'Planos III e Família', data: '28 de julho' },
+        { plano: 'Plano FAF e Família',  data: '29 de julho' },
+      ],
+    },
+  },
+
+  // ─── Compromisso com Você — Unidades MBRF (seção 2) ─────────────────────────
+  compromissoUnidades: {
+    titulo: 'BRF Prev atinge R$ 5 bilhões em patrimônio e reforça solidez na gestão previdenciária',
+    paragrafos: [
+      'A BRF Prev atingiu uma marca histórica em 2026, alcançando R$ 5 bilhões de patrimônio. O resultado reflete a confiança depositada pelos participantes, que, em diferentes fases da vida, contam com a Entidade para apoiar o planejamento de longo prazo e a construção de um futuro mais seguro.',
+      'Esse volume expressivo de recursos evidencia o crescimento da entidade e, também, a consistência de sua gestão ao longo do tempo, pautada pela responsabilidade, transparência e foco no participante.',
+    ],
+    fotoUrl: null,
+    paragrafoFoto: '[Texto do parágrafo ao lado da foto — edite em edition.js]',
+    tituloExtra: 'Um número difícil de imaginar',
+    paragrafosExtra: [
+      '[Texto do parágrafo extra — edite em edition.js]',
+    ],
+    paragrafosAposCards: [
+      'Esses exemplos demonstram a dimensão do patrimônio administrado e a relevância dessa conquista da BRF Prev para seus participantes. Um patrimônio robusto permite maior poder de negociação com gestores e instituições financeiras e diluição de seu custo administrativo, contribuindo para a busca de melhores condições e resultados para os participantes.',
+      'Para o Diretor-Presidente, Mauricio Manduca, este marco é reflexo de um trabalho coletivo e contínuo da BRF Previdência.',
+    ],
+    resultados: [
+      { valor: '+200', label: 'atendimentos realizados' },
+      { valor: '125',  label: 'adesões aos planos previdenciários' },
+      { valor: '40',   label: 'aportes e contribuições suplementares' },
+      { valor: '90',   label: 'pontos na avaliação de atendimento' },
+    ],
+    citacao: 'Atingir a marca de R$ 5 bilhões em patrimônio representa muito mais do que um número. É a materialização da confiança dos nossos participantes e do compromisso diário de toda a equipe com uma gestão responsável, transparente e orientada ao longo prazo. Seguiremos trabalhando para fortalecer ainda mais a segurança e a sustentabilidade dos nossos planos, sempre com foco na geração de valor para cada participante.',
+    citacaoAutor: 'Mauricio Manduca, Diretor-Presidente da BRF Previdência',
+    proximaVisita: 'Lucas do Rio Verde, MT — 25 a 29 de maio',
   },
 
   // ─── R$ 5 Bilhões em Patrimônio ───────────────────────────────────────────
@@ -430,6 +494,7 @@ export const edition = {
         titulo: 'O que são contribuições suplementares?',
         planos: 'Planos II e III',
         descricao: 'Os participantes ativos dos Planos II e III – ou seja, aqueles que trabalham atualmente no grupo MBRF, podem realizar contribuições suplementares, que são contribuições facultativas feitas além da alíquota máxima da contribuição básica do plano.\n\nNesse caso, o participante escolhe um percentual (não inferior a 1%) aplicado sobre o seu Salário de Participação ou opta por um valor livre, independente do salário e sem valor mínimo.',
+        introLista: 'Entre os principais diferenciais dessa modalidade estão:',
         beneficios: [
           'Flexibilidade para definir a periodicidade das contribuições.',
           'Possibilidade de suspender as contribuições a qualquer momento.',
@@ -441,6 +506,7 @@ export const edition = {
         titulo: 'O que são aportes extras?',
         planos: 'Planos II, III e Família',
         descricao: 'Enquanto as contribuições suplementares correspondem a um percentual ou valor definido, com a periodicidade que você escolher e desconto direto na folha de pagamento, os aportes extras são contribuições pontuais, feitas de forma esporádica, com valor livre e pagamento via PIX ou boleto.\n\nPodem realizar aportes extras:\n– Participantes ativos e autopatrocinados dos Planos II e III\n– Participantes do Plano Família',
+        introLista: 'Nessa modalidade, o participante define livremente:',
         beneficios: [
           'O valor da contribuição.',
           'A periodicidade dos aportes.',

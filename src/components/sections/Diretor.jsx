@@ -7,14 +7,30 @@ export default function Diretor() {
     <section className="section director" id="diretor" data-screen-label="Diretor">
       <div className="wrap">
         <div className="row">
-          {/* Card lateral */}
-          <aside className="director-card reveal">
-            <span className="badge">Presidente</span>
-            <div className="director-photo" aria-label={`Foto de ${diretor.nome}`}>
-              {diretor.iniciais}
+
+          {/* Card vertical — mensagem do presidente */}
+          <aside className="director-quote-card reveal">
+
+            {/* Foto */}
+            <div className="dqc-top">
+              <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="#888" strokeWidth="1.2" aria-hidden="true">
+                <circle cx="12" cy="8" r="4"/>
+                <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+              </svg>
             </div>
-            <span className="name">{diretor.nome}</span>
-            <span className="role">{diretor.cargo}</span>
+
+            {/* Badge aspas */}
+            <div className="dqc-badge">"</div>
+
+            {/* Texto */}
+            <div className="dqc-body">
+              <p className="dqc-text">{diretor.titulo}</p>
+              <div>
+                <p className="dqc-name">{diretor.nome}</p>
+                <p className="dqc-role">{diretor.cargo}</p>
+              </div>
+            </div>
+
           </aside>
 
           {/* Texto */}
@@ -39,6 +55,7 @@ export default function Diretor() {
               <div className="r">{diretor.cargo.split('·')[0].trim()} · {diretor.cnpb}</div>
             </div>
           </article>
+
         </div>
       </div>
     </section>

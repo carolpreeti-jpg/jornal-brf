@@ -6,18 +6,27 @@ export default function FalePresidente() {
   return (
     <section className="section newsite" id="fale-presidente" data-screen-label="Fale com o Presidente">
       <div className="wrap">
-        <div className="row">
-          {/* Texto */}
-          <div className="reveal">
-            <span className="eyebrow" style={{ color: 'var(--brand-blue-mid)' }}>
-              Novo canal · Relacionamento
-            </span>
-            <h2 style={{ color: 'var(--brand-blue)', marginTop: 10 }}>
-              {falePresidente.titulo.split('\n').map((linha, i) => (
-                <span key={i} style={{ display: 'block' }}>{linha}</span>
-              ))}
-            </h2>
-            <p style={{ color: 'var(--text-secondary)', fontSize: 16, marginTop: 14, maxWidth: 520 }}>
+
+        {/* Imagem + título — largura total */}
+        <div>
+          <img
+            src="/imagem04.png"
+            alt=""
+            style={{ width: '25%', borderRadius: 12, marginBottom: 28, display: 'block' }}
+          />
+          <h2 style={{ marginTop: 0 }}>
+            <span style={{ color: 'var(--brand-blue)' }}>Fale com o Presidente:</span>
+            {' '}
+            <span style={{ color: 'var(--gray-700)' }}>um novo canal de escuta<br />e proximidade com os participantes</span>
+          </h2>
+        </div>
+
+        {/* Grid: texto esquerda · card direita */}
+        <div className="fale-content-grid">
+
+          {/* Coluna esquerda — todo o texto */}
+          <div>
+            <p style={{ color: 'var(--text-secondary)', marginTop: 14 }}>
               {falePresidente.descricao}
             </p>
 
@@ -34,46 +43,32 @@ export default function FalePresidente() {
               {falePresidente.cta}
             </p>
 
-            <a className="btn btn-primary" style={{ marginTop: 20 }} href={`mailto:${falePresidente.email}`}>
+            <a className="btn btn-primary" style={{ marginTop: 20, background: '#EE686D', boxShadow: '0 6px 18px rgba(238,104,109,.35)' }} href={`mailto:${falePresidente.email}`}>
               Acessar o canal <span className="arrow">→</span>
             </a>
 
-            {/* Citação do Presidente */}
-            <blockquote style={{
-              marginTop: 32,
-              borderLeft: '3px solid var(--brand-blue-mid)',
-              paddingLeft: 16,
-              color: 'var(--text-secondary)',
-              fontStyle: 'italic',
-              fontSize: 15,
-            }}>
-              "{falePresidente.citacao}"
-              <cite style={{ display: 'block', marginTop: 8, fontStyle: 'normal', fontWeight: 600, color: 'var(--text-primary)', fontSize: 13 }}>
-                — {falePresidente.citacaoAutor.split('\n').join(', ')}
-              </cite>
-            </blockquote>
           </div>
 
-          {/* Mockup decorativo */}
-          <div className="browser reveal d2" aria-hidden="true">
-            <div className="browser-bar">
-              <span className="dot r" /><span className="dot y" /><span className="dot g" />
-              <span className="url">brfprevidencia.com.br</span>
-            </div>
-            <div className="browser-body">
-              <div className="row1">
-                <div className="logo">BRF · previdência</div>
-                <div className="menu">
-                  <span>Início</span><span>Extrato</span>
-                  <span>Simulador</span><span>Conta</span>
-                </div>
+          {/* Coluna direita — card sticky */}
+          <div className="fale-card-col">
+            <div className="testimonial-card">
+              <div className="card-top">
+                <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="#888" strokeWidth="1.2" aria-hidden="true">
+                  <circle cx="12" cy="8" r="4"/>
+                  <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+                </svg>
               </div>
-              <div className="hero-box">Fale com o Presidente<br />Estamos ouvindo você.</div>
-              <div className="cards">
-                <div className="c a" /><div className="c b" /><div className="c c" />
+              <div className="quote-badge">"</div>
+              <div className="card-bottom">
+                <p className="card-text">{falePresidente.citacao}</p>
+                <div>
+                  <p className="card-author-name" style={{ fontFamily: "'Co Headline', sans-serif", fontWeight: 400, color: '#EE686D', fontSize: 20 }}>{falePresidente.citacaoAutor.split('\n')[0]}</p>
+                  <p className="card-author-role" style={{ fontFamily: "'Noto Sans', sans-serif" }}>{falePresidente.citacaoAutor.split('\n')[1]}</p>
+                </div>
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </section>

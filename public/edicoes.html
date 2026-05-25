@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Edições — Jornal BRF Previdência</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --brand-blue:      #1B46B2;
+      --brand-blue-mid:  #7D94FC;
+      --brand-blue-light:#EBF0FF;
+      --brand-coral:     #EE686D;
+      --text-primary:    #000E1F;
+      --text-secondary:  #5A4D45;
+      --gray-50:         #F5F3F0;
+      --gray-100:        #EBE8E3;
+      --font-display:    'Sora', sans-serif;
+      --font-body:       'DM Sans', sans-serif;
+      --radius-card:     16px;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--gray-50);
+      color: var(--text-primary);
+      min-height: 100vh;
+    }
+
+    /* ── Header ── */
+    header {
+      background: #fff;
+      border-bottom: 1px solid var(--gray-100);
+      padding: 20px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 2px 12px rgba(27,70,178,.06);
+    }
+
+    .header-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .header-logo {
+      width: 36px;
+      height: 36px;
+      background: var(--brand-blue);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .header-logo span {
+      color: #fff;
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 14px;
+      letter-spacing: -0.5px;
+    }
+
+    .header-name {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 15px;
+      color: var(--brand-blue);
+    }
+
+    .header-back {
+      font-size: 14px;
+      color: var(--brand-blue);
+      text-decoration: none;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: opacity .2s;
+    }
+    .header-back:hover { opacity: .7; }
+
+    /* ── Hero da página ── */
+    .page-hero {
+      background: linear-gradient(135deg, var(--brand-blue) 0%, #2A1F6B 100%);
+      padding: 80px 32px 72px;
+      text-align: center;
+      color: #fff;
+    }
+
+    .page-hero .eyebrow {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.6);
+      margin-bottom: 16px;
+    }
+
+    .page-hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(36px, 5vw, 56px);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+
+    .page-hero p {
+      font-size: 17px;
+      color: rgba(255,255,255,.75);
+      max-width: 520px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* ── Grid de edições ── */
+    .wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    .edicoes-section {
+      padding: 72px 0 100px;
+    }
+
+    .edicoes-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    @media (max-width: 880px) { .edicoes-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 540px) { .edicoes-grid { grid-template-columns: 1fr; } }
+
+    /* ── Card de edição ── */
+    .ed-card {
+      background: #fff;
+      border-radius: var(--radius-card);
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 2px 12px rgba(27,70,178,.06);
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+    .ed-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(27,70,178,.14);
+    }
+
+    .ed-cover {
+      aspect-ratio: 16 / 9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ed-cover-label {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 13px;
+      color: rgba(255,255,255,.6);
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .ed-badge {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: rgba(255,255,255,.18);
+      backdrop-filter: blur(6px);
+      border: 1px solid rgba(255,255,255,.3);
+      border-radius: 99px;
+      padding: 4px 12px;
+      font-size: 11px;
+      font-weight: 600;
+      color: #fff;
+      letter-spacing: .06em;
+    }
+
+    .ed-body {
+      padding: 24px 24px 28px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .ed-meta {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--brand-coral);
+    }
+
+    .ed-titulo {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 17px;
+      color: var(--text-primary);
+      line-height: 1.4;
+    }
+
+    .ed-desc {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.65;
+      margin-top: 4px;
+      flex: 1;
+    }
+
+    .ed-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 16px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--brand-blue);
+      text-decoration: none;
+    }
+    .ed-link:hover { text-decoration: underline; }
+
+    /* ── Gradientes das capas ── */
+    .g1 { background: linear-gradient(135deg, #1B46B2 0%, #2A1F6B 100%); }
+    .g2 { background: linear-gradient(135deg, #EE686D 0%, #C53B6C 100%); }
+    .g3 { background: linear-gradient(135deg, #0D9488 0%, #1B46B2 100%); }
+    .g4 { background: linear-gradient(135deg, #2A1F6B 0%, #7D94FC 100%); }
+    .g5 { background: linear-gradient(135deg, #EE686D 0%, #F97316 100%); }
+    .g6 { background: linear-gradient(135deg, #1B46B2 0%, #0D9488 100%); }
+
+    /* ── Card em destaque (edição atual) ── */
+    .ed-card.destaque {
+      grid-column: 1 / -1;
+      flex-direction: row;
+    }
+    .ed-card.destaque .ed-cover {
+      width: 340px;
+      flex-shrink: 0;
+      aspect-ratio: unset;
+    }
+    .ed-card.destaque .ed-titulo { font-size: 22px; }
+    .ed-card.destaque .ed-badge { font-size: 12px; padding: 5px 14px; }
+
+    @media (max-width: 720px) {
+      .ed-card.destaque { flex-direction: column; }
+      .ed-card.destaque .ed-cover { width: 100%; aspect-ratio: 16/9; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <a class="header-brand" href="/">
+      <div class="header-logo"><span>BRF</span></div>
+      <span class="header-name">Jornal BRF Previdência</span>
+    </a>
+    <a class="header-back" href="/">← Voltar à edição atual</a>
+  </header>
+
+  <!-- Hero -->
+  <div class="page-hero">
+    <p class="eyebrow">Arquivo · Histórico</p>
+    <h1>Edições</h1>
+    <p>Acesse todas as edições do Jornal BRF Previdência e acompanhe nossa trajetória.</p>
+  </div>
+
+  <!-- Grid de edições -->
+  <section class="edicoes-section">
+    <div class="wrap">
+      <div class="edicoes-grid">
+
+        <!-- Edição atual em destaque -->
+        <a class="ed-card destaque" href="/">
+          <div class="ed-cover g1">
+            <span class="ed-cover-label">Edição 13</span>
+            <span class="ed-badge">✦ Edição atual</span>
+          </div>
+          <div class="ed-body">
+            <span class="ed-meta">Edição 13 · Maio 2026</span>
+            <p class="ed-titulo">Mais próximos de você</p>
+            <p class="ed-desc">Em 2026, seguimos fortalecendo um compromisso essencial: estar cada vez mais próximos de você. Alcançamos R$ 5 bilhões em patrimônio e ampliamos nossa presença nas unidades.</p>
+            <a class="ed-link" href="/">Ler edição →</a>
+          </div>
+        </a>
+
+        <!-- Edições anteriores -->
+        <a class="ed-card" href="#">
+          <div class="ed-cover g2">
+            <span class="ed-cover-label">Edição 12</span>
+          </div>
+          <div class="ed-body">
+            <span class="ed-meta">Edição 12 · Março 2025</span>
+            <p class="ed-titulo">Planejando o futuro com segurança</p>
+            <p class="ed-desc">Destaques sobre rentabilidade, novidades do App e conteúdos de educação financeira para os participantes.</p>
+            <span class="ed-link">Ler edição →</span>
+          </div>
+        </a>
+
+        <a class="ed-card" href="#">
+          <div class="ed-cover g3">
+            <span class="ed-cover-label">Edição 11</span>
+          </div>
+          <div class="ed-body">
+            <span class="ed-meta">Edição 11 · Dezembro 2024</span>
+            <p class="ed-titulo">Encerrando o ano com resultados</p>
+            <p class="ed-desc">Balanço do ano, desempenho dos planos e os principais marcos de 2024 para a BRF Previdência.</p>
+            <span class="ed-link">Ler edição →</span>
+          </div>
+        </a>
+
+        <a class="ed-card" href="#">
+          <div class="ed-cover g4">
+            <span class="ed-cover-label">Edição 10</span>
+          </div>
+          <div class="ed-body">
+            <span class="ed-meta">Edição 10 · Setembro 2024</span>
+            <p class="ed-titulo">Governança e transparência em foco</p>
+            <p class="ed-desc">Relatório de atividades, encontros com participantes e novidades sobre a gestão dos planos previdenciários.</p>
+            <span class="ed-link">Ler edição →</span>
+          </div>
+        </a>
+
+        <a class="ed-card" href="#">
+          <div class="ed-cover g5">
+            <span class="ed-cover-label">Edição 09</span>
+          </div>
+          <div class="ed-body">
+            <span class="ed-meta">Edição 09 · Junho 2024</span>
+            <p class="ed-titulo">Conexão com o participante</p>
+            <p class="ed-desc">Histórias inspiradoras, eventos regionais e o avanço dos canais digitais de comunicação da BRF Prev.</p>
+            <span class="ed-link">Ler edição →</span>
+          </div>
+        </a>
+
+        <a class="ed-card" href="#">
+          <div class="ed-cover g6">
+            <span class="ed-cover-label">Edição 08</span>
+          </div>
+          <div class="ed-body">
+            <span class="ed-meta">Edição 08 · Março 2024</span>
+            <p class="ed-titulo">Novos horizontes previdenciários</p>
+            <p class="ed-desc">Lançamento de iniciativas de educação financeira, rentabilidade dos planos e perspectivas para o ano.</p>
+            <span class="ed-link">Ler edição →</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

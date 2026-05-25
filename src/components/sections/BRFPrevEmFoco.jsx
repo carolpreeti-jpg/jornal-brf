@@ -5,51 +5,87 @@ const { brfPrevEmFoco } = edition
 export default function BRFPrevEmFoco() {
   return (
     <section className="section" id="brfprev-em-foco" data-screen-label="BRF Prev em Foco"
-      style={{ background: 'var(--gray-50)' }}>
+      style={{ background: '#ffffff' }}>
       <div className="wrap">
 
-        <div className="section-head reveal">
-          <span className="eyebrow">Canal · Comunicação</span>
-          <h2>{brfPrevEmFoco.titulo}</h2>
-          <p style={{ fontWeight: 600, color: 'var(--brand-blue)' }}>{brfPrevEmFoco.chamada}</p>
+        <div className="section-head reveal" style={{ marginBottom: 16 }}>
+          <h2 style={{ fontSize: 'clamp(44px, 5vw, 64px)' }}>
+            {brfPrevEmFoco.titulo.split(/^(BRF Prev em Foco:)/).filter(Boolean).map((part, i) =>
+              part === 'BRF Prev em Foco:'
+                ? <span key={i} style={{ color: 'var(--brand-blue)' }}>{part}</span>
+                : part
+            )}
+          </h2>
+          <p style={{ fontFamily: "'Noto Sans', sans-serif", fontWeight: 400, fontSize: 26, color: 'var(--brand-blue)', marginTop: 28, marginBottom: 4, lineHeight: 1.2 }}>
+            {brfPrevEmFoco.chamada.split(/(previdência)/i).map((part, i) =>
+              /previdência/i.test(part)
+                ? <span key={i}>{part}<br /></span>
+                : part
+            )}
+          </p>
         </div>
 
         <div className="cols reveal d2">
-          <div>
-            {brfPrevEmFoco.paragrafos.slice(0, Math.ceil(brfPrevEmFoco.paragrafos.length / 2)).map((p, i) => (
+          <div style={{ paddingTop: '2%' }}>
+            {brfPrevEmFoco.paragrafos.slice(0, Math.ceil((brfPrevEmFoco.paragrafos.length - 1) / 2)).map((p, i) => (
               <p key={i} style={{ color: 'var(--text-secondary)' }}>{p}</p>
             ))}
           </div>
           <div>
-            {brfPrevEmFoco.paragrafos.slice(Math.ceil(brfPrevEmFoco.paragrafos.length / 2)).map((p, i) => (
+            {brfPrevEmFoco.paragrafos.slice(Math.ceil((brfPrevEmFoco.paragrafos.length - 1) / 2), -1).map((p, i) => (
               <p key={i} style={{ color: 'var(--text-secondary)' }}>{p}</p>
             ))}
           </div>
         </div>
 
-        {/* CTA destaque */}
+        {/* Retângulo azul */}
         <div style={{
-          marginTop: 32,
-          background: 'linear-gradient(135deg, #DC2626 0%, #7C3AED 100%)',
-          borderRadius: 'var(--radius-card)',
-          padding: '24px 28px',
-          display: 'flex',
-          flexWrap: 'wrap',
-          alignItems: 'center',
-          gap: 16,
-        }} className="reveal d3">
-          <p style={{ color: '#fff', margin: 0, flex: 1, fontWeight: 600 }}>
-            {brfPrevEmFoco.cta}
-          </p>
-          <a
-            className="btn btn-light"
-            href={brfPrevEmFoco.urlYoutube}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {brfPrevEmFoco.urlYoutubeLabel} <span className="arrow">→</span>
-          </a>
+          marginTop: 40,
+          background: 'var(--brand-blue)',
+          borderRadius: 16,
+          padding: '48px 40px 60px',
+          display: 'grid',
+          gridTemplateColumns: '1fr 1fr',
+          alignItems: 'start',
+          gap: 40,
+        }}>
+          {/* Coluna esquerda — reservada para foto */}
+          <div />
+
+          {/* Coluna direita — texto + botão */}
+          <div style={{ paddingTop: 80 }}>
+            <p style={{
+              fontFamily: "'Co Headline', sans-serif",
+              fontWeight: 400,
+              fontSize: 26,
+              lineHeight: 1.5,
+              color: '#ffffff',
+              margin: '0 0 28px',
+            }}>
+              {brfPrevEmFoco.paragrafos[brfPrevEmFoco.paragrafos.length - 1]}
+            </p>
+            <a
+              href={brfPrevEmFoco.urlYoutube}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: 'inline-block',
+                background: '#7990F8',
+                color: '#ffffff',
+                fontFamily: "'Noto Sans', sans-serif",
+                fontWeight: 700,
+                fontSize: 24,
+                padding: '9px 26px',
+                borderRadius: 999,
+                textDecoration: 'none',
+                letterSpacing: '0.3px',
+              }}
+            >
+              Assista aqui
+            </a>
+          </div>
         </div>
+
 
       </div>
     </section>

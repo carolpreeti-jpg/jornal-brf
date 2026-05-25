@@ -2,16 +2,26 @@ import { edition } from '../../data/edition.js'
 
 const { aportes } = edition
 
+const NOTO = { fontFamily: "'Noto Sans', sans-serif" }
+const P    = { ...NOTO, fontSize: 17, lineHeight: 1.8, color: 'var(--text-secondary)' }
+
 export default function Aportes() {
   return (
     <section className="section game" id="aportes" data-screen-label="Aportes">
       <div className="wrap">
         <div className="section-head reveal">
-          <span className="eyebrow">Planejamento · Reserva Previdenciária</span>
-          <h2>{aportes.titulo}</h2>
-          <p>{aportes.descricao}</p>
+          <h2>
+            {aportes.titulo
+              .split(/(aportes extras|contribuições suplementares)/i)
+              .map((part, i) =>
+                /aportes extras|contribuições suplementares/i.test(part)
+                  ? <span key={i} style={{ color: '#EE686D' }}>{part}</span>
+                  : part
+              )}
+          </h2>
+          <p style={{ ...P, marginTop: 40 }}>{aportes.descricao}</p>
           {aportes.descricaoExtra && (
-            <p style={{ color: 'var(--text-secondary)', marginTop: 8 }}>{aportes.descricaoExtra}</p>
+            <p style={{ ...P, marginTop: 8 }}>{aportes.descricaoExtra}</p>
           )}
         </div>
 
@@ -19,29 +29,48 @@ export default function Aportes() {
         <div className="units-grid reveal d2">
           {aportes.modalidades.map((m, i) => (
             <article key={i} className="unit-card">
-              <div className="unit-body" style={{ padding: 24 }}>
-                <span className="unit-loc">{m.planos}</span>
-                <h3>{m.titulo}</h3>
-                {m.descricao.split('\n\n').map((p, j) => (
-                  <p key={j} style={{ fontSize: 14, color: 'var(--text-secondary)', marginTop: j > 0 ? 10 : 0 }}>{p}</p>
-                ))}
-                <ul style={{ marginTop: 12, paddingLeft: 0, listStyle: 'none' }}>
+              <div className="unit-body" style={{ padding: '40px 28px 28px' }}>
+                <h3 style={{ fontSize: 30, lineHeight: 1.3, marginBottom: 20, fontFamily: "'Co Headline', sans-serif", fontWeight: 400 }}>
+                  {m.titulo.includes('suplementares')
+                    ? <><span style={{ fontFamily: "'Co Headline', sans-serif", fontWeight: 400 }}>O que são </span><span style={{ color: '#EE686D' }}>contribuições</span><br /><span style={{ color: '#EE686D' }}>suplementares?</span></>
+                    : <><span style={{ fontFamily: "'Co Headline', sans-serif", fontWeight: 400 }}>O que são </span><span style={{ color: '#EE686D' }}>aportes extras?</span></>
+                  }
+                </h3>
+                {m.descricao.split('\n\n').map((bloco, j) => {
+                  const linhas = bloco.split('\n')
+                  const temBullets = linhas.some(l => l.startsWith('–'))
+                  if (temBullets) {
+                    return (
+                      <div key={j} style={{ marginTop: j > 0 ? 12 : 0 }}>
+                        {linhas.filter(l => !l.startsWith('–')).map((l, k) => (
+                          l.trim() && <p key={k} style={{ ...P, marginBottom: 8, fontWeight: l.trim().endsWith(':') ? 700 : undefined }}>{l}</p>
+                        ))}
+                        <ul style={{ paddingLeft: 0, listStyle: 'none', marginTop: 4 }}>
+                          {linhas.filter(l => l.startsWith('–')).map((l, k) => (
+                            <li key={k} style={{ ...{ fontFamily: "'Noto Sans', sans-serif" }, display: 'flex', gap: 8, padding: '8px 0', fontSize: 17, lineHeight: 1.7, color: 'var(--text-secondary)' }}>
+                              <span style={{ color: 'var(--brand-coral)', flexShrink: 0, fontSize: 14, fontWeight: 700 }}>✦</span>
+                              {l.replace(/^–\s*/, '')}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )
+                  }
+                  return <p key={j} style={{ ...P, marginTop: j > 0 ? 12 : 0 }}>{bloco}</p>
+                })}
+                {m.introLista && (
+                  <p style={{ ...P, marginTop: 16, marginBottom: 4, fontWeight: 700 }}>{m.introLista}</p>
+                )}
+                <ul style={{ marginTop: 8, paddingLeft: 0, listStyle: 'none' }}>
                   {m.beneficios.map((b, j) => (
-                    <li key={j} style={{
-                      display: 'flex',
-                      gap: 8,
-                      padding: '6px 0',
-                      borderBottom: '1px solid var(--gray-100)',
-                      fontSize: 13,
-                      color: 'var(--text-secondary)',
-                    }}>
-                      <span style={{ color: 'var(--brand-teal)', flexShrink: 0 }}>✓</span>
+                    <li key={j} style={{ ...NOTO, display: 'flex', gap: 8, padding: '8px 0', fontSize: 17, lineHeight: 1.7, color: 'var(--text-secondary)' }}>
+                      <span style={{ color: 'var(--brand-coral)', flexShrink: 0, fontSize: 14, fontWeight: 700 }}>✦</span>
                       {b}
                     </li>
                   ))}
                 </ul>
                 {m.obs && (
-                  <p style={{ marginTop: 12, fontSize: 13, color: 'var(--text-muted)', fontStyle: 'italic' }}>
+                  <p style={{ ...NOTO, marginTop: 0, fontSize: 17, lineHeight: 1.7, color: 'var(--text-muted)', fontStyle: 'italic' }}>
                     {m.obs}
                   </p>
                 )}
@@ -51,69 +80,107 @@ export default function Aportes() {
         </div>
 
         {/* Quando vale a pena */}
-        <div className="reveal" style={{ marginTop: 40 }}>
-          <span className="eyebrow" style={{ color: 'var(--brand-blue-mid)' }}>
-            Quando vale a pena fazer um aporte extra ou contribuição suplementar?
-          </span>
-          <p style={{ color: 'var(--text-secondary)', marginTop: 8, marginBottom: 16 }}>
+        <div style={{ marginTop: 48 }}>
+          <h3 style={{ fontFamily: "'Co Headline', sans-serif", fontWeight: 400, fontSize: 26, lineHeight: 1.3, marginBottom: 16, color: 'var(--text-primary)' }}>
+            Quando vale a pena fazer um{' '}
+            <span style={{ color: '#EE686D' }}>aporte extra</span>
+            {' '}ou{' '}
+            <span style={{ color: '#EE686D' }}>contribuição suplementar</span>?
+          </h3>
+          <p style={{ ...P }}>
             Contribuições ocasionais podem fazer diferença no saldo acumulado no longo prazo e alguns momentos podem ser boas oportunidades para reforçar sua reserva previdenciária, como:
           </p>
-          <ul style={{ paddingLeft: 0, listStyle: 'none', display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-            {aportes.oportunidades.map((o, i) => (
-              <li key={i} style={{
-                background: 'var(--brand-blue-light)',
-                color: 'var(--brand-blue)',
-                padding: '8px 16px',
-                borderRadius: 'var(--radius-pill)',
-                fontSize: 13,
-                fontWeight: 600,
+
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 16, marginTop: 20 }}>
+            {aportes.oportunidades.map((item, i) => (
+              <button key={i} style={{
+                background: 'transparent',
+                border: '2px solid #e8545a',
+                borderRadius: 50,
+                padding: '14px 32px',
+                fontSize: 18,
+                color: '#222',
+                fontFamily: "'Gill Sans', 'Trebuchet MS', sans-serif",
+                fontWeight: 300,
+                letterSpacing: '0.5px',
+                cursor: 'default',
               }}>
-                {o}
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        {/* Benefício fiscal */}
-        <div className="reveal d2" style={{
-          marginTop: 32,
-          background: 'var(--brand-blue-light)',
-          borderRadius: 'var(--radius-card)',
-          padding: '20px 24px',
-          borderLeft: '4px solid var(--brand-blue-mid)',
-        }}>
-          <span style={{ fontWeight: 700, color: 'var(--brand-blue)', display: 'block', marginBottom: 6 }}>
-            Benefício fiscal
-          </span>
-          <p style={{ color: 'var(--text-secondary)', fontSize: 14, margin: 0 }}>
-            {aportes.beneficioFiscal}
-          </p>
-          {aportes.beneficioFiscalExtra && (
-            <p style={{ color: 'var(--text-secondary)', fontSize: 14, marginTop: 8, marginBottom: 0 }}>
-              {aportes.beneficioFiscalExtra}
-            </p>
-          )}
-        </div>
-
-        {/* Canais */}
-        <div className="reveal" style={{ marginTop: 32 }}>
-          <span className="eyebrow" style={{ color: 'var(--brand-blue-mid)' }}>
-            Como realizar aportes e contribuições suplementares?
-          </span>
-          <p style={{ color: 'var(--text-secondary)', marginTop: 8, marginBottom: 16, fontSize: 14 }}>
-            O processo pode ser feito de forma simples pelo autoatendimento no site ou pelos canais de atendimento:
-          </p>
-          <div className="contact-row">
-            {aportes.canais.map((c) => (
-              <span key={c.texto} className="contact">
-                {c.ic}  {c.texto}
-              </span>
+                {item.replace(/\.$/, '')}
+              </button>
             ))}
           </div>
-          <a className="btn btn-primary" style={{ marginTop: 20 }} href="#">
-            Acessar autoatendimento <span className="arrow">→</span>
-          </a>
+
+          <p style={{ ...P, marginTop: 32 }}>
+            Os Aportes extras e as contribuições suplementares ajudam a acelerar a construção do patrimônio previdenciário e contribuem para um planejamento financeiro mais sólido.
+          </p>
+          <p style={{ ...P, marginTop: 16 }}>
+            Além disso, as contribuições realizadas ao plano podem trazer vantagens fiscais. Os valores aportados são dedutíveis do Imposto de Renda no limite de até 12% da renda bruta anual para participantes que utilizam o modelo completo da declaração.
+          </p>
+          <p style={{ ...P, marginTop: 16 }}>
+            Essa é uma excelente oportunidade para os participantes fazerem aportes no Plano Família, complementando os 12% de contribuição previdenciária anual.
+          </p>
+
+          {/* Layout duas colunas: imagem | conteúdo */}
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 48, alignItems: 'stretch', marginTop: 56 }}>
+
+            {/* Coluna esquerda — placeholder de imagem */}
+            <div style={{
+              background: '#F1F5F9',
+              borderRadius: 16,
+              border: '2px dashed #CBD5E1',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              minHeight: 0,
+              color: '#94A3B8',
+              fontFamily: "'Noto Sans', sans-serif",
+              fontSize: 14,
+              flexDirection: 'column',
+              gap: 8,
+            }}>
+              <span style={{ fontSize: 36 }}>🖼</span>
+              <span>Imagem</span>
+            </div>
+
+            {/* Coluna direita — texto */}
+            <div>
+              <h3 style={{ fontFamily: "'Co Headline', sans-serif", fontWeight: 400, fontSize: 26, lineHeight: 1.3, marginBottom: 16, color: 'var(--text-primary)' }}>
+                Como realizar aportes<br />
+                e <span style={{ color: '#EE686D' }}>contribuições suplementares</span>?
+              </h3>
+              <p style={{ ...P }}>
+                O processo pode ser feito de forma simples pelo autoatendimento no site ou pelos canais de atendimento:
+              </p>
+
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 12, marginTop: 20 }}>
+                {[
+                  { img: '/whatsapp.png',          texto: aportes.canais[0].texto },
+                  { img: '/suporte-ao-cliente.png', texto: aportes.canais[1].texto },
+                ].map((c) => (
+                  <span key={c.texto} style={{
+                    fontFamily: "'Noto Sans', sans-serif",
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 10,
+                    fontSize: 22,
+                    fontWeight: 500,
+                  }}>
+                    <img src={c.img} alt="" style={{ width: 40, height: 40, objectFit: 'contain', filter: 'invert(52%) sepia(60%) saturate(700%) hue-rotate(314deg) brightness(105%) contrast(90%)' }} />
+                    <span style={{ color: '#EE686D' }}>{c.texto.split(': ')[0]}:</span>
+                    {' '}
+                    <span style={{ color: '#4A4A4A' }}>{c.texto.split(': ')[1]}</span>
+                  </span>
+                ))}
+              </div>
+
+              <p style={{ ...P, marginTop: 32 }}>
+                Aproveitar oportunidades para investir no seu futuro pode fazer diferença ao longo do tempo. Avalie seu planejamento financeiro e conheça as alternativas disponíveis para fortalecer sua reserva previdenciária.
+              </p>
+            </div>
+
+          </div>
         </div>
+
       </div>
     </section>
   )

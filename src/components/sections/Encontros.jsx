@@ -4,55 +4,118 @@ const { encontros } = edition
 
 export default function Encontros() {
   return (
-    <section className="section survey" id="encontros" data-screen-label="Encontros">
-      <div className="wrap inner">
-        {/* Lado esquerdo */}
-        <div className="reveal">
-          <span className="eyebrow">Resultados · 33ª Edição</span>
-          <h2>{encontros.titulo}</h2>
-          <p>{encontros.intro}</p>
-          <p style={{ marginTop: 12 }}>{encontros.descricao}</p>
+    <section className="section survey" id="encontros" data-screen-label="Encontros"
+      style={{ padding: '200px 0 160px', minHeight: '1300px', display: 'flex', alignItems: 'flex-start' }}>
+      <div style={{ width: '100%', padding: '0 200px' }}>
+        {/* Imagem sobreposta na borda azul/branco */}
+        <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '-90px', position: 'relative', zIndex: 2 }}>
+          <img
+            src="/imagem10.png"
+            alt="Conexão BRF Previdência"
+            style={{ width: '200px', display: 'block' }}
+          />
+        </div>
 
-          {/* Próximas datas */}
-          {encontros.proximasDatas && encontros.proximasDatas.length > 0 && (
-            <div style={{ marginTop: 24 }}>
-              <span className="eyebrow" style={{ color: 'rgba(255,255,255,.7)', marginBottom: 8, display: 'block' }}>
-                Já reserve na sua agenda as próximas datas para acompanhar ao vivo:
-              </span>
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 6 }}>
-                {encontros.proximasDatas.map((d, i) => (
-                  <li key={i} style={{ color: 'rgba(255,255,255,.85)', fontSize: 14, display: 'flex', gap: 8, alignItems: 'center' }}>
-                    <span style={{ color: 'var(--brand-yellow)', flexShrink: 0 }}>▸</span>
-                    {d}
+        <div style={{
+          width: '100%',
+          minHeight: '1000px',
+          borderRadius: '20px',
+          background: '#ffffff',
+          display: 'flex',
+          flexDirection: 'column',
+          padding: '110px 0 64px',
+          position: 'relative',
+        }}>
+          {/* Imagem centralizada */}
+          <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 40, padding: '0 64px' }}>
+            <img
+              src="/imagem08.png"
+              alt="Encontro Trimestral de Resultados"
+              style={{ width: '70%', display: 'block' }}
+            />
+          </div>
+
+          {/* Parágrafos */}
+          <p style={{ color: 'var(--text-secondary)', fontSize: 17, lineHeight: 1.8, margin: '0 0 16px', padding: '0 80px', maxWidth: '100%' }}>
+            {encontros.intro}
+          </p>
+          <p style={{ color: 'var(--text-secondary)', fontSize: 17, lineHeight: 1.8, margin: '0', padding: '0 80px', maxWidth: '100%' }}>
+            {encontros.descricao}
+          </p>
+
+          <h3 style={{
+            fontFamily: 'var(--font-display)',
+            fontWeight: 400,
+            fontSize: 22,
+            color: 'var(--text-primary)',
+            margin: '48px 0 32px',
+            padding: '0 80px',
+          }}>
+            Confira as{' '}
+            <span style={{ color: 'var(--brand-coral)', fontWeight: 700 }}>gravações</span>
+            {' '}nos links abaixo:
+          </h3>
+
+          {/* Cards de vídeo */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24, padding: '0 80px' }}>
+            {encontros.gravacoes.map((g, i) => (
+              <div key={i} style={{ position: 'relative' }}>
+                <a
+                  href={`https://youtu.be/${g.videoId}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ display: 'block', position: 'relative', width: '100%', border: '2px solid #e8545a', borderRadius: 10, overflow: 'hidden', textDecoration: 'none' }}
+                >
+                  <img
+                    src={`https://img.youtube.com/vi/${g.videoId}/hqdefault.jpg`}
+                    alt={g.plano}
+                    style={{ width: '100%', aspectRatio: '16/9', objectFit: 'cover', display: 'block' }}
+                  />
+                  <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <div style={{ width: 52, height: 52, background: 'red', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                      <div style={{ width: 0, height: 0, borderTop: '10px solid transparent', borderBottom: '10px solid transparent', borderLeft: '18px solid white', marginLeft: 4 }} />
+                    </div>
+                  </div>
+                </a>
+                {/* Label do plano sobreposta na parte inferior */}
+                <div style={{ position: 'absolute', bottom: -30, left: '50%', transform: 'translateX(-50%)', zIndex: 2 }}>
+                  <img
+                    src={g.img}
+                    alt={g.plano}
+                    style={{ height: 52, display: 'block' }}
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Próximo Encontro */}
+          {encontros.proximoEncontro && (
+            <div style={{ padding: '48px 80px 0', marginTop: 56 }}>
+              <h3 style={{
+                fontFamily: 'var(--font-display)',
+                fontWeight: 400,
+                fontSize: 22,
+                color: 'var(--text-primary)',
+                marginBottom: 12,
+              }}>
+                Já reserve na sua agenda as próximas datas para{' '}
+                <span style={{ color: '#e8545a', fontWeight: 700 }}>acompanhar ao vivo:</span>
+              </h3>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 8 }}>
+                {encontros.proximoEncontro.datas.map((item, i) => (
+                  <li key={i} style={{ display: 'flex', alignItems: 'center', gap: 12, fontSize: 17, color: 'var(--text-primary)' }}>
+                    <span style={{ color: 'var(--brand-coral)', fontWeight: 700, fontSize: 14 }}>✦</span>
+                    <span>
+                      <span style={{ fontFamily: 'var(--font-display)', fontWeight: 400 }}>{item.plano}</span>
+                      <span style={{ fontFamily: "'Noto Sans', sans-serif", fontWeight: 400 }}>{' – '}{item.data}</span>
+                    </span>
                   </li>
                 ))}
               </ul>
-              <p style={{ marginTop: 12, color: 'rgba(255,255,255,.7)', fontSize: 13 }}>
-                Fique de olho em nossas comunicações para conferir os horários e acessar os links.
-              </p>
             </div>
           )}
-        </div>
 
-        {/* Links das gravações */}
-        <div className="reveal d2" style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
-          <span className="eyebrow" style={{ color: 'rgba(255,255,255,.7)', marginBottom: 4 }}>
-            Confira as gravações
-          </span>
-          {encontros.gravacoes.map((g, i) => (
-            <a
-              key={i}
-              href={g.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-yellow"
-              style={{ display: 'inline-flex', alignItems: 'center', gap: 10 }}
-            >
-              <span style={{ fontSize: 18 }}>▶</span>
-              {g.titulo}
-              <span className="arrow">→</span>
-            </a>
-          ))}
         </div>
       </div>
     </section>

@@ -7,44 +7,56 @@ export default function RelatorioAnual() {
     <section className="section events" id="relatorio" data-screen-label="Relatório Anual">
       <div className="wrap">
         <div className="section-head reveal">
-          <span className="eyebrow">Transparência · Governança</span>
-          <h2>{relatorio.titulo}</h2>
-          <p>{relatorio.descricao}</p>
+          <img
+            src="/imagem06.png"
+            alt="Relatório Anual 2025"
+            style={{ width: '75%', borderRadius: 12, display: 'block' }}
+          />
+          {relatorio.descricao.split('\n\n').map((p, i) => (
+            <p key={i} style={{ marginTop: i === 0 ? 32 : 16 }}>{p}</p>
+          ))}
         </div>
 
-        <div className="events-grid">
-          {relatorio.destaques.map((item, i) => {
-            const delay = i > 0 ? ` d${Math.min(i + 1, 4)}` : ''
-            return (
-              <article key={i} className={`event-card reveal${delay}`}>
-                <div className="event-body" style={{ padding: '24px 20px' }}>
-                  <span className="tag" style={{ fontSize: 22 }}>{item.ic}</span>
-                  <p style={{ marginTop: 12, fontSize: 14, color: 'var(--text-secondary)' }}>
-                    {item.texto}
-                  </p>
-                </div>
-              </article>
-            )
-          })}
+        <div className="relatorio-grid reveal">
+          {relatorio.celulas.map((c, i) => (
+            <div key={i} className={`cell cell-${i + 1}`}>
+              <strong className="cell-titulo">{c.titulo}</strong>
+              <p className="cell-texto">{c.texto}</p>
+            </div>
+          ))}
         </div>
 
-        <blockquote className="quote reveal" style={{ marginTop: 40 }}>
-          "{relatorio.citacao}"
-          <cite>— {relatorio.citacaoAutor}</cite>
-        </blockquote>
+        <div className="testimonial-card testimonial-card--horizontal reveal" style={{ marginTop: 72 }}>
+          <div className="card-top">
+            <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="#888" strokeWidth="1.2" aria-hidden="true">
+              <circle cx="12" cy="8" r="4"/>
+              <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+            </svg>
+          </div>
+          <div className="quote-badge">"</div>
+          <div className="card-bottom">
+            <div>
+              <p className="card-author-name" style={{ fontFamily: "'Co Headline', sans-serif", fontWeight: 400, color: '#EE686D', fontSize: 20 }}>{relatorio.citacaoAutor.split(',')[0]}</p>
+              <p className="card-author-role">
+                {relatorio.citacaoAutor.split(',').slice(1).join(',').trim().split(' e ').map((part, i, arr) => (
+                  <span key={i} style={{ display: 'block' }}>{i > 0 ? 'e ' : ''}{part}</span>
+                ))}
+              </p>
+            </div>
+            <p className="card-text">{relatorio.citacao}</p>
+          </div>
+        </div>
 
-        <div className="cta-row reveal" style={{ marginTop: 32 }}>
+        <div className="cta-row reveal" style={{ marginTop: 64 }}>
           <a
             className="btn btn-primary"
             href={relatorio.url}
             target="_blank"
             rel="noopener noreferrer"
+            style={{ background: '#ED676D', boxShadow: '0 6px 18px rgba(237,103,109,.35)' }}
           >
             Acesse o Relatório Anual 2025 <span className="arrow">→</span>
           </a>
-          <span style={{ fontSize: 13, color: 'var(--text-muted)', fontFamily: 'var(--font-mono)', marginLeft: 16 }}>
-            {relatorio.urlLabel}
-          </span>
         </div>
       </div>
     </section>

@@ -1,23 +1,54 @@
+import { useRef, useEffect, useState } from 'react'
 import { edition } from '../../data/edition.js'
 
 const { compromisso } = edition
 
-const statusLabel = {
-  realizado: 'Realizado',
-  proxima:   'Próxima visita',
-  confirmar: 'A confirmar',
+const HIGHLIGHTS = [
+  '200 atendimentos',
+  '125 adesões aos planos previdenciários',
+  '40 aportes e contribuições suplementares',
+]
+
+function highlightText(text) {
+  const regex = new RegExp(`(${HIGHLIGHTS.map(h => h.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|')})`, 'g')
+  return text.split(regex).map((part, i) =>
+    HIGHLIGHTS.includes(part)
+      ? <strong key={i} style={{ color: 'var(--brand-coral)', fontFamily: 'var(--font-body)', fontWeight: 700 }}>{part}</strong>
+      : part
+  )
 }
+
+const CAL_COLORS = ['#1B46B2', '#EE686D', '#7990F8']
+const VISIBLE = 4
 
 export default function Compromisso() {
   const { acoesRealizadas } = compromisso
+  const trackRef = useRef(null)
+  const [idx, setIdx] = useState(0)
+  const [hoveredPhoto, setHoveredPhoto] = useState(null)
+
+  const total  = compromisso.calendario.length
+  const maxIdx = Math.max(0, total - VISIBLE)
+
+  useEffect(() => {
+    const track = trackRef.current
+    if (!track || !track.children[0]) return
+    const cardW = track.children[0].offsetWidth
+    track.style.transform = `translateX(-${idx * (cardW + 16)}px)`
+  }, [idx])
+
+  function navigate(dir) {
+    setIdx(prev => Math.max(0, Math.min(prev + dir, maxIdx)))
+  }
 
   return (
     <section className="section" id="compromisso" data-screen-label="Compromisso"
       style={{ background: '#fff' }}>
+
       <div className="wrap">
 
         {/* Cabeçalho */}
-        <div className="section-head reveal">
+        <div className="section-head">
           <h2>
             {compromisso.titulo.split('Compromisso com Você').map((part, i, arr) => (
               i < arr.length - 1
@@ -28,88 +59,125 @@ export default function Compromisso() {
           <p>{compromisso.intro}</p>
         </div>
 
-        {/* Ações realizadas */}
-        <div className="reveal" style={{ marginBottom: 48 }}>
-          <span className="eyebrow" style={{ color: 'var(--brand-blue-mid)', marginBottom: 8, display: 'block' }}>
-            {acoesRealizadas.label} · {acoesRealizadas.local} · {acoesRealizadas.periodo}
-          </span>
+        {/* Ações realizadas + contexto */}
+        <div>
           {acoesRealizadas.descricao.split('\n\n').map((p, i) => (
-            <p key={i} style={{ color: 'var(--text-secondary)', marginTop: i === 0 ? 0 : 12 }}>
-              {p}
-            </p>
+            <>
+              <p key={i} style={{ color: 'var(--text-secondary)', margin: '24px 0' }}>
+                {i === 2 ? highlightText(p) : p}
+              </p>
+              {i === 0 && (
+                <div key="action-photos" style={{ display: 'flex', gap: 8, width: '100%', margin: '40px 0', alignItems: 'stretch' }}>
+                  {[0, 1, 2, 3, 4].map(j => (
+                    <div
+                      key={j}
+                      style={{
+                        background: '#2a5fc4',
+                        borderRadius: 10,
+                        aspectRatio: '3/4',
+                        flex: hoveredPhoto === j ? '1.6 1 0' : hoveredPhoto !== null ? '0.85 1 0' : '1 1 0',
+                        transition: 'flex 0.35s cubic-bezier(.4,0,.2,1)',
+                        cursor: 'pointer',
+                      }}
+                      onMouseEnter={() => setHoveredPhoto(j)}
+                      onMouseLeave={() => setHoveredPhoto(null)}
+                    />
+                  ))}
+                </div>
+              )}
+            </>
           ))}
 
-          {/* Stats em cards claros */}
-          <div className="elas-stats" style={{ marginTop: 24 }}>
-            {acoesRealizadas.resultados.map((r, i) => (
-              <div key={i} className="stat-card light reveal" style={{ '--delay': `${i * 0.08}s` }}>
-                <div className="v">{r.valor}</div>
-                <div className="l">{r.label}</div>
+          <p style={{ color: 'var(--text-secondary)', margin: '24px 0' }}>
+            {compromisso.resultadosContexto}
+          </p>
+
+          {/* Depoimento Rose Zanutto */}
+          <div className="testimonial-card testimonial-card--horizontal">
+            <div className="card-top">
+              <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="#888" strokeWidth="1.2" aria-hidden="true">
+                <circle cx="12" cy="8" r="4"/>
+                <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+              </svg>
+            </div>
+            <div className="quote-badge">"</div>
+            <div className="card-bottom">
+              <div>
+                <p className="card-author-name" style={{ fontFamily: "'Co Headline', sans-serif", fontWeight: 400, color: '#EE686D', fontSize: 20 }}>{compromisso.citacaoAutor.split(',')[0]}</p>
+                <p className="card-author-role">
+                  {compromisso.citacaoAutor.split(',').slice(1).join(',').trim().split('\n').map((line, i) => (
+                    <span key={i} style={{ display: 'block' }}>{line}</span>
+                  ))}
+                </p>
               </div>
-            ))}
+              <p className="card-text">{compromisso.citacao}</p>
+            </div>
           </div>
+
         </div>
 
-        {/* Contexto dos resultados */}
-        <p className="reveal" style={{ color: 'var(--text-secondary)', marginBottom: 32 }}>
-          {compromisso.resultadosContexto}
-        </p>
-
-        {/* Citação */}
-        <blockquote className="quote reveal" style={{ marginBottom: 56 }}>
-          "{compromisso.citacao}"
-          <cite>— {compromisso.citacaoAutor}</cite>
-        </blockquote>
-
         {/* Cabeçalho do calendário */}
-        <div className="reveal">
-          <span className="eyebrow" style={{ color: 'var(--brand-coral)', marginBottom: 6, display: 'block' }}>
-            Calendário 2026
-          </span>
-          <h3 style={{ color: 'var(--text-primary)', marginBottom: 4 }}>
+        <div style={{ marginTop: 56, marginBottom: 20 }}>
+          <h3 style={{ color: 'var(--text-primary)', marginBottom: 10, fontSize: 32 }}>
             Próximas visitas às unidades
           </h3>
-          <p style={{ color: 'var(--text-secondary)', margin: 0 }}>
-            O calendário está em fase de organização. As datas serão divulgadas oportunamente pelos canais oficiais da BRF Prev e RH's locais.
+          <p style={{ color: 'var(--text-secondary)', margin: 0, maxWidth: 760 }}>
+            A próxima visita está marcada para o mês de maio, em Lucas do Rio Verde, MT, no período de 25 a 29 de maio. O calendário das próximas ações presenciais está em fase de organização, os locais já estão definidos (confira na tabela abaixo). As datas serão divulgadas oportunamente pelos canais oficiais da BRF Prev e RH's locais.
           </p>
         </div>
 
-        {/* Grid de cards de calendário */}
-        <div className="calendar-grid">
-          {compromisso.calendario.map((item, i) => (
-            <div
-              key={i}
-              className="cal-card reveal"
-              style={{ '--delay': `${(i % 3) * 0.07}s` }}
-            >
-              {/* Área de imagem/gradient */}
-              <div className="cal-img">
+        {/* ── Carousel de cards ── */}
+        <div className="cal-carousel">
+          <div className="cal-track-wrap">
+            <div className="cal-track" ref={trackRef}>
+              {compromisso.calendario.map((item, i) => (
                 <div
-                  className="cal-img-bg"
-                  style={{ background: item.gradient }}
-                />
-                <div className="cal-img-overlay">
-                  <span className="cal-location-label">
-                    {item.unidade}
-                  </span>
+                  key={i}
+                  className="cal-card"
+                  style={{ background: CAL_COLORS[i % 3] }}
+                >
+                  <div>
+                    <p className="cal-month">{item.mes}</p>
+                    <h3 className="cal-title">{item.unidade}</h3>
+                  </div>
+                  <div className="cal-footer">{item.datas}</div>
+                  <span className="cal-category">{item.mes}</span>
                 </div>
-              </div>
-
-              {/* Corpo do card */}
-              <div className="cal-body">
-                <p className="cal-city">
-                  {item.unidade}
-                  <span style={{ color: 'var(--text-muted)', fontWeight: 400, fontSize: 13 }}>
-                    {' '}· {item.estado}
-                  </span>
-                </p>
-                <span className="cal-date">{item.datas}</span>
-                <span className={`cal-status ${item.status}`}>
-                  {statusLabel[item.status]}
-                </span>
-              </div>
+              ))}
             </div>
-          ))}
+          </div>
+
+          {/* Navegação */}
+          <div className="cal-nav">
+            <button
+              className="cal-arrow"
+              onClick={() => navigate(-1)}
+              disabled={idx === 0}
+              aria-label="Anterior"
+            >
+              ←
+            </button>
+
+            <div className="cal-dots">
+              {Array.from({ length: maxIdx + 1 }, (_, i) => (
+                <button
+                  key={i}
+                  className={`cal-dot${i === idx ? ' active' : ''}`}
+                  onClick={() => setIdx(i)}
+                  aria-label={`Ir para posição ${i + 1}`}
+                />
+              ))}
+            </div>
+
+            <button
+              className="cal-arrow"
+              onClick={() => navigate(1)}
+              disabled={idx >= maxIdx}
+              aria-label="Próximo"
+            >
+              →
+            </button>
+          </div>
         </div>
 
       </div>

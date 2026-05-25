@@ -1,8 +1,7 @@
 import { useState } from 'react'
 import { useStickyHeader } from '../../hooks/useStickyHeader.js'
 import { edition } from '../../data/edition.js'
-import logoWhite from '../../../LOGO-horizontal-1.png'
-import logoColor from '../../../LOGO-horizontal-2.png'
+const logo = '/imagem05.png'
 
 const navLinks = [
   { href: '#top', label: 'Início' },
@@ -21,8 +20,7 @@ export default function Header() {
     <header id="site-header">
       <div className="wrap nav">
         <a href="#top" className="brand" aria-label="BRF Previdência">
-          <img src={logoWhite} alt="BRF Previdência" className="brand-logo logo-white" />
-          <img src={logoColor} alt="BRF Previdência" className="brand-logo logo-color" />
+          <img src={logo} alt="BRF Previdência" className="brand-logo" style={{ height: 20 }} />
           <span className="brand-tag">O informativo dos participantes</span>
         </a>
 

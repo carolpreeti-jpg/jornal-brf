@@ -76,11 +76,13 @@ export default function Patrimonio() {
               borderLeft: '3px solid var(--brand-yellow)',
               paddingLeft: 16,
               color: 'rgba(255,255,255,.85)',
+              fontFamily: "'Noto Sans', sans-serif",
               fontStyle: 'italic',
-              fontSize: 14,
+              fontSize: 15,
+              lineHeight: 1.75,
             }}>
               "{patrimonio.citacao}"
-              <cite style={{ display: 'block', marginTop: 8, fontStyle: 'normal', fontWeight: 600, opacity: .7 }}>
+              <cite style={{ display: 'block', marginTop: 8, fontFamily: "'Co Headline', sans-serif", fontWeight: 400, fontSize: 15, fontStyle: 'normal', color: 'rgba(255,255,255,.7)' }}>
                 — {patrimonio.citacaoAutor}
               </cite>
             </blockquote>

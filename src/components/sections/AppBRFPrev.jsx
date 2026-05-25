@@ -5,69 +5,129 @@ const { appBRFPrev } = edition
 export default function AppBRFPrev() {
   return (
     <section className="section" id="app-brf-prev" data-screen-label="App BRF Prev"
-      style={{ background: '#fff' }}>
+      style={{ background: 'var(--brand-blue)' }}>
       <div className="wrap">
 
         <div className="section-head reveal">
-          <span className="eyebrow">Digital · Aplicativo</span>
-          <h2>{appBRFPrev.titulo}</h2>
+          <h2 style={{ color: '#fff', fontSize: 'clamp(44px, 5vw, 64px)' }}>
+            {appBRFPrev.titulo.split(/^(App BRF Prev:)/).filter(Boolean).map((part, i) =>
+              part === 'App BRF Prev:'
+                ? <span key={i} style={{ color: '#97aaff' }}>{part}</span>
+                : part
+            )}
+          </h2>
           {appBRFPrev.descricao.split('\n\n').map((p, i) => (
-            <p key={i} style={{ color: 'var(--text-secondary)' }}>{p}</p>
+            <p key={i} style={{ color: 'rgba(255,255,255,0.85)', marginTop: i === 0 ? 20 : 12, marginBottom: 0 }}>
+              {p.split(/(acompanhar)/i).map((part, j) =>
+                /acompanhar/i.test(part)
+                  ? <span key={j}><br />{part}</span>
+                  : part
+              )}
+            </p>
           ))}
         </div>
 
-        <div className="row" style={{ alignItems: 'flex-start', gap: 48, marginTop: 40 }}>
+        <p style={{
+          fontFamily: "'Co Headline', sans-serif",
+          fontWeight: 400,
+          fontSize: 30,
+          color: '#fff',
+          marginTop: -24,
+        }}>
+          <span style={{ color: '#97aaff' }}>Confira algumas </span>
+          <span style={{ color: '#fff' }}>funcionalidades disponíveis:</span>
+        </p>
 
-          {/* Funcionalidades */}
-          <div className="reveal" style={{ flex: 1 }}>
-            <span className="eyebrow" style={{ color: 'var(--brand-blue-mid)', marginBottom: 12, display: 'block' }}>
-              {appBRFPrev.funcionalidadesIntro}
-            </span>
-            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 10 }}>
-              {appBRFPrev.funcionalidades.map((f, i) => (
-                <li key={i} style={{
-                  display: 'flex', gap: 10, alignItems: 'flex-start',
-                  padding: '10px 14px',
-                  background: 'var(--brand-blue-light)',
-                  borderRadius: 10,
-                  fontSize: 14,
-                  color: 'var(--brand-blue)',
-                  fontWeight: 500,
-                }}>
-                  <span style={{ color: 'var(--brand-teal)', flexShrink: 0, marginTop: 1 }}>✓</span>
-                  {f}
-                </li>
-              ))}
-            </ul>
-            <p style={{ marginTop: 16, fontSize: 14, color: 'var(--text-secondary)', fontWeight: 600 }}>
-              {appBRFPrev.plataformas}
-            </p>
+        {/* Cards de funcionalidades */}
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 20, marginTop: 24 }}>
+          {appBRFPrev.funcionalidades.map((texto, i) => (
+            <div key={i} className="analogia-card">
+              <p style={{ fontFamily: "'Noto Sans', sans-serif", fontSize: 16, color: 'var(--text-secondary)', margin: 0, lineHeight: 1.7, textAlign: 'center' }}>
+                {texto}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        <div style={{ display: 'flex', alignItems: 'center', gap: 40, marginTop: 40 }}>
+          <p style={{
+            fontFamily: "'Co Headline', sans-serif",
+            fontWeight: 400,
+            fontSize: 30,
+            color: '#fff',
+            margin: 0,
+            lineHeight: 1.3,
+          }}>
+            Baixe o aplicativo<br />
+            <span style={{ color: '#97aaff' }}>na sua loja</span>
+          </p>
+
+          <div style={{ display: 'flex', flexDirection: 'row', gap: 12 }}>
+            <img src="/google.png" alt="Google Play" style={{ height: 58, objectFit: 'contain' }} />
+            <img src="/apple.png"  alt="App Store"   style={{ height: 58, objectFit: 'contain' }} />
           </div>
+        </div>
 
-          {/* Tutorial de acesso */}
-          <div className="reveal d2" style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 20 }}>
-            {[appBRFPrev.primeiroAcesso, appBRFPrev.esqueceuSenha].map((item, i) => (
-              <div key={i} style={{
-                background: 'var(--gray-50)',
-                borderRadius: 'var(--radius-card)',
-                padding: '20px 24px',
-                borderLeft: '4px solid var(--brand-blue-mid)',
-              }}>
-                <p style={{ fontWeight: 700, color: 'var(--brand-blue)', marginBottom: 8 }}>{item.titulo}</p>
-                {item.descricao.split('\n\n').map((p, j) => (
-                  <p key={j} style={{ fontSize: 14, color: 'var(--text-secondary)', margin: j > 0 ? '8px 0 0' : 0 }}>{p}</p>
-                ))}
-              </div>
-            ))}
+        {/* Dois colunas: imagem esquerda | texto direita */}
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 48, alignItems: 'start', marginTop: 90 }}>
+
+          {/* Coluna esquerda — reservada para imagem */}
+          <div />
+
+          {/* Coluna direita — Primeiro acesso */}
+          <div>
+            <h3 style={{
+              fontFamily: "'Co Headline', sans-serif",
+              fontWeight: 400,
+              fontSize: 30,
+              color: '#fff',
+              marginBottom: 16,
+            }}>
+              {appBRFPrev.primeiroAcesso.titulo}
+            </h3>
+            <p style={{
+              fontFamily: "'Noto Sans', sans-serif",
+              fontSize: 17,
+              lineHeight: 1.8,
+              color: 'rgba(255,255,255,0.85)',
+              margin: 0,
+            }}>
+              {appBRFPrev.primeiroAcesso.descricao}
+            </p>
           </div>
 
         </div>
 
-        {/* CTA */}
-        <div className="cta reveal d3" style={{ marginTop: 36 }}>
-          <a className="btn btn-primary" href="#">
-            {appBRFPrev.cta} <span className="arrow">→</span>
-          </a>
+        {/* Dois colunas: imagem esquerda | Esqueceu sua senha */}
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 48, alignItems: 'start', marginTop: 48 }}>
+
+          {/* Coluna esquerda — reservada para imagem */}
+          <div />
+
+          {/* Coluna direita — Esqueceu sua senha */}
+          <div>
+            <h3 style={{
+              fontFamily: "'Co Headline', sans-serif",
+              fontWeight: 400,
+              fontSize: 30,
+              color: '#fff',
+              marginBottom: 16,
+            }}>
+              {appBRFPrev.esqueceuSenha.titulo}
+            </h3>
+            <p style={{
+              fontFamily: "'Noto Sans', sans-serif",
+              fontSize: 17,
+              lineHeight: 1.8,
+              color: 'rgba(255,255,255,0.85)',
+              margin: 0,
+            }}>
+              {appBRFPrev.esqueceuSenha.descricao.split('\n\n').map((p, i) => (
+                <span key={i} style={{ display: 'block', marginBottom: i < appBRFPrev.esqueceuSenha.descricao.split('\n\n').length - 1 ? 24 : 0 }}>{p}</span>
+              ))}
+            </p>
+          </div>
+
         </div>
 
       </div>
