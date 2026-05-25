@@ -72,6 +72,14 @@ export default function Historias() {
             )}
           </div>
 
+          {/* Foto — ivone-delazari.jpg duplicada ao lado do bloco 3 */}
+          <div className="elas-photo" style={{ alignSelf: 'stretch', clipPath: 'inset(0 0 15% 0 round 24px)' }} aria-hidden="true">
+            <img
+              src="/ivone-delazari.jpg"
+              alt="Dra. Ivone Delazari"
+              style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', display: 'block' }}
+            />
+          </div>
 
         </div>
 
