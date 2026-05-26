@@ -11,3 +11,12 @@ pnpm-debug.log*
 *.env
 .idea/
 jornal-brf/
+
+# Arquivos de vídeo/mídia pesados
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.webm
+*.mp3
+*.wav
