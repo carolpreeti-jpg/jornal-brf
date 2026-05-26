@@ -10,7 +10,7 @@ export default function BRFPrevEmFoco() {
       <div className="wrap">
 
         <div className="section-head" style={{ marginBottom: 16 }}>
-          <h2 style={{ fontSize: 'clamp(32px, 3.8vw, 52px)', whiteSpace: 'nowrap' }}>
+          <h2 style={{ fontSize: 'clamp(28px, 3.8vw, 52px)' }}>
             {brfPrevEmFoco.titulo.split(/^(BRF Prev em Foco:)/).filter(Boolean).map((part, i) =>
               part === 'BRF Prev em Foco:'
                 ? <><span key={i} style={{ color: 'var(--brand-blue)' }}>{part}</span><br /></>
@@ -40,18 +40,7 @@ export default function BRFPrevEmFoco() {
         </div>
 
         {/* Retângulo azul */}
-        <div style={{
-          marginTop: 40,
-          background: 'var(--brand-blue)',
-          borderRadius: 16,
-          overflow: 'hidden',
-          position: 'relative',
-          minHeight: 360,
-          display: 'grid',
-          gridTemplateColumns: '1fr 1fr',
-          alignItems: 'center',
-          gap: 40,
-        }}>
+        <div className="brfprev-foco-box">
           {/* Imagem cobrindo todo o retângulo */}
           <img
             src="/celular.png"
@@ -70,7 +59,7 @@ export default function BRFPrevEmFoco() {
           <div />
 
           {/* Coluna direita — texto + botão */}
-          <div style={{ position: 'relative', zIndex: 1, padding: '48px 40px 48px 0', marginLeft: '20%' }}>
+          <div className="brfprev-foco-right-col">
             <p style={{
               fontFamily: "'Co Headline', sans-serif",
               fontWeight: 400,

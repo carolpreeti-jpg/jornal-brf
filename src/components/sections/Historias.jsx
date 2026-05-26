@@ -33,7 +33,7 @@ export default function Historias() {
 
           {/* Coluna direita — badge, título, primeiro parágrafo */}
           <div>
-            <div className="hist-badge" style={{ marginTop: 40, marginLeft: '-260px', position: 'relative', zIndex: 10 }}>Histórias que Inspiram</div>
+            <div className="hist-badge hist-badge--overlay" style={{ marginTop: 40, position: 'relative', zIndex: 10 }}>Histórias que Inspiram</div>
             <h2 style={{ marginTop: 2 }}>{historias.subtitulo}</h2>
             <p style={{ opacity: 0.9, marginTop: 32 }}>{historias.intro}</p>
           </div>

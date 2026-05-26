@@ -41,7 +41,9 @@
       "PowerShell(Get-Command *)",
       "PowerShell(winget install *)",
       "PowerShell(& \"$env:LOCALAPPDATA\\\\Microsoft\\\\WinGet\\\\Links\\\\ffmpeg.exe\" -i \"C:\\\\www\\\\jornalbrf\\\\light-blue-glittering-liquid-abstract-background-2025-12-17-09-58-35-utc.mov\" -vcodec libx264 -crf 23 -preset fast -pix_fmt yuv420p -an \"C:\\\\www\\\\jornalbrf\\\\public\\\\bg-app.mp4\" -y 2>&1 | Select-Object -Last 8)",
-      "PowerShell(& \"C:\\\\Users\\\\Mirador ADM\\\\AppData\\\\Local\\\\Microsoft\\\\WinGet\\\\Packages\\\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\\\ffmpeg-8.1.1-full_build\\\\bin\\\\ffmpeg.exe\" -i \"C:\\\\www\\\\jornalbrf\\\\light-blue-glittering-liquid-abstract-background-2025-12-17-09-58-35-utc.mov\" -vcodec libx264 -crf 23 -preset fast -pix_fmt yuv420p -an \"C:\\\\www\\\\jornalbrf\\\\public\\\\bg-app.mp4\" -y 2>&1 | Select-Object -Last 6)"
+      "PowerShell(& \"C:\\\\Users\\\\Mirador ADM\\\\AppData\\\\Local\\\\Microsoft\\\\WinGet\\\\Packages\\\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\\\ffmpeg-8.1.1-full_build\\\\bin\\\\ffmpeg.exe\" -i \"C:\\\\www\\\\jornalbrf\\\\light-blue-glittering-liquid-abstract-background-2025-12-17-09-58-35-utc.mov\" -vcodec libx264 -crf 23 -preset fast -pix_fmt yuv420p -an \"C:\\\\www\\\\jornalbrf\\\\public\\\\bg-app.mp4\" -y 2>&1 | Select-Object -Last 6)",
+      "Bash(rtk grep *)",
+      "Bash(rtk npm *)"
     ]
   }
 }

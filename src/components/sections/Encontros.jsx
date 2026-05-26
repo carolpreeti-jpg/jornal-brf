@@ -5,7 +5,7 @@ const { encontros } = edition
 export default function Encontros() {
   return (
     <section className="section survey" id="encontros" data-screen-label="Encontros"
-      style={{ padding: '200px 0 160px', minHeight: '1300px', display: 'flex', alignItems: 'flex-start', position: 'relative', overflow: 'hidden' }}>
+      style={{ padding: 'clamp(80px, 14vw, 200px) 0 clamp(64px, 11vw, 160px)', display: 'flex', alignItems: 'flex-start', position: 'relative', overflow: 'hidden' }}>
 
       {/* Degradê de transição com WebinarIR */}
       <div style={{
@@ -37,7 +37,7 @@ export default function Encontros() {
         <source src="/azul2.mp4" type="video/mp4" />
       </video>
 
-      <div style={{ width: '100%', padding: '0 200px', position: 'relative', zIndex: 1 }}>
+      <div style={{ width: '100%', padding: '0 clamp(16px, 12vw, 200px)', position: 'relative', zIndex: 1 }}>
         {/* Imagem sobreposta na borda azul/branco */}
         <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '-90px', position: 'relative', zIndex: 2 }}>
           <img
@@ -67,10 +67,10 @@ export default function Encontros() {
           </div>
 
           {/* Parágrafos */}
-          <p style={{ color: 'var(--text-secondary)', fontSize: 17, lineHeight: 1.8, margin: '0 0 16px', padding: '0 80px', maxWidth: '100%' }}>
+          <p style={{ color: 'var(--text-secondary)', fontSize: 17, lineHeight: 1.8, margin: '0 0 16px', padding: '0 clamp(8px, 5.5vw, 80px)', maxWidth: '100%' }}>
             {encontros.intro}
           </p>
-          <p style={{ color: 'var(--text-secondary)', fontSize: 17, lineHeight: 1.8, margin: '0', padding: '0 80px', maxWidth: '100%' }}>
+          <p style={{ color: 'var(--text-secondary)', fontSize: 17, lineHeight: 1.8, margin: '0', padding: '0 clamp(8px, 5.5vw, 80px)', maxWidth: '100%' }}>
             {encontros.descricao}
           </p>
 
@@ -80,7 +80,7 @@ export default function Encontros() {
             fontSize: 22,
             color: 'var(--text-primary)',
             margin: '48px 0 32px',
-            padding: '0 80px',
+            padding: '0 clamp(8px, 5.5vw, 80px)',
           }}>
             Confira as{' '}
             <span style={{ color: 'var(--brand-coral)', fontWeight: 700 }}>gravações</span>
@@ -88,7 +88,7 @@ export default function Encontros() {
           </h3>
 
           {/* Cards de vídeo */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24, padding: '0 80px' }}>
+          <div className="encontros-gravacoes-grid" style={{ padding: '0 clamp(8px, 5.5vw, 80px)' }}>
             {encontros.gravacoes.map((g, i) => (
               <div key={i} style={{ position: 'relative' }}>
                 <a
@@ -122,7 +122,7 @@ export default function Encontros() {
 
           {/* Próximo Encontro */}
           {encontros.proximoEncontro && (
-            <div style={{ padding: '48px 80px 0', marginTop: 56 }}>
+            <div style={{ padding: '48px clamp(8px, 5.5vw, 80px) 0', marginTop: 56 }}>
               <h3 style={{
                 fontFamily: 'var(--font-display)',
                 fontWeight: 400,

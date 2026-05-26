@@ -70,7 +70,7 @@ export default function Footer() {
       <div style={S.wrap}>
 
         {/* ── Expediente ── */}
-        <div style={S.topGrid}>
+        <div className="footer-top-grid" style={S.topGrid}>
 
           {/* Coluna esquerda */}
           <div>
@@ -122,7 +122,7 @@ export default function Footer() {
         <div style={S.divider} />
 
         {/* ── Parte inferior ── */}
-        <div style={S.bottomGrid}>
+        <div className="footer-bottom-grid" style={S.bottomGrid}>
 
           {/* Esquerda — Logo + Canais */}
           <div>

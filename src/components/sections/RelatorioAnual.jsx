@@ -7,10 +7,10 @@ export default function RelatorioAnual() {
     <section className="section events" id="relatorio" data-screen-label="Relatório Anual">
       <div className="wrap">
         <div className="section-head reveal" style={{ position: 'relative', zIndex: 10 }}>
-          <div style={{ display: 'flex', alignItems: 'flex-start', gap: 24 }}>
+          <div className="relatorio-top-row">
 
             {/* Coluna esquerda: banner + texto */}
-            <div style={{ flex: '0 0 72%' }}>
+            <div className="relatorio-text-col">
               <img
                 src="/imagem06.png"
                 alt="Relatório Anual 2025"
@@ -22,7 +22,7 @@ export default function RelatorioAnual() {
             </div>
 
             {/* Coluna direita: notebook alinhado ao topo */}
-            <div style={{ flex: 1, overflow: 'visible', position: 'relative', zIndex: 10 }}>
+            <div className="relatorio-note-col">
               <div className="animar">
                 <img
                   src="/note.png"

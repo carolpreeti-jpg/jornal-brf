@@ -19,7 +19,7 @@ export default function Hero() {
 
       <div className="wrap hero-inner">
         {/* Conteúdo esquerdo */}
-        <div style={{ marginTop: 'calc(-40px + 7%)', marginLeft: '-20%' }}>
+        <div className="hero-content-col">
           <h1>
             {hero.titulo}
             <span className="accent">{hero.subtitulo}</span>

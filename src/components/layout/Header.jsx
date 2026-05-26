@@ -28,13 +28,13 @@ export default function Header() {
   return (
     <header id="site-header">
       <div className="wrap nav" style={{ justifyContent: 'space-between' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 20, marginLeft: -32 }}>
+        <div className="nav-brand-group" style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
           <a href="#top" className="brand" aria-label="BRF Previdência"
             style={{ flexDirection: 'row', alignItems: 'center', gap: 10 }}>
             <img src={scrolled ? logoScrolled : logoDefault} alt="BRF Previdência" className="brand-logo" style={{ height: 40 }} />
             <span className="brand-tag" style={{ paddingLeft: 0, borderLeft: 'none' }}>Jornal BRF Previdência</span>
           </a>
-          <div className="edition-meta">
+          <div className="edition-meta header-edition-meta">
             <span className="edition-dot" />
             <span>
               Edição {edition.numero} · {edition.mes} {edition.ano}

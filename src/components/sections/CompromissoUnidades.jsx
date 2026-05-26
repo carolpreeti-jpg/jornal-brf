@@ -35,13 +35,7 @@ export default function CompromissoUnidades() {
         </div>
 
         {/* Foto + parágrafo lado a lado */}
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: '1fr 1fr',
-          gap: 40,
-          alignItems: 'center',
-          marginBottom: 56,
-        }}>
+        <div className="cu-foto-grid">
           {/* Espaço para foto */}
           <div style={{
             background: 'var(--gray-50)',
@@ -109,12 +103,7 @@ export default function CompromissoUnidades() {
         </div>
 
         {/* Cards de analogias */}
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(4, 1fr)',
-          gap: 20,
-          marginBottom: 56,
-        }}>
+        <div className="cu-analogias-grid">
           {patrimonio.analogias.map((a, i) => (
             <div key={i} className="analogia-card">
               <p style={{

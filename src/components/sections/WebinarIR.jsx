@@ -205,12 +205,7 @@ export default function WebinarIR({ bg, hideTitle, hideCarousel, topImage, custo
         {!hideTitle ? (
           <>
             {/* Layout 2 colunas: texto à esquerda (só até paragrafos[0]), foto à direita */}
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: '1fr 1fr',
-              gap: '48px',
-              alignItems: 'stretch',
-            }}>
+            <div className="webinar-two-col">
               {/* Coluna esquerda — título + descricao + paragrafos[0] */}
               <div>
                 <div className="section-head" style={{ maxWidth: '100%', marginBottom: 24 }}>
@@ -303,7 +298,7 @@ export default function WebinarIR({ bg, hideTitle, hideCarousel, topImage, custo
 
         {/* Retângulo branco com conteúdo extra */}
         {bottomContent && (
-          <div style={{ position: 'relative', marginTop: 160, marginLeft: -100, marginRight: -100 }}>
+          <div className="webinar-bottom-box">
 
             {/* Imagem centralizada entre o azul e o retângulo */}
             <div style={{

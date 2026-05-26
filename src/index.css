@@ -92,7 +92,7 @@
 
 /* ---------- Reset / Base ---------- */
 *, *::before, *::after { box-sizing: border-box }
-html { scroll-behavior: smooth }
+html { scroll-behavior: smooth; overflow-x: hidden }
 body {
   margin: 0;
   font-family: var(--font-body);
@@ -176,6 +176,8 @@ header.scrolled {
 }
 
 .nav { display: flex; align-items: center; gap: 24px; height: var(--header-h) }
+.nav-brand-group { margin-left: -32px; }
+@media(max-width:640px) { .nav-brand-group { margin-left: -20px; } }
 
 .brand { display: flex; align-items: center; gap: 14px; flex-shrink: 0 }
 .brand-logo {
@@ -307,6 +309,14 @@ header.scrolled .hamburger span { background: var(--gray-900) }
 }
 .note-hidden { opacity: 0; }
 .note-visible { animation: fadeIn 1.2s ease forwards; }
+
+.hero-content-col {
+  margin-top: calc(-40px + 7%);
+  margin-left: -20%;
+}
+@media(max-width: 960px) {
+  .hero-content-col { margin-left: 0; margin-top: 0; }
+}
 
 .hero h1 { margin-top: 24px; color: #fff; font-size: clamp(42px, 5.8vw, 72px); line-height: 1.04; letter-spacing: -.03em }
 .hero h1 .accent { display: block; color: var(--brand-coral) }
@@ -914,6 +924,7 @@ header.scrolled .hamburger span { background: var(--gray-900) }
 }
 @media(max-width:880px) {
   .elas-hero-grid { grid-template-columns: 1fr; gap: 40px; }
+  .hist-badge--overlay { margin-left: 0 !important; }
 }
 .elas-photo {
   min-height: 320px; border-radius: 24px; overflow: hidden; position: relative;
@@ -1087,6 +1098,7 @@ header.scrolled .hamburger span { background: var(--gray-900) }
 .fale-card-col {
   position: sticky;
   top: calc(var(--header-h) + 32px);
+  margin-top: -220px;
 }
 
 /* card um pouco maior neste contexto */
@@ -1119,6 +1131,7 @@ header.scrolled .hamburger span { background: var(--gray-900) }
   }
   .fale-card-col {
     position: static;
+    margin-top: 40px;
   }
 }
 
@@ -1133,6 +1146,28 @@ header.scrolled .hamburger span { background: var(--gray-900) }
   font-family: var(--font-body);
   font-size: 15px;
   line-height: 1.8;
+}
+
+/* ── Relatório Anual — layout topo (banner + notebook) ── */
+.relatorio-top-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+}
+.relatorio-text-col {
+  flex: 0 0 72%;
+  min-width: 0;
+}
+.relatorio-note-col {
+  flex: 1;
+  overflow: visible;
+  position: relative;
+  z-index: 10;
+}
+@media(max-width: 720px) {
+  .relatorio-top-row { flex-direction: column; gap: 32px; }
+  .relatorio-text-col { flex: 0 0 100%; width: 100%; }
+  .relatorio-note-col { display: none; }
 }
 
 /* ── Relatório Anual — 3 faixas horizontais empilhadas ── */
@@ -1203,6 +1238,20 @@ header.scrolled .hamburger span { background: var(--gray-900) }
   margin: 0;
 }
 
+
+@media(max-width: 560px) {
+  .relatorio-grid .cell {
+    grid-template-columns: 1fr;
+    gap: 16px 0;
+  }
+  .relatorio-grid .cell-titulo {
+    border-right: none;
+    border-bottom: 1.5px solid rgba(255,255,255,.2);
+    padding-right: 0;
+    padding-bottom: 12px;
+    align-self: auto;
+  }
+}
 
 /* ── Relatório Anual — padronização de fontes ── */
 #relatorio h2,
@@ -1647,6 +1696,33 @@ blockquote.quote cite { display: block; margin-top: 14px; font-family: 'Co Headl
   padding-left: 36px;
   align-self: center;
 }
+@media(max-width: 640px) {
+  .testimonial-card--horizontal {
+    flex-direction: column;
+  }
+  .testimonial-card--horizontal .card-top {
+    width: 100%;
+    height: 220px;
+    border-radius: 16px 16px 0 0;
+  }
+  .testimonial-card--horizontal .quote-badge {
+    top: 220px;
+    left: 28px;
+    transform: translateY(-50%);
+  }
+  .testimonial-card--horizontal .card-bottom {
+    flex-direction: column;
+    padding: 40px 24px 28px;
+    gap: 20px;
+    align-items: flex-start;
+  }
+  .testimonial-card--horizontal .card-bottom > p.card-text {
+    border-left: none;
+    padding-left: 0;
+    border-top: 1.5px solid rgba(238, 104, 109, 0.4);
+    padding-top: 20px;
+  }
+}
 
 /* Cabeçalho ocupa toda a largura disponível */
 #compromisso .section-head {
@@ -1851,6 +1927,10 @@ blockquote.quote cite { display: block; margin-top: 14px; font-family: 'Co Headl
   .cal-card { flex: 0 0 100%; }
 }
 
+@media(min-width:880px) {
+  .hist-badge--overlay { margin-left: -260px; }
+}
+
 /* ── Badge "Histórias que Inspiram" ── */
 .hist-badge {
   display: inline-block;
@@ -2029,6 +2109,148 @@ blockquote.quote cite { display: block; margin-top: 14px; font-family: 'Co Headl
   .countdown .grid { grid-template-columns: repeat(4,1fr) }
   .hero-inner { padding: 64px 0 100px }
   .hero-art { display: none }
+  .quote-block { padding: 24px 32px 4px 32px }
+  .hist-nav { padding: 24px 20px 0 }
+  .hist-hero { padding: 24px 20px 48px; gap: 24px }
+  .fale-content-grid { gap: 48px }
+}
+
+/* ============================================================
+   RESPONSIVIDADE MOBILE — classes utilitárias
+   ============================================================ */
+
+/* ── BRF Prev em Foco ── */
+.brfprev-foco-box {
+  margin-top: 40px;
+  background: var(--brand-blue);
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  min-height: 360px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 40px;
+}
+.brfprev-foco-right-col {
+  position: relative;
+  z-index: 1;
+  padding: 48px 40px 48px 0;
+  margin-left: 20%;
+}
+@media(max-width:720px) {
+  .brfprev-foco-box { grid-template-columns: 1fr; min-height: 280px; }
+  .brfprev-foco-right-col { margin-left: 0; padding: 32px 24px; }
+}
+
+/* ── App BRF Prev ── */
+.app-phone-floating { /* estilos via inline — só precisamos esconder */ }
+@media(max-width:960px) {
+  .app-phone-floating { display: none !important; }
+}
+.app-funcionalidades-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 24px;
+}
+@media(max-width:720px) { .app-funcionalidades-grid { grid-template-columns: repeat(2, 1fr); } }
+@media(max-width:400px) { .app-funcionalidades-grid { grid-template-columns: 1fr; } }
+
+/* ── Compromisso Unidades ── */
+.cu-foto-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 56px;
+}
+.cu-analogias-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 56px;
+}
+@media(max-width:720px) {
+  .cu-foto-grid { grid-template-columns: 1fr; gap: 24px; }
+  .cu-analogias-grid { grid-template-columns: 1fr; }
+}
+
+/* ── Aportes ── */
+.aportes-top-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 3.5fr;
+  gap: 48px;
+  margin-bottom: 56px;
+  align-items: stretch;
+}
+.aportes-como-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: stretch;
+  margin-top: 56px;
+}
+@media(max-width:720px) {
+  .aportes-top-grid { grid-template-columns: 1fr; gap: 24px; }
+  .aportes-top-grid > div:first-child { display: none; }
+  .aportes-como-grid { grid-template-columns: 1fr; gap: 32px; }
+}
+
+/* ── RentCarousel ── */
+.rent-carousel-wrap {
+  background: #fff;
+  border-radius: 12px;
+  padding: 8px 4px 32px;
+  overflow-x: auto;
+  margin: 0 -32px;
+  -webkit-overflow-scrolling: touch;
+}
+@media(max-width:720px) {
+  .rent-carousel-wrap { margin: 0; border-radius: 8px; }
+}
+
+/* ── WebinarIR ── */
+.webinar-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: stretch;
+}
+.webinar-bottom-box {
+  position: relative;
+  margin-top: 160px;
+  margin-left: -100px;
+  margin-right: -100px;
+}
+@media(max-width:880px) {
+  .webinar-two-col { grid-template-columns: 1fr; }
+}
+@media(max-width:720px) {
+  .webinar-bottom-box { margin-left: 0; margin-right: 0; margin-top: 80px; }
+}
+
+/* ── Encontros ── */
+.encontros-gravacoes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+@media(max-width:640px) {
+  .encontros-gravacoes-grid { grid-template-columns: 1fr; }
+}
+
+/* ── Footer ── */
+.footer-top-grid { grid-template-columns: 1fr !important; }
+.footer-bottom-grid { grid-template-columns: 1fr !important; }
+@media(min-width:640px) {
+  .footer-top-grid { grid-template-columns: 1fr 1fr !important; }
+  .footer-bottom-grid { grid-template-columns: 1fr 1fr !important; }
+}
+
+/* ── Header edition-meta ── */
+@media(max-width:480px) {
+  .header-edition-meta { display: none !important; }
 }
 
 /* ── Cards de analogias (Compromisso Unidades) ── */

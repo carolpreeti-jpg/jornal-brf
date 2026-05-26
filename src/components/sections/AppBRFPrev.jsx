@@ -39,6 +39,7 @@ export default function AppBRFPrev() {
       <img
         src="/app.png"
         alt="App BRF Prev"
+        className="app-phone-floating"
         style={{
           position: 'absolute',
           top: '7%',
@@ -86,7 +87,7 @@ export default function AppBRFPrev() {
         </div>
 
         {/* Cards de funcionalidades */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 20, marginTop: 24 }}>
+        <div className="app-funcionalidades-grid">
           {appBRFPrev.funcionalidades.map((texto, i) => (
             <div key={i} className="analogia-card">
               <p style={{ fontFamily: "'Noto Sans', sans-serif", fontSize: 16, color: 'var(--text-secondary)', margin: 0, lineHeight: 1.7, textAlign: 'center' }}>

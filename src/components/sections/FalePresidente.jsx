@@ -51,7 +51,7 @@ export default function FalePresidente() {
           </div>
 
           {/* Coluna direita — card sticky */}
-          <div className="fale-card-col" style={{ marginTop: '-220px' }}>
+          <div className="fale-card-col">
             <div className="testimonial-card">
               <div className="card-top" style={{ position: 'relative' }}>
                 <img
