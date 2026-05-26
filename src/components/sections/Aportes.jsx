@@ -4,7 +4,7 @@ import { edition } from '../../data/edition.js'
 const { aportes } = edition
 
 const NOTO = { fontFamily: "'Noto Sans', sans-serif" }
-const P    = { ...NOTO, fontSize: 17, lineHeight: 1.8, color: 'var(--text-secondary)' }
+const P    = { ...NOTO, fontSize: 18, lineHeight: 1.8, color: 'var(--text-secondary)' }
 
 export default function Aportes() {
   const titleRef   = useRef(null)
@@ -91,7 +91,7 @@ export default function Aportes() {
                         ))}
                         <ul style={{ paddingLeft: 0, listStyle: 'none', marginTop: 4 }}>
                           {linhas.filter(l => l.startsWith('–')).map((l, k) => (
-                            <li key={k} style={{ ...{ fontFamily: "'Noto Sans', sans-serif" }, display: 'flex', gap: 8, padding: '8px 0', fontSize: 17, lineHeight: 1.7, color: 'var(--text-secondary)' }}>
+                            <li key={k} style={{ ...{ fontFamily: "'Noto Sans', sans-serif" }, display: 'flex', gap: 8, padding: '8px 0', fontSize: 18, lineHeight: 1.8, color: 'var(--text-secondary)' }}>
                               <span style={{ color: 'var(--brand-coral)', flexShrink: 0, fontSize: 14, fontWeight: 700 }}>✦</span>
                               {l.replace(/^–\s*/, '')}
                             </li>
@@ -107,14 +107,14 @@ export default function Aportes() {
                 )}
                 <ul style={{ marginTop: 8, paddingLeft: 0, listStyle: 'none' }}>
                   {m.beneficios.map((b, j) => (
-                    <li key={j} style={{ ...NOTO, display: 'flex', gap: 8, padding: '8px 0', fontSize: 17, lineHeight: 1.7, color: 'var(--text-secondary)' }}>
+                    <li key={j} style={{ ...NOTO, display: 'flex', gap: 8, padding: '8px 0', fontSize: 18, lineHeight: 1.8, color: 'var(--text-secondary)' }}>
                       <span style={{ color: 'var(--brand-coral)', flexShrink: 0, fontSize: 14, fontWeight: 700 }}>✦</span>
                       {b}
                     </li>
                   ))}
                 </ul>
                 {m.obs && (
-                  <p style={{ ...NOTO, marginTop: 0, fontSize: 17, lineHeight: 1.7, color: 'var(--text-muted)', fontStyle: 'italic' }}>
+                  <p style={{ ...NOTO, marginTop: 0, fontSize: 18, lineHeight: 1.8, color: 'var(--text-muted)', fontStyle: 'italic' }}>
                     {m.obs}
                   </p>
                 )}

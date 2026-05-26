@@ -63,7 +63,7 @@ export default function AppBRFPrev() {
               )}
             </h2>
             {appBRFPrev.descricao.split('\n\n').map((p, i) => (
-              <p key={i} style={{ color: 'rgba(255,255,255,0.85)', marginTop: i === 0 ? 20 : 12, marginBottom: 0 }}>
+              <p key={i} style={{ color: 'rgba(255,255,255,0.85)', fontFamily: "'Noto Sans', sans-serif", fontSize: 18, lineHeight: 1.8, marginTop: i === 0 ? 20 : 12, marginBottom: 0 }}>
                 {p.split(/(acompanhar)/i).map((part, j) =>
                   /acompanhar/i.test(part)
                     ? <span key={j}><br />{part}</span>
@@ -146,7 +146,7 @@ export default function AppBRFPrev() {
           </h3>
           <p style={{
             fontFamily: "'Noto Sans', sans-serif",
-            fontSize: 17,
+            fontSize: 18,
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.85)',
             margin: 0,
@@ -172,7 +172,7 @@ export default function AppBRFPrev() {
           </h3>
           <p style={{
             fontFamily: "'Noto Sans', sans-serif",
-            fontSize: 17,
+            fontSize: 18,
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.85)',
             margin: 0,
