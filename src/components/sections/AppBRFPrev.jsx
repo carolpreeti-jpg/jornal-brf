@@ -5,7 +5,27 @@ const { appBRFPrev } = edition
 export default function AppBRFPrev() {
   return (
     <section className="section" id="app-brf-prev" data-screen-label="App BRF Prev"
-      style={{ background: 'var(--brand-blue)', position: 'relative', overflow: 'visible' }}>
+      style={{ background: '#0F1F5C', position: 'relative', overflow: 'hidden' }}>
+
+      {/* Vídeo de fundo */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        style={{
+          position: 'absolute',
+          inset: 0,
+          width: '100%',
+          height: '100%',
+          objectFit: 'cover',
+          opacity: 0.1,
+          zIndex: 0,
+          pointerEvents: 'none',
+        }}
+      >
+        <source src="/bg-app.mp4" type="video/mp4" />
+      </video>
 
       <style>{`
         @keyframes floatUpDown {
@@ -31,7 +51,7 @@ export default function AppBRFPrev() {
         }}
       />
 
-      <div className="wrap">
+      <div className="wrap" style={{ position: 'relative', zIndex: 1 }}>
 
         <div>
           <div className="section-head" style={{ marginBottom: 0 }}>
@@ -113,14 +133,14 @@ export default function AppBRFPrev() {
           </div>
         </div>
 
-        {/* Primeiro acesso — alinhado à esquerda */}
-        <div style={{ marginTop: 48 }}>
+        {/* Primeiro acesso */}
+        <div style={{ marginTop: 56 }}>
           <h3 style={{
             fontFamily: "'Co Headline', sans-serif",
             fontWeight: 400,
             fontSize: 30,
             color: '#fff',
-            marginBottom: 16,
+            margin: '0 0 12px',
           }}>
             {appBRFPrev.primeiroAcesso.titulo}
           </h3>
@@ -135,14 +155,14 @@ export default function AppBRFPrev() {
           </p>
         </div>
 
-        {/* Esqueceu sua senha — alinhado à esquerda */}
-        <div style={{ marginTop: 48 }}>
+        {/* Esqueceu sua senha */}
+        <div style={{ marginTop: 40 }}>
           <h3 style={{
             fontFamily: "'Co Headline', sans-serif",
             fontWeight: 400,
             fontSize: 30,
             color: '#fff',
-            marginBottom: 16,
+            margin: '0 0 12px',
           }}>
             {appBRFPrev.esqueceuSenha.titulo.split(/(sua senha\?)/i).map((part, i) =>
               /sua senha\?/i.test(part)
@@ -158,7 +178,7 @@ export default function AppBRFPrev() {
             margin: 0,
           }}>
             {appBRFPrev.esqueceuSenha.descricao.split('\n\n').map((p, i) => (
-              <span key={i} style={{ display: 'block', marginBottom: i < appBRFPrev.esqueceuSenha.descricao.split('\n\n').length - 1 ? 24 : 0 }}>
+              <span key={i} style={{ display: 'block', marginTop: i > 0 ? 16 : 0 }}>
                 {p.split(/(Importante!)/i).map((part, j) =>
                   /Importante!/i.test(part)
                     ? <span key={j} style={{ fontWeight: 700, textTransform: 'uppercase' }}>{part}</span>

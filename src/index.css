@@ -295,11 +295,15 @@ header.scrolled .hamburger span { background: var(--gray-900) }
 }
 @keyframes float-money {
   0%   { transform: translateY(0px); }
-  50%  { transform: translateY(-12px); }
+  50%  { transform: translateY(-22px); }
   100% { transform: translateY(0px); }
 }
 .float-money {
+  opacity: 0;
   animation: float-money 3.5s ease-in-out infinite;
+}
+.float-money.visible {
+  animation: fadeIn 1.2s ease forwards, float-money 3.5s ease-in-out infinite;
 }
 .note-hidden { opacity: 0; }
 .note-visible { animation: fadeIn 1.2s ease forwards; }
@@ -322,8 +326,17 @@ header.scrolled .hamburger span { background: var(--gray-900) }
   box-shadow: 0 40px 80px -20px rgba(0,0,0,.7);
 }
 .hero-card.main {
-  inset: 6% 8% 12% 4%;
+  inset: 11% 8% 7% -11%;
   background: linear-gradient(135deg, #EE686D, #C53B6C);
+  transform: translateX(25%) scale(1.2);
+  transform-origin: center center;
+  cursor: pointer;
+}
+.hero-card.main img {
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.hero-card.main:hover img {
+  transform: scale(1.08);
 }
 .hero-card.main::after {
   content: none;
@@ -359,7 +372,7 @@ header.scrolled .hamburger span { background: var(--gray-900) }
    ============================================================ */
 .menu-index {
   background: var(--gray-50);
-  padding: 56px 0 72px;
+  padding: 120px 0;
   border-bottom: 1px solid var(--gray-200);
 }
 .menu-index-grid {
@@ -401,9 +414,10 @@ header.scrolled .hamburger span { background: var(--gray-900) }
 .mi-img img {
   position: absolute; inset: 0;
   width: 100%; height: 100%; object-fit: cover; display: block;
-  transition: transform .5s ease;
+  filter: grayscale(100%) brightness(1.25);
+  transition: transform .5s ease, filter .5s ease;
 }
-.mi-card:hover .mi-img img { transform: scale(1.05) }
+.mi-card:hover .mi-img img { transform: scale(1.05); filter: grayscale(0%) brightness(1) }
 .mi-img::after { display: none }
 
 .mi-placeholder {
@@ -430,7 +444,7 @@ header.scrolled .hamburger span { background: var(--gray-900) }
   width: 58px; height: 58px;
   border-radius: 50%;
   border: none;
-  background: #efd5ae;
+  background: #EE686D;
   color: #fff;
   font-size: 25px;
   line-height: 1;
@@ -438,7 +452,7 @@ header.scrolled .hamburger span { background: var(--gray-900) }
   transition: background .2s ease, transform .2s ease;
 }
 .mi-card:hover .mi-arrow {
-  background: #e5c89a;
+  background: #C53B6C;
   transform: scale(1.06);
 }
 
@@ -457,6 +471,7 @@ header.scrolled .hamburger span { background: var(--gray-900) }
 .mi-titulo {
   font-family: var(--font-display); font-size: 22px; font-weight: 700;
   color: #202020; line-height: 1.05; margin: 0 0 8px; letter-spacing: -0.04em;
+  white-space: pre-line;
 }
 .mi-card:hover .mi-titulo { color: var(--brand-blue) }
 .mi-sub {

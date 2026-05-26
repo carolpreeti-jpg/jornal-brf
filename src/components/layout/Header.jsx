@@ -28,18 +28,36 @@ export default function Header() {
   return (
     <header id="site-header">
       <div className="wrap nav" style={{ justifyContent: 'space-between' }}>
-        <a href="#top" className="brand" aria-label="BRF Previdência"
-          style={{ flexDirection: 'row', alignItems: 'center', gap: 10, marginLeft: -32 }}>
-          <img src={scrolled ? logoScrolled : logoDefault} alt="BRF Previdência" className="brand-logo" style={{ height: 40 }} />
-          <span className="brand-tag" style={{ paddingLeft: 0, borderLeft: 'none' }}>Jornal BRF Previdência</span>
-        </a>
-
-        <div className="edition-meta">
-          <span className="edition-dot" />
-          <span>
-            Edição <strong>{edition.numero}</strong> · {edition.mes} {edition.ano}
-          </span>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 20, marginLeft: -32 }}>
+          <a href="#top" className="brand" aria-label="BRF Previdência"
+            style={{ flexDirection: 'row', alignItems: 'center', gap: 10 }}>
+            <img src={scrolled ? logoScrolled : logoDefault} alt="BRF Previdência" className="brand-logo" style={{ height: 40 }} />
+            <span className="brand-tag" style={{ paddingLeft: 0, borderLeft: 'none' }}>Jornal BRF Previdência</span>
+          </a>
+          <div className="edition-meta">
+            <span className="edition-dot" />
+            <span>
+              Edição {edition.numero} · {edition.mes} {edition.ano}
+            </span>
+          </div>
         </div>
+
+        {scrolled && (
+          <a href="#menu-index" style={{
+            color: '#EE686D',
+            fontFamily: 'var(--font-body)',
+            fontWeight: 600,
+            fontSize: 13,
+            textDecoration: 'none',
+            letterSpacing: '0.02em',
+            whiteSpace: 'nowrap',
+            border: '1.5px solid #EE686D',
+            borderRadius: 999,
+            padding: '6px 16px',
+          }}>
+            Volte ao Índice
+          </a>
+        )}
 
         <button
           className="hamburger"

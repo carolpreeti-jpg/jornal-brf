@@ -1,3 +1,4 @@
+import { useRef, useEffect, useState } from 'react'
 import { edition } from '../../data/edition.js'
 
 const { aportes } = edition
@@ -6,6 +7,20 @@ const NOTO = { fontFamily: "'Noto Sans', sans-serif" }
 const P    = { ...NOTO, fontSize: 17, lineHeight: 1.8, color: 'var(--text-secondary)' }
 
 export default function Aportes() {
+  const titleRef   = useRef(null)
+  const [dinheiroVisible, setDinheiroVisible] = useState(false)
+
+  useEffect(() => {
+    const el = titleRef.current
+    if (!el) return
+    const io = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setDinheiroVisible(true); io.disconnect() } },
+      { threshold: 0.5 }
+    )
+    io.observe(el)
+    return () => io.disconnect()
+  }, [])
+
   return (
     <section className="section game" id="aportes" data-screen-label="Aportes">
       <div className="wrap">
@@ -13,7 +28,7 @@ export default function Aportes() {
         <div style={{ display: 'grid', gridTemplateColumns: '1.5fr 3.5fr', gap: 48, marginBottom: 56, alignItems: 'stretch' }}>
 
           {/* Coluna esquerda — imagem com overlay de dinheiro */}
-          <div style={{ position: 'relative', minHeight: 320, marginTop: '-15%' }}>
+          <div style={{ position: 'relative', minHeight: 320, marginTop: '-15%', zIndex: 0 }}>
             <img
               src="/homem2.png"
               alt=""
@@ -23,7 +38,7 @@ export default function Aportes() {
               src="/dinheiro.png"
               alt=""
               aria-hidden="true"
-              className="float-money"
+              className={`float-money${dinheiroVisible ? ' visible' : ''}`}
               style={{
                 position: 'absolute',
                 top: '-2%',
@@ -37,7 +52,7 @@ export default function Aportes() {
 
           {/* Coluna direita — título e descrição */}
           <div className="section-head" style={{ maxWidth: '100%', marginBottom: 0 }}>
-            <h2 style={{ fontSize: 'clamp(29px, 3.78vw, 47px)' }}>
+            <h2 ref={titleRef} style={{ fontSize: 'clamp(29px, 3.78vw, 47px)' }}>
               {aportes.titulo
                 .split(/(aportes extras|contribuições suplementares)/i)
                 .map((part, i) =>
@@ -55,7 +70,7 @@ export default function Aportes() {
         </div>
 
         {/* Modalidades */}
-        <div className="units-grid reveal d2" style={{ marginTop: '-6%' }}>
+        <div className="units-grid" style={{ marginTop: '-6%', position: 'relative', zIndex: 1 }}>
           {aportes.modalidades.map((m, i) => (
             <article key={i} className="unit-card">
               <div className="unit-body" style={{ padding: '40px 28px 28px' }}>

@@ -126,7 +126,7 @@ export default function Encontros() {
               <h3 style={{
                 fontFamily: 'var(--font-display)',
                 fontWeight: 400,
-                fontSize: 22,
+                fontSize: 23,
                 color: 'var(--text-primary)',
                 marginBottom: 12,
               }}>
@@ -135,7 +135,7 @@ export default function Encontros() {
               </h3>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 8 }}>
                 {encontros.proximoEncontro.datas.map((item, i) => (
-                  <li key={i} style={{ display: 'flex', alignItems: 'center', gap: 12, fontSize: 17, color: 'var(--text-primary)' }}>
+                  <li key={i} style={{ display: 'flex', alignItems: 'center', gap: 12, fontSize: 18, color: 'var(--text-primary)' }}>
                     <span style={{ color: 'var(--brand-coral)', fontWeight: 700, fontSize: 14 }}>✦</span>
                     <span>
                       <span style={{ fontFamily: 'var(--font-display)', fontWeight: 400 }}>{item.plano}</span>

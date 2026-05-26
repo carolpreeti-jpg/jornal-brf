@@ -3,12 +3,13 @@ import { edition } from '../../data/edition.js'
 const { brfPrevEmFoco } = edition
 
 export default function BRFPrevEmFoco() {
+
   return (
     <section className="section" id="brfprev-em-foco" data-screen-label="BRF Prev em Foco"
       style={{ background: '#ffffff' }}>
       <div className="wrap">
 
-        <div className="section-head reveal" style={{ marginBottom: 16 }}>
+        <div className="section-head" style={{ marginBottom: 16 }}>
           <h2 style={{ fontSize: 'clamp(32px, 3.8vw, 52px)', whiteSpace: 'nowrap' }}>
             {brfPrevEmFoco.titulo.split(/^(BRF Prev em Foco:)/).filter(Boolean).map((part, i) =>
               part === 'BRF Prev em Foco:'
@@ -25,14 +26,14 @@ export default function BRFPrevEmFoco() {
           </p>
         </div>
 
-        <div className="cols reveal d2">
+        <div className="cols">
           <div style={{ paddingTop: '2%' }}>
-            {brfPrevEmFoco.paragrafos.slice(0, Math.ceil((brfPrevEmFoco.paragrafos.length - 1) / 2)).map((p, i) => (
+            {brfPrevEmFoco.paragrafos.slice(0, Math.ceil(brfPrevEmFoco.paragrafos.length / 2)).map((p, i) => (
               <p key={i} style={{ color: 'var(--text-secondary)' }}>{p}</p>
             ))}
           </div>
           <div>
-            {brfPrevEmFoco.paragrafos.slice(Math.ceil((brfPrevEmFoco.paragrafos.length - 1) / 2), -1).map((p, i) => (
+            {brfPrevEmFoco.paragrafos.slice(Math.ceil(brfPrevEmFoco.paragrafos.length / 2)).map((p, i) => (
               <p key={i} style={{ color: 'var(--text-secondary)' }}>{p}</p>
             ))}
           </div>
@@ -101,7 +102,6 @@ export default function BRFPrevEmFoco() {
             </a>
           </div>
         </div>
-
 
       </div>
     </section>

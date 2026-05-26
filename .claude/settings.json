@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ffmpeg -i \"c:/www/jornalbrf/public/motion_crop.mp4\" -ss 00:00:02 -vframes 1 \"c:/www/jornalbrf/public/motion_preview.png\" -y)",
+      "Bash(ffmpeg -i \"c:/www/jornalbrf/public/motion.mp4\" -vf \"crop=730:730:115:115\" -c:v libx264 -preset fast -crf 18 -an \"c:/www/jornalbrf/public/motion_crop2.mp4\" -y)",
+      "Bash(ffmpeg -i \"c:/www/jornalbrf/public/motion_crop2.mp4\" -ss 00:00:02 -vframes 1 -update 1 \"c:/www/jornalbrf/public/motion_preview2.png\" -y)",
+      "Bash(ffmpeg -i \"c:/www/jornalbrf/public/motion.mp4\" -vf \"crop=644:644:158:158\" -c:v libx264 -preset fast -crf 18 -an \"c:/www/jornalbrf/public/motion_crop3.mp4\" -y)",
+      "Bash(ffmpeg -i \"c:/www/jornalbrf/public/motion_crop3.mp4\" -ss 00:00:02 -vframes 1 -update 1 \"c:/www/jornalbrf/public/motion_preview3.png\" -y)",
+      "Bash(Copy-Item \"c:/www/jornalbrf/public/motion.mp4\" \"c:/www/jornalbrf/public/motion_original_backup.mp4\" -Force)",
+      "Bash(Copy-Item \"c:/www/jornalbrf/public/motion_crop3.mp4\" \"c:/www/jornalbrf/public/motion.mp4\" -Force)",
+      "Bash(Remove-Item \"c:/www/jornalbrf/public/motion_crop.mp4\" -Force)",
+      "Bash(Remove-Item \"c:/www/jornalbrf/public/motion_crop2.mp4\" -Force)",
+      "Bash(Remove-Item \"c:/www/jornalbrf/public/motion_crop3.mp4\" -Force)",
+      "Bash(Copy-Item \"C:\\\\www\\\\jornalbrf\\\\fotos\\\\bilhoes.jpg\" \"C:\\\\www\\\\jornalbrf\\\\public\\\\bilhoes.jpg\" -Force)"
+    ]
+  }
+}

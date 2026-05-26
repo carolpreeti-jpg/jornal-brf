@@ -11,7 +11,6 @@ const N           = COLORS.length
 const GAP         = 14
 const SLOTS       = 13
 const CENTER_SLOT = 6
-const SCROLL_THRESHOLD = 80
 
 const BASE_SIZES = [
   {w:30,h:30},{w:40,h:40},{w:52,h:52},{w:72,h:72},{w:100,h:100},{w:138,h:138},
@@ -26,8 +25,6 @@ function CarouselWebinar() {
   const animRef      = useRef(false)
   const timerRef     = useRef(null)
   const goToRef      = useRef(null)
-  const lockedRef    = useRef(true)   // true enquanto não chegou ao último card
-  const bufferRef    = useRef(0)
   const [dot, setDot] = useState(0)
 
   useEffect(() => {
@@ -102,7 +99,6 @@ function CarouselWebinar() {
         if (delta !== 0 && op > 0) div.addEventListener('click', () => { resetTimer(); shift(delta) })
         vp.appendChild(div)
       }
-      lockedRef.current = activeRef.current < N - 1
       setDot(activeRef.current)
     }
 
@@ -150,34 +146,17 @@ function CarouselWebinar() {
       shift(shortest)
     }
 
-    function startTimer() { timerRef.current = setInterval(() => shift(1), 4000) }
+    function startTimer() { timerRef.current = setInterval(() => shift(1), 3000) }
     function resetTimer() { clearInterval(timerRef.current); startTimer() }
-
-    function handleWheel(e) {
-      const rect   = wrap.getBoundingClientRect()
-      const inView = rect.top < window.innerHeight && rect.bottom > 0
-      if (!inView || !lockedRef.current) return
-      e.preventDefault()
-      bufferRef.current += e.deltaY
-      if (bufferRef.current >= SCROLL_THRESHOLD) {
-        bufferRef.current = 0
-        if (activeRef.current < N - 1) { resetTimer(); shift(1) }
-      } else if (bufferRef.current <= -SCROLL_THRESHOLD) {
-        bufferRef.current = 0
-        if (activeRef.current > 0) { resetTimer(); shift(-1) }
-      }
-    }
 
     goToRef.current = goTo
     window.addEventListener('resize', buildStatic)
-    window.addEventListener('wheel', handleWheel, { passive: false })
     buildStatic()
     startTimer()
 
     return () => {
       clearInterval(timerRef.current)
       window.removeEventListener('resize', buildStatic)
-      window.removeEventListener('wheel', handleWheel)
     }
   }, [])
 
@@ -223,27 +202,58 @@ export default function WebinarIR({ bg, hideTitle, hideCarousel, topImage, custo
           </div>
         )}
 
-        {!hideTitle && (
-          <div className="section-head" style={{ maxWidth: '100%', marginBottom: 24 }}>
-            <h2 style={{ maxWidth: '100%', color: '#fff' }}>
-              <span style={{ color: '#fff' }}>Webinar BRF Prev</span>
-              {' '}orienta participantes sobre a{' '}
-              <span style={{ color: '#fff' }}>Declaração de IR 2026</span>
-              {' '}na prática
-            </h2>
-          </div>
-        )}
+        {!hideTitle ? (
+          <>
+            {/* Layout 2 colunas: texto à esquerda (só até paragrafos[0]), foto à direita */}
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: '1fr 1fr',
+              gap: '48px',
+              alignItems: 'stretch',
+            }}>
+              {/* Coluna esquerda — título + descricao + paragrafos[0] */}
+              <div>
+                <div className="section-head" style={{ maxWidth: '100%', marginBottom: 24 }}>
+                  <h2 style={{ maxWidth: '100%', color: '#fff' }}>
+                    <span style={{ color: '#fff' }}>Webinar BRF Prev</span>
+                    {' '}orienta participantes sobre a{' '}
+                    <span style={{ color: '#fff' }}>Declaração de IR 2026</span>
+                    {' '}na prática
+                  </h2>
+                </div>
+                {[webinar.descricao, (webinar.paragrafos || [])[0]].filter(Boolean).map((p, i) => (
+                  <p key={i} style={{ color: '#fff', fontSize: 16, lineHeight: 1.8, margin: '0 0 20px' }}>{p}</p>
+                ))}
+              </div>
 
-        {(customParagrafos ?? [webinar.descricao, ...(webinar.paragrafos || [])]).map((p, i) => (
-          <p key={i} style={{ color: '#fff', fontSize: 16, lineHeight: 1.8, maxWidth: '100%', margin: '0 0 16px' }}>{p}</p>
-        ))}
+              {/* Coluna direita — foto termina junto com o texto */}
+              <div style={{ borderRadius: 16, overflow: 'hidden', position: 'relative', height: '90%' }}>
+                <img
+                  src="/jessica-webinar.jpg"
+                  alt="Webinar IR 2026"
+                  style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}
+                />
+              </div>
+            </div>
+
+            {/* Parágrafos restantes — abaixo, largura total */}
+            {(webinar.paragrafos || []).slice(1).map((p, i) => (
+              <p key={i} style={{ color: '#fff', fontSize: 16, lineHeight: 1.8, margin: '20px 0 0' }}>{p}</p>
+            ))}
+          </>
+        ) : (
+          /* Modo sem título — parágrafos simples (customParagrafos) */
+          (customParagrafos ?? []).map((p, i) => (
+            <p key={i} style={{ color: '#fff', fontSize: 16, lineHeight: 1.8, maxWidth: '100%', margin: '0 0 16px' }}>{p}</p>
+          ))
+        )}
 
         {!hideCarousel && (
           <>
             <img
               src="/07.png"
               alt="Webinar IR 2026"
-              style={{ width: '36%', borderRadius: 12, display: 'block', margin: '40px 0 24px' }}
+              style={{ width: '36%', borderRadius: 12, display: 'block', margin: '80px 0 24px' }}
             />
 
             <CarouselWebinar />
@@ -313,7 +323,7 @@ export default function WebinarIR({ bg, hideTitle, hideCarousel, topImage, custo
               padding: '40px 48px',
             }}>
               {boxIntro && (
-                <div style={{ margin: '92px 0 32px' }}>
+                <div style={{ margin: '92px 0 32px', paddingLeft: '3%', paddingRight: '3%' }}>
                   {(Array.isArray(boxIntro) ? boxIntro : [boxIntro]).map((txt, i, arr) => (
                     <p key={i} style={{
                       fontFamily: "'Noto Sans', sans-serif",
@@ -327,7 +337,9 @@ export default function WebinarIR({ bg, hideTitle, hideCarousel, topImage, custo
                   ))}
                 </div>
               )}
-              {bottomContent}
+              <div style={{ paddingLeft: '3%', paddingRight: '3%' }}>
+                {bottomContent}
+              </div>
             </div>
           </div>
         )}
