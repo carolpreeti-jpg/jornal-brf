@@ -12,7 +12,6 @@ export default function RelatorioAnual() {
 
             {/* Coluna esquerda: banner + texto */}
             <div className="relatorio-text-col">
-            <div style={{ flex: '0 0 77%' }}>
               <img
                 src={asset('/imagem06.png')}
                 alt="Relatório Anual 2025"

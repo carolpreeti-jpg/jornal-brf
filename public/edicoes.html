@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Edições — Jornal BRF Previdência</title>
+  <title>Edições Anteriores — Jornal BRF Previdência</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -12,358 +12,691 @@
 
     :root {
       --brand-blue:      #1B46B2;
-      --brand-blue-mid:  #7D94FC;
-      --brand-blue-light:#EBF0FF;
       --brand-coral:     #EE686D;
-      --text-primary:    #000E1F;
-      --text-secondary:  #5A4D45;
-      --gray-50:         #F5F3F0;
-      --gray-100:        #EBE8E3;
       --font-display:    'Sora', sans-serif;
       --font-body:       'DM Sans', sans-serif;
-      --radius-card:     16px;
     }
 
     body {
       font-family: var(--font-body);
-      background: var(--gray-50);
-      color: var(--text-primary);
+      background: #fff;
+      color: #0F172A;
       min-height: 100vh;
     }
 
     /* ── Header ── */
-    header {
+    .site-header {
       background: #fff;
-      border-bottom: 1px solid var(--gray-100);
-      padding: 20px 32px;
+      border-bottom: 1px solid #E2E8F0;
+      padding: 16px 32px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       position: sticky;
       top: 0;
-      z-index: 10;
-      box-shadow: 0 2px 12px rgba(27,70,178,.06);
+      z-index: 20;
+      box-shadow: 0 2px 16px rgba(27,70,178,.06);
     }
 
     .header-brand {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 14px;
       text-decoration: none;
     }
 
-    .header-logo {
-      width: 36px;
-      height: 36px;
-      background: var(--brand-blue);
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .header-brand img {
+      height: 44px;
+      width: auto;
+      display: block;
     }
 
-    .header-logo span {
-      color: #fff;
+    .header-tag {
       font-family: var(--font-display);
-      font-weight: 800;
-      font-size: 14px;
-      letter-spacing: -0.5px;
-    }
-
-    .header-name {
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: 15px;
-      color: var(--brand-blue);
+      font-size: 13px;
+      font-weight: 600;
+      color: #475569;
+      border-left: 1px solid #CBD5E1;
+      padding-left: 14px;
     }
 
     .header-back {
-      font-size: 14px;
-      color: var(--brand-blue);
-      text-decoration: none;
-      font-weight: 600;
-      display: flex;
+      display: inline-flex;
       align-items: center;
-      gap: 6px;
-      transition: opacity .2s;
+      gap: 8px;
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--brand-coral);
+      text-decoration: none;
+      border: 1.5px solid var(--brand-coral);
+      border-radius: 999px;
+      padding: 6px 16px;
+      transition: background .2s, color .2s;
     }
-    .header-back:hover { opacity: .7; }
-
-    /* ── Hero da página ── */
-    .page-hero {
-      background: linear-gradient(135deg, var(--brand-blue) 0%, #2A1F6B 100%);
-      padding: 80px 32px 72px;
-      text-align: center;
+    .header-back:hover {
+      background: var(--brand-coral);
       color: #fff;
     }
 
-    .page-hero .eyebrow {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: .16em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,.6);
-      margin-bottom: 16px;
+    /* ── Banner coral ── */
+    .intro-banner {
+      background: #EE686D;
+      padding: 28px 32px;
+      text-align: center;
     }
 
-    .page-hero h1 {
+    .intro-banner p {
       font-family: var(--font-display);
-      font-size: clamp(36px, 5vw, 56px);
-      font-weight: 800;
-      line-height: 1.1;
-      margin-bottom: 16px;
-    }
-
-    .page-hero p {
-      font-size: 17px;
-      color: rgba(255,255,255,.75);
-      max-width: 520px;
+      font-weight: 700;
+      font-size: clamp(14px, 2.2vw, 18px);
+      color: #fff;
+      max-width: 680px;
       margin: 0 auto;
-      line-height: 1.7;
+      line-height: 1.55;
     }
 
-    /* ── Grid de edições ── */
+    /* ── Fundo azul ── */
+    .edicoes-bg {
+      background: linear-gradient(180deg, #5571E3 0%, #2B4DD6 35%, #1B3FB5 70%, #0F2D8C 100%);
+      padding: 60px 24px 80px;
+    }
+
     .wrap {
-      max-width: 1200px;
+      max-width: 960px;
       margin: 0 auto;
-      padding: 0 32px;
     }
 
-    .edicoes-section {
-      padding: 72px 0 100px;
+    /* ── Edição destaque ── */
+    .destaque-wrap {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 52px;
     }
 
+    .ed-destaque {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      text-decoration: none;
+      gap: 16px;
+    }
+
+    .ed-destaque .ed-thumb {
+      width: 180px;
+      height: 180px;
+    }
+
+    .ed-destaque .ed-num {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: .18em;
+      color: #fff;
+      text-transform: uppercase;
+    }
+
+    .ed-destaque .ed-mes {
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 400;
+      color: rgba(255,255,255,.75);
+      margin-top: -10px;
+    }
+
+    /* ── Grid das demais edições ── */
     .edicoes-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+      gap: 40px 24px;
     }
 
-    @media (max-width: 880px) { .edicoes-grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 540px) { .edicoes-grid { grid-template-columns: 1fr; } }
-
-    /* ── Card de edição ── */
-    .ed-card {
-      background: #fff;
-      border-radius: var(--radius-card);
-      overflow: hidden;
-      text-decoration: none;
-      color: inherit;
+    .ed-item {
       display: flex;
       flex-direction: column;
-      box-shadow: 0 2px 12px rgba(27,70,178,.06);
-      transition: transform .25s ease, box-shadow .25s ease;
-    }
-    .ed-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 32px rgba(27,70,178,.14);
+      align-items: center;
+      text-align: center;
+      text-decoration: none;
+      gap: 14px;
     }
 
-    .ed-cover {
-      aspect-ratio: 16 / 9;
+    /* ── Thumb circular ── */
+    .ed-thumb {
+      width: 148px;
+      height: 148px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid rgba(255,255,255,.18);
+      box-shadow: 0 0 0 6px rgba(255,255,255,.07), 0 8px 32px rgba(0,0,0,.35);
+      flex-shrink: 0;
+      background: rgba(255,255,255,.12);
       display: flex;
       align-items: center;
       justify-content: center;
-      position: relative;
-      overflow: hidden;
+      transition: transform .28s ease, box-shadow .28s ease;
     }
 
-    .ed-cover-label {
+    .ed-item:hover .ed-thumb,
+    .ed-destaque:hover .ed-thumb {
+      transform: translateY(-4px) scale(1.04);
+      box-shadow: 0 0 0 6px rgba(255,255,255,.14), 0 16px 48px rgba(0,0,0,.5);
+    }
+
+    .ed-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: grayscale(20%);
+    }
+
+    /* ── Texto abaixo do thumb ── */
+    .ed-num {
       font-family: var(--font-display);
+      font-size: 15px;
       font-weight: 800;
-      font-size: 13px;
-      color: rgba(255,255,255,.6);
-      letter-spacing: .1em;
-      text-transform: uppercase;
-    }
-
-    .ed-badge {
-      position: absolute;
-      top: 14px;
-      left: 14px;
-      background: rgba(255,255,255,.18);
-      backdrop-filter: blur(6px);
-      border: 1px solid rgba(255,255,255,.3);
-      border-radius: 99px;
-      padding: 4px 12px;
-      font-size: 11px;
-      font-weight: 600;
+      letter-spacing: .16em;
       color: #fff;
-      letter-spacing: .06em;
-    }
-
-    .ed-body {
-      padding: 24px 24px 28px;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .ed-meta {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: .12em;
       text-transform: uppercase;
-      color: var(--brand-coral);
+      line-height: 1.2;
     }
 
-    .ed-titulo {
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: 17px;
-      color: var(--text-primary);
-      line-height: 1.4;
+    .ed-item:hover .ed-num,
+    .ed-destaque:hover .ed-num {
+      text-decoration: underline;
+      text-underline-offset: 3px;
     }
 
-    .ed-desc {
-      font-size: 14px;
-      color: var(--text-secondary);
-      line-height: 1.65;
-      margin-top: 4px;
-      flex: 1;
+    .ed-mes {
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 400;
+      color: rgba(255,255,255,.72);
+      margin-top: -8px;
     }
 
-    .ed-link {
+    /* ── Botão coral ── */
+    .ed-btn {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      margin-top: 16px;
-      font-size: 13px;
+      gap: 8px;
+      background: var(--brand-coral);
+      color: #fff;
+      font-family: var(--font-body);
+      font-size: 12px;
       font-weight: 700;
-      color: var(--brand-blue);
+      letter-spacing: .04em;
+      border-radius: 999px;
+      padding: 7px 16px 7px 14px;
       text-decoration: none;
+      transition: background .2s, transform .2s;
     }
-    .ed-link:hover { text-decoration: underline; }
 
-    /* ── Gradientes das capas ── */
-    .g1 { background: linear-gradient(135deg, #1B46B2 0%, #2A1F6B 100%); }
-    .g2 { background: linear-gradient(135deg, #EE686D 0%, #C53B6C 100%); }
-    .g3 { background: linear-gradient(135deg, #0D9488 0%, #1B46B2 100%); }
-    .g4 { background: linear-gradient(135deg, #2A1F6B 0%, #7D94FC 100%); }
-    .g5 { background: linear-gradient(135deg, #EE686D 0%, #F97316 100%); }
-    .g6 { background: linear-gradient(135deg, #1B46B2 0%, #0D9488 100%); }
-
-    /* ── Card em destaque (edição atual) ── */
-    .ed-card.destaque {
-      grid-column: 1 / -1;
-      flex-direction: row;
+    .ed-btn:hover {
+      background: #d94f54;
+      transform: translateY(-1px);
     }
-    .ed-card.destaque .ed-cover {
-      width: 340px;
+
+    .ed-btn svg {
+      width: 18px;
+      height: 10px;
       flex-shrink: 0;
-      aspect-ratio: unset;
     }
-    .ed-card.destaque .ed-titulo { font-size: 22px; }
-    .ed-card.destaque .ed-badge { font-size: 12px; padding: 5px 14px; }
 
+    /* ── Footer ── */
+    footer {
+      background: #0B1530;
+      padding: 12px 40px 40px;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 56px;
+    }
+
+    .footer-section-title {
+      font-family: 'Sora', sans-serif;
+      font-weight: 400;
+      font-size: 22px;
+      color: #8b8fe8;
+      margin-bottom: 20px;
+    }
+
+    .footer-block { margin-bottom: 24px; }
+
+    .footer-label {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+
+    .footer-text {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      color: rgba(255,255,255,.75);
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .footer-divider {
+      border-top: 1px solid rgba(255,255,255,.12);
+      margin-bottom: 40px;
+    }
+
+    .footer-bottom {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .footer-logo-text {
+      margin-bottom: 20px;
+    }
+
+    .footer-logo-brf {
+      font-family: 'Sora', sans-serif;
+      font-weight: 700;
+      font-size: 22px;
+      color: #fff;
+      line-height: 1;
+    }
+
+    .footer-logo-prev {
+      font-family: 'Sora', sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      color: rgba(255,255,255,.8);
+    }
+
+    .footer-cta-label {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      color: #fff;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .footer-link {
+      color: rgba(255,255,255,.75);
+      text-decoration: underline;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+
+    .footer-social a {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+
+    /* ── Responsividade ── */
     @media (max-width: 720px) {
-      .ed-card.destaque { flex-direction: column; }
-      .ed-card.destaque .ed-cover { width: 100%; aspect-ratio: 16/9; }
+      .site-header { padding: 14px 20px; }
+      .header-tag { display: none; }
+      .intro-banner { padding: 20px 20px; }
+      .edicoes-bg { padding: 44px 16px 60px; }
+      .edicoes-grid { grid-template-columns: repeat(2, 1fr); gap: 32px 16px; }
+      .footer-top, .footer-bottom { grid-template-columns: 1fr; gap: 0; }
+      footer { padding: 12px 24px 40px; }
+    }
+
+    @media (max-width: 480px) {
+      .edicoes-grid { grid-template-columns: 1fr; gap: 40px; }
+      .ed-destaque .ed-thumb { width: 148px; height: 148px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
-  <header>
+  <!-- ── Header ── -->
+  <header class="site-header">
     <a class="header-brand" href="./">
-      <div class="header-logo"><span>BRF</span></div>
-      <span class="header-name">Jornal BRF Previdência</span>
+      <img src="data:image/png;base64,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" alt="BRF Previdência" />
+      <span class="header-tag">Jornal BRF Previdência</span>
     </a>
-    <a class="header-back" href="./">← Voltar à edição atual</a>
+    <a class="header-back" href="./">← Edição atual</a>
   </header>
 
-  <!-- Hero -->
-  <div class="page-hero">
-    <p class="eyebrow">Arquivo · Histórico</p>
-    <h1>Edições</h1>
-    <p>Acesse todas as edições do Jornal BRF Previdência e acompanhe nossa trajetória.</p>
+  <!-- ── Banner coral ── -->
+  <div class="intro-banner">
+    <p>Confira todas as edições digitais do Jornal BRF Previdência,<br>
+       com novidades sobre os planos, dicas de educação<br>
+       financeira, eventos e muito mais!</p>
   </div>
 
-  <!-- Grid de edições -->
-  <section class="edicoes-section">
+  <!-- ── Fundo azul com edições ── -->
+  <div class="edicoes-bg">
     <div class="wrap">
+
+      <!-- Edição destaque (mais recente) -->
+      <div class="destaque-wrap">
+        <a class="ed-destaque" href="https://jornal.brfprevidencia.com.br/edicao-44-dezembro-2025" target="_blank" rel="noopener noreferrer">
+          <div class="ed-thumb">
+            <img
+              src="https://static.wixstatic.com/media/abf46c_f3f6bdee854946b6a907e1467d714a4d~mv2.jpg/v1/fill/w_326,h_326,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/dasdas(1)_edited.jpg"
+              alt="Edição 44 – Dezembro 2025"
+            />
+          </div>
+          <span class="ed-num">E D I Ç Ã O &nbsp; 4 4</span>
+          <span class="ed-mes">Dezembro 2025</span>
+          <span class="ed-btn">
+            <svg viewBox="0 0 18 10" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="14" height="10" rx="5" fill="white" fill-opacity="0.25"/>
+              <path d="M2 5H16M16 5L12 1M16 5L12 9" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </a>
+      </div>
+
+      <!-- Grid das demais edições -->
       <div class="edicoes-grid">
 
-        <!-- Edição atual em destaque -->
-        <a class="ed-card destaque" href="./">
-          <div class="ed-cover g1">
-            <span class="ed-cover-label">Edição 13</span>
-            <span class="ed-badge">✦ Edição atual</span>
+        <!-- Edição 43 -->
+        <a class="ed-item" href="https://jornal.brfprevidencia.com.br/edicao-43-setembro-2025" target="_blank" rel="noopener noreferrer">
+          <div class="ed-thumb">
+            <img
+              src="https://static.wixstatic.com/media/abf46c_56c6bd28f6d14579a4fbb8d07178c1cf~mv2.jpg/v1/crop/x_0,y_27,w_1264,h_1264/fill/w_328,h_328,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/capa%20principal_edited.jpg"
+              alt="Edição 43 – Setembro 2025"
+            />
           </div>
-          <div class="ed-body">
-            <span class="ed-meta">Edição 13 · Maio 2026</span>
-            <p class="ed-titulo">Mais próximos de você</p>
-            <p class="ed-desc">Em 2026, seguimos fortalecendo um compromisso essencial: estar cada vez mais próximos de você. Alcançamos R$ 5 bilhões em patrimônio e ampliamos nossa presença nas unidades.</p>
-            <a class="ed-link" href="./">Ler edição →</a>
-          </div>
+          <span class="ed-num">E D I Ç Ã O &nbsp; 4 3</span>
+          <span class="ed-mes">Setembro 2025</span>
+          <span class="ed-btn">
+            <svg viewBox="0 0 18 10" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="14" height="10" rx="5" fill="white" fill-opacity="0.25"/>
+              <path d="M2 5H16M16 5L12 1M16 5L12 9" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
         </a>
 
-        <!-- Edições anteriores -->
-        <div class="ed-card" aria-disabled="true">
-          <div class="ed-cover g2">
-            <span class="ed-cover-label">Edição 12</span>
+        <!-- Edição 42 -->
+        <a class="ed-item" href="https://jornal.brfprevidencia.com.br/edicao-42-junho-2025" target="_blank" rel="noopener noreferrer">
+          <div class="ed-thumb">
+            <img
+              src="https://static.wixstatic.com/media/abf46c_1aaa396010c04687ad3e89e1abf4b171~mv2.jpg/v1/crop/x_38,y_0,w_1108,h_1108/fill/w_328,h_328,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/capa_edited.jpg"
+              alt="Edição 42 – Junho 2025"
+            />
           </div>
-          <div class="ed-body">
-            <span class="ed-meta">Edição 12 · Março 2025</span>
-            <p class="ed-titulo">Planejando o futuro com segurança</p>
-            <p class="ed-desc">Destaques sobre rentabilidade, novidades do App e conteúdos de educação financeira para os participantes.</p>
-            <span class="ed-link">Em breve</span>
+          <span class="ed-num">E D I Ç Ã O &nbsp; 4 2</span>
+          <span class="ed-mes">Junho 2025</span>
+          <span class="ed-btn">
+            <svg viewBox="0 0 18 10" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="14" height="10" rx="5" fill="white" fill-opacity="0.25"/>
+              <path d="M2 5H16M16 5L12 1M16 5L12 9" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </a>
+
+        <!-- Edição 41 -->
+        <a class="ed-item" href="https://jornal.brfprevidencia.com.br/edi%C3%A7%C3%A3o-41-dezembro-2024" target="_blank" rel="noopener noreferrer">
+          <div class="ed-thumb">
+            <img
+              src="https://static.wixstatic.com/media/abf46c_844829a131b3498e8a34760ca48ccb36~mv2.jpg/v1/crop/x_17,y_0,w_1754,h_1754/fill/w_328,h_328,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/familia-feliz-decorando-arvore-de-natal-em-casa_edited.jpg"
+              alt="Edição 41 – Dezembro 2024"
+            />
+          </div>
+          <span class="ed-num">E D I Ç Ã O &nbsp; 4 1</span>
+          <span class="ed-mes">Dezembro 2024</span>
+          <span class="ed-btn">
+            <svg viewBox="0 0 18 10" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="14" height="10" rx="5" fill="white" fill-opacity="0.25"/>
+              <path d="M2 5H16M16 5L12 1M16 5L12 9" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </a>
+
+        <!-- Edição 40 -->
+        <a class="ed-item" href="https://jornal.brfprevidencia.com.br/edicao-40" target="_blank" rel="noopener noreferrer">
+          <div class="ed-thumb">
+            <img
+              src="https://static.wixstatic.com/media/abf46c_82fc76ffcc9f44c1acee34c1e84ddc90~mv2.png/v1/crop/x_0,y_11,w_535,h_535/fill/w_328,h_328,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/image.png"
+              alt="Edição 40 – Setembro 2024"
+            />
+          </div>
+          <span class="ed-num">E D I Ç Ã O &nbsp; 4 0</span>
+          <span class="ed-mes">Setembro 2024</span>
+          <span class="ed-btn">
+            <svg viewBox="0 0 18 10" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="14" height="10" rx="5" fill="white" fill-opacity="0.25"/>
+              <path d="M2 5H16M16 5L12 1M16 5L12 9" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </a>
+
+        <!-- Edição 39 -->
+        <a class="ed-item" href="https://jornal.brfprevidencia.com.br/edicao-39" target="_blank" rel="noopener noreferrer">
+          <div class="ed-thumb">
+            <img
+              src="https://static.wixstatic.com/media/abf46c_127b43f59c3b44dea22c76d7a9e7e82d~mv2.jpg/v1/crop/x_1774,y_0,w_3532,h_3537/fill/w_326,h_320,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/familia-de-tiro-medio-saindo-em-um-cais.jpg"
+              alt="Edição 39 – Julho 2024"
+            />
+          </div>
+          <span class="ed-num">E D I Ç Ã O &nbsp; 3 9</span>
+          <span class="ed-mes">Julho 2024</span>
+          <span class="ed-btn">
+            <svg viewBox="0 0 18 10" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="14" height="10" rx="5" fill="white" fill-opacity="0.25"/>
+              <path d="M2 5H16M16 5L12 1M16 5L12 9" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </a>
+
+        <!-- Edição 38 -->
+        <a class="ed-item" href="https://jornal.brfprevidencia.com.br/edicao-38" target="_blank" rel="noopener noreferrer">
+          <div class="ed-thumb">
+            <img
+              src="https://static.wixstatic.com/media/abf46c_aaa7993948b843a4a1cb0be38b3f7010~mv2.png/v1/crop/x_7,y_0,w_557,h_555/fill/w_328,h_328,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/image.png"
+              alt="Edição 38 – Dezembro 2023"
+            />
+          </div>
+          <span class="ed-num">E D I Ç Ã O &nbsp; 3 8</span>
+          <span class="ed-mes">Dezembro 2023</span>
+          <span class="ed-btn">
+            <svg viewBox="0 0 18 10" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="14" height="10" rx="5" fill="white" fill-opacity="0.25"/>
+              <path d="M2 5H16M16 5L12 1M16 5L12 9" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </a>
+
+        <!-- Edição 37 -->
+        <a class="ed-item" href="https://jornal.brfprevidencia.com.br/edicao-37" target="_blank" rel="noopener noreferrer">
+          <div class="ed-thumb">
+            <img
+              src="https://static.wixstatic.com/media/11062b_e8529498efaf4ce6bdcdbfc1c0a1c431~mv2.jpg/v1/crop/x_560,y_0,w_2240,h_2240/fill/w_328,h_328,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Colegas%20de%20trabalho.jpg"
+              alt="Edição 37 – Setembro 2023"
+            />
+          </div>
+          <span class="ed-num">E D I Ç Ã O &nbsp; 3 7</span>
+          <span class="ed-mes">Setembro 2023</span>
+          <span class="ed-btn">
+            <svg viewBox="0 0 18 10" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="14" height="10" rx="5" fill="white" fill-opacity="0.25"/>
+              <path d="M2 5H16M16 5L12 1M16 5L12 9" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </a>
+
+        <!-- Edição 36 -->
+        <a class="ed-item" href="https://jornal.brfprevidencia.com.br/edicao-36" target="_blank" rel="noopener noreferrer">
+          <div class="ed-thumb">
+            <img
+              src="https://static.wixstatic.com/media/abf46c_27dab6db08c843458b4ee0c47ecf4f38~mv2.png/v1/crop/x_34,y_0,w_621,h_621/fill/w_328,h_328,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/image.png"
+              alt="Edição 36 – Maio 2023"
+            />
+          </div>
+          <span class="ed-num">E D I Ç Ã O &nbsp; 3 6</span>
+          <span class="ed-mes">Maio 2023</span>
+          <span class="ed-btn">
+            <svg viewBox="0 0 18 10" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="14" height="10" rx="5" fill="white" fill-opacity="0.25"/>
+              <path d="M2 5H16M16 5L12 1M16 5L12 9" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </a>
+
+        <!-- Edição 35 -->
+        <a class="ed-item" href="https://jornal.brfprevidencia.com.br/edicao-35" target="_blank" rel="noopener noreferrer">
+          <div class="ed-thumb">
+            <img
+              src="https://static.wixstatic.com/media/abf46c_7acb383f0f824c24baf3468ce356f3b1~mv2.png/v1/fill/w_253,h_253,al_c,lg_1,q_85,enc_avif,quality_auto/Camada%203_edited.png"
+              alt="Edição 35 – Dezembro 2022"
+            />
+          </div>
+          <span class="ed-num">E D I Ç Ã O &nbsp; 3 5</span>
+          <span class="ed-mes">Dezembro 2022</span>
+          <span class="ed-btn">
+            <svg viewBox="0 0 18 10" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="14" height="10" rx="5" fill="white" fill-opacity="0.25"/>
+              <path d="M2 5H16M16 5L12 1M16 5L12 9" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </a>
+
+      </div><!-- /.edicoes-grid -->
+    </div><!-- /.wrap -->
+  </div><!-- /.edicoes-bg -->
+
+  <!-- ── Footer ── -->
+  <footer>
+    <div class="footer-inner">
+
+      <!-- Expediente -->
+      <div class="footer-top">
+        <div>
+          <p class="footer-section-title">Expediente</p>
+
+          <div class="footer-block">
+            <p class="footer-label">Diretoria Executiva</p>
+            <p class="footer-text">
+              Maurício Manduca – Diretor-Presidente<br />
+              Milton Cabral – Diretor de Investimento<br />
+              Vivian Fonseca - Diretora Administrativa e de Seguridade
+            </p>
+          </div>
+
+          <div class="footer-block">
+            <p class="footer-label">Conselho Deliberativo</p>
+            <p class="footer-text">
+              <span style="display:block;margin-bottom:10px">Presidente: Daniel Luis Moreli Rocha</span>
+              <span style="display:block;margin-bottom:10px">Vice-Presidente: Indiara Kurtz Danelli Manfre</span>
+              <span style="display:block">Conselheiros: Victor Rodrigues Antonio, Thiago Luiz de Freitas Pereira, Felipe Costa Ricciulli Soares, Antonio Carlos Cesco, Rafael Lando Menute, Luzia Goldbeck de Andrade, Jair Bondicz, José Carlos de Carvalho Martins, Júlio Cesar Cavasin, Hugo Saito</span>
+            </p>
           </div>
         </div>
 
-        <div class="ed-card" aria-disabled="true">
-          <div class="ed-cover g3">
-            <span class="ed-cover-label">Edição 11</span>
+        <div>
+          <div class="footer-block" style="margin-top:42px">
+            <p class="footer-label">Conselho Fiscal</p>
+            <p class="footer-text">
+              <span style="display:block;margin-bottom:10px">Presidente: Almir Sebastiao Zanon Xavier</span>
+              <span style="display:block">Conselheiros: Valmir Grolli, Ludieri Leandro Fiorelli, Tiago Both, Vinícius José Ferreira de Almeida, Osvaldo Vaz</span>
+            </p>
           </div>
-          <div class="ed-body">
-            <span class="ed-meta">Edição 11 · Dezembro 2024</span>
-            <p class="ed-titulo">Encerrando o ano com resultados</p>
-            <p class="ed-desc">Balanço do ano, desempenho dos planos e os principais marcos de 2024 para a BRF Previdência.</p>
-            <span class="ed-link">Em breve</span>
+
+          <div class="footer-block">
+            <p class="footer-label">Comunicação e Marketing</p>
+            <p class="footer-text">Tatiani Leite</p>
+          </div>
+
+          <div class="footer-block">
+            <p class="footer-label">Edição de arte:</p>
+            <a href="https://mirador360.com.br" target="_blank" rel="noopener noreferrer" class="footer-link">Mirador Comunicação</a>
           </div>
         </div>
-
-        <div class="ed-card" aria-disabled="true">
-          <div class="ed-cover g4">
-            <span class="ed-cover-label">Edição 10</span>
-          </div>
-          <div class="ed-body">
-            <span class="ed-meta">Edição 10 · Setembro 2024</span>
-            <p class="ed-titulo">Governança e transparência em foco</p>
-            <p class="ed-desc">Relatório de atividades, encontros com participantes e novidades sobre a gestão dos planos previdenciários.</p>
-            <span class="ed-link">Em breve</span>
-          </div>
-        </div>
-
-        <div class="ed-card" aria-disabled="true">
-          <div class="ed-cover g5">
-            <span class="ed-cover-label">Edição 09</span>
-          </div>
-          <div class="ed-body">
-            <span class="ed-meta">Edição 09 · Junho 2024</span>
-            <p class="ed-titulo">Conexão com o participante</p>
-            <p class="ed-desc">Histórias inspiradoras, eventos regionais e o avanço dos canais digitais de comunicação da BRF Prev.</p>
-            <span class="ed-link">Em breve</span>
-          </div>
-        </div>
-
-        <div class="ed-card" aria-disabled="true">
-          <div class="ed-cover g6">
-            <span class="ed-cover-label">Edição 08</span>
-          </div>
-          <div class="ed-body">
-            <span class="ed-meta">Edição 08 · Março 2024</span>
-            <p class="ed-titulo">Novos horizontes previdenciários</p>
-            <p class="ed-desc">Lançamento de iniciativas de educação financeira, rentabilidade dos planos e perspectivas para o ano.</p>
-            <span class="ed-link">Em breve</span>
-          </div>
-        </div>
-
       </div>
-    </div>
-  </section>
+
+      <div class="footer-divider"></div>
+
+      <!-- Parte inferior -->
+      <div class="footer-bottom">
+
+        <!-- Esquerda -->
+        <div>
+          <div class="footer-logo-text">
+            <div class="footer-logo-brf">BRF</div>
+            <div class="footer-logo-prev">previdência</div>
+          </div>
+
+          <p class="footer-cta-label">Canais de Atendimento</p>
+          <p class="footer-text">
+            CENTRAL: 0800 702 4422<br />
+            Atendimento das <strong style="color:#fff">8:30 às 17:30</strong> (de segunda a sexta-feira).<br /><br />
+            E-MAIL: <a href="mailto:atendimento@brfprevidencia.com.br" class="footer-link">atendimento@brfprevidencia.com.br</a><br /><br />
+            WHATS APP: (11) 96325-9487 - Atendimento somente por mensagens.
+          </p>
+        </div>
+
+        <!-- Direita -->
+        <div style="display:flex;flex-direction:column;align-items:flex-start;gap:28px">
+
+          <!-- Redes sociais -->
+          <div class="footer-social">
+            <a href="https://instagram.com/brfprevidencia" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0f1f4b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+              </svg>
+            </a>
+            <a href="https://facebook.com/brfprevidencia" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="#0f1f4b">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+              </svg>
+            </a>
+            <a href="https://linkedin.com/company/brf-previdencia" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="#0f1f4b">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
+              </svg>
+            </a>
+            <a href="https://www.youtube.com/channel/UCp2JyTO7GLaMnLmWErsBhpg" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0f1f4b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#0f1f4b" stroke="none"/>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Canal de Denúncia -->
+          <div>
+            <p class="footer-text" style="color:#fff"><strong>CANAL DE DENÚNCIA:</strong> 0800 740 4789</p>
+            <p class="footer-text">
+              Email: <a href="mailto:canaldedenuncias.brfprevidencia@iaudit.com.br" class="footer-link">canaldedenuncias.brfprevidencia@iaudit.com.br</a>
+            </p>
+          </div>
+
+          <!-- Link de volta ao jornal -->
+          <div>
+            <p class="footer-text" style="margin-bottom:4px">Quer acessar a edição mais recente?</p>
+            <a href="./" style="color:#fff;font-weight:700;font-size:15px;font-family:'DM Sans',sans-serif;text-decoration:underline">CLIQUE AQUI</a>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /.footer-inner -->
+  </footer>
 
 </body>
 </html>
