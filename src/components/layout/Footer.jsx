@@ -1,3 +1,5 @@
+import { page } from '../../utils/assets.js'
+
 const S = {
   wrap: {
     maxWidth: 1200,
@@ -167,7 +169,7 @@ export default function Footer() {
                 </svg>
               </a>
               {/* YouTube */}
-              <a href="https://youtube.com/canalhrfprev" target="_blank" rel="noopener noreferrer" aria-label="YouTube"
+              <a href="https://www.youtube.com/channel/UCp2JyTO7GLaMnLmWErsBhpg" target="_blank" rel="noopener noreferrer" aria-label="YouTube"
                 style={{ width: 48, height: 48, borderRadius: '50%', background: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none' }}>
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0f1f4b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#0f1f4b" stroke="none"/>
@@ -190,7 +192,7 @@ export default function Footer() {
             {/* Versões anteriores */}
             <div>
               <p style={{ ...S.text, marginBottom: 4 }}>Quer acessar as versões anteriores do jornal?</p>
-              <a href={'/edicoes.html'} style={{ ...S.link, fontWeight: 700, color: '#fff', fontSize: 15 }}>
+              <a href={page('/edicoes.html')} style={{ ...S.link, fontWeight: 700, color: '#fff', fontSize: 15 }}>
                 CLIQUE AQUI
               </a>
             </div>

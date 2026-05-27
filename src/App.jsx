@@ -36,6 +36,8 @@ export default function App() {
         <Encontros />
         <CompromissoUnidades />
         <WebinarIR
+          id="rentabilidade"
+          screenLabel="Rentabilidade"
           bg="linear-gradient(150deg, #1B46B2 0%, #1B46B2 60%, #7D94FC 100%)"
           hideTitle
           hideCarousel

@@ -1,4 +1,5 @@
 import { edition } from '../../data/edition.js'
+import { asset } from '../../utils/assets.js'
 
 const { appBRFPrev } = edition
 
@@ -24,7 +25,7 @@ export default function AppBRFPrev() {
           pointerEvents: 'none',
         }}
       >
-        <source src="/bg-app.mp4" type="video/mp4" />
+        <source src={asset('/bg-app.mp4')} type="video/mp4" />
       </video>
 
       <style>{`
@@ -37,7 +38,7 @@ export default function AppBRFPrev() {
 
       {/* Imagem do app — flutua acima de tudo, não interfere nos textos */}
       <img
-        src="/app.png"
+        src={asset('/app.png')}
         alt="App BRF Prev"
         className="app-phone-floating"
         style={{
@@ -119,7 +120,7 @@ export default function AppBRFPrev() {
               onMouseEnter={e => { e.currentTarget.style.opacity = '0.8'; e.currentTarget.style.transform = 'scale(1.05)' }}
               onMouseLeave={e => { e.currentTarget.style.opacity = '1';   e.currentTarget.style.transform = 'scale(1)' }}
             >
-              <img src="/google.png" alt="Google Play" style={{ height: 51, objectFit: 'contain', display: 'block' }} />
+              <img src={asset('/google.png')} alt="Google Play" style={{ height: 51, objectFit: 'contain', display: 'block' }} />
             </a>
             <a
               href="https://apps.apple.com/br/app/brf-previd%C3%AAncia/id6496354261"
@@ -129,7 +130,7 @@ export default function AppBRFPrev() {
               onMouseEnter={e => { e.currentTarget.style.opacity = '0.8'; e.currentTarget.style.transform = 'scale(1.05)' }}
               onMouseLeave={e => { e.currentTarget.style.opacity = '1';   e.currentTarget.style.transform = 'scale(1)' }}
             >
-              <img src="/apple.png" alt="App Store" style={{ height: 51, objectFit: 'contain', display: 'block' }} />
+              <img src={asset('/apple.png')} alt="App Store" style={{ height: 51, objectFit: 'contain', display: 'block' }} />
             </a>
           </div>
         </div>

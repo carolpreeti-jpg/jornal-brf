@@ -1,5 +1,6 @@
 import { useRef, useEffect, useState } from 'react'
 import { edition } from '../../data/edition.js'
+import { asset } from '../../utils/assets.js'
 
 const { webinar } = edition
 
@@ -189,16 +190,16 @@ function CarouselWebinar() {
   )
 }
 
-export default function WebinarIR({ bg, hideTitle, hideCarousel, topImage, customParagrafos, bottomContent, boxIntro }) {
+export default function WebinarIR({ id = 'webinar', screenLabel = 'Webinar IR', bg, hideTitle, hideCarousel, topImage, customParagrafos, bottomContent, boxIntro }) {
   return (
-    <section className="section estatuto" id="webinar" data-screen-label="Webinar IR"
+    <section className="section estatuto" id={id} data-screen-label={screenLabel}
       style={{ background: bg ?? '#6F91FB', paddingTop: topImage ? 140 : undefined }}>
       <div className="wrap">
 
         {/* Imagem centralizada no topo */}
         {topImage && (
           <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 48 }}>
-            <img src={topImage} alt="" style={{ maxWidth: 600, width: '100%', display: 'block' }} />
+            <img src={asset(topImage)} alt="" style={{ maxWidth: 600, width: '100%', display: 'block' }} />
           </div>
         )}
 
@@ -224,7 +225,7 @@ export default function WebinarIR({ bg, hideTitle, hideCarousel, topImage, custo
               {/* Coluna direita — foto termina junto com o texto */}
               <div style={{ borderRadius: 16, overflow: 'hidden', position: 'relative', height: '90%' }}>
                 <img
-                  src="/jessica-webinar.jpg"
+                  src={asset('/jessica-webinar.jpg')}
                   alt="Webinar IR 2026"
                   style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}
                 />
@@ -246,7 +247,7 @@ export default function WebinarIR({ bg, hideTitle, hideCarousel, topImage, custo
         {!hideCarousel && (
           <>
             <img
-              src="/07.png"
+              src={asset('/07.png')}
               alt="Webinar IR 2026"
               style={{ width: '36%', borderRadius: 12, display: 'block', margin: '80px 0 24px' }}
             />
@@ -309,7 +310,7 @@ export default function WebinarIR({ bg, hideTitle, hideCarousel, topImage, custo
               justifyContent: 'center',
               pointerEvents: 'none',
             }}>
-              <img src="/imagem12.png" alt="Investimentos" style={{ width: 416, display: 'block' }} />
+              <img src={asset('/imagem12.png')} alt="Investimentos" style={{ width: 416, display: 'block' }} />
             </div>
 
             <div style={{

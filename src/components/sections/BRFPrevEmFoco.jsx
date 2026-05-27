@@ -1,4 +1,5 @@
 import { edition } from '../../data/edition.js'
+import { asset } from '../../utils/assets.js'
 
 const { brfPrevEmFoco } = edition
 
@@ -43,7 +44,7 @@ export default function BRFPrevEmFoco() {
         <div className="brfprev-foco-box">
           {/* Imagem cobrindo todo o retângulo */}
           <img
-            src="/celular.png"
+            src={asset('/celular.png')}
             alt=""
             style={{
               position: 'absolute',

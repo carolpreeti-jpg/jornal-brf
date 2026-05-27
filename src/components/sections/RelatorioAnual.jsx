@@ -1,4 +1,5 @@
 import { edition } from '../../data/edition.js'
+import { asset } from '../../utils/assets.js'
 
 const { relatorio } = edition
 
@@ -12,7 +13,7 @@ export default function RelatorioAnual() {
             {/* Coluna esquerda: banner + texto */}
             <div className="relatorio-text-col">
               <img
-                src="/imagem06.png"
+                src={asset('/imagem06.png')}
                 alt="Relatório Anual 2025"
                 style={{ width: '100%', borderRadius: 12, display: 'block' }}
               />
@@ -25,7 +26,7 @@ export default function RelatorioAnual() {
             <div className="relatorio-note-col">
               <div className="animar">
                 <img
-                  src="/note.png"
+                  src={asset('/note.png')}
                   alt="Notebook"
                   style={{
                     width: '100%',
@@ -53,7 +54,7 @@ export default function RelatorioAnual() {
         <div className="testimonial-card testimonial-card--horizontal reveal" style={{ marginTop: 72 }}>
           <div className="card-top">
             <img
-              src="/vivian-fonseca.jpg"
+              src={asset('/vivian-fonseca.jpg')}
               alt="Vivian Fonseca"
               style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', display: 'block', borderRadius: '16px 0 0 16px' }}
             />

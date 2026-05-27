@@ -1,4 +1,5 @@
 import { edition } from '../../data/edition.js'
+import { asset } from '../../utils/assets.js'
 
 const { falePresidente } = edition
 
@@ -10,7 +11,7 @@ export default function FalePresidente() {
         {/* Imagem + título — largura total */}
         <div>
           <img
-            src="/imagem04.png"
+            src={asset('/imagem04.png')}
             alt=""
             style={{ width: '25%', borderRadius: 12, marginBottom: 28, display: 'block' }}
           />
@@ -55,7 +56,7 @@ export default function FalePresidente() {
             <div className="testimonial-card">
               <div className="card-top" style={{ position: 'relative' }}>
                 <img
-                  src="/mauricio-manduca.jpg"
+                  src={asset('/mauricio-manduca.jpg')}
                   alt="Maurício Manduca"
                   style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', display: 'block', borderRadius: '16px 16px 0 0' }}
                 />

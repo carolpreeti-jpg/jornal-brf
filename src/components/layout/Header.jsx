@@ -1,14 +1,16 @@
 import { useState, useEffect } from 'react'
 import { useStickyHeader } from '../../hooks/useStickyHeader.js'
 import { edition } from '../../data/edition.js'
-const logoDefault  = '/logo-horizontal-1.png'
-const logoScrolled = '/logo-horizontal-2.png'
+import { asset } from '../../utils/assets.js'
+
+const logoDefault  = asset('/logo-horizontal-1.png')
+const logoScrolled = asset('/logo-horizontal-2.png')
 
 const navLinks = [
   { href: '#top', label: 'Início' },
   { href: '#editorial', label: 'Editorial' },
-  { href: '#unidades', label: 'Unidades' },
-  { href: '#estatuto', label: 'Benefícios' },
+  { href: '#compromisso', label: 'Compromisso' },
+  { href: '#relatorio', label: 'Relatório' },
   { href: '#rentabilidade', label: 'Rentabilidade' },
   { href: '#contato', label: 'Contato' },
 ]

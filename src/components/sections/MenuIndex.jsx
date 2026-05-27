@@ -1,4 +1,5 @@
 import { edition } from '../../data/edition.js'
+import { asset } from '../../utils/assets.js'
 
 export default function MenuIndex() {
   return (
@@ -15,7 +16,7 @@ export default function MenuIndex() {
             >
               {/* Imagem/gradiente com recorte orgânico */}
               <div className="mi-img" style={{ background: card.gradient }}>
-                {card.imagem && <img src={card.imagem} alt={card.titulo} style={{ objectFit: card.imagemFit || 'cover', objectPosition: card.imagemPosition || 'center center', transform: [card.imagemFlipX ? 'scaleX(-1)' : '', card.imagemScale ? `scale(${card.imagemScale})` : '', card.imagemTranslateX ? `translateX(${card.imagemTranslateX})` : '', card.imagemTranslateY ? `translateY(${card.imagemTranslateY})` : ''].filter(Boolean).join(' ') || undefined, transformOrigin: 'top center' }} />}
+                {card.imagem && <img src={asset(card.imagem)} alt={card.titulo} style={{ objectFit: card.imagemFit || 'cover', objectPosition: card.imagemPosition || 'center center', transform: [card.imagemFlipX ? 'scaleX(-1)' : '', card.imagemScale ? `scale(${card.imagemScale})` : '', card.imagemTranslateX ? `translateX(${card.imagemTranslateX})` : '', card.imagemTranslateY ? `translateY(${card.imagemTranslateY})` : ''].filter(Boolean).join(' ') || undefined, transformOrigin: 'top center' }} />}
                 <span className="mi-num">{card.n}</span>
               </div>
 

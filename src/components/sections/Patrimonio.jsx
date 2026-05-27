@@ -1,4 +1,5 @@
 import { edition } from '../../data/edition.js'
+import { asset } from '../../utils/assets.js'
 
 const { patrimonio } = edition
 
@@ -98,7 +99,7 @@ export default function Patrimonio() {
           {/* Arte decorativa */}
           <div className="lu-photo reveal d2" aria-hidden="true">
             <img
-              src="/business-women.jpg"
+              src={asset('/business-women.jpg')}
               alt=""
               style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
             />

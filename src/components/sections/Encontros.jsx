@@ -1,4 +1,5 @@
 import { edition } from '../../data/edition.js'
+import { asset } from '../../utils/assets.js'
 
 const { encontros } = edition
 
@@ -34,14 +35,14 @@ export default function Encontros() {
           zIndex: 0,
         }}
       >
-        <source src="/azul2.mp4" type="video/mp4" />
+        <source src={asset('/azul2.mp4')} type="video/mp4" />
       </video>
 
       <div style={{ width: '100%', padding: '0 clamp(16px, 12vw, 200px)', position: 'relative', zIndex: 1 }}>
         {/* Imagem sobreposta na borda azul/branco */}
         <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '-90px', position: 'relative', zIndex: 2 }}>
           <img
-            src="/imagem10.png"
+            src={asset('/imagem10.png')}
             alt="Conexão BRF Previdência"
             style={{ width: '200px', display: 'block' }}
           />
@@ -60,7 +61,7 @@ export default function Encontros() {
           {/* Imagem centralizada */}
           <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 40, padding: '0 64px' }}>
             <img
-              src="/imagem08.png"
+              src={asset('/imagem08.png')}
               alt="Encontro Trimestral de Resultados"
               style={{ width: '70%', display: 'block' }}
             />
@@ -111,7 +112,7 @@ export default function Encontros() {
                 {/* Label do plano sobreposta na parte inferior */}
                 <div style={{ position: 'absolute', bottom: -30, left: '50%', transform: 'translateX(-50%)', zIndex: 2 }}>
                   <img
-                    src={g.img}
+                    src={asset(g.img)}
                     alt={g.plano}
                     style={{ height: 52, display: 'block' }}
                   />

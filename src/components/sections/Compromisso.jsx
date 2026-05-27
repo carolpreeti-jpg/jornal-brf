@@ -1,5 +1,6 @@
 import { useRef, useEffect, useState } from 'react'
 import { edition } from '../../data/edition.js'
+import { asset } from '../../utils/assets.js'
 
 const { compromisso } = edition
 
@@ -89,7 +90,7 @@ export default function Compromisso() {
                       onMouseLeave={() => setHoveredPhoto(null)}
                     >
                       <img
-                        src={src}
+                        src={asset(src)}
                         alt={`Ação Curitiba ${j + 1}`}
                         style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
                       />
@@ -108,7 +109,7 @@ export default function Compromisso() {
           <div className="testimonial-card testimonial-card--horizontal">
             <div className="card-top">
               <img
-                src="/rose-zanutto.jpg"
+                src={asset('/rose-zanutto.jpg')}
                 alt="Rose Zanutto"
                 style={{
                   width: '100%',
