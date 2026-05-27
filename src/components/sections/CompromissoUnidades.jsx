@@ -1,4 +1,5 @@
 import { edition } from '../../data/edition.js'
+import { asset } from '../../utils/assets.js'
 
 const { compromissoUnidades: c, patrimonio } = edition
 
@@ -35,13 +36,7 @@ export default function CompromissoUnidades() {
         </div>
 
         {/* Foto + parágrafo lado a lado */}
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: '1fr 1fr',
-          gap: 40,
-          alignItems: 'center',
-          marginBottom: 56,
-        }}>
+        <div className="cu-foto-grid">
           {/* Espaço para foto */}
           <div style={{
             background: 'var(--gray-50)',
@@ -53,7 +48,7 @@ export default function CompromissoUnidades() {
             overflow: 'hidden',
           }}>
             {c.fotoUrl
-              ? <img src={c.fotoUrl} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              ? <img src={asset(c.fotoUrl)} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               : <span style={{ color: 'var(--text-muted)', fontSize: 14, fontFamily: 'var(--font-mono)' }}>foto</span>
             }
           </div>
@@ -109,12 +104,7 @@ export default function CompromissoUnidades() {
         </div>
 
         {/* Cards de analogias */}
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(4, 1fr)',
-          gap: 20,
-          marginBottom: 56,
-        }}>
+        <div className="cu-analogias-grid">
           {patrimonio.analogias.map((a, i) => (
             <div key={i} className="analogia-card">
               <p style={{
@@ -148,7 +138,7 @@ export default function CompromissoUnidades() {
         <div className="testimonial-card testimonial-card--horizontal">
           <div className="card-top">
             <img
-              src="/mauricio-manduca.jpg"
+              src={asset('/mauricio-manduca.jpg')}
               alt="Mauricio Manduca"
               style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', display: 'block', borderRadius: '16px 0 0 16px' }}
             />

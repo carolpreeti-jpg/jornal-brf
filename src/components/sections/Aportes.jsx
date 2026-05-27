@@ -1,5 +1,6 @@
 import { useRef, useEffect, useState } from 'react'
 import { edition } from '../../data/edition.js'
+import { asset } from '../../utils/assets.js'
 
 const { aportes } = edition
 
@@ -25,17 +26,17 @@ export default function Aportes() {
     <section className="section game" id="aportes" data-screen-label="Aportes">
       <div className="wrap">
         {/* Cabeçalho: imagem esquerda + título/texto direita */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1.5fr 3.5fr', gap: 48, marginBottom: 56, alignItems: 'stretch' }}>
+        <div className="aportes-top-grid">
 
           {/* Coluna esquerda — imagem com overlay de dinheiro */}
           <div style={{ position: 'relative', minHeight: 320, marginTop: '-15%', zIndex: 0 }}>
             <img
-              src="/homem2.png"
+              src={asset('/homem2.png')}
               alt=""
               style={{ width: '100%', height: 'auto', display: 'block' }}
             />
             <img
-              src="/dinheiro.png"
+              src={asset('/dinheiro.png')}
               alt=""
               aria-hidden="true"
               className={`float-money${dinheiroVisible ? ' visible' : ''}`}
@@ -165,12 +166,12 @@ export default function Aportes() {
           </p>
 
           {/* Layout duas colunas: imagem | conteúdo */}
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 48, alignItems: 'stretch', marginTop: 56 }}>
+          <div className="aportes-como-grid">
 
             {/* Coluna esquerda — imagem da atendente */}
             <div style={{ borderRadius: 16, overflow: 'hidden', minHeight: 0 }}>
               <img
-                src="/atendente.jpg"
+                src={asset('/atendente.jpg')}
                 alt="Atendente de suporte ao participante"
                 style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
               />
@@ -188,15 +189,15 @@ export default function Aportes() {
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: 12, marginTop: 20 }}>
                 {[
-                  { img: '/whatsapp.png',          texto: aportes.canais[0].texto },
-                  { img: '/suporte-ao-cliente.png', texto: aportes.canais[1].texto },
+                  { img: asset('/whatsapp.png'),          texto: aportes.canais[0].texto },
+                  { img: asset('/suporte-ao-cliente.png'), texto: aportes.canais[1].texto },
                 ].map((c) => (
                   <span key={c.texto} style={{
                     fontFamily: "'Noto Sans', sans-serif",
                     display: 'flex',
                     alignItems: 'center',
                     gap: 10,
-                    fontSize: 22,
+                    fontSize: 'clamp(16px, 2.2vw, 22px)',
                     fontWeight: 500,
                   }}>
                     <img src={c.img} alt="" style={{ width: 40, height: 40, objectFit: 'contain', filter: 'invert(52%) sepia(60%) saturate(700%) hue-rotate(314deg) brightness(105%) contrast(90%)' }} />

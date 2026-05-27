@@ -428,7 +428,7 @@ export const edition = {
     ],
     paragrafos2Youtube: 'Para quem não pôde acompanhar ao vivo ou deseja revisar o conteúdo, a gravação está disponível no canal da BRF Prev no YouTube.',
     data: '24 de abril',
-    urlYoutube: '#',
+    urlYoutube: 'https://www.youtube.com/channel/UCp2JyTO7GLaMnLmWErsBhpg',
     urlLabel: 'Assistir gravação no YouTube',
   },
 
@@ -648,11 +648,11 @@ export const edition = {
     titulo: 'Continue com a gente em <em>2026!</em>',
     lead: 'A conversa não para na última página do jornal. Siga, marque e compartilhe — toda semana tem conteúdo novo sobre educação financeira e bastidores da BRF Prev.',
     plataformas: [
-      { classe: 'ig', ic: 'IG', nome: 'Instagram', seguidores: '44,7 mil', handle: '@brfprevidencia',   href: '#' },
-      { classe: 'li', ic: 'in', nome: 'LinkedIn',  seguidores: '4,3 mil',  handle: 'BRF Previdência',  href: '#' },
-      { classe: 'fb', ic: 'f',  nome: 'Facebook',  seguidores: '43,7 mil', handle: '/brfprevidencia',  href: '#' },
-      { classe: 'yt', ic: '▶',  nome: 'YouTube',   seguidores: '11 mil',   handle: '/canalbrfprev',    href: '#' },
-      { classe: 'wa', ic: '✉',  nome: 'WhatsApp',  seguidores: null,       handle: 'comunidade fechada', href: '#', labelEspecial: 'Entre no grupo' },
+      { classe: 'ig', ic: 'IG', nome: 'Instagram', seguidores: '44,7 mil', handle: '@brfprevidencia',   href: 'https://instagram.com/brfprevidencia' },
+      { classe: 'li', ic: 'in', nome: 'LinkedIn',  seguidores: '4,3 mil',  handle: 'BRF Previdência',  href: 'https://linkedin.com/company/brf-previdencia' },
+      { classe: 'fb', ic: 'f',  nome: 'Facebook',  seguidores: '43,7 mil', handle: '/brfprevidencia',  href: 'https://facebook.com/brfprevidencia' },
+      { classe: 'yt', ic: '▶',  nome: 'YouTube',   seguidores: '11 mil',   handle: '/canalbrfprev',    href: 'https://www.youtube.com/channel/UCp2JyTO7GLaMnLmWErsBhpg' },
+      { classe: 'wa', ic: '✉',  nome: 'WhatsApp',  seguidores: null,       handle: 'comunidade fechada', href: 'https://wa.me/5511963259487', labelEspecial: 'Entre no grupo' },
     ],
   },
 }

@@ -1,4 +1,5 @@
 import { edition } from '../../data/edition.js'
+import { asset } from '../../utils/assets.js'
 
 const { historias } = edition
 
@@ -25,7 +26,7 @@ export default function Historias() {
           {/* Coluna esquerda — foto */}
           <div className="elas-photo" style={{ alignSelf: 'stretch', clipPath: 'inset(0 0 2% 0 round 24px)' }} aria-hidden="true">
             <img
-              src="/ivone-delazari.jpg"
+              src={asset('/ivone-delazari.jpg')}
               alt="Dra. Ivone Delazari"
               style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', display: 'block' }}
             />
@@ -33,7 +34,7 @@ export default function Historias() {
 
           {/* Coluna direita — badge, título, primeiro parágrafo */}
           <div>
-            <div className="hist-badge" style={{ marginTop: 40, marginLeft: '-260px', position: 'relative', zIndex: 10 }}>Histórias que Inspiram</div>
+            <div className="hist-badge hist-badge--overlay" style={{ marginTop: 40, position: 'relative', zIndex: 10 }}>Histórias que Inspiram</div>
             <h2 style={{ marginTop: 2 }}>{historias.subtitulo}</h2>
             <p style={{ opacity: 0.9, marginTop: 32 }}>{historias.intro}</p>
           </div>
@@ -75,7 +76,7 @@ export default function Historias() {
           {/* Foto — ivone 3 ao lado do bloco 3 */}
           <div className="elas-photo elas-photo--flip" style={{ alignSelf: 'stretch', clipPath: 'inset(0 0 15% 0 round 24px)', transform: 'translateY(10%)' }} aria-hidden="true">
             <img
-              src="/ivone-3.jpg"
+              src={asset('/ivone-3.jpg')}
               alt="Dra. Ivone Delazari"
               style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', display: 'block' }}
             />

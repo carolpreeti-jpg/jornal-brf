@@ -1,5 +1,6 @@
 import { useRef, useEffect, useState } from 'react'
 import { edition } from '../../data/edition.js'
+import { asset } from '../../utils/assets.js'
 
 const { webinar } = edition
 
@@ -189,22 +190,23 @@ function CarouselWebinar() {
   )
 }
 
-export default function WebinarIR({ bg, hideTitle, hideCarousel, topImage, customParagrafos, bottomContent, boxIntro }) {
+export default function WebinarIR({ id = 'webinar', screenLabel = 'Webinar IR', bg, hideTitle, hideCarousel, topImage, customParagrafos, bottomContent, boxIntro }) {
   return (
-    <section className="section estatuto" id="webinar" data-screen-label="Webinar IR"
+    <section className="section estatuto" id={id} data-screen-label={screenLabel}
       style={{ background: bg ?? '#6F91FB', paddingTop: topImage ? 140 : undefined }}>
       <div className="wrap">
 
         {/* Imagem centralizada no topo */}
         {topImage && (
           <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 48 }}>
-            <img src={topImage} alt="" style={{ maxWidth: 600, width: '100%', display: 'block' }} />
+            <img src={asset(topImage)} alt="" style={{ maxWidth: 600, width: '100%', display: 'block' }} />
           </div>
         )}
 
         {!hideTitle ? (
           <>
             {/* Layout 2 colunas: texto à esquerda (só até paragrafos[0]), foto à direita */}
+            <div className="webinar-two-col">
             <div style={{
               display: 'grid',
               gridTemplateColumns: '1fr 1fr',
@@ -237,6 +239,9 @@ export default function WebinarIR({ bg, hideTitle, hideCarousel, topImage, custo
                 </div>
                 {/* Badge Jessica — sobrepõe a base da foto */}
                 <img
+                  src={asset('/jessica-webinar.jpg')}
+                  alt="Webinar IR 2026"
+                  style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}
                   src="/jessica-badge.png"
                   alt="Jessica Maia"
                   style={{
@@ -269,7 +274,7 @@ export default function WebinarIR({ bg, hideTitle, hideCarousel, topImage, custo
         {!hideCarousel && (
           <>
             <img
-              src="/07.png"
+              src={asset('/07.png')}
               alt="Webinar IR 2026"
               style={{ width: '36%', borderRadius: 12, display: 'block', margin: '80px 0 24px' }}
             />
@@ -321,7 +326,7 @@ export default function WebinarIR({ bg, hideTitle, hideCarousel, topImage, custo
 
         {/* Retângulo branco com conteúdo extra */}
         {bottomContent && (
-          <div style={{ position: 'relative', marginTop: 160, marginLeft: -100, marginRight: -100 }}>
+          <div className="webinar-bottom-box">
 
             {/* Imagem centralizada entre o azul e o retângulo */}
             <div style={{
@@ -332,7 +337,7 @@ export default function WebinarIR({ bg, hideTitle, hideCarousel, topImage, custo
               justifyContent: 'center',
               pointerEvents: 'none',
             }}>
-              <img src="/imagem12.png" alt="Investimentos" style={{ width: 416, display: 'block' }} />
+              <img src={asset('/imagem12.png')} alt="Investimentos" style={{ width: 416, display: 'block' }} />
             </div>
 
             <div style={{

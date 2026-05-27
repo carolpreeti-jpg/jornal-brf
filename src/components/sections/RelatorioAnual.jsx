@@ -1,4 +1,5 @@
 import { edition } from '../../data/edition.js'
+import { asset } from '../../utils/assets.js'
 
 const { relatorio } = edition
 
@@ -7,12 +8,13 @@ export default function RelatorioAnual() {
     <section className="section events" id="relatorio" data-screen-label="Relatório Anual">
       <div className="wrap">
         <div className="section-head reveal" style={{ position: 'relative', zIndex: 10 }}>
-          <div style={{ display: 'flex', alignItems: 'flex-start', gap: 24 }}>
+          <div className="relatorio-top-row">
 
             {/* Coluna esquerda: banner + texto */}
+            <div className="relatorio-text-col">
             <div style={{ flex: '0 0 77%' }}>
               <img
-                src="/imagem06.png"
+                src={asset('/imagem06.png')}
                 alt="Relatório Anual 2025"
                 style={{ width: '100%', borderRadius: 12, display: 'block' }}
               />
@@ -22,10 +24,10 @@ export default function RelatorioAnual() {
             </div>
 
             {/* Coluna direita: notebook alinhado ao topo */}
-            <div style={{ flex: 1, overflow: 'visible', position: 'relative', zIndex: 10 }}>
+            <div className="relatorio-note-col">
               <div className="animar">
                 <img
-                  src="/note.png"
+                  src={asset('/note.png')}
                   alt="Notebook"
                   style={{
                     width: '100%',
@@ -53,7 +55,7 @@ export default function RelatorioAnual() {
         <div className="testimonial-card testimonial-card--horizontal reveal" style={{ marginTop: 72 }}>
           <div className="card-top">
             <img
-              src="/vivian-fonseca.jpg"
+              src={asset('/vivian-fonseca.jpg')}
               alt="Vivian Fonseca"
               style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', display: 'block', borderRadius: '16px 0 0 16px' }}
             />

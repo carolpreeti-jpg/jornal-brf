@@ -47,8 +47,8 @@ export default function RentCarousel() {
       </p>
 
       {/* Tabela */}
-      <div style={{ background: '#fff', borderRadius: 12, padding: '8px 4px 32px', overflowX: 'auto', margin: '0 -32px' }}>
-        <table style={{ width: '100%', borderCollapse: 'collapse', tableLayout: 'fixed' }}>
+      <div className="rent-carousel-wrap">
+        <table className="rent-carousel-table" style={{ width: '100%', borderCollapse: 'collapse', tableLayout: 'fixed' }}>
           <tbody>
             {/* Header rentabilidade */}
             <tr>
@@ -120,6 +120,5 @@ export default function RentCarousel() {
     </div>
   )
 }
-
 
 

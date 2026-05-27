@@ -1,4 +1,5 @@
 import { edition } from '../../data/edition.js'
+import { asset } from '../../utils/assets.js'
 
 const { editorial } = edition
 
@@ -34,12 +35,12 @@ export default function Editorial() {
           <div className="editorial-col-stack">
 
             <div className="editorial-photo-small">
-              <img src="/foto-editorial-1.jpg" alt="Participante BRF Previdência"
+              <img src={asset('/foto-editorial-1.jpg')} alt="Participante BRF Previdência"
                 style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: 'inherit', display: 'block' }} />
             </div>
 
             <div className="editorial-photo-small">
-              <img src="/foto-editorial-2.jpg" alt="Família BRF Previdência"
+              <img src={asset('/foto-editorial-2.jpg')} alt="Família BRF Previdência"
                 style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: '20% center', borderRadius: 'inherit', display: 'block' }} />
             </div>
 
