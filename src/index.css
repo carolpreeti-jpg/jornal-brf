@@ -918,7 +918,8 @@ header.scrolled .hamburger span { background: var(--gray-900) }
     radial-gradient(circle at 12% 20%, rgba(125,148,252,.2), transparent 35%),
     radial-gradient(circle at 88% 80%, rgba(238,104,109,.15), transparent 35%);
 }
-.elas .inner { padding: 120px 0; position: relative }
+.elas .inner { padding: 120px 20px; position: relative }
+@media(min-width: 640px) { .elas .inner { padding: 120px 32px } }
 .elas .eyebrow { color: rgba(255,255,255,.6) }
 .elas h2 { color: #fff; margin-top: 16px; font-size: clamp(32px,4.4vw,54px); font-weight: 800; max-width: 900px }
 .elas h2 .elas-word {
@@ -2138,7 +2139,7 @@ blockquote.quote cite { display: block; margin-top: 14px; font-family: 'Co Headl
 @media(max-width:640px) {
   .section { padding: 96px 0 }
   .wrap { padding: 0 20px }
-  .elas .inner { padding: 80px 0 }
+  .elas .inner { padding: 80px 20px }
   .countdown .grid { grid-template-columns: repeat(4,1fr) }
   .hero-inner { padding: 64px 0 100px }
   .hero-art { display: none }
@@ -2238,9 +2239,12 @@ blockquote.quote cite { display: block; margin-top: 14px; font-family: 'Co Headl
   overflow-x: auto;
   margin: 0 -32px;
   -webkit-overflow-scrolling: touch;
+  scrollbar-color: var(--brand-blue-light) transparent;
 }
+.rent-carousel-table { min-width: 760px; }
 @media(max-width:720px) {
   .rent-carousel-wrap { margin: 0; border-radius: 8px; }
+  .rent-carousel-table { min-width: 720px; }
 }
 
 /* ── WebinarIR ── */
