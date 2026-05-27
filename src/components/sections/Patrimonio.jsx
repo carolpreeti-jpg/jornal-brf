@@ -25,7 +25,7 @@ export default function Patrimonio() {
             </div>
 
             {patrimonio.descricao.split('\n\n').map((p, i) => (
-              <p key={i} style={{ color: 'rgba(255,255,255,.85)', fontSize: 15, maxWidth: 540, marginBottom: 16 }}>
+              <p key={i} style={{ color: 'rgba(255,255,255,.85)', fontSize: 18, maxWidth: 540, marginBottom: 16 }}>
                 {p}
               </p>
             ))}
@@ -39,10 +39,10 @@ export default function Patrimonio() {
                 marginBottom: 24,
                 borderLeft: '3px solid var(--brand-yellow)',
               }}>
-                <p style={{ color: 'var(--brand-yellow)', fontWeight: 700, fontSize: 13, marginBottom: 8 }}>
+                <p style={{ color: 'var(--brand-yellow)', fontWeight: 700, fontSize: 18, marginBottom: 8 }}>
                   {patrimonio.oQueEPatrimonio.titulo}
                 </p>
-                <p style={{ color: 'rgba(255,255,255,.8)', fontSize: 13, margin: 0 }}>
+                <p style={{ color: 'rgba(255,255,255,.8)', fontSize: 18, margin: 0 }}>
                   {patrimonio.oQueEPatrimonio.texto}
                 </p>
               </div>
@@ -50,7 +50,7 @@ export default function Patrimonio() {
 
             {/* Intro analogias */}
             {patrimonio.analogiasIntro && (
-              <p style={{ color: 'rgba(255,255,255,.75)', fontSize: 13, marginBottom: 12 }}>
+              <p style={{ color: 'rgba(255,255,255,.75)', fontSize: 18, marginBottom: 12 }}>
                 {patrimonio.analogiasIntro}
               </p>
             )}
@@ -60,14 +60,14 @@ export default function Patrimonio() {
               {patrimonio.analogias.map((a, i) => (
                 <div key={i} className="lu-rule">
                   <span className="ic">{a.ic}</span>
-                  <span className="t" style={{ fontSize: 13 }}>{a.texto}</span>
+                  <span className="t" style={{ fontSize: 18 }}>{a.texto}</span>
                 </div>
               ))}
             </div>
 
             {/* Contexto das analogias */}
             {patrimonio.analogiasContexto && (
-              <p style={{ color: 'rgba(255,255,255,.75)', fontSize: 13, marginTop: 16, marginBottom: 24 }}>
+              <p style={{ color: 'rgba(255,255,255,.75)', fontSize: 18, marginTop: 16, marginBottom: 24 }}>
                 {patrimonio.analogiasContexto}
               </p>
             )}
@@ -79,18 +79,18 @@ export default function Patrimonio() {
               color: 'rgba(255,255,255,.85)',
               fontFamily: "'Noto Sans', sans-serif",
               fontStyle: 'italic',
-              fontSize: 15,
+              fontSize: 18,
               lineHeight: 1.75,
             }}>
               "{patrimonio.citacao}"
-              <cite style={{ display: 'block', marginTop: 8, fontFamily: "'Co Headline', sans-serif", fontWeight: 400, fontSize: 15, fontStyle: 'normal', color: 'rgba(255,255,255,.7)' }}>
+              <cite style={{ display: 'block', marginTop: 8, fontFamily: "'Co Headline', sans-serif", fontWeight: 400, fontSize: 18, fontStyle: 'normal', color: 'rgba(255,255,255,.7)' }}>
                 — {patrimonio.citacaoAutor}
               </cite>
             </blockquote>
 
             {/* Fechamento */}
             {patrimonio.fechamento && (
-              <p style={{ color: 'rgba(255,255,255,.75)', fontSize: 13, marginTop: 20 }}>
+              <p style={{ color: 'rgba(255,255,255,.75)', fontSize: 18, lineHeight: 1.8, marginTop: 20 }}>
                 {patrimonio.fechamento}
               </p>
             )}

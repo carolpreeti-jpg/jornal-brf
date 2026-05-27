@@ -207,9 +207,16 @@ export default function WebinarIR({ id = 'webinar', screenLabel = 'Webinar IR', 
           <>
             {/* Layout 2 colunas: texto à esquerda (só até paragrafos[0]), foto à direita */}
             <div className="webinar-two-col">
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: '1fr 1fr',
+              gap: '48px',
+              alignItems: 'stretch',
+              paddingBottom: 24,
+            }}>
               {/* Coluna esquerda — título + descricao + paragrafos[0] */}
               <div>
-                <div className="section-head" style={{ maxWidth: '100%', marginBottom: 24 }}>
+                <div className="section-head" style={{ maxWidth: '100%', marginBottom: 40 }}>
                   <h2 style={{ maxWidth: '100%', color: '#fff' }}>
                     <span style={{ color: '#fff' }}>Webinar BRF Prev</span>
                     {' '}orienta participantes sobre a{' '}
@@ -218,29 +225,49 @@ export default function WebinarIR({ id = 'webinar', screenLabel = 'Webinar IR', 
                   </h2>
                 </div>
                 {[webinar.descricao, (webinar.paragrafos || [])[0]].filter(Boolean).map((p, i) => (
-                  <p key={i} style={{ color: '#fff', fontSize: 16, lineHeight: 1.8, margin: '0 0 20px' }}>{p}</p>
+                  <p key={i} style={{ color: '#fff', fontSize: 18, lineHeight: 1.8, margin: '0 0 20px', whiteSpace: 'pre-line' }}>{p}</p>
                 ))}
               </div>
 
-              {/* Coluna direita — foto termina junto com o texto */}
-              <div style={{ borderRadius: 16, overflow: 'hidden', position: 'relative', height: '90%' }}>
+              {/* Coluna direita — foto interativa + badge sobreposto na base */}
+              <div style={{ position: 'relative' }}>
+                <div className="webinar-photo-box" style={{ height: '90%' }}>
+                  <img
+                    src="/jessica-webinar.jpg"
+                    alt="Webinar IR 2026"
+                  />
+                </div>
+                {/* Badge Jessica — sobrepõe a base da foto */}
                 <img
                   src={asset('/jessica-webinar.jpg')}
                   alt="Webinar IR 2026"
                   style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}
+                  src="/jessica-badge.png"
+                  alt="Jessica Maia"
+                  style={{
+                    position: 'absolute',
+                    bottom: '5%',
+                    left: '50%',
+                    transform: 'translateX(-50%)',
+                    width: '48%',
+                    display: 'block',
+                    zIndex: 10,
+                  }}
                 />
               </div>
             </div>
 
             {/* Parágrafos restantes — abaixo, largura total */}
-            {(webinar.paragrafos || []).slice(1).map((p, i) => (
-              <p key={i} style={{ color: '#fff', fontSize: 16, lineHeight: 1.8, margin: '20px 0 0' }}>{p}</p>
-            ))}
+            <div style={{ marginTop: 4 }}>
+              {(webinar.paragrafos || []).slice(1).map((p, i) => (
+                <p key={i} style={{ color: '#fff', fontSize: 18, lineHeight: 1.8, margin: '0 0 20px' }}>{p}</p>
+              ))}
+            </div>
           </>
         ) : (
           /* Modo sem título — parágrafos simples (customParagrafos) */
           (customParagrafos ?? []).map((p, i) => (
-            <p key={i} style={{ color: '#fff', fontSize: 16, lineHeight: 1.8, maxWidth: '100%', margin: '0 0 16px' }}>{p}</p>
+            <p key={i} style={{ color: '#fff', fontSize: 18, lineHeight: 1.8, maxWidth: '100%', margin: '0 0 16px' }}>{p}</p>
           ))
         )}
 
@@ -260,15 +287,15 @@ export default function WebinarIR({ id = 'webinar', screenLabel = 'Webinar IR', 
             </h3>
 
             {(webinar.paragrafos2 || []).slice(0, 2).map((p, i) => (
-              <p key={i} style={{ color: '#fff', fontSize: 16, lineHeight: 1.8, maxWidth: '100%', margin: '0 0 16px' }}>{p}</p>
+              <p key={i} style={{ color: '#fff', fontSize: 18, lineHeight: 1.8, maxWidth: '100%', margin: '0 0 16px' }}>{p}</p>
             ))}
 
-            <p style={{ color: '#fff', fontSize: 16, lineHeight: 1.8, maxWidth: '100%', margin: '0 0 16px' }}>
+            <p style={{ color: '#fff', fontSize: 18, lineHeight: 1.8, maxWidth: '100%', margin: '0 0 16px' }}>
               {webinar.paragrafos2Youtube}
             </p>
 
             {(webinar.paragrafos2 || []).slice(2).map((p, i) => (
-              <p key={i} style={{ color: '#fff', fontSize: 16, lineHeight: 1.8, maxWidth: '100%', margin: '0 0 16px' }}>{p}</p>
+              <p key={i} style={{ color: '#fff', fontSize: 18, lineHeight: 1.8, maxWidth: '100%', margin: '0 0 16px' }}>{p}</p>
             ))}
 
             <div style={{ margin: '32px 0 0' }}>
@@ -291,7 +318,7 @@ export default function WebinarIR({ id = 'webinar', screenLabel = 'Webinar IR', 
                   transition: 'background 0.2s',
                 }}
               >
-                Assista ao webinar em nosso canal do YouTube →
+                Assista ao webinar em nosso canal do YouTube
               </a>
             </div>
           </>
@@ -324,7 +351,7 @@ export default function WebinarIR({ id = 'webinar', screenLabel = 'Webinar IR', 
                     <p key={i} style={{
                       fontFamily: "'Noto Sans', sans-serif",
                       color: 'var(--text-primary)',
-                      fontSize: 17,
+                      fontSize: 18,
                       lineHeight: 1.8,
                       margin: i < arr.length - 1 ? '0 0 20px' : 0,
                     }}>

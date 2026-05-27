@@ -12,6 +12,7 @@ export default function RelatorioAnual() {
 
             {/* Coluna esquerda: banner + texto */}
             <div className="relatorio-text-col">
+            <div style={{ flex: '0 0 77%' }}>
               <img
                 src={asset('/imagem06.png')}
                 alt="Relatório Anual 2025"
@@ -32,7 +33,7 @@ export default function RelatorioAnual() {
                     width: '100%',
                     objectFit: 'contain',
                     display: 'block',
-                    transform: 'translateX(-1%) translateY(-18%) scale(3.24)',
+                    transform: 'translateX(18%) translateY(13%) scale(4.2)',
                     transformOrigin: 'top left',
                   }}
                 />
@@ -79,9 +80,9 @@ export default function RelatorioAnual() {
             href={relatorio.url}
             target="_blank"
             rel="noopener noreferrer"
-            style={{ background: '#ED676D', boxShadow: '0 6px 18px rgba(237,103,109,.35)' }}
+            style={{ background: '#ED676D', boxShadow: 'none', fontSize: 18 }}
           >
-            Acesse o Relatório Anual 2025 <span className="arrow">→</span>
+            Acesse o Relatório Anual 2025
           </a>
         </div>
       </div>

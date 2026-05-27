@@ -30,12 +30,12 @@ export default function BRFPrevEmFoco() {
         <div className="cols">
           <div style={{ paddingTop: '2%' }}>
             {brfPrevEmFoco.paragrafos.slice(0, Math.ceil(brfPrevEmFoco.paragrafos.length / 2)).map((p, i) => (
-              <p key={i} style={{ color: 'var(--text-secondary)' }}>{p}</p>
+              <p key={i} style={{ color: 'var(--text-secondary)', fontFamily: "'Noto Sans', sans-serif", fontSize: 18, lineHeight: 1.8 }}>{p}</p>
             ))}
           </div>
           <div>
             {brfPrevEmFoco.paragrafos.slice(Math.ceil(brfPrevEmFoco.paragrafos.length / 2)).map((p, i) => (
-              <p key={i} style={{ color: 'var(--text-secondary)' }}>{p}</p>
+              <p key={i} style={{ color: 'var(--text-secondary)', fontFamily: "'Noto Sans', sans-serif", fontSize: 18, lineHeight: 1.8 }}>{p}</p>
             ))}
           </div>
         </div>

@@ -41,12 +41,18 @@ export default function FalePresidente() {
               ))}
             </ul>
 
-            <p style={{ marginTop: 20, color: 'var(--text-secondary)', fontSize: 15 }}>
-              {falePresidente.cta}
+            <p style={{ marginTop: 20, color: 'var(--text-secondary)' }}>
+              {falePresidente.cta}{' '}
+              <a href={`mailto:${falePresidente.email}`} style={{ color: 'var(--brand-blue)', textDecoration: 'none', fontWeight: 600 }}>
+                {falePresidente.email}
+              </a>
+            </p>
+            <p style={{ marginTop: 12, color: 'var(--text-secondary)' }}>
+              {falePresidente.ctaComplemento}
             </p>
 
-            <a className="btn btn-primary" style={{ marginTop: 20, background: '#EE686D', boxShadow: '0 6px 18px rgba(238,104,109,.35)' }} href={`mailto:${falePresidente.email}`}>
-              Acessar o canal <span className="arrow">→</span>
+            <a className="btn btn-primary" style={{ marginTop: 20, background: '#EE686D', boxShadow: 'none', fontSize: 18 }} href={`mailto:${falePresidente.email}`}>
+              Acessar o canal
             </a>
 
           </div>

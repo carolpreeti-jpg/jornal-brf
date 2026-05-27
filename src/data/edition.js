@@ -331,7 +331,8 @@ export const edition = {
       'O "Fale com o Presidente" reforça o compromisso da BRF Prev com a proximidade, a transparência e a escuta ativa, contribuindo para uma experiência de atendimento ainda mais completa e acolhedora.',
       'É importante destacar que o canal não substitui os canais tradicionais de atendimento e não possui caráter de ouvidoria. Sua proposta é atuar como um segundo nível de atendimento, proporcionando mais proximidade na tratativa das demandas apresentadas pelos participantes.',
     ],
-    cta: 'Quando precisar utilizar o canal, basta escrever um e-mail diretamente para: presidente.brfprevidencia@mbrf.com. O acesso também está disponível em nosso site.',
+    cta: 'Quando precisar utilizar o canal, basta escrever um e-mail diretamente para:',
+    ctaComplemento: 'O acesso também está disponível em nosso site.',
     email: 'presidente.brfprevidencia@mbrf.com',
     citacao: 'Criar este canal é, antes de tudo, um ato de respeito ao nosso participante. O Fale com o Presidente não é uma formalidade: é um compromisso pessoal meu de ouvir, entender e agir. Cada mensagem será tratada com a atenção que você merece.',
     citacaoAutor: 'Mauricio Manduca\nDiretor Presidente - BRF Prev',
@@ -400,9 +401,9 @@ export const edition = {
   // ─── Webinar IR 2026 ──────────────────────────────────────────────────────
   webinar: {
     titulo: 'Webinar BRF Prev orienta participantes sobre a Declaração de IR 2026 na prática',
-    descricao: 'Com o início do período de entrega da Declaração do Imposto de Renda 2026, a BRF Prev promoveu um webinar especial com o objetivo de apoiar seus participantes no correto preenchimento das informações, especialmente no que se refere à previdência complementar.',
+    descricao: 'Com o início do período de entrega da Declaração do Imposto\nde Renda 2026, a BRF Prev promoveu um webinar especial com o objetivo de apoiar seus participantes no correto preenchimento das informações, especialmente no que se refere à previdência complementar.',
     paragrafos: [
-      'O encontro foi conduzido pela Diretora de Administração e Seguridade, Vivian Fonseca, e contou com a participação da contadora Jessica Maia, fundadora da Domus Contábil, responsável por apresentar, de forma prática e didática, o passo a passo da declaração.',
+      'O encontro foi conduzido pela Diretora de Administração e Seguridade, Vivian Fonseca, e contou com a participação da contadora Jessica Maia, fundadora da Domus Contábil, responsável por apresentar, de forma prática e didática,\no passo a passo da declaração.',
       'Durante o webinar, foram abordados os principais pontos de atenção para o contribuinte, com destaque para as atualizações das regras do IR 2026, possibilidades de deduções e orientações específicas sobre como declarar corretamente as contribuições e benefícios relacionados à previdência.',
       'A iniciativa reforça a importância do planejamento financeiro e do correto cumprimento das obrigações fiscais, contribuindo para evitar inconsistências na declaração, reduzir a carga tributária quando aplicável e garantir maior tranquilidade junto à Receita Federal.',
     ],

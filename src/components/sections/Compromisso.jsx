@@ -137,9 +137,10 @@ export default function Compromisso() {
         </div>
 
         {/* Cabeçalho do calendário */}
-        <div style={{ marginTop: 56, marginBottom: 20 }}>
-          <h3 style={{ color: 'var(--text-primary)', marginBottom: 10, fontSize: 32 }}>
-            Próximas visitas às unidades
+        <div style={{ marginTop: 72, marginBottom: 40 }}>
+          <h3 style={{ marginBottom: 20, fontSize: 32 }}>
+            <span style={{ color: '#EE686D' }}>Próximas visitas </span>
+            <span style={{ color: 'var(--text-primary)' }}>às unidades</span>
           </h3>
           <p style={{ color: 'var(--text-secondary)', margin: 0, maxWidth: 760 }}>
             A próxima visita está marcada para o mês de maio, em Lucas do Rio Verde, MT, no período de 25 a 29 de maio. O calendário das próximas ações presenciais está em fase de organização, os locais já estão definidos (confira na tabela abaixo). As datas serão divulgadas oportunamente pelos canais oficiais da BRF Prev e RH's locais.

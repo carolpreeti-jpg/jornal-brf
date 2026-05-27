@@ -72,6 +72,10 @@ export default function Encontros() {
             {encontros.intro}
           </p>
           <p style={{ color: 'var(--text-secondary)', fontSize: 17, lineHeight: 1.8, margin: '0', padding: '0 clamp(8px, 5.5vw, 80px)', maxWidth: '100%' }}>
+          <p style={{ color: 'var(--text-secondary)', fontSize: 18, lineHeight: 1.8, margin: '0 0 16px', padding: '0 80px', maxWidth: '100%' }}>
+            {encontros.intro}
+          </p>
+          <p style={{ color: 'var(--text-secondary)', fontSize: 18, lineHeight: 1.8, margin: '0', padding: '0 80px', maxWidth: '100%' }}>
             {encontros.descricao}
           </p>
 
@@ -124,6 +128,7 @@ export default function Encontros() {
           {/* Próximo Encontro */}
           {encontros.proximoEncontro && (
             <div style={{ padding: '48px clamp(8px, 5.5vw, 80px) 0', marginTop: 56 }}>
+            <div style={{ padding: '48px 80px 0', marginTop: 28 }}>
               <h3 style={{
                 fontFamily: 'var(--font-display)',
                 fontWeight: 400,
