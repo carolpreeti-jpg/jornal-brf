@@ -28,7 +28,7 @@ export const edition = {
       tag: 'Programa',
       titulo: 'BRF Prev Compromisso com Você',
       subtitulo: 'Visitas presenciais às unidades',
-      imagem: '/acao-curitiba.png',
+      imagem: '/acao-curitiba.jpg',
       imagemFit: 'cover',
       imagemPosition: 'center 35%',
       imagemFlipX: true,
@@ -127,7 +127,7 @@ export const edition = {
       tag: 'Aporte',
       titulo: 'Aportes extras e contribuições',
       subtitulo: 'Aumente sua reserva',
-      imagem: '/aportes.png',
+      imagem: '/aportes.jpg',
       imagemFit: 'cover',
       imagemPosition: 'center center',
       gradient: 'linear-gradient(135deg, #F97316 0%, #FCD34D 100%)',
@@ -369,7 +369,7 @@ export const edition = {
   relatorio: {
     titulo: 'Relatório Anual 2025 conecta resultados da BRF Prev com os participantes',
     tema: 'resultados que conectam',
-    descricao: 'A BRF Previdência apresenta o Relatório Anual 2025, um material que vai além dos números e itens exigidos pela legislação, reforçando o compromisso da Entidade com a transparência, as melhores práticas de governança e proximidade com seus participantes.\n\nCom o tema "resultados que conectam", o documento reúne os principais destaques da gestão no último ano, evidenciando a evolução contínua da experiência do participante, os avanços em eficiência operacional e a consistência dos resultados dos planos.',
+    descricao: 'A BRF Previdência apresenta o Relatório Anual 2025, um material que vai além dos números e itens exigidos pela legislação, reforçando o compromisso da Entidade com a transparência, as melhores práticas de governança e proximidade com seus participantes.',
     destaques: [
       { ic: '💻', texto: 'Lançamento de novos canais digitais como o site, portal de autoatendimento e aplicativo. Em 2025, a BRF Prev renovou a identidade visual e desenvolveu campanhas voltadas ao incentivo de aportes adicionais.' },
       { ic: '⚙️', texto: 'Internamente, houve revisão de processos e a migração do sistema de gestão, com foco em simplificar o acesso às informações e fortalecer a jornada do participante.' },

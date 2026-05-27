@@ -469,7 +469,7 @@ header.scrolled .hamburger span { background: var(--gray-900) }
   transition: background .2s ease, transform .2s ease;
 }
 .mi-card:hover .mi-arrow {
-  background: #C53B6C;
+  background: #94A3B8;
   transform: scale(1.06);
 }
 
@@ -1200,6 +1200,7 @@ header.scrolled .hamburger span { background: var(--gray-900) }
   .relatorio-top-row { flex-direction: column; gap: 32px; }
   .relatorio-text-col { flex: 0 0 100%; width: 100%; }
   .relatorio-note-col { display: none; }
+}
 /* ── Webinar — retângulo de foto interativo ── */
 .webinar-photo-box {
   border-radius: 16px;
@@ -2242,9 +2243,12 @@ blockquote.quote cite { display: block; margin-top: 14px; font-family: 'Co Headl
 }
 .cu-analogias-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   margin-bottom: 56px;
+}
+@media(max-width:880px) {
+  .cu-analogias-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media(max-width:720px) {
   .cu-foto-grid { grid-template-columns: 1fr; gap: 24px; }

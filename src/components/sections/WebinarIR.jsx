@@ -206,7 +206,6 @@ export default function WebinarIR({ id = 'webinar', screenLabel = 'Webinar IR', 
         {!hideTitle ? (
           <>
             {/* Layout 2 colunas: texto à esquerda (só até paragrafos[0]), foto à direita */}
-            <div className="webinar-two-col">
             <div style={{
               display: 'grid',
               gridTemplateColumns: '1fr 1fr',
@@ -233,16 +232,13 @@ export default function WebinarIR({ id = 'webinar', screenLabel = 'Webinar IR', 
               <div style={{ position: 'relative' }}>
                 <div className="webinar-photo-box" style={{ height: '90%' }}>
                   <img
-                    src="/jessica-webinar.jpg"
+                    src={asset('/jessica-webinar.jpg')}
                     alt="Webinar IR 2026"
                   />
                 </div>
                 {/* Badge Jessica — sobrepõe a base da foto */}
                 <img
-                  src={asset('/jessica-webinar.jpg')}
-                  alt="Webinar IR 2026"
-                  style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}
-                  src="/jessica-badge.png"
+                  src={asset('/jessica-badge.png')}
                   alt="Jessica Maia"
                   style={{
                     position: 'absolute',

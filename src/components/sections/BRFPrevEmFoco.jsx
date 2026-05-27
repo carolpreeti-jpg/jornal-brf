@@ -44,7 +44,7 @@ export default function BRFPrevEmFoco() {
         <div className="brfprev-foco-box">
           {/* Imagem cobrindo todo o retângulo */}
           <img
-            src={asset('/celular.png')}
+            src={asset('/celular.jpg')}
             alt=""
             style={{
               position: 'absolute',

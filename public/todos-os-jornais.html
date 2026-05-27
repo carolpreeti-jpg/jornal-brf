@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Todos os Jornais — BRF Previdência</title>
+  <style>
+    @font-face {
+      font-family: 'Co Headline';
+      src: url('/fonts/CoHeadline-Bold.otf') format('opentype');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Co Headline';
+      src: url('/fonts/CoHeadline-Regular.otf') format('opentype');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Co Headline';
+      src: url('/fonts/CoHeadline-Light.otf') format('opentype');
+      font-weight: 300;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Noto Sans';
+      src: url('/fonts/NotoSans-Regular.ttf') format('truetype');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Noto Sans';
+      src: url('/fonts/NotoSans-Bold.ttf') format('truetype');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --brand-blue:       #1B46B2;
+      --brand-blue-dark:  #0D2A6E;
+      --brand-blue-mid:   #7D94FC;
+      --brand-blue-light: #EBF0FF;
+      --brand-coral:      #EE686D;
+      --brand-teal:       #0D9488;
+      --white:            #FAF9F6;
+      --text-primary:     #000E1F;
+      --text-secondary:   #5A4D45;
+      --text-muted:       #8A7D75;
+      --gray-50:          #F5F3F0;
+      --gray-100:         #EBE8E3;
+      --gray-200:         #D8D3CC;
+      --font-display:     'Co Headline', sans-serif;
+      --font-body:        'Noto Sans', sans-serif;
+      --radius-card:      16px;
+      --shadow-sm:        0 1px 2px rgba(0,14,31,.06);
+      --shadow-md:        0 4px 24px rgba(0,14,31,.08);
+      --shadow-lg:        0 12px 32px rgba(27,70,178,.14);
+    }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--gray-50);
+      color: var(--text-primary);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ───────────────────────────────────────────────────────
+       HEADER
+    ─────────────────────────────────────────────────────── */
+    header {
+      background: #fff;
+      border-bottom: 1px solid var(--gray-100);
+      padding: 0 40px;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 12px rgba(27,70,178,.06);
+    }
+
+    .header-brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+    }
+
+    .header-logo-box {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, var(--brand-blue) 0%, var(--brand-blue-dark) 100%);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .header-logo-box span {
+      color: #fff;
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 13px;
+      letter-spacing: -0.5px;
+    }
+
+    .header-name {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 15px;
+      color: var(--brand-blue);
+      line-height: 1.2;
+    }
+    .header-name small {
+      display: block;
+      font-weight: 400;
+      font-size: 11px;
+      color: var(--text-muted);
+      letter-spacing: .06em;
+    }
+
+    .header-back {
+      font-size: 13px;
+      color: var(--brand-blue);
+      text-decoration: none;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      border: 1.5px solid var(--brand-blue-mid);
+      padding: 8px 18px;
+      border-radius: 999px;
+      transition: background .2s, color .2s;
+    }
+    .header-back:hover {
+      background: var(--brand-blue);
+      color: #fff;
+      border-color: var(--brand-blue);
+    }
+
+    /* ───────────────────────────────────────────────────────
+       HERO
+    ─────────────────────────────────────────────────────── */
+    .page-hero {
+      background: linear-gradient(135deg, var(--brand-blue) 0%, var(--brand-blue-dark) 60%, #2A1F6B 100%);
+      padding: 88px 40px 80px;
+      text-align: center;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 70% 40%, rgba(125,148,252,.18) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .page-hero .eyebrow {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.55);
+      margin-bottom: 18px;
+      position: relative;
+    }
+
+    .page-hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(36px, 5vw, 58px);
+      font-weight: 800;
+      line-height: 1.05;
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .page-hero p {
+      font-size: 17px;
+      color: rgba(255,255,255,.72);
+      max-width: 540px;
+      margin: 0 auto;
+      line-height: 1.75;
+      position: relative;
+    }
+
+    .hero-stats {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+      margin-top: 40px;
+      position: relative;
+    }
+
+    .hero-stat { text-align: center; }
+    .hero-stat strong {
+      display: block;
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 28px;
+      color: #fff;
+      line-height: 1;
+    }
+    .hero-stat span {
+      font-size: 12px;
+      color: rgba(255,255,255,.55);
+      letter-spacing: .06em;
+      margin-top: 4px;
+      display: block;
+    }
+    .hero-stat-divider {
+      width: 1px;
+      height: 36px;
+      background: rgba(255,255,255,.2);
+    }
+
+    /* ───────────────────────────────────────────────────────
+       MAIN WRAP
+    ─────────────────────────────────────────────────────── */
+    .wrap {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    /* ───────────────────────────────────────────────────────
+       SEÇÃO EDIÇÕES
+    ─────────────────────────────────────────────────────── */
+    .edicoes-section { padding: 72px 0 100px; }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--brand-coral);
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: clamp(24px, 3vw, 32px);
+      color: var(--text-primary);
+      margin-bottom: 36px;
+    }
+
+    /* ───────────────────────────────────────────────────────
+       CARD DESTAQUE (edição atual)
+    ─────────────────────────────────────────────────────── */
+    .ed-destaque {
+      display: flex;
+      background: #fff;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      margin-bottom: 48px;
+      text-decoration: none;
+      color: inherit;
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+    .ed-destaque:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 24px 48px rgba(27,70,178,.18);
+    }
+
+    .ed-destaque-cover {
+      width: 380px;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 48px 40px;
+      position: relative;
+      overflow: hidden;
+    }
+    .ed-destaque-cover::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 30% 60%, rgba(125,148,252,.3) 0%, transparent 60%);
+    }
+
+    .ed-destaque-edicao {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 64px;
+      color: rgba(255,255,255,.12);
+      position: absolute;
+      bottom: 20px;
+      right: 24px;
+      line-height: 1;
+      letter-spacing: -3px;
+    }
+
+    .ed-destaque-badge {
+      background: rgba(255,255,255,.15);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,.3);
+      border-radius: 999px;
+      padding: 6px 16px;
+      font-size: 11px;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      position: relative;
+      margin-bottom: 24px;
+    }
+
+    .ed-destaque-num {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: clamp(48px, 6vw, 72px);
+      color: #fff;
+      line-height: 1;
+      position: relative;
+      text-align: center;
+    }
+    .ed-destaque-num small {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      color: rgba(255,255,255,.65);
+      letter-spacing: .08em;
+      margin-top: 6px;
+    }
+
+    .ed-destaque-body {
+      padding: 48px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .ed-destaque-meta {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--brand-coral);
+      margin-bottom: 14px;
+    }
+
+    .ed-destaque-titulo {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: clamp(22px, 2.5vw, 30px);
+      color: var(--text-primary);
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .ed-destaque-desc {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.75;
+      margin-bottom: 32px;
+      max-width: 520px;
+    }
+
+    .ed-destaque-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 32px;
+    }
+
+    .ed-tag {
+      background: var(--brand-blue-light);
+      color: var(--brand-blue);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 5px 14px;
+      border-radius: 999px;
+      letter-spacing: .04em;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--brand-blue);
+      color: #fff;
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 700;
+      padding: 14px 28px;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: background .2s, transform .2s;
+      align-self: flex-start;
+    }
+    .btn-primary:hover {
+      background: var(--brand-blue-dark);
+      transform: translateX(2px);
+    }
+
+    /* ───────────────────────────────────────────────────────
+       GRID EDIÇÕES ANTERIORES
+    ─────────────────────────────────────────────────────── */
+    .edicoes-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    @media (max-width: 960px) { .edicoes-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 560px) { .edicoes-grid { grid-template-columns: 1fr; } }
+
+    .ed-card {
+      background: #fff;
+      border-radius: var(--radius-card);
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--gray-100);
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+    .ed-card:not([aria-disabled='true']):hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: transparent;
+    }
+    .ed-card[aria-disabled='true'] { cursor: default; opacity: .85; }
+
+    .ed-cover {
+      aspect-ratio: 16 / 9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ed-cover-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      position: relative;
+    }
+
+    .ed-cover-num {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 48px;
+      color: rgba(255,255,255,.2);
+      line-height: 1;
+      letter-spacing: -2px;
+    }
+
+    .ed-cover-label {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 12px;
+      color: rgba(255,255,255,.65);
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .ed-body {
+      padding: 22px 24px 26px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .ed-meta {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--brand-coral);
+    }
+
+    .ed-titulo {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 16px;
+      color: var(--text-primary);
+      line-height: 1.4;
+    }
+
+    .ed-desc {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.65;
+      margin-top: 2px;
+      flex: 1;
+    }
+
+    .ed-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      margin-top: 14px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--brand-blue);
+      text-decoration: none;
+      align-self: flex-start;
+    }
+    .ed-link:hover { text-decoration: underline; }
+
+    .ed-link-soon {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      margin-top: 14px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-muted);
+      align-self: flex-start;
+    }
+
+    /* ── Gradientes ── */
+    .g1  { background: linear-gradient(135deg, #1B46B2 0%, #0D2A6E 100%); }
+    .g2  { background: linear-gradient(135deg, #EE686D 0%, #C53B6C 100%); }
+    .g3  { background: linear-gradient(135deg, #0D9488 0%, #1B46B2 100%); }
+    .g4  { background: linear-gradient(135deg, #2A1F6B 0%, #7D94FC 100%); }
+    .g5  { background: linear-gradient(135deg, #EE686D 0%, #F97316 100%); }
+    .g6  { background: linear-gradient(135deg, #1B46B2 0%, #0D9488 100%); }
+    .g7  { background: linear-gradient(135deg, #7D94FC 0%, #1B46B2 100%); }
+    .g8  { background: linear-gradient(135deg, #DC2626 0%, #7C3AED 100%); }
+    .g9  { background: linear-gradient(135deg, #0D9488 0%, #2563EB 100%); }
+    .g10 { background: linear-gradient(135deg, #F97316 0%, #FCD34D 100%); }
+    .g11 { background: linear-gradient(135deg, #1E3A8A 0%, #2563EB 100%); }
+    .g12 { background: linear-gradient(135deg, #7C3AED 0%, #EE686D 100%); }
+
+    /* ───────────────────────────────────────────────────────
+       FOOTER
+    ─────────────────────────────────────────────────────── */
+    .page-footer {
+      background: #0B1530;
+      padding: 48px 40px;
+      text-align: center;
+    }
+    .page-footer p {
+      font-size: 13px;
+      color: rgba(255,255,255,.45);
+      line-height: 1.7;
+    }
+    .page-footer a {
+      color: rgba(255,255,255,.7);
+      text-decoration: underline;
+    }
+    .page-footer .footer-logo {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 18px;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+    .page-footer .footer-logo small {
+      font-weight: 400;
+      font-size: 13px;
+      color: rgba(255,255,255,.5);
+      display: block;
+      margin-top: 2px;
+    }
+
+    /* ───────────────────────────────────────────────────────
+       RESPONSIVO
+    ─────────────────────────────────────────────────────── */
+    @media (max-width: 860px) {
+      .ed-destaque { flex-direction: column; }
+      .ed-destaque-cover { width: 100%; padding: 48px 40px; aspect-ratio: 16 / 7; }
+      .ed-destaque-body { padding: 36px 32px 40px; }
+    }
+
+    @media (max-width: 640px) {
+      header { padding: 0 20px; }
+      .wrap { padding: 0 20px; }
+      .page-hero { padding: 64px 20px 56px; }
+      .hero-stats { gap: 20px; }
+      .hero-stat strong { font-size: 22px; }
+      .edicoes-section { padding: 48px 0 72px; }
+      .ed-destaque-cover { padding: 36px 28px; }
+      .ed-destaque-body { padding: 28px 24px 32px; }
+      .page-footer { padding: 40px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Header ── -->
+  <header>
+    <a class="header-brand" href="./">
+      <div class="header-logo-box"><span>BRF</span></div>
+      <div class="header-name">
+        Jornal BRF Previdência
+        <small>Fundo de Pensão</small>
+      </div>
+    </a>
+    <a class="header-back" href="./">← Edição atual</a>
+  </header>
+
+  <!-- ── Hero ── -->
+  <div class="page-hero">
+    <p class="eyebrow">Arquivo · Histórico Editorial</p>
+    <h1>Todos os Jornais</h1>
+    <p>Acesse cada edição do Jornal BRF Previdência e acompanhe nossa trajetória de transparência, informação e proximidade com os participantes.</p>
+
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <strong>45</strong>
+        <span>Edições publicadas</span>
+      </div>
+      <div class="hero-stat-divider"></div>
+      <div class="hero-stat">
+        <strong>2026</strong>
+        <span>Ano atual</span>
+      </div>
+      <div class="hero-stat-divider"></div>
+      <div class="hero-stat">
+        <strong>Mensal</strong>
+        <span>Periodicidade</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Edições ── -->
+  <section class="edicoes-section">
+    <div class="wrap">
+
+      <!-- Edições -->
+      <p class="section-label">Todas as edições</p>
+      <h2 class="section-title">Arquivo</h2>
+
+      <div class="edicoes-grid">
+
+        <div class="ed-card" aria-disabled="true">
+          <div class="ed-cover g2">
+            <div class="ed-cover-inner">
+              <span class="ed-cover-num">44</span>
+              <span class="ed-cover-label">Abril 2026</span>
+            </div>
+          </div>
+          <div class="ed-body">
+            <span class="ed-meta">Edição 44 · Abril 2026</span>
+            <p class="ed-titulo">Transparência e governança em foco</p>
+            <p class="ed-desc">Resultados do 1º trimestre, Encontros de Resultados e novidades sobre os planos previdenciários.</p>
+            <span class="ed-link-soon">⏳ Em breve</span>
+          </div>
+        </div>
+
+        <div class="ed-card" aria-disabled="true">
+          <div class="ed-cover g3">
+            <div class="ed-cover-inner">
+              <span class="ed-cover-num">43</span>
+              <span class="ed-cover-label">Março 2026</span>
+            </div>
+          </div>
+          <div class="ed-body">
+            <span class="ed-meta">Edição 43 · Março 2026</span>
+            <p class="ed-titulo">Novos canais digitais e educação financeira</p>
+            <p class="ed-desc">Lançamento do portal de autoatendimento atualizado e dicas de planejamento para os participantes.</p>
+            <span class="ed-link-soon">⏳ Em breve</span>
+          </div>
+        </div>
+
+        <div class="ed-card" aria-disabled="true">
+          <div class="ed-cover g4">
+            <div class="ed-cover-inner">
+              <span class="ed-cover-num">42</span>
+              <span class="ed-cover-label">Fevereiro 2026</span>
+            </div>
+          </div>
+          <div class="ed-body">
+            <span class="ed-meta">Edição 42 · Fevereiro 2026</span>
+            <p class="ed-titulo">Planejamento de longo prazo em 2026</p>
+            <p class="ed-desc">Perspectivas para o novo ano, orientações sobre aportes e resultados acumulados dos planos.</p>
+            <span class="ed-link-soon">⏳ Em breve</span>
+          </div>
+        </div>
+
+        <div class="ed-card" aria-disabled="true">
+          <div class="ed-cover g5">
+            <div class="ed-cover-inner">
+              <span class="ed-cover-num">41</span>
+              <span class="ed-cover-label">Janeiro 2026</span>
+            </div>
+          </div>
+          <div class="ed-body">
+            <span class="ed-meta">Edição 41 · Janeiro 2026</span>
+            <p class="ed-titulo">Começo de ano com metas e prosperidade</p>
+            <p class="ed-desc">Balanço de 2025, destaques institucionais e o cenário econômico para os próximos meses.</p>
+            <span class="ed-link-soon">⏳ Em breve</span>
+          </div>
+        </div>
+
+        <div class="ed-card" aria-disabled="true">
+          <div class="ed-cover g6">
+            <div class="ed-cover-inner">
+              <span class="ed-cover-num">40</span>
+              <span class="ed-cover-label">Dezembro 2025</span>
+            </div>
+          </div>
+          <div class="ed-body">
+            <span class="ed-meta">Edição 40 · Dezembro 2025</span>
+            <p class="ed-titulo">Encerrando 2025 com grandes conquistas</p>
+            <p class="ed-desc">Revisão completa do ano: rentabilidade, lançamento do novo site e principais marcos da gestão.</p>
+            <span class="ed-link-soon">⏳ Em breve</span>
+          </div>
+        </div>
+
+        <div class="ed-card" aria-disabled="true">
+          <div class="ed-cover g7">
+            <div class="ed-cover-inner">
+              <span class="ed-cover-num">39</span>
+              <span class="ed-cover-label">Novembro 2025</span>
+            </div>
+          </div>
+          <div class="ed-body">
+            <span class="ed-meta">Edição 39 · Novembro 2025</span>
+            <p class="ed-titulo">Identidade renovada e novos horizontes</p>
+            <p class="ed-desc">Apresentação da nova identidade visual da BRF Prev e expansão dos canais de atendimento digital.</p>
+            <span class="ed-link-soon">⏳ Em breve</span>
+          </div>
+        </div>
+
+        <div class="ed-card" aria-disabled="true">
+          <div class="ed-cover g8">
+            <div class="ed-cover-inner">
+              <span class="ed-cover-num">38</span>
+              <span class="ed-cover-label">Outubro 2025</span>
+            </div>
+          </div>
+          <div class="ed-body">
+            <span class="ed-meta">Edição 38 · Outubro 2025</span>
+            <p class="ed-titulo">Participantes em primeiro lugar</p>
+            <p class="ed-desc">Mês do participante com ações especiais, destaques sobre benefícios e histórias inspiradoras.</p>
+            <span class="ed-link-soon">⏳ Em breve</span>
+          </div>
+        </div>
+
+        <div class="ed-card" aria-disabled="true">
+          <div class="ed-cover g9">
+            <div class="ed-cover-inner">
+              <span class="ed-cover-num">37</span>
+              <span class="ed-cover-label">Setembro 2025</span>
+            </div>
+          </div>
+          <div class="ed-body">
+            <span class="ed-meta">Edição 37 · Setembro 2025</span>
+            <p class="ed-titulo">Rentabilidade e gestão sustentável</p>
+            <p class="ed-desc">Resultados do 3º trimestre e análise do cenário econômico com perspectivas para o encerramento do ano.</p>
+            <span class="ed-link-soon">⏳ Em breve</span>
+          </div>
+        </div>
+
+        <div class="ed-card" aria-disabled="true">
+          <div class="ed-cover g10">
+            <div class="ed-cover-inner">
+              <span class="ed-cover-num">36</span>
+              <span class="ed-cover-label">Agosto 2025</span>
+            </div>
+          </div>
+          <div class="ed-body">
+            <span class="ed-meta">Edição 36 · Agosto 2025</span>
+            <p class="ed-titulo">App BRF Prev: tecnologia a serviço de você</p>
+            <p class="ed-desc">Lançamento do aplicativo mobile e tutorial completo de como acompanhar seu plano previdenciário.</p>
+            <span class="ed-link-soon">⏳ Em breve</span>
+          </div>
+        </div>
+
+        <div class="ed-card" aria-disabled="true">
+          <div class="ed-cover g11">
+            <div class="ed-cover-inner">
+              <span class="ed-cover-num">35</span>
+              <span class="ed-cover-label">Julho 2025</span>
+            </div>
+          </div>
+          <div class="ed-body">
+            <span class="ed-meta">Edição 35 · Julho 2025</span>
+            <p class="ed-titulo">Conexão com o participante</p>
+            <p class="ed-desc">Eventos regionais, encontros trimestrais de resultados e novos canais de comunicação da BRF Prev.</p>
+            <span class="ed-link-soon">⏳ Em breve</span>
+          </div>
+        </div>
+
+        <div class="ed-card" aria-disabled="true">
+          <div class="ed-cover g12">
+            <div class="ed-cover-inner">
+              <span class="ed-cover-num">34</span>
+              <span class="ed-cover-label">Junho 2025</span>
+            </div>
+          </div>
+          <div class="ed-body">
+            <span class="ed-meta">Edição 34 · Junho 2025</span>
+            <p class="ed-titulo">Educação financeira para toda a família</p>
+            <p class="ed-desc">Dicas práticas de planejamento financeiro, benefícios dos planos e como aproveitar melhor sua previdência.</p>
+            <span class="ed-link-soon">⏳ Em breve</span>
+          </div>
+        </div>
+
+        <div class="ed-card" aria-disabled="true">
+          <div class="ed-cover g1">
+            <div class="ed-cover-inner">
+              <span class="ed-cover-num">33</span>
+              <span class="ed-cover-label">Maio 2025</span>
+            </div>
+          </div>
+          <div class="ed-body">
+            <span class="ed-meta">Edição 33 · Maio 2025</span>
+            <p class="ed-titulo">Planos superando metas de rentabilidade</p>
+            <p class="ed-desc">Planos II, III e FAF superam metas no acumulado do ano e reforçam solidez da gestão previdenciária.</p>
+            <span class="ed-link-soon">⏳ Em breve</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer class="page-footer">
+    <div class="footer-logo">
+      BRF Previdência
+      <small>Jornal Digital Mensal</small>
+    </div>
+    <p>
+      CNPB 2019.0098-46 · <a href="https://brfprevidencia.com.br" target="_blank" rel="noopener">brfprevidencia.com.br</a><br>
+      Central de Atendimento: 0800 702 4422 · Seg–Sex, 8h30–17h30
+    </p>
+  </footer>
+
+</body>
+</html>

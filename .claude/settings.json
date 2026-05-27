@@ -11,7 +11,21 @@
       "Bash(Remove-Item \"c:/www/jornalbrf/public/motion_crop.mp4\" -Force)",
       "Bash(Remove-Item \"c:/www/jornalbrf/public/motion_crop2.mp4\" -Force)",
       "Bash(Remove-Item \"c:/www/jornalbrf/public/motion_crop3.mp4\" -Force)",
-      "Bash(Copy-Item \"C:\\\\www\\\\jornalbrf\\\\fotos\\\\bilhoes.jpg\" \"C:\\\\www\\\\jornalbrf\\\\public\\\\bilhoes.jpg\" -Force)"
+      "Bash(Copy-Item \"C:\\\\www\\\\jornalbrf\\\\fotos\\\\bilhoes.jpg\" \"C:\\\\www\\\\jornalbrf\\\\public\\\\bilhoes.jpg\" -Force)",
+      "Bash(findstr -i \"jessica\\\\|07\\\\|webinar\")",
+      "Bash(Get-Item \"c:\\\\www\\\\jornalbrf\\\\todos os jornais\")",
+      "Bash(Select-Object Name, Extension, Length, LastWriteTime)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:5173/todos-os-jornais.html)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://[::1]:5173/todos-os-jornais.html)",
+      "Bash(curl -v http://[::1]:5173/todos-os-jornais.html)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:5176/todos-os-jornais.html)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:5176/jornal/todos-os-jornais.html)",
+      "Bash(node -e \"const { chromium } = require\\('playwright'\\); \\(async \\(\\) => { const b = await chromium.launch\\(\\); const p = await b.newPage\\(\\); await p.setViewportSize\\({width:1440,height:900}\\); await p.goto\\('http://localhost:5176/jornal/todos-os-jornais.html', {waitUntil:'networkidle'}\\); await p.screenshot\\({path:'/tmp/preview-top.png', clip:{x:0,y:0,width:1440,height:900}}\\); await p.screenshot\\({path:'/tmp/preview-full.png', fullPage:true}\\); await b.close\\(\\); console.log\\('ok'\\); }\\)\\(\\);\")",
+      "Read(//tmp/**)",
+      "Read(//c/tmp/**)",
+      "Bash(node -e ' *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:5176/jornal/fonts/CoHeadline-Bold.otf)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:5176/jornal/fonts/NotoSans-Regular.ttf)"
     ]
   }
 }
