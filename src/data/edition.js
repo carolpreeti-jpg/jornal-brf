@@ -236,8 +236,8 @@ export const edition = {
 
   // ─── BRF Prev Compromisso com Você ────────────────────────────────────────
   compromisso: {
-    titulo: 'Programa BRF Prev Compromisso com Você fortalece proximidade com participantes nas unidades da MBRF',
-    intro: 'Com o objetivo de fortalecer ainda mais o relacionamento com os participantes e ampliar a proximidade por meio de atendimentos presenciais, criamos o programa BRF Prev Compromisso com Você.  A iniciativa prevê visitas presenciais às unidades da MBRF em diversas regiões do Brasil ao longo do ano, promovendo atendimento mais próximo, acessível e personalizado aos participantes.',
+    titulo: 'Programa BRF Prev Compromisso com Você fortalece proximidade com participantes nas unidades da BRF',
+    intro: 'Com o objetivo de fortalecer ainda mais o relacionamento com os participantes e ampliar a proximidade por meio de atendimentos presenciais, criamos o programa BRF Prev Compromisso com Você.  A iniciativa prevê visitas presenciais às unidades da BRF em diversas regiões do Brasil ao longo do ano, promovendo atendimento mais próximo, acessível e personalizado aos participantes.',
     acoesRealizadas: {
       label: 'Ações realizadas',
       local: 'Curitiba · Itajaí · Campinas',
@@ -446,7 +446,7 @@ export const edition = {
     },
   },
 
-  // ─── Compromisso com Você — Unidades MBRF (seção 2) ─────────────────────────
+  // ─── Compromisso com Você — Unidades BRF (seção 2) ─────────────────────────
   compromissoUnidades: {
     titulo: 'BRF Prev atinge R$ 5 bilhões em patrimônio e reforça solidez na gestão previdenciária',
     paragrafos: [
@@ -505,7 +505,7 @@ export const edition = {
       {
         titulo: 'O que são contribuições suplementares?',
         planos: 'Planos II e III',
-        descricao: 'Os participantes ativos dos Planos II e III – ou seja, aqueles que trabalham atualmente no grupo MBRF, podem realizar contribuições suplementares, que são contribuições facultativas feitas além da alíquota máxima da contribuição básica do plano.\n\nNesse caso, o participante escolhe um percentual (não inferior a 1%) aplicado sobre o seu Salário de Participação ou opta por um valor livre, independente do salário e sem valor mínimo.',
+        descricao: 'Os participantes ativos dos Planos II e III – ou seja, aqueles que trabalham atualmente no grupo BRF, podem realizar contribuições suplementares, que são contribuições facultativas feitas além da alíquota máxima da contribuição básica do plano.\n\nNesse caso, o participante escolhe um percentual (não inferior a 1%) aplicado sobre o seu Salário de Participação ou opta por um valor livre, independente do salário e sem valor mínimo.',
         introLista: 'Entre os principais diferenciais dessa modalidade estão:',
         beneficios: [
           'Flexibilidade para definir a periodicidade das contribuições.',
@@ -604,7 +604,7 @@ export const edition = {
     desempenhoParagrafos: [
       'Os planos da BRF Prev apresentaram desempenho pouco abaixo das metas nos últimos meses, refletindo os impactos do cenário econômico e dos conflitos no sudoeste da Ásia sobre os mercados globais.',
       'As aplicações em títulos públicos atrelados à inflação tiveram comportamento compatível com o momento econômico e contribuíram para dar maior estabilidade à carteira diante do aumento da volatilidade.',
-      'Já os investimentos em ações da MBRF foram impactados por uma combinação de fatores externos e setoriais. Entre eles, estiveram as expectativas de aumento nos preços dos insumos agrícolas em razão da possível ocorrência do fenômeno El Niño, o estabelecimento de cotas para exportações destinadas à China, as restrições na oferta de gado no mercado americano e as dificuldades logísticas relacionadas à navegação no Estreito de Ormuz.',
+      'Já os investimentos em ações da BRF foram impactados por uma combinação de fatores externos e setoriais. Entre eles, estiveram as expectativas de aumento nos preços dos insumos agrícolas em razão da possível ocorrência do fenômeno El Niño, o estabelecimento de cotas para exportações destinadas à China, as restrições na oferta de gado no mercado americano e as dificuldades logísticas relacionadas à navegação no Estreito de Ormuz.',
       'Também influenciaram esse cenário a valorização do real frente ao dólar, moeda que representa mais de dois terços da receita da companhia, e, mais recentemente, as barreiras sanitárias impostas pelo mercado europeu, em um contexto de maior protecionismo comercial.',
     ],
     desempenhoDestaque: {

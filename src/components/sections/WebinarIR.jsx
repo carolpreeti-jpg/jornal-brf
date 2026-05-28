@@ -334,26 +334,23 @@ export default function WebinarIR({ id = 'webinar', screenLabel = 'Webinar IR', 
                     {webinar.subtitulo2}
                   </h3>
 
-                  {(webinar.paragrafos2 || []).slice(0, 2).map((p, i) => (
-                    <p key={i} style={{ color: 'rgba(255,255,255,0.75)', fontSize: 16, lineHeight: 1.75, margin: '0 0 14px', fontFamily: 'var(--font-body)' }}>{p}</p>
-                  ))}
-
-                  <p style={{
-                    color: 'rgba(255,255,255,0.55)',
-                    fontSize: 15,
-                    lineHeight: 1.7,
-                    margin: '0 0 14px',
-                    fontFamily: 'var(--font-body)',
-                    fontStyle: 'italic',
-                  }}>
-                    {webinar.paragrafos2Youtube}
-                  </p>
-
-                  {(webinar.paragrafos2 || []).slice(2).map((p, i) => (
-                    <p key={i} style={{ color: 'rgba(255,255,255,0.75)', fontSize: 16, lineHeight: 1.75, margin: '0 0 14px', fontFamily: 'var(--font-body)' }}>{p}</p>
+                  {(webinar.paragrafos2 || []).slice(0, 1).map((p, i) => (
+                    <p key={i} style={{ color: 'rgba(255,255,255,0.75)', fontSize: 16, lineHeight: 1.75, margin: 0, fontFamily: 'var(--font-body)' }}>{p}</p>
                   ))}
                 </div>
               </div>
+            </div>
+
+            <div className="webinar-body" style={{ marginTop: 40 }}>
+              {(webinar.paragrafos2 || [])[1] && (
+                <p>{webinar.paragrafos2[1]}</p>
+              )}
+              {webinar.paragrafos2Youtube && (
+                <p style={{ fontStyle: 'italic', opacity: 0.85 }}>{webinar.paragrafos2Youtube}</p>
+              )}
+              {(webinar.paragrafos2 || [])[2] && (
+                <p>{webinar.paragrafos2[2]}</p>
+              )}
             </div>
 
             {/* Botão centralizado */}
