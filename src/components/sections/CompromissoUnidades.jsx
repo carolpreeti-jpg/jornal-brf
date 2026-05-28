@@ -1,5 +1,6 @@
 import { edition } from '../../data/edition.js'
 import { asset } from '../../utils/assets.js'
+import { CARD_IMAGES } from '../../assets/cardImages.js'
 
 const { compromissoUnidades: c, patrimonio } = edition
 
@@ -160,7 +161,7 @@ export default function CompromissoUnidades() {
         <div className="testimonial-card testimonial-card--horizontal">
           <div className="card-top">
             <img
-              src={asset('/mauricio-manduca.jpg')}
+              src={CARD_IMAGES['/mauricio-manduca.jpg']}
               alt="Mauricio Manduca"
               style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', display: 'block', borderRadius: '16px 0 0 16px' }}
             />

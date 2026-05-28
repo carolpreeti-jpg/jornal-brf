@@ -1,6 +1,7 @@
 import { useRef, useEffect, useState } from 'react'
 import { edition } from '../../data/edition.js'
 import { asset } from '../../utils/assets.js'
+import { CARD_IMAGES } from '../../assets/cardImages.js'
 
 const { webinar } = edition
 
@@ -245,7 +246,7 @@ export default function WebinarIR({ id = 'webinar', screenLabel = 'Webinar IR', 
               <div className="webinar-photo-wrap">
                 <div className="webinar-photo-box">
                   <img
-                    src={asset('/jessica-webinar.jpg')}
+                    src={CARD_IMAGES['/jessica-webinar.jpg']}
                     alt="Webinar IR 2026"
                   />
                 </div>

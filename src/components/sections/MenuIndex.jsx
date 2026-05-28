@@ -20,8 +20,28 @@ export default function MenuIndex() {
               style={{ '--delay': `${(i % 4) * 0.07}s` }}
             >
               {/* Imagem/gradiente com recorte orgânico */}
-              <div className="mi-img" style={{ background: card.gradient }}>
-                {card.imagem && <img loading="lazy" decoding="async" src={CARD_IMAGES[card.imagem] ?? asset(card.imagem)} alt={card.titulo} style={{ objectFit: card.imagemFit || 'cover', objectPosition: card.imagemPosition || 'center center', transform: [card.imagemFlipX ? 'scaleX(-1)' : '', card.imagemScale ? `scale(${card.imagemScale})` : '', card.imagemTranslateX ? `translateX(${card.imagemTranslateX})` : '', card.imagemTranslateY ? `translateY(${card.imagemTranslateY})` : ''].filter(Boolean).join(' ') || undefined, transformOrigin: 'top center' }} />}
+              <div
+                className="mi-img"
+                style={{
+                  background: card.gradient,
+                  '--mi-flip': card.imagemFlipX ? -1 : 1,
+                  '--mi-scale': card.imagemScale ?? 1,
+                  '--mi-tx': card.imagemTranslateX ?? '0',
+                  '--mi-ty': card.imagemTranslateY ?? '0',
+                }}
+              >
+                {card.imagem && (
+                  <img
+                    loading="lazy"
+                    decoding="async"
+                    src={CARD_IMAGES[card.imagem] ?? asset(card.imagem)}
+                    alt={card.titulo}
+                    style={{
+                      objectFit: card.imagemFit || 'cover',
+                      objectPosition: card.imagemPosition || 'center center',
+                    }}
+                  />
+                )}
                 <span className="mi-num">{card.n}</span>
               </div>
 

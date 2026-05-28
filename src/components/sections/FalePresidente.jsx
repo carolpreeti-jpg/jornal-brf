@@ -1,5 +1,6 @@
 import { edition } from '../../data/edition.js'
 import { asset } from '../../utils/assets.js'
+import { CARD_IMAGES } from '../../assets/cardImages.js'
 
 const { falePresidente } = edition
 
@@ -67,7 +68,7 @@ export default function FalePresidente() {
             <div className="testimonial-card">
               <div className="card-top" style={{ position: 'relative' }}>
                 <img
-                  src={asset('/mauricio-manduca.jpg')}
+                  src={CARD_IMAGES['/mauricio-manduca.jpg']}
                   alt="Maurício Manduca"
                   style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', display: 'block', borderRadius: '16px 16px 0 0' }}
                 />

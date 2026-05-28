@@ -478,9 +478,21 @@ header.scrolled .hamburger span { background: var(--gray-900) }
 .mi-img img {
   position: absolute; inset: 0;
   width: 100%; height: 100%; object-fit: cover; display: block;
+  transform-origin: top center;
+  transform:
+    scaleX(var(--mi-flip, 1))
+    scale(var(--mi-scale, 1))
+    translateX(var(--mi-tx, 0))
+    translateY(var(--mi-ty, 0));
   transition: transform .5s ease;
 }
-.mi-card:hover .mi-img img { transform: scale(1.05) }
+.mi-card:hover .mi-img img {
+  transform:
+    scaleX(var(--mi-flip, 1))
+    scale(calc(var(--mi-scale, 1) * 1.05))
+    translateX(var(--mi-tx, 0))
+    translateY(var(--mi-ty, 0));
+}
 .mi-img::after { display: none }
 
 .mi-placeholder {
