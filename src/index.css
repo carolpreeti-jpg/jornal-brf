@@ -1818,6 +1818,33 @@ footer .socials a:hover { background: var(--brand-blue-mid); color: #fff }
 .reveal.d3 { transition-delay: .2s }
 .reveal.d4 { transition-delay: .3s }
 
+/* Seções fora da viewport não são pintadas até o scroll */
+.section {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 720px;
+}
+.hero {
+  content-visibility: visible;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .float-money,
+  .float-money.visible,
+  .app-phone-floating,
+  .hero-card.float {
+    animation: none !important;
+  }
+  header.scrolled {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+}
+
 /* ============================================================
    QUOTE — blockquote global
    ============================================================ */

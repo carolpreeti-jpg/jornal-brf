@@ -1,4 +1,5 @@
 import { useScrollReveal } from './hooks/useScrollReveal.js'
+import { useLazyImages } from './hooks/useLazyImages.js'
 import { edition } from './data/edition.js'
 import Header       from './components/layout/Header.jsx'
 import Footer       from './components/layout/Footer.jsx'
@@ -20,6 +21,7 @@ import AppBRFPrev     from './components/sections/AppBRFPrev.jsx'
 
 export default function App() {
   useScrollReveal()
+  useLazyImages()
 
   return (
     <>

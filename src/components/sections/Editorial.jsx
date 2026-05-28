@@ -36,12 +36,12 @@ export default function Editorial() {
           <div className="editorial-col-stack">
 
             <div className="editorial-photo-small">
-              <img src={asset('/foto-editorial-1.jpg')} alt="Participante BRF Previdência"
+              <img loading="lazy" decoding="async" src={asset('/foto-editorial-1.jpg')} alt="Participante BRF Previdência"
                 style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: 'inherit', display: 'block' }} />
             </div>
 
             <div className="editorial-photo-small">
-              <img src={asset('/foto-editorial-2.jpg')} alt="Família BRF Previdência"
+              <img loading="lazy" decoding="async" src={asset('/foto-editorial-2.jpg')} alt="Família BRF Previdência"
                 style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: '20% center', borderRadius: 'inherit', display: 'block' }} />
             </div>
 

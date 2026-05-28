@@ -1,19 +1,62 @@
+import { useEffect, useRef } from 'react'
 import { edition } from '../../data/edition.js'
 import { asset } from '../../utils/assets.js'
 
 const { appBRFPrev } = edition
+const BG_VIDEO = asset('/bg-app.mp4')
 
 export default function AppBRFPrev() {
-  return (
-    <section className="section" id="app-brf-prev" data-screen-label="App BRF Prev"
-      style={{ background: '#0F1F5C', position: 'relative', overflow: 'hidden' }}>
+  const sectionRef = useRef(null)
+  const videoRef = useRef(null)
 
-      {/* Vídeo de fundo */}
+  useEffect(() => {
+    const section = sectionRef.current
+    const video = videoRef.current
+    if (!section || !video) return undefined
+
+    let loaded = false
+
+    const loadVideo = () => {
+      if (loaded) return
+      loaded = true
+      video.src = BG_VIDEO
+      video.load()
+      video.play().catch(() => {})
+    }
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return undefined
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          loadVideo()
+          observer.disconnect()
+        }
+      },
+      { rootMargin: '240px' }
+    )
+
+    observer.observe(section)
+    return () => observer.disconnect()
+  }, [])
+
+  return (
+    <section
+      ref={sectionRef}
+      className="section"
+      id="app-brf-prev"
+      data-screen-label="App BRF Prev"
+      style={{ background: '#0F1F5C', position: 'relative', overflow: 'hidden' }}
+    >
+
+      {/* Vídeo de fundo — carrega só quando a seção entra na viewport */}
       <video
+        ref={videoRef}
         autoPlay
         loop
         muted
         playsInline
+        preload="none"
         style={{
           position: 'absolute',
           inset: 0,
@@ -24,9 +67,7 @@ export default function AppBRFPrev() {
           zIndex: 0,
           pointerEvents: 'none',
         }}
-      >
-        <source src={asset('/bg-app.mp4')} type="video/mp4" />
-      </video>
+      />
 
       <style>{`
         @keyframes floatUpDown {
@@ -38,6 +79,8 @@ export default function AppBRFPrev() {
 
       {/* Imagem do app — flutua acima de tudo, não interfere nos textos */}
       <img
+        loading="lazy"
+        decoding="async"
         src={asset('/app.png')}
         alt="App BRF Prev"
         className="app-phone-floating"
@@ -120,7 +163,7 @@ export default function AppBRFPrev() {
               onMouseEnter={e => { e.currentTarget.style.opacity = '0.8'; e.currentTarget.style.transform = 'scale(1.05)' }}
               onMouseLeave={e => { e.currentTarget.style.opacity = '1';   e.currentTarget.style.transform = 'scale(1)' }}
             >
-              <img src={asset('/google.png')} alt="Google Play" style={{ height: 51, objectFit: 'contain', display: 'block' }} />
+              <img loading="lazy" decoding="async" src={asset('/google.png')} alt="Google Play" style={{ height: 51, objectFit: 'contain', display: 'block' }} />
             </a>
             <a
               href="https://apps.apple.com/br/app/brf-previd%C3%AAncia/id6496354261"
@@ -130,7 +173,7 @@ export default function AppBRFPrev() {
               onMouseEnter={e => { e.currentTarget.style.opacity = '0.8'; e.currentTarget.style.transform = 'scale(1.05)' }}
               onMouseLeave={e => { e.currentTarget.style.opacity = '1';   e.currentTarget.style.transform = 'scale(1)' }}
             >
-              <img src={asset('/apple.png')} alt="App Store" style={{ height: 51, objectFit: 'contain', display: 'block' }} />
+              <img loading="lazy" decoding="async" src={asset('/apple.png')} alt="App Store" style={{ height: 51, objectFit: 'contain', display: 'block' }} />
             </a>
           </div>
         </div>

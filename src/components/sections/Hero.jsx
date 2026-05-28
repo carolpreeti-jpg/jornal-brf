@@ -60,7 +60,7 @@ export default function Hero() {
         {/* Arte decorativa */}
         <div className="hero-art" aria-hidden="true">
           <div className="hero-card main">
-            <img src={asset('/hero-team.jpg')} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', objectPosition: '6% center' }} />
+            <img loading="eager" fetchPriority="high" decoding="async" src={asset('/hero-team.jpg')} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', objectPosition: '6% center' }} />
           </div>
           <div className="hero-card mini" />
         </div>

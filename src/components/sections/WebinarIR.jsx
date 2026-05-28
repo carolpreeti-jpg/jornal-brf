@@ -33,6 +33,7 @@ function CarouselWebinar() {
   const animRef      = useRef(false)
   const timerRef     = useRef(null)
   const goToRef      = useRef(null)
+  const visibleRef   = useRef(true)
   const [dot, setDot] = useState(0)
 
   useEffect(() => {
@@ -154,16 +155,30 @@ function CarouselWebinar() {
       shift(shortest)
     }
 
-    function startTimer() { timerRef.current = setInterval(() => shift(1), 3000) }
-    function resetTimer() { clearInterval(timerRef.current); startTimer() }
+    function startTimer() {
+      clearInterval(timerRef.current)
+      if (!visibleRef.current) return
+      timerRef.current = setInterval(() => shift(1), 3000)
+    }
+    function resetTimer() { startTimer() }
 
     goToRef.current = goTo
     window.addEventListener('resize', buildStatic)
     buildStatic()
-    startTimer()
+
+    const visibilityObserver = new IntersectionObserver(
+      ([entry]) => {
+        visibleRef.current = entry.isIntersecting
+        if (entry.isIntersecting) startTimer()
+        else clearInterval(timerRef.current)
+      },
+      { threshold: 0.08 }
+    )
+    visibilityObserver.observe(wrap)
 
     return () => {
       clearInterval(timerRef.current)
+      visibilityObserver.disconnect()
       window.removeEventListener('resize', buildStatic)
     }
   }, [])

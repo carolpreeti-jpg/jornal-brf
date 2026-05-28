@@ -20,22 +20,25 @@ export default function BeamsCanvas({ style }) {
   const canvasRef = useRef(null)
   const beamsRef  = useRef([])
   const rafRef    = useRef(0)
+  const visibleRef = useRef(true)
 
   useEffect(() => {
-    const canvas = canvasRef.current
-    if (!canvas) return
-    const ctx = canvas.getContext('2d')
-    if (!ctx) return
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return undefined
 
-    const TOTAL = 30
+    const canvas = canvasRef.current
+    if (!canvas) return undefined
+    const ctx = canvas.getContext('2d')
+    if (!ctx) return undefined
+
+    const TOTAL = 16
 
     function resize() {
-      const dpr = window.devicePixelRatio || 1
+      const dpr = Math.min(window.devicePixelRatio || 1, 1.25)
       const W   = canvas.offsetWidth
       const H   = canvas.offsetHeight
       canvas.width  = W * dpr
       canvas.height = H * dpr
-      ctx.scale(dpr, dpr)
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0)
       beamsRef.current = Array.from({ length: TOTAL }, () => createBeam(W, H))
     }
 
@@ -71,37 +74,49 @@ export default function BeamsCanvas({ style }) {
     }
 
     function animate() {
+      rafRef.current = requestAnimationFrame(animate)
+      if (!visibleRef.current) return
+
       const W = canvas.offsetWidth
       const H = canvas.offsetHeight
       ctx.clearRect(0, 0, W, H)
-      ctx.filter = 'blur(35px)'
       beamsRef.current.forEach((beam, i) => {
         beam.y     -= beam.speed
         beam.pulse += beam.pulseSpeed
         if (beam.y + beam.length < -100) resetBeam(beam, i)
         drawBeam(beam)
       })
-      rafRef.current = requestAnimationFrame(animate)
     }
+
+    const visibilityObserver = new IntersectionObserver(
+      ([entry]) => { visibleRef.current = entry.isIntersecting },
+      { threshold: 0.05 }
+    )
+    visibilityObserver.observe(canvas)
 
     resize()
     animate()
     window.addEventListener('resize', resize)
     return () => {
       window.removeEventListener('resize', resize)
+      visibilityObserver.disconnect()
       cancelAnimationFrame(rafRef.current)
     }
   }, [])
 
+  if (typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    return null
+  }
+
   return (
     <canvas
       ref={canvasRef}
+      aria-hidden="true"
       style={{
         position: 'absolute',
         left: 0,
         right: 0,
         width: '100%',
-        filter: 'blur(15px)',
         pointerEvents: 'none',
         ...style,
       }}

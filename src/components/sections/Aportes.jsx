@@ -30,12 +30,12 @@ export default function Aportes() {
 
           {/* Coluna esquerda — imagem com overlay de dinheiro */}
           <div style={{ position: 'relative', minHeight: 320, marginTop: '-15%', zIndex: 0 }}>
-            <img
+            <img loading="lazy" decoding="async"
               src={asset('/homem2.png')}
               alt=""
               style={{ width: '100%', height: 'auto', display: 'block' }}
             />
-            <img
+            <img loading="lazy" decoding="async"
               src={asset('/dinheiro.png')}
               alt=""
               aria-hidden="true"
@@ -170,7 +170,7 @@ export default function Aportes() {
 
             {/* Coluna esquerda — imagem da atendente */}
             <div style={{ borderRadius: 16, overflow: 'hidden', minHeight: 0 }}>
-              <img
+              <img loading="lazy" decoding="async"
                 src={asset('/atendente.jpg')}
                 alt="Atendente de suporte ao participante"
                 style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
@@ -200,7 +200,7 @@ export default function Aportes() {
                     fontSize: 'clamp(16px, 2.2vw, 22px)',
                     fontWeight: 500,
                   }}>
-                    <img src={c.img} alt="" style={{ width: 40, height: 40, objectFit: 'contain', filter: 'invert(52%) sepia(60%) saturate(700%) hue-rotate(314deg) brightness(105%) contrast(90%)' }} />
+                    <img loading="lazy" decoding="async" src={c.img} alt="" style={{ width: 40, height: 40, objectFit: 'contain', filter: 'invert(52%) sepia(60%) saturate(700%) hue-rotate(314deg) brightness(105%) contrast(90%)' }} />
                     <span style={{ color: '#EE686D' }}>{c.texto.split(': ')[0]}:</span>
                     {' '}
                     <span style={{ color: '#4A4A4A' }}>{c.texto.split(': ')[1]}</span>
