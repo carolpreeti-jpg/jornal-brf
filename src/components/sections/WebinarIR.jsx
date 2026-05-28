@@ -19,6 +19,13 @@ const BASE_SIZES = [
 ]
 const SLOT_OPACITIES = [0,0.08,0.15,0.25,0.4,0.6,1,0.6,0.4,0.25,0.15,0.08,0]
 
+function isIconImage(icon) {
+  return (
+    typeof icon === 'string' &&
+    /^(\/?|https?:\/\/).+\.(svg|png|jpe?g|webp|gif)(\?.*)?$/i.test(icon)
+  )
+}
+
 function CarouselWebinar() {
   const vpRef        = useRef(null)
   const wrapRef      = useRef(null)
@@ -245,7 +252,16 @@ export default function WebinarIR({ id = 'webinar', screenLabel = 'Webinar IR', 
               {customCenario.boxes.map((box, i) => (
                 <div key={i} className="rent-cenario-box">
                   <div className="rent-cenario-box-head">
-                    <span className="rent-cenario-box-icon" aria-hidden="true">{box.icone}</span>
+                    {isIconImage(box.icone) ? (
+                      <img
+                        src={asset(box.icone)}
+                        alt=""
+                        aria-hidden="true"
+                        className="rent-cenario-box-icon-image"
+                      />
+                    ) : (
+                      <span className="rent-cenario-box-icon" aria-hidden="true">{box.icone}</span>
+                    )}
                     <span className="rent-cenario-box-title">{box.titulo}</span>
                   </div>
                   {box.paragrafos.map((p, j) => (
