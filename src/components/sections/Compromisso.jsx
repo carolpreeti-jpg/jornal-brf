@@ -1,6 +1,7 @@
 import { useRef, useEffect, useState } from 'react'
 import { edition } from '../../data/edition.js'
 import { asset } from '../../utils/assets.js'
+import { withBoldPrograma } from '../../utils/formatText.jsx'
 
 const { compromisso } = edition
 
@@ -57,7 +58,7 @@ export default function Compromisso() {
                 : part
             ))}
           </h2>
-          <p>{compromisso.intro}</p>
+          <p>{withBoldPrograma(compromisso.intro)}</p>
         </div>
 
         {/* Ações realizadas + contexto */}
@@ -142,7 +143,7 @@ export default function Compromisso() {
             <span style={{ color: '#EE686D' }}>Próximas visitas </span>
             <span style={{ color: 'var(--text-primary)' }}>às unidades</span>
           </h3>
-          <p style={{ color: 'var(--text-secondary)', margin: 0, maxWidth: 760 }}>
+          <p style={{ color: 'var(--text-secondary)', margin: 0 }}>
             A próxima visita está marcada para o mês de maio, em Lucas do Rio Verde, MT, no período de 25 a 29 de maio. O calendário das próximas ações presenciais está em fase de organização, os locais já estão definidos (confira na tabela abaixo). As datas serão divulgadas oportunamente pelos canais oficiais da BRF Prev e RH's locais.
           </p>
         </div>

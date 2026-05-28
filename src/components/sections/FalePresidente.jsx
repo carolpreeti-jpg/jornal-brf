@@ -16,7 +16,6 @@ export default function FalePresidente() {
             style={{ width: '25%', borderRadius: 12, marginBottom: 28, display: 'block' }}
           />
           <h2 style={{ marginTop: 0, fontSize: 'clamp(28px, 3.2vw, 44px)', lineHeight: 1.15 }}>
-            <span style={{ color: 'var(--brand-blue)', display: 'block' }}>Fale com o Presidente:</span>
             <span style={{ color: 'var(--gray-700)', display: 'block' }}>um novo canal de escuta</span>
             <span style={{ color: 'var(--gray-700)', display: 'block' }}>e proximidade com</span>
             <span style={{ color: 'var(--gray-700)', display: 'block' }}>os participantes</span>
@@ -51,7 +50,13 @@ export default function FalePresidente() {
               {falePresidente.ctaComplemento}
             </p>
 
-            <a className="btn btn-primary" style={{ marginTop: 20, background: '#EE686D', boxShadow: 'none', fontSize: 18 }} href={`mailto:${falePresidente.email}`}>
+            <a
+              className="btn btn-primary"
+              style={{ marginTop: 20, background: '#EE686D', boxShadow: 'none', fontSize: 18 }}
+              href={falePresidente.urlCanal}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Acessar o canal
             </a>
 

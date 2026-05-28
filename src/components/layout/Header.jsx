@@ -57,7 +57,7 @@ export default function Header() {
             borderRadius: 999,
             padding: '6px 16px',
           }}>
-            Volte ao Índice
+            Menu do Jornal
           </a>
         )}
 

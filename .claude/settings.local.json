@@ -45,7 +45,42 @@
       "Bash(rtk grep *)",
       "Bash(rtk npm *)",
       "Bash(rtk ls *)",
-      "Bash(python3 *)"
+      "Bash(python3 *)",
+      "Bash(xargs cat)",
+      "Bash(rtk read *)",
+      "Skill(update-config)",
+      "Bash(bash -c 'f=$\\(jq -r \".tool_input.file_path // .tool_response.filePath // empty\"\\); [[ \"$f\" =~ \\\\.\\(js|jsx\\)$ ]] && node --check \"$f\" 2>&1 || [[ ! \"$f\" =~ \\\\.\\(js|jsx\\)$ ]]')",
+      "Bash(echo \"exit: $?\")",
+      "Bash(node --check /tmp/test_err.js)",
+      "Bash(node --check /tmp/test_err2.js)",
+      "Bash(echo \"exit1: $?\")",
+      "Bash(node --input-type=module --check /tmp/test_err.js)",
+      "Bash(echo \"exit2: $?\")",
+      "Bash(echo \"exit3: $?\")",
+      "Bash(./node_modules/.bin/esbuild /tmp/test_err.js --bundle=false)",
+      "Bash(./node_modules/.bin/esbuild src/data/edition.js --bundle=false)",
+      "Bash(bash -c 'f=$\\(jq -r \".tool_input.file_path // .tool_response.filePath // empty\"\\); [[ \"$f\" =~ \\\\.\\(js|jsx\\)$ ]] && /Users/jeancarlo/brf-journal/jornal-brf/node_modules/.bin/esbuild \"$f\" --bundle=false 2>&1 || [[ ! \"$f\" =~ \\\\.\\(js|jsx\\)$ ]]')",
+      "Bash(/Users/jeancarlo/brf-journal/jornal-brf/node_modules/.bin/esbuild /tmp/test_err.js)",
+      "Bash(echo \"exit A \\(erro esperado 1\\): $?\")",
+      "Bash(/Users/jeancarlo/brf-journal/jornal-brf/node_modules/.bin/esbuild /tmp/test_err.js --outfile=/dev/null)",
+      "Bash(echo \"exit B \\(erro esperado 1\\): $?\")",
+      "Bash(/Users/jeancarlo/brf-journal/jornal-brf/node_modules/.bin/esbuild /Users/jeancarlo/brf-journal/jornal-brf/src/data/edition.js)",
+      "Bash(rtk npx *)",
+      "Bash(node *)"
+    ]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "f=$(jq -r '.tool_input.file_path // .tool_response.filePath // empty'); [[ \"$f\" =~ \\.(js|jsx)$ ]] && ./node_modules/.bin/esbuild \"$f\" 2>&1 >/dev/null || [[ ! \"$f\" =~ \\.(js|jsx)$ ]]",
+            "statusMessage": "Verificando sintaxe JS..."
+          }
+        ]
+      }
     ]
   }
 }

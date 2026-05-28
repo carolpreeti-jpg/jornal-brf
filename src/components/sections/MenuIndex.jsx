@@ -6,6 +6,10 @@ export default function MenuIndex() {
     <section className="menu-index" id="menu-index" data-screen-label="Índice">
 
       <div className="wrap">
+        <div className="section-head menu-index-head reveal">
+          <h2>{edition.menuIndexTitulo}</h2>
+        </div>
+
         <div className="menu-index-grid">
           {edition.menuIndex.map((card, i) => (
             <a

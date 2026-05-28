@@ -1,5 +1,6 @@
 import { edition } from '../../data/edition.js'
 import { asset } from '../../utils/assets.js'
+import { withBoldPrograma } from '../../utils/formatText.jsx'
 
 const { editorial } = edition
 
@@ -23,7 +24,7 @@ export default function Editorial() {
 
           <div className="editorial-body">
             {editorial.paragrafos.map((p, i) => (
-              <p key={i}>{p}</p>
+              <p key={i}>{withBoldPrograma(p)}</p>
             ))}
           </div>
 

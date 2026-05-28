@@ -5,60 +5,18 @@ const { encontros } = edition
 
 export default function Encontros() {
   return (
-    <section className="section survey" id="encontros" data-screen-label="Encontros"
-      style={{ padding: 'clamp(80px, 14vw, 200px) 0 clamp(64px, 11vw, 160px)', display: 'flex', alignItems: 'flex-start', position: 'relative', overflow: 'hidden' }}>
+    <section className="section encontros-section" id="encontros" data-screen-label="Encontros">
 
-      {/* Degradê de transição com WebinarIR */}
-      <div style={{
-        position: 'absolute',
-        top: 0, left: 0, right: 0,
-        height: 400,
-        background: 'linear-gradient(to bottom, #6F91FB 0%, rgba(111,145,251,.6) 35%, rgba(111,145,251,.2) 65%, transparent 100%)',
-        zIndex: 2,
-        pointerEvents: 'none',
-      }} />
-
-      {/* Vídeo de fundo */}
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        style={{
-          position: 'absolute',
-          inset: 0,
-          width: '100%',
-          height: '100%',
-          objectFit: 'cover',
-          opacity: 0.65,
-          pointerEvents: 'none',
-          zIndex: 0,
-        }}
-      >
-        <source src={asset('/azul2.mp4')} type="video/mp4" />
-      </video>
-
-      <div style={{ width: '100%', padding: '0 clamp(16px, 12vw, 200px)', position: 'relative', zIndex: 1 }}>
-        {/* Imagem sobreposta na borda azul/branco */}
-        <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '-90px', position: 'relative', zIndex: 2 }}>
+      <div className="encontros-inner">
+        <div className="encontros-section-break">
           <img
             src={asset('/imagem10.png')}
             alt="Conexão BRF Previdência"
-            style={{ width: '200px', display: 'block' }}
+            className="encontros-break-logo"
           />
         </div>
 
-        <div style={{
-          width: '100%',
-          minHeight: '1000px',
-          borderRadius: '20px',
-          background: '#ffffff',
-          display: 'flex',
-          flexDirection: 'column',
-          padding: '110px 0 64px',
-          position: 'relative',
-        }}>
-          {/* Imagem centralizada */}
+        <div className="encontros-panel">
           <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 40, padding: '0 64px' }}>
             <img
               src={asset('/imagem08.png')}
@@ -67,7 +25,6 @@ export default function Encontros() {
             />
           </div>
 
-          {/* Parágrafos */}
           <p style={{ color: 'var(--text-secondary)', fontSize: 17, lineHeight: 1.8, margin: '0 0 16px', padding: '0 clamp(8px, 5.5vw, 80px)', maxWidth: '100%' }}>
             {encontros.intro}
           </p>
@@ -88,7 +45,6 @@ export default function Encontros() {
             {' '}nos links abaixo:
           </h3>
 
-          {/* Cards de vídeo */}
           <div className="encontros-gravacoes-grid" style={{ padding: '0 clamp(8px, 5.5vw, 80px)' }}>
             {encontros.gravacoes.map((g, i) => (
               <div key={i} style={{ position: 'relative' }}>
@@ -109,7 +65,6 @@ export default function Encontros() {
                     </div>
                   </div>
                 </a>
-                {/* Label do plano sobreposta na parte inferior */}
                 <div style={{ position: 'absolute', bottom: -30, left: '50%', transform: 'translateX(-50%)', zIndex: 2 }}>
                   <img
                     src={asset(g.img)}
@@ -121,7 +76,6 @@ export default function Encontros() {
             ))}
           </div>
 
-          {/* Próximo Encontro */}
           {encontros.proximoEncontro && (
             <div style={{ padding: '48px clamp(8px, 5.5vw, 80px) 0', marginTop: 56 }}>
               <h3 style={{
@@ -145,6 +99,12 @@ export default function Encontros() {
                   </li>
                 ))}
               </ul>
+              {encontros.proximoEncontro.avisoPosDatas && (
+                <p className="encontros-aviso">
+                  <span className="encontros-aviso-icon" aria-hidden="true">✦</span>
+                  {encontros.proximoEncontro.avisoPosDatas}
+                </p>
+              )}
             </div>
           )}
 

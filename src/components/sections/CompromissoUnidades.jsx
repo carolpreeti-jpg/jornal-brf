@@ -3,6 +3,28 @@ import { asset } from '../../utils/assets.js'
 
 const { compromissoUnidades: c, patrimonio } = edition
 
+const ANALOGIA_BOLD = [
+  'R$ 5 bilhões',
+  'R$ 5 mil',
+  '2.740 anos',
+  '7,9 prêmios',
+  '125 mil',
+  '158 anos',
+  'R$ 1',
+]
+
+function withBoldFragments(text) {
+  const regex = new RegExp(
+    `(${ANALOGIA_BOLD.map((part) => part.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|')})`,
+    'g',
+  )
+  return text.split(regex).map((part, i) =>
+    ANALOGIA_BOLD.includes(part)
+      ? <strong key={i}>{part}</strong>
+      : part,
+  )
+}
+
 export default function CompromissoUnidades() {
   return (
     <section className="section" id="compromisso-unidades" data-screen-label="Compromisso Unidades"
@@ -99,7 +121,7 @@ export default function CompromissoUnidades() {
             lineHeight: 1.8,
             margin: 0,
           }}>
-            {patrimonio.analogiasIntro}
+            {withBoldFragments(patrimonio.analogiasIntro)}
           </p>
         </div>
 
@@ -114,7 +136,7 @@ export default function CompromissoUnidades() {
                 margin: 0,
                 lineHeight: 1.7,
                 textAlign: 'center',
-              }}>{a.texto}</p>
+              }}>{withBoldFragments(a.texto)}</p>
             </div>
           ))}
         </div>

@@ -32,9 +32,22 @@ export default function Rentabilidade() {
 
         {/* Cenário econômico */}
         <div className="reveal" style={{ marginBottom: 32 }}>
-          {rentabilidade.cenarioParagrafos.map((p, i) => (
-            <p key={i} style={{ color: 'var(--text-secondary)', marginBottom: 12 }}>{p}</p>
-          ))}
+          {rentabilidade.cenarioIntro && (
+            <p style={{ color: 'var(--text-secondary)', marginBottom: 20 }}>{rentabilidade.cenarioIntro}</p>
+          )}
+          <div className="rent-cenario-grid rent-cenario-grid--light">
+            {rentabilidade.cenarioBoxes.map((box, i) => (
+              <div key={i} className="rent-cenario-box rent-cenario-box--light">
+                <div className="rent-cenario-box-head">
+                  <span className="rent-cenario-box-icon" aria-hidden="true">{box.icone}</span>
+                  <span className="rent-cenario-box-title">{box.titulo}</span>
+                </div>
+                {box.paragrafos.map((p, j) => (
+                  <p key={j} className="rent-cenario-box-text">{p}</p>
+                ))}
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Desempenho dos investimentos */}
@@ -45,6 +58,19 @@ export default function Rentabilidade() {
           {rentabilidade.desempenhoParagrafos.map((p, i) => (
             <p key={i} style={{ color: 'var(--text-secondary)', marginBottom: 10 }}>{p}</p>
           ))}
+          {rentabilidade.desempenhoDestaque && (
+            <div className="rent-desempenho-destaque">
+              <div className="rent-desempenho-destaque-head">
+                <span className="rent-desempenho-destaque-icon" aria-hidden="true">
+                  {rentabilidade.desempenhoDestaque.icone}
+                </span>
+                <span className="rent-desempenho-destaque-title">
+                  {rentabilidade.desempenhoDestaque.titulo}
+                </span>
+              </div>
+              <p className="rent-desempenho-destaque-text">{rentabilidade.desempenhoDestaque.texto}</p>
+            </div>
+          )}
         </div>
 
         {/* Toggle mensal / acumulada */}

@@ -42,8 +42,14 @@ export default function App() {
           hideTitle
           hideCarousel
           topImage="/imagem11.png"
-          customParagrafos={edition.rentabilidade.cenarioParagrafos.slice(0, 4)}
-          boxIntro={edition.rentabilidade.desempenhoParagrafos}
+          customCenario={{
+            intro: edition.rentabilidade.cenarioIntro,
+            boxes: edition.rentabilidade.cenarioBoxes,
+          }}
+          boxIntro={{
+            paragrafos: edition.rentabilidade.desempenhoParagrafos,
+            destaque: edition.rentabilidade.desempenhoDestaque,
+          }}
           bottomContent={<RentCarousel />}
         />
         <Aportes />

@@ -9,12 +9,13 @@ export const edition = {
   ano: 2026,
 
   // ─── Menu Índice (cards visuais logo após o header) ───────────────────────
+  menuIndexTitulo: 'Matérias desta Edição',
   menuIndex: [
     {
       id: 'editorial',
       n: '01',
       tag: 'Editorial',
-      titulo: 'A edição em foco',
+      titulo: 'Resumo da edição',
       subtitulo: 'Mensagem do Comitê Editorial',
       imagem: '/edicao.jpg',
       imagemFit: 'cover',
@@ -189,7 +190,7 @@ export const edition = {
 
   // ─── Sumário ──────────────────────────────────────────────────────────────
   sumario: [
-    { n: '01', tag: 'Editorial',     titulo: 'Editorial — a edição em foco',                  href: '#editorial',       variante: '' },
+    { n: '01', tag: 'Editorial',     titulo: 'Editorial — Resumo da Edição',                  href: '#editorial',       variante: '' },
     { n: '02', tag: 'Programa',      titulo: 'BRF Prev Compromisso com Você',                 href: '#compromisso',     variante: 'alt2' },
     { n: '03', tag: 'Canal',         titulo: 'Fale com o Presidente',                          href: '#fale-presidente', variante: 'alt3' },
     { n: '04', tag: 'Inspiração',    titulo: 'Histórias que inspiram — Dra. Ivone Delazari',  href: '#historias',       variante: 'alt' },
@@ -255,21 +256,6 @@ export const edition = {
     proximaVisita: 'Lucas do Rio Verde, MT — 25 a 29 de maio',
     calendario: [
       {
-        mes: 'Mar/Abr', unidade: 'Curitiba', estado: 'PR',
-        datas: '30 mar – 2 abr', status: 'realizado',
-        gradient: 'linear-gradient(135deg, #1B46B2 0%, #0D2A6E 100%)',
-      },
-      {
-        mes: 'Maio', unidade: 'Itajaí', estado: 'SC',
-        datas: '11–15 mai', status: 'realizado',
-        gradient: 'linear-gradient(135deg, #EE686D 0%, #C53B6C 100%)',
-      },
-      {
-        mes: 'Maio', unidade: 'Campinas', estado: 'SP',
-        datas: '18–19 mai', status: 'realizado',
-        gradient: 'linear-gradient(135deg, #7D94FC 0%, #1B46B2 100%)',
-      },
-      {
         mes: 'Maio', unidade: 'Lucas do Rio Verde', estado: 'MT',
         datas: '25–29 mai', status: 'proxima',
         gradient: 'linear-gradient(135deg, #EE686D 0%, #C53B6C 100%)',
@@ -334,6 +320,7 @@ export const edition = {
     cta: 'Quando precisar utilizar o canal, basta escrever um e-mail diretamente para:',
     ctaComplemento: 'O acesso também está disponível em nosso site.',
     email: 'presidente.brfprevidencia@mbrf.com',
+    urlCanal: 'https://brfprevidencia.com.br/2026/05/11/fale-com-o-presidente/',
     citacao: 'Criar este canal é, antes de tudo, um ato de respeito ao nosso participante. O Fale com o Presidente não é uma formalidade: é um compromisso pessoal meu de ouvir, entender e agir. Cada mensagem será tratada com a atenção que você merece.',
     citacaoAutor: 'Mauricio Manduca\nDiretor Presidente - BRF Prev',
   },
@@ -347,7 +334,7 @@ export const edition = {
       {
         titulo: 'Uma carreira construída com propósito',
         texto: 'Durante sua atuação na Sadia/BRF S.A., a Dra. Ivone construiu uma carreira admirável na área de Segurança e Qualidade de Alimentos, com reconhecimento dentro e fora do Brasil. Sua dedicação a levou a diferentes países, sempre com o olhar atento à melhoria contínua e à proteção do consumidor. Além de títulos e conquistas, o que marcou sua trajetória foi a forma como escolheu viver essa jornada, sempre próxima das pessoas.\n\nAlém desse gesto de humildade e disposição para aprender, a troca constante com os colegas da indústria foi essencial para o desenvolvimento de metodologias eficazes e para a construção de uma visão completa sobre os processos de qualidade e segurança dos alimentos.',
-        citacao: 'Eu fazia questão de visitar todas as unidades e estar com os trabalhadores da unidade. Eles diziam que aprendiam comigo, mas, na realidade, eu que aprendia com eles.',
+        citacao: 'Eu fazia questão de visitar todas as unidades e estar com os trabalhadores. Eles diziam que aprendiam comigo, mas, na realidade, eu que aprendia com eles.',
       },
       {
         titulo: 'Aposentadoria não significa parar',
@@ -428,7 +415,7 @@ export const edition = {
     ],
     paragrafos2Youtube: 'Para quem não pôde acompanhar ao vivo ou deseja revisar o conteúdo, a gravação está disponível no canal da BRF Prev no YouTube.',
     data: '24 de abril',
-    urlYoutube: 'https://www.youtube.com/channel/UCp2JyTO7GLaMnLmWErsBhpg',
+    urlYoutube: 'https://youtu.be/Y2ij6POWl7U?si=YDG-jFccU6kvLNyb',
     urlLabel: 'Assistir gravação no YouTube',
   },
 
@@ -455,6 +442,7 @@ export const edition = {
         { plano: 'Planos III e Família', data: '28 de julho' },
         { plano: 'Plano FAF e Família',  data: '29 de julho' },
       ],
+      avisoPosDatas: 'Fique de olho em nossas comunicações para conferir os horários e acessar os links.',
     },
   },
 
@@ -494,7 +482,7 @@ export const edition = {
       titulo: 'O que é o patrimônio de uma Entidade Fechada de Previdência Complementar?',
       texto: 'O patrimônio de uma Entidade corresponde ao conjunto de recursos acumulados nos planos de benefícios. Esses valores são destinados exclusivamente ao cumprimento dos compromissos assumidos com os participantes e seus beneficiários. De forma estruturada, o patrimônio é composto por contribuições das patrocinadoras e dos participantes, além dos resultados obtidos nos investimentos com a aplicação desses recursos no mercado financeiro. O patrimônio do plano forma a reserva financeira que, no futuro, será convertida em benefício aos participantes.',
     },
-    analogiasIntro: 'Para termos uma ideia do que representam R$ 5 bilhões, algumas comparações ajudam a ilustrar a magnitude desse valor monetário.',
+    analogiasIntro: 'Para termos uma ideia do que representam R$ 5 bilhões, algumas comparações ajudam a ilustrar a magnitude desse valor monetário:',
     analogias: [
       { ic: '📅', texto: 'Se você poupasse R$ 5 mil por dia, sem qualquer rendimento, seriam necessários aproximadamente 2.740 anos para atingir esse valor.' },
       { ic: '🎰', texto: 'Esse montante equivale a cerca de 7,9 prêmios da Mega da Virada de 2024.' },
@@ -594,11 +582,23 @@ export const edition = {
     periodo: 'jan/26 – abr/26',
     meses: ['Jan/26', 'Fev/26', 'Mar/26', 'Abr/26'],
     tituloCenario: 'Desempenho dos Planos e cenário econômico: como foi o período',
-    cenarioParagrafos: [
-      'Os primeiros quatro meses de 2026 foram marcados por um cenário econômico desafiador no Brasil e no exterior, refletindo diretamente no desempenho dos investimentos dos planos da BRF Prev.',
-      'No cenário internacional, a escalada dos conflitos no sudoeste da Ásia ganhou força após ataques coordenados dos Estados Unidos e de Israel contra o Irã. Como consequência, houve uma forte alta no preço do petróleo, entre 40% e 50% sobre o preço médio de 2025, além de restrições de passagem no Estreito de Ormuz, uma das principais rotas do comércio global de petróleo. Esse cenário também elevou significativamente os custos do seguro naval e trouxe impactos para a logística mundial.',
-      'Os reflexos já começaram a ser percebidos no aumento de preços e até na escassez de combustíveis em algumas regiões do mundo. Diante desse contexto, os principais Bancos Centrais passaram a sinalizar possíveis elevações nas taxas de juros e medidas de apoio para reduzir os impactos nos derivados de petróleo. Esses movimentos aumentam ainda mais a pressão sobre as contas públicas globais, que já vinham fragilizadas desde os efeitos econômicos da pandemia no início da década.',
-      'No Brasil, os índices de inflação apresentaram aceleração nos primeiros meses do ano. O IPCA, principal indicador de inflação do país, registrou 0,33% em janeiro, 0,70% em fevereiro, 0,88% em março e 0,67% em abril. Ao mesmo tempo, o Banco Central reduziu a taxa SELIC em suas duas primeiras reuniões do ano, indicando um movimento de ajuste na política monetária. A decisão ocorreu em um cenário de inflação ainda pressionada, com alta tanto nos índices gerais quanto em seus núcleos, o que aumentou as discussões do mercado sobre os próximos passos da economia e os impactos para os investimentos.',
+    cenarioIntro: 'Os primeiros quatro meses de 2026 foram marcados por um cenário econômico desafiador no Brasil e no exterior, refletindo diretamente no desempenho dos investimentos dos planos da BRF Prev.',
+    cenarioBoxes: [
+      {
+        icone: '🌍',
+        titulo: 'Cenário internacional',
+        paragrafos: [
+          'No cenário internacional, a escalada dos conflitos no sudoeste da Ásia ganhou força após ataques coordenados dos Estados Unidos e de Israel contra o Irã. Como consequência, houve uma forte alta no preço do petróleo, entre 40% e 50% sobre o preço médio de 2025, além de restrições de passagem no Estreito de Ormuz, uma das principais rotas do comércio global de petróleo. Esse cenário também elevou significativamente os custos do seguro naval e trouxe impactos para a logística mundial.',
+          'Os reflexos já começaram a ser percebidos no aumento de preços e até na escassez de combustíveis em algumas regiões do mundo. Diante desse contexto, os principais Bancos Centrais passaram a sinalizar possíveis elevações nas taxas de juros e medidas de apoio para reduzir os impactos nos derivados de petróleo. Esses movimentos aumentam ainda mais a pressão sobre as contas públicas globais, que já vinham fragilizadas desde os efeitos econômicos da pandemia no início da década.',
+        ],
+      },
+      {
+        icone: '🇧🇷',
+        titulo: 'Brasil',
+        paragrafos: [
+          'No Brasil, os índices de inflação apresentaram aceleração nos primeiros meses do ano. O IPCA, principal indicador de inflação do país, registrou 0,33% em janeiro, 0,70% em fevereiro, 0,88% em março e 0,67% em abril. Ao mesmo tempo, o Banco Central reduziu a taxa SELIC em suas duas primeiras reuniões do ano, indicando um movimento de ajuste na política monetária. A decisão ocorreu em um cenário de inflação ainda pressionada, com alta tanto nos índices gerais quanto em seus núcleos, o que aumentou as discussões do mercado sobre os próximos passos da economia e os impactos para os investimentos.',
+        ],
+      },
     ],
     tituloDesempenho: 'Desempenho dos investimentos da BRF Prev',
     desempenhoParagrafos: [
@@ -606,8 +606,12 @@ export const edition = {
       'As aplicações em títulos públicos atrelados à inflação tiveram comportamento compatível com o momento econômico e contribuíram para dar maior estabilidade à carteira diante do aumento da volatilidade.',
       'Já os investimentos em ações da MBRF foram impactados por uma combinação de fatores externos e setoriais. Entre eles, estiveram as expectativas de aumento nos preços dos insumos agrícolas em razão da possível ocorrência do fenômeno El Niño, o estabelecimento de cotas para exportações destinadas à China, as restrições na oferta de gado no mercado americano e as dificuldades logísticas relacionadas à navegação no Estreito de Ormuz.',
       'Também influenciaram esse cenário a valorização do real frente ao dólar, moeda que representa mais de dois terços da receita da companhia, e, mais recentemente, as barreiras sanitárias impostas pelo mercado europeu, em um contexto de maior protecionismo comercial.',
-      'Por outro lado, alguns fatores mais recentes contribuem para perspectivas mais positivas. A safra de soja colhida no fim do verão doméstico ajudou a reduzir os preços da commodity, enquanto a safra de milho do meio do ano tem expectativa de volume recorde. Além disso, há expectativa de flexibilização de algumas barreiras comerciais como forma de conter os impactos inflacionários relacionados ao petróleo. Somam-se a isso as oportunidades de captura de sinergias ainda relevantes com a fusão entre Marfrig e BRF.',
     ],
+    desempenhoDestaque: {
+      icone: '📈',
+      titulo: 'Perspectivas mais positivas',
+      texto: 'Por outro lado, alguns fatores mais recentes contribuem para perspectivas mais positivas. A safra de soja colhida no fim do verão doméstico ajudou a reduzir os preços da commodity, enquanto a safra de milho do meio do ano tem expectativa de volume recorde. Além disso, há expectativa de flexibilização de algumas barreiras comerciais como forma de conter os impactos inflacionários relacionados ao petróleo. Somam-se a isso as oportunidades de captura de sinergias ainda relevantes com a fusão entre Marfrig e BRF.',
+    },
     linhas: [
       { nome: 'II (Classe BD)',         meses: ['0,59', '1,11',  '1,46',  '0,47'],  acum: '3,68',  p12m: '9,35',   p24m: '19,74', p36m: '31,30', tipo: 'plano' },
       { nome: 'II (Classe CD)',         meses: ['0,61', '1,35',  '0,66',  '0,70'],  acum: '3,36',  p12m: '11,11',  p24m: '20,22', p36m: '35,31', tipo: 'plano' },

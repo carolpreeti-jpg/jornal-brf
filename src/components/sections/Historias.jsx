@@ -50,7 +50,7 @@ export default function Historias() {
               <blockquote className="hist-quote">
                 {i === 0 ? (
                   <>
-                    "Eu fazia questão de visitar todas as unidades e estar com os trabalhadores da unidade.
+                    "Eu fazia questão de visitar todas as unidades e estar com os trabalhadores.
                     <br />Eles diziam que aprendiam comigo, mas, na realidade, eu que aprendia com eles."
                   </>
                 ) : `"${bloco.citacao}"`}

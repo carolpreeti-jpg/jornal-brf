@@ -190,7 +190,7 @@ function CarouselWebinar() {
   )
 }
 
-export default function WebinarIR({ id = 'webinar', screenLabel = 'Webinar IR', bg, hideTitle, hideCarousel, topImage, customParagrafos, bottomContent, boxIntro }) {
+export default function WebinarIR({ id = 'webinar', screenLabel = 'Webinar IR', bg, hideTitle, hideCarousel, topImage, customParagrafos, customCenario, bottomContent, boxIntro }) {
   return (
     <section className="section estatuto" id={id} data-screen-label={screenLabel}
       style={{ background: bg ?? '#6F91FB', paddingTop: topImage ? 140 : undefined }}>
@@ -205,65 +205,57 @@ export default function WebinarIR({ id = 'webinar', screenLabel = 'Webinar IR', 
 
         {!hideTitle ? (
           <>
-            {/* Layout 2 colunas: texto à esquerda (só até paragrafos[0]), foto à direita */}
             <div className="webinar-two-col">
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: '1fr 1fr',
-              gap: '48px',
-              alignItems: 'stretch',
-              paddingBottom: 24,
-            }}>
-              {/* Coluna esquerda — título + descricao + paragrafos[0] */}
-              <div>
-                <div className="section-head" style={{ maxWidth: '100%', marginBottom: 40 }}>
-                  <h2 style={{ maxWidth: '100%', color: '#fff' }}>
-                    <span style={{ color: '#fff' }}>Webinar BRF Prev</span>
+              <div className="webinar-intro">
+                <div className="section-head webinar-section-head">
+                  <h2>
+                    <span>Webinar BRF Prev</span>
                     {' '}orienta participantes sobre a{' '}
-                    <span style={{ color: '#fff' }}>Declaração de IR 2026</span>
+                    <span>Declaração de IR 2026</span>
                     {' '}na prática
                   </h2>
                 </div>
                 {[webinar.descricao, (webinar.paragrafos || [])[0]].filter(Boolean).map((p, i) => (
-                  <p key={i} style={{ color: '#fff', fontSize: 18, lineHeight: 1.8, margin: '0 0 20px', whiteSpace: 'pre-line' }}>{p}</p>
+                  <p key={i}>{p}</p>
                 ))}
               </div>
 
-              {/* Coluna direita — foto interativa + badge sobreposto na base */}
-              <div style={{ position: 'relative' }}>
-                <div className="webinar-photo-box" style={{ height: '90%' }}>
+              <div className="webinar-photo-wrap">
+                <div className="webinar-photo-box">
                   <img
                     src={asset('/jessica-webinar.jpg')}
                     alt="Webinar IR 2026"
                   />
                 </div>
-                {/* Badge Jessica — sobrepõe a base da foto */}
-                <img
-                  src={asset('/jessica-badge.png')}
-                  alt="Jessica Maia"
-                  style={{
-                    position: 'absolute',
-                    bottom: '5%',
-                    left: '50%',
-                    transform: 'translateX(-50%)',
-                    width: '48%',
-                    display: 'block',
-                    zIndex: 10,
-                  }}
-                />
               </div>
             </div>
 
-            {/* Parágrafos restantes — abaixo, largura total */}
-            <div style={{ marginTop: 4 }}>
+            <div className="webinar-body">
               {(webinar.paragrafos || []).slice(1).map((p, i) => (
-                <p key={i} style={{ color: '#fff', fontSize: 18, lineHeight: 1.8, margin: '0 0 20px' }}>{p}</p>
+                <p key={i}>{p}</p>
               ))}
             </div>
-          </div>
+          </>
+        ) : customCenario ? (
+          <>
+            {customCenario.intro && (
+              <p className="rent-cenario-intro">{customCenario.intro}</p>
+            )}
+            <div className="rent-cenario-grid">
+              {customCenario.boxes.map((box, i) => (
+                <div key={i} className="rent-cenario-box">
+                  <div className="rent-cenario-box-head">
+                    <span className="rent-cenario-box-icon" aria-hidden="true">{box.icone}</span>
+                    <span className="rent-cenario-box-title">{box.titulo}</span>
+                  </div>
+                  {box.paragrafos.map((p, j) => (
+                    <p key={j} className="rent-cenario-box-text">{p}</p>
+                  ))}
+                </div>
+              ))}
+            </div>
           </>
         ) : (
-          /* Modo sem título — parágrafos simples (customParagrafos) */
           (customParagrafos ?? []).map((p, i) => (
             <p key={i} style={{ color: '#fff', fontSize: 18, lineHeight: 1.8, maxWidth: '100%', margin: '0 0 16px' }}>{p}</p>
           ))
@@ -345,7 +337,10 @@ export default function WebinarIR({ id = 'webinar', screenLabel = 'Webinar IR', 
             }}>
               {boxIntro && (
                 <div style={{ margin: '92px 0 32px', paddingLeft: '3%', paddingRight: '3%' }}>
-                  {(Array.isArray(boxIntro) ? boxIntro : [boxIntro]).map((txt, i, arr) => (
+                  {(Array.isArray(boxIntro)
+                    ? boxIntro
+                    : boxIntro.paragrafos ?? []
+                  ).map((txt, i, arr) => (
                     <p key={i} style={{
                       fontFamily: "'Noto Sans', sans-serif",
                       color: 'var(--text-primary)',
@@ -356,6 +351,17 @@ export default function WebinarIR({ id = 'webinar', screenLabel = 'Webinar IR', 
                       {txt}
                     </p>
                   ))}
+                  {!Array.isArray(boxIntro) && boxIntro.destaque && (
+                    <div className="rent-desempenho-destaque">
+                      <div className="rent-desempenho-destaque-head">
+                        <span className="rent-desempenho-destaque-icon" aria-hidden="true">
+                          {boxIntro.destaque.icone}
+                        </span>
+                        <span className="rent-desempenho-destaque-title">{boxIntro.destaque.titulo}</span>
+                      </div>
+                      <p className="rent-desempenho-destaque-text">{boxIntro.destaque.texto}</p>
+                    </div>
+                  )}
                 </div>
               )}
               <div style={{ paddingLeft: '3%', paddingRight: '3%' }}>
@@ -366,6 +372,20 @@ export default function WebinarIR({ id = 'webinar', screenLabel = 'Webinar IR', 
         )}
 
       </div>
+
+      {id === 'webinar' && (
+        <svg
+          className="webinar-section-wave"
+          viewBox="0 0 1440 80"
+          preserveAspectRatio="none"
+          aria-hidden="true"
+        >
+          <path
+            fill="#ffffff"
+            d="M0,48 C240,8 480,72 720,40 C960,8 1200,56 1440,32 L1440,80 L0,80 Z"
+          />
+        </svg>
+      )}
     </section>
   )
 }
