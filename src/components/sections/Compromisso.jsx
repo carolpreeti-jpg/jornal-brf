@@ -71,10 +71,10 @@ export default function Compromisso() {
               {i === 0 && (
                 <div key="action-photos" style={{ display: 'flex', gap: 8, width: '100%', margin: '40px 0', alignItems: 'stretch' }}>
                   {[
-                    '/acao-curitiba-1.jfif',
-                    '/acao-curitiba-2.jfif',
-                    '/acao-curitiba-3.jpg',
-                    '/acao-curitiba-4.jpg',
+                    asset('/acao-curitiba-1.jpg'),
+                    asset('/acao-curitiba-2.jpg'),
+                    asset('/acao-curitiba-3.jpg'),
+                    asset('/acao-curitiba-4.jpg'),
                   ].map((src, j) => (
                     <div
                       key={j}
@@ -91,7 +91,7 @@ export default function Compromisso() {
                       onMouseLeave={() => setHoveredPhoto(null)}
                     >
                       <img
-                        src={asset(src)}
+                        src={src}
                         alt={`Ação Curitiba ${j + 1}`}
                         style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
                       />
