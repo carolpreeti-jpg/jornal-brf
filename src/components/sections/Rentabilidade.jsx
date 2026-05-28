@@ -1,11 +1,19 @@
 import { useState } from 'react'
 import { edition } from '../../data/edition.js'
+import { asset } from '../../utils/assets.js'
 
 const { rentabilidade } = edition
 
 function classeValor(v) {
   const num = parseFloat(String(v).replace(',', '.'))
   return num >= 0 ? 'pos' : 'neg'
+}
+
+function isIconImage(icon) {
+  return (
+    typeof icon === 'string' &&
+    /^(\/?|https?:\/\/).+\.(svg|png|jpe?g|webp|gif)(\?.*)?$/i.test(icon)
+  )
 }
 
 export default function Rentabilidade() {
@@ -39,7 +47,16 @@ export default function Rentabilidade() {
             {rentabilidade.cenarioBoxes.map((box, i) => (
               <div key={i} className="rent-cenario-box rent-cenario-box--light">
                 <div className="rent-cenario-box-head">
-                  <span className="rent-cenario-box-icon" aria-hidden="true">{box.icone}</span>
+                  {isIconImage(box.icone) ? (
+                    <img
+                      src={asset(box.icone)}
+                      alt=""
+                      aria-hidden="true"
+                      className="rent-cenario-box-icon-image"
+                    />
+                  ) : (
+                    <span className="rent-cenario-box-icon" aria-hidden="true">{box.icone}</span>
+                  )}
                   <span className="rent-cenario-box-title">{box.titulo}</span>
                 </div>
                 {box.paragrafos.map((p, j) => (

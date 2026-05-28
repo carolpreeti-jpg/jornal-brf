@@ -593,7 +593,7 @@ export const edition = {
         ],
       },
       {
-        icone: '🇧🇷',
+        icone: '/bandeira-brasil.svg',
         titulo: 'Brasil',
         paragrafos: [
           'No Brasil, os índices de inflação apresentaram aceleração nos primeiros meses do ano. O IPCA, principal indicador de inflação do país, registrou 0,33% em janeiro, 0,70% em fevereiro, 0,88% em março e 0,67% em abril. Ao mesmo tempo, o Banco Central reduziu a taxa SELIC em suas duas primeiras reuniões do ano, indicando um movimento de ajuste na política monetária. A decisão ocorreu em um cenário de inflação ainda pressionada, com alta tanto nos índices gerais quanto em seus núcleos, o que aumentou as discussões do mercado sobre os próximos passos da economia e os impactos para os investimentos.',

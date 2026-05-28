@@ -1551,6 +1551,13 @@ header.scrolled .hamburger span { background: var(--gray-900) }
   font-size: 28px;
   line-height: 1;
 }
+.rent-cenario-box-icon-image {
+  width: 28px;
+  height: 20px;
+  border-radius: 3px;
+  object-fit: cover;
+  box-shadow: 0 1px 2px rgba(0, 14, 31, 0.2);
+}
 .rent-cenario-box-title {
   font-family: var(--font-display);
   font-weight: 600;
