@@ -7,28 +7,30 @@ export default function RelatorioAnual() {
   return (
     <section className="section events" id="relatorio" data-screen-label="Relatório Anual">
       <div className="wrap">
-        <div className="section-head reveal">
-          <img
-            src={asset('/imagem06.png')}
-            alt="Relatório Anual 2025"
-            style={{ width: '100%', borderRadius: 12, display: 'block', marginBottom: 32 }}
-          />
-          <div className="relatorio-top-row">
+        {/* ── Hero topo: título + texto | notebook ── */}
+        <div className="relatorio-hero reveal">
 
-            <div className="relatorio-text-col">
+          <div className="relatorio-hero-left">
+            <img
+              src={asset('/imagem06.png')}
+              alt="Relatório Anual 2025"
+              className="relatorio-titulo-img"
+            />
+            <div className="relatorio-hero-body">
               {relatorio.descricao.split('\n\n').map((p, i) => (
-                <p key={i} style={{ marginTop: i === 0 ? 0 : 16 }}>{p}</p>
+                <p key={i}>{p}</p>
               ))}
             </div>
-
-            <div className="relatorio-note-col">
-              <img
-                src={asset('/note.png')}
-                alt="Notebook"
-              />
-            </div>
-
           </div>
+
+          <div className="relatorio-hero-right">
+            <img
+              src={asset('/note.png')}
+              alt="Notebook com o Relatório Anual 2025"
+              className="relatorio-note-img"
+            />
+          </div>
+
         </div>
 
         <div className="relatorio-grid reveal">

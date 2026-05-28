@@ -269,26 +269,95 @@ export default function WebinarIR({ id = 'webinar', screenLabel = 'Webinar IR', 
               style={{ width: '36%', borderRadius: 12, display: 'block', margin: '80px 0 24px' }}
             />
 
-            <CarouselWebinar />
+            {/* Lista de temas em texto corrido */}
+            <div style={{ margin: '8px 0 48px' }}>
+              <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', gap: 12 }}>
+                {webinar.temas.map((tema, i) => (
+                  <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: 12, color: '#fff', fontFamily: 'var(--font-body)', fontSize: 18, lineHeight: 1.6 }}>
+                    <span style={{ flexShrink: 0, width: 8, height: 8, borderRadius: '50%', background: '#fff', marginTop: 8, display: 'block' }} />
+                    {tema}
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-            {/* Subtítulo + parágrafos abaixo do carousel */}
-            <h3 style={{ color: '#fff', fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 28, margin: '48px 0 20px' }}>
-              {webinar.subtitulo2}
-            </h3>
+            {/* ── Bloco 12% — destaque editorial ── */}
+            <div style={{
+              margin: '64px 0 0',
+              background: '#0D1B4B',
+              borderRadius: 20,
+              padding: 'clamp(28px, 4vw, 48px)',
+              overflow: 'hidden',
+              position: 'relative',
+            }}>
+              {/* Halo decorativo de fundo */}
+              <div aria-hidden="true" style={{
+                position: 'absolute',
+                top: -60, right: -60,
+                width: 280, height: 280,
+                borderRadius: '50%',
+                background: 'radial-gradient(circle, rgba(249,115,22,0.12) 0%, transparent 70%)',
+                pointerEvents: 'none',
+              }} />
 
-            {(webinar.paragrafos2 || []).slice(0, 2).map((p, i) => (
-              <p key={i} style={{ color: '#fff', fontSize: 18, lineHeight: 1.8, maxWidth: '100%', margin: '0 0 16px' }}>{p}</p>
-            ))}
+              <div style={{
+                display: 'grid',
+                gridTemplateColumns: 'auto 1fr',
+                gap: '0 48px',
+                alignItems: 'start',
+              }}>
+                {/* Número âncora */}
+                <div style={{
+                  fontFamily: 'var(--font-display)',
+                  fontWeight: 800,
+                  fontSize: 'clamp(80px, 10vw, 128px)',
+                  lineHeight: 0.9,
+                  letterSpacing: '-0.04em',
+                  color: 'var(--brand-coral)',
+                  userSelect: 'none',
+                  paddingTop: 6,
+                }}>
+                  12%
+                </div>
 
-            <p style={{ color: '#fff', fontSize: 18, lineHeight: 1.8, maxWidth: '100%', margin: '0 0 16px' }}>
-              {webinar.paragrafos2Youtube}
-            </p>
+                {/* Conteúdo textual */}
+                <div style={{ borderTop: '1.5px solid rgba(255,255,255,0.15)', paddingTop: 20 }}>
+                  <h3 style={{
+                    color: '#fff',
+                    fontFamily: 'var(--font-display)',
+                    fontWeight: 700,
+                    fontSize: 'clamp(18px, 2.2vw, 24px)',
+                    lineHeight: 1.3,
+                    margin: '0 0 20px',
+                    letterSpacing: '-0.01em',
+                  }}>
+                    {webinar.subtitulo2}
+                  </h3>
 
-            {(webinar.paragrafos2 || []).slice(2).map((p, i) => (
-              <p key={i} style={{ color: '#fff', fontSize: 18, lineHeight: 1.8, maxWidth: '100%', margin: '0 0 16px' }}>{p}</p>
-            ))}
+                  {(webinar.paragrafos2 || []).slice(0, 2).map((p, i) => (
+                    <p key={i} style={{ color: 'rgba(255,255,255,0.75)', fontSize: 16, lineHeight: 1.75, margin: '0 0 14px', fontFamily: 'var(--font-body)' }}>{p}</p>
+                  ))}
 
-            <div style={{ margin: '32px 0 0' }}>
+                  <p style={{
+                    color: 'rgba(255,255,255,0.55)',
+                    fontSize: 15,
+                    lineHeight: 1.7,
+                    margin: '0 0 14px',
+                    fontFamily: 'var(--font-body)',
+                    fontStyle: 'italic',
+                  }}>
+                    {webinar.paragrafos2Youtube}
+                  </p>
+
+                  {(webinar.paragrafos2 || []).slice(2).map((p, i) => (
+                    <p key={i} style={{ color: 'rgba(255,255,255,0.75)', fontSize: 16, lineHeight: 1.75, margin: '0 0 14px', fontFamily: 'var(--font-body)' }}>{p}</p>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Botão centralizado */}
+            <div style={{ margin: '40px 0 0', display: 'flex', justifyContent: 'center' }}>
               <a
                 href={webinar.urlYoutube}
                 target="_blank"

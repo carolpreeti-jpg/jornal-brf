@@ -244,7 +244,43 @@ header.scrolled .hamburger span { background: var(--gray-900) }
   .mobile-menu { padding: 8px 32px 24px; }
 }
 .mobile-menu.open { display: block }
-.mobile-menu a { display: block; padding: 12px 0; border-bottom: 1px solid var(--gray-100); color: var(--text-primary); font-weight: 500 }
+.mobile-menu a { display: block; padding: 12px 0; border-bottom: 1px solid var(--gray-100); color: var(--text-primary); font-weight: 500; text-decoration: none }
+
+/* itens enriquecidos do menu mobile */
+.mobile-menu-item {
+  display: flex !important;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 14px 0 !important;
+}
+.mobile-menu-num {
+  flex-shrink: 0;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--brand-coral);
+  letter-spacing: 0.06em;
+  padding-top: 3px;
+  min-width: 22px;
+}
+.mobile-menu-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.mobile-menu-title {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+.mobile-menu-sub {
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 400;
+}
 
 /* ============================================================
    HERO — full-bleed, full-height, imersivo
@@ -1190,32 +1226,68 @@ header.scrolled .hamburger span { background: var(--gray-900) }
   line-height: 1.8;
 }
 
-/* ── Relatório Anual — layout topo (banner + notebook) ── */
-#relatorio .section-head {
-  max-width: none;
-}
-.relatorio-top-row {
+/* ── Relatório Anual — hero topo ── */
+.relatorio-hero {
+  position: relative;
   display: flex;
-  align-items: center;
-  gap: 40px;
+  align-items: flex-start;
+  margin-bottom: 56px;
+  min-height: 480px;
 }
-.relatorio-text-col {
-  flex: 0 0 42%;
-  min-width: 0;
+.relatorio-hero-left {
+  width: 48%;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding-right: 32px;
+  z-index: 1;
 }
-.relatorio-note-col {
-  flex: 1;
-  min-width: 0;
-}
-.relatorio-note-col img {
+.relatorio-titulo-img {
   width: 100%;
   height: auto;
   display: block;
+  border-radius: 12px;
 }
-@media(max-width: 720px) {
-  .relatorio-top-row { flex-direction: column; gap: 32px; }
-  .relatorio-text-col { flex: 0 0 100%; width: 100%; }
-  .relatorio-note-col { display: none; }
+.relatorio-hero-body p {
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin: 0 0 16px;
+}
+.relatorio-hero-body p:last-child { margin-bottom: 0; }
+.relatorio-hero-right {
+  position: absolute;
+  right: -32px;
+  top: 0;
+  width: 58%;
+  overflow: visible;
+  pointer-events: none;
+}
+.relatorio-note-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 32px 56px rgba(0,0,0,0.12));
+}
+@media(max-width: 800px) {
+  .relatorio-hero { min-height: unset; }
+  .relatorio-hero-left { width: 100%; padding-right: 0; }
+  .relatorio-hero-right { display: none; }
+}
+/* ── Webinar bloco 12% — responsivo ── */
+@media(max-width: 640px) {
+  .webinar-fiscal-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .webinar-fiscal-num {
+    font-size: 72px !important;
+    WebkitTextStroke: '1.5px rgba(255,255,255,0.5)' !important;
+    border-bottom: 1.5px solid rgba(255,255,255,0.25);
+    padding-bottom: 16px;
+    margin-bottom: 0;
+  }
 }
 /* ── Webinar — retângulo de foto interativo ── */
 .webinar-photo-box {

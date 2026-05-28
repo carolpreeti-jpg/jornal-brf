@@ -7,12 +7,18 @@ const logoDefault  = asset('/logo-horizontal-1.png')
 const logoScrolled = asset('/logo-horizontal-2.png')
 
 const navLinks = [
-  { href: '#top', label: 'Início' },
-  { href: '#editorial', label: 'Editorial' },
-  { href: '#compromisso', label: 'Compromisso' },
-  { href: '#relatorio', label: 'Relatório' },
-  { href: '#rentabilidade', label: 'Rentabilidade' },
-  { href: '#contato', label: 'Contato' },
+  { href: '#editorial',           label: 'Resumo da edição',                sub: 'Mensagem do Comitê Editorial' },
+  { href: '#compromisso-unidades',label: 'BRF Prev Compromisso com Você',   sub: 'Visitas presenciais às unidades' },
+  { href: '#fale-presidente',     label: 'Fale com o Presidente',           sub: 'Novo canal de relacionamento' },
+  { href: '#historias',           label: 'Histórias que inspiram',          sub: 'Dra. Ivone Delazari' },
+  { href: '#relatorio',           label: 'Relatório Anual 2025',            sub: 'Resultados que conectam' },
+  { href: '#webinar',             label: 'Webinar IR 2026',                 sub: 'Declaração na prática' },
+  { href: '#encontros',           label: 'Encontros de Resultados',         sub: '33ª edição trimestral' },
+  { href: '#patrimonio',          label: 'R$ 5 bilhões em patrimônio',      sub: 'Uma marca histórica' },
+  { href: '#rentabilidade',       label: 'Desempenho dos Planos',           sub: 'Cenário e rentabilidade 2025' },
+  { href: '#aportes',             label: 'Aportes extras e contribuições',  sub: 'Aumente sua reserva' },
+  { href: '#brfprev-em-foco',     label: 'BRF Prev em Foco',               sub: 'Vídeo mensal de novidades' },
+  { href: '#app-brf-prev',        label: 'App BRF Prev',                   sub: 'Sua previdência na palma da mão' },
 ]
 
 export default function Header() {
@@ -74,9 +80,13 @@ export default function Header() {
       </div>
 
       <div className={`mobile-menu${menuOpen ? ' open' : ''}`}>
-        {navLinks.map((l) => (
-          <a key={l.href} href={l.href} onClick={() => setMenuOpen(false)}>
-            {l.label}
+        {navLinks.map((l, i) => (
+          <a key={l.href} href={l.href} onClick={() => setMenuOpen(false)} className="mobile-menu-item">
+            <span className="mobile-menu-num">{String(i + 1).padStart(2, '0')}</span>
+            <span className="mobile-menu-text">
+              <span className="mobile-menu-title">{l.label}</span>
+              {l.sub && <span className="mobile-menu-sub">{l.sub}</span>}
+            </span>
           </a>
         ))}
       </div>
