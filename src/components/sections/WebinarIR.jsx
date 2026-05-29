@@ -332,35 +332,21 @@ export default function WebinarIR({ id = 'webinar', screenLabel = 'Webinar IR', 
                 pointerEvents: 'none',
               }} />
 
-              <div style={{
-                display: 'grid',
-                gridTemplateColumns: 'auto 1fr',
-                gap: '0 48px',
-                alignItems: 'start',
-              }}>
+              <div className="webinar-12-grid">
                 {/* Número âncora */}
-                <div style={{
-                  fontFamily: 'var(--font-display)',
-                  fontWeight: 800,
-                  fontSize: 'clamp(80px, 10vw, 128px)',
-                  lineHeight: 0.9,
-                  letterSpacing: '-0.04em',
-                  color: 'var(--brand-coral)',
-                  userSelect: 'none',
-                  paddingTop: 6,
-                }}>
+                <div className="webinar-12-num">
                   12%
                 </div>
 
                 {/* Conteúdo textual */}
-                <div style={{ borderTop: '1.5px solid rgba(255,255,255,0.15)', paddingTop: 20 }}>
+                <div className="webinar-12-body">
                   <h3 style={{
                     color: '#fff',
                     fontFamily: 'var(--font-display)',
                     fontWeight: 700,
                     fontSize: 'clamp(18px, 2.2vw, 24px)',
                     lineHeight: 1.3,
-                    margin: '0 0 20px',
+                    margin: '0 0 16px',
                     letterSpacing: '-0.01em',
                   }}>
                     {webinar.subtitulo2}

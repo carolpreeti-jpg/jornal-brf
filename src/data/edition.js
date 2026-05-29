@@ -604,7 +604,7 @@ export const edition = {
     ],
     tituloDesempenho: 'Desempenho dos investimentos da BRF Prev',
     desempenhoParagrafos: [
-      'Os planos da BRF Prev ficaram abaixo das metas recentemente, em virtude dos impactos do conflito no sudoeste da Ásia. As aplicações em títulos públicos atrelados à inflação apresentaram comportamento compatível com o cenário. Já o investimento em ações no segmento de renda variável registrou desvalorização, principalmente em decorrência dos reflexos dos conflitos geopolíticos.',
+      'Os planos da BRF Prev ficaram abaixo das metas recentemente, em virtude dos impactos do conflito no sudoeste da Ásia. As aplicações em títulos públicos atrelados à inflação apresentaram comportamento compatível com o cenário. Já o investimento em ações no segmento de renda variável registrou desvalorização, principalmente em decorrência dos reflexos dos conflitos geopolíticos. Ainda assim, nosso entendimento é de que existem fundamentos sólidos que justificam a manutenção da posição, com boas perspectivas de contribuição para resultados futuros consistentes e crescentes.',
     ],
     desempenhoDestaque: null,
     linhas: [

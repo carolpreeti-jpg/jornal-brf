@@ -1996,11 +1996,14 @@ blockquote.quote cite { display: block; margin-top: 14px; font-family: 'Co Headl
   }
   .testimonial-card--horizontal .card-top {
     width: 100%;
-    height: 220px;
+    height: 420px;
     border-radius: 16px 16px 0 0;
   }
+  .testimonial-card--horizontal .card-top img {
+    object-position: center top;
+  }
   .testimonial-card--horizontal .quote-badge {
-    top: 220px;
+    top: 420px;
     left: 28px;
     transform: translateY(-50%);
   }
@@ -2537,6 +2540,44 @@ blockquote.quote cite { display: block; margin-top: 14px; font-family: 'Co Headl
 }
 .webinar-body {
   margin-top: 8px;
+}
+
+/* Bloco 12% — layout responsivo */
+.webinar-12-grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0 48px;
+  align-items: start;
+}
+.webinar-12-num {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(80px, 10vw, 128px);
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  color: var(--brand-coral);
+  user-select: none;
+  padding-top: 6px;
+}
+.webinar-12-body {
+  border-top: 1.5px solid rgba(255,255,255,0.15);
+  padding-top: 20px;
+}
+
+@media (max-width: 600px) {
+  .webinar-12-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .webinar-12-num {
+    font-size: 72px;
+    padding-top: 0;
+    margin-bottom: 16px;
+  }
+  .webinar-12-body {
+    border-top: 1.5px solid rgba(255,255,255,0.15);
+    padding-top: 16px;
+  }
 }
 .webinar-photo-wrap {
   position: relative;
