@@ -35,6 +35,7 @@ export default function App() {
         <Historias />
         <RelatorioAnual />
         <WebinarIR />
+        <Aportes />
         <Encontros />
         <CompromissoUnidades />
         <WebinarIR
@@ -54,7 +55,6 @@ export default function App() {
           }}
           bottomContent={<RentCarousel />}
         />
-        <Aportes />
         <BRFPrevEmFoco />
         <AppBRFPrev />
       </main>

@@ -89,8 +89,20 @@ export const edition = {
       placeholderLabel: 'Webinar IR',
     },
     {
-      id: 'encontros',
+      id: 'aportes',
       n: '07',
+      tag: 'Aporte',
+      titulo: 'Aportes extras e contribuições',
+      subtitulo: 'Aumente sua reserva',
+      imagem: '/aportes.png',
+      imagemFit: 'cover',
+      imagemPosition: 'center center',
+      gradient: 'linear-gradient(135deg, #F97316 0%, #FCD34D 100%)',
+      placeholderLabel: 'Aportes',
+    },
+    {
+      id: 'encontros',
+      n: '08',
       tag: 'Resultados',
       titulo: 'Encontros de Resultados',
       subtitulo: '33ª edição trimestral',
@@ -102,7 +114,7 @@ export const edition = {
     },
     {
       id: 'compromisso-unidades',
-      n: '08',
+      n: '09',
       tag: 'Marco',
       titulo: 'R$ 5 bilhões em patrimônio',
       subtitulo: 'Uma marca histórica',
@@ -114,7 +126,7 @@ export const edition = {
     },
     {
       id: 'rentabilidade',
-      n: '09',
+      n: '10',
       tag: 'Resultados',
       titulo: 'Desempenho dos Planos',
       subtitulo: 'Cenário e rentabilidade 2025',
@@ -123,18 +135,6 @@ export const edition = {
       imagemPosition: 'center center',
       gradient: 'linear-gradient(135deg, #0D9488 0%, #2563EB 100%)',
       placeholderLabel: 'Rentabilidade',
-    },
-    {
-      id: 'aportes',
-      n: '10',
-      tag: 'Aporte',
-      titulo: 'Aportes extras e contribuições',
-      subtitulo: 'Aumente sua reserva',
-      imagem: '/aportes.png',
-      imagemFit: 'cover',
-      imagemPosition: 'center center',
-      gradient: 'linear-gradient(135deg, #F97316 0%, #FCD34D 100%)',
-      placeholderLabel: 'Aportes',
     },
     {
       id: 'brfprev-em-foco',
@@ -198,10 +198,10 @@ export const edition = {
     { n: '04', tag: 'Inspiração',    titulo: 'Histórias que inspiram — Dra. Ivone Delazari',  href: '#historias',       variante: 'alt' },
     { n: '05', tag: 'Transparência', titulo: 'Relatório Anual 2025',                           href: '#relatorio',       variante: 'alt2' },
     { n: '06', tag: 'Educação',      titulo: 'Webinar IR 2026',                                href: '#webinar',         variante: 'alt3' },
-    { n: '07', tag: 'Resultados',    titulo: 'Encontros de Resultados — 33ª edição',           href: '#encontros',       variante: '' },
-    { n: '08', tag: 'Marco',      titulo: 'R$ 5 bilhões em patrimônio',                   href: '#compromisso-unidades', variante: 'alt2' },
-    { n: '09', tag: 'Resultados', titulo: 'Desempenho dos planos',                        href: '#rentabilidade',        variante: 'alt3' },
-    { n: '10', tag: 'Aporte',     titulo: 'Aportes extras e contribuições suplementares', href: '#aportes',              variante: '' },
+    { n: '07', tag: 'Aporte',     titulo: 'Aportes extras e contribuições suplementares', href: '#aportes',              variante: '' },
+    { n: '08', tag: 'Resultados',    titulo: 'Encontros de Resultados — 33ª edição',           href: '#encontros',       variante: 'alt2' },
+    { n: '09', tag: 'Marco',      titulo: 'R$ 5 bilhões em patrimônio',                   href: '#compromisso-unidades', variante: 'alt3' },
+    { n: '10', tag: 'Resultados', titulo: 'Desempenho dos planos',                        href: '#rentabilidade',        variante: '' },
     { n: '11', tag: 'Canal',      titulo: 'BRF Prev em Foco',                             href: '#brfprev-em-foco',      variante: 'alt' },
     { n: '12', tag: 'Digital',    titulo: 'App BRF Prev',                                 href: '#app-brf-prev',         variante: 'alt2' },
   ],
@@ -238,8 +238,8 @@ export const edition = {
 
   // ─── BRF Prev Compromisso com Você ────────────────────────────────────────
   compromisso: {
-    titulo: 'Programa BRF Prev Compromisso com Você fortalece proximidade com participantes nas unidades da BRF',
-    intro: 'Com o objetivo de fortalecer ainda mais o relacionamento com os participantes e ampliar a proximidade por meio de atendimentos presenciais, criamos o programa BRF Prev Compromisso com Você.  A iniciativa prevê visitas presenciais às unidades da BRF em diversas regiões do Brasil ao longo do ano, promovendo atendimento mais próximo, acessível e personalizado aos participantes.',
+    titulo: 'Programa BRF Prev Compromisso com Você fortalece proximidade com participantes nas unidades da MBRF',
+    intro: 'Com o objetivo de fortalecer ainda mais o relacionamento com os participantes e ampliar a proximidade por meio de atendimentos presenciais, criamos o programa BRF Prev Compromisso com Você.  A iniciativa prevê visitas presenciais às unidades da MBRF em diversas regiões do Brasil ao longo do ano, promovendo atendimento mais próximo, acessível e personalizado aos participantes.',
     acoesRealizadas: {
       label: 'Ações realizadas',
       local: 'Curitiba · Itajaí · Campinas',
@@ -392,7 +392,7 @@ export const edition = {
     titulo: 'Webinar BRF Prev orienta participantes sobre a Declaração de IR 2026 na prática',
     descricao: 'Com o início do período de entrega da Declaração do Imposto\nde Renda 2026, a BRF Prev promoveu um webinar especial com o objetivo de apoiar seus participantes no correto preenchimento das informações, especialmente no que se refere à previdência complementar.',
     paragrafos: [
-      'O encontro foi conduzido pela Diretora de Administração e Seguridade, Vivian Fonseca, e contou com a participação da contadora Jessica Maia, fundadora da Domus Contábil, responsável por apresentar, de forma prática e didática,\no passo a passo da declaração.',
+      'O encontro foi conduzido pela Diretora de Administração e Seguridade, Vivian Fonseca, e contou com a participação da contadora Jessica Maia, fundadora da Domus Contábil, responsável por apresentar, de forma prática e didática, o passo a passo da declaração.',
       'Durante o webinar, foram abordados os principais pontos de atenção para o contribuinte, com destaque para as atualizações das regras do IR 2026, possibilidades de deduções e orientações específicas sobre como declarar corretamente as contribuições e benefícios relacionados à previdência.',
       'A iniciativa reforça a importância do planejamento financeiro e do correto cumprimento das obrigações fiscais, contribuindo para evitar inconsistências na declaração, reduzir a carga tributária quando aplicável e garantir maior tranquilidade junto à Receita Federal.',
     ],
@@ -604,16 +604,9 @@ export const edition = {
     ],
     tituloDesempenho: 'Desempenho dos investimentos da BRF Prev',
     desempenhoParagrafos: [
-      'Os planos da BRF Prev apresentaram desempenho pouco abaixo das metas nos últimos meses, refletindo os impactos do cenário econômico e dos conflitos no sudoeste da Ásia sobre os mercados globais.',
-      'As aplicações em títulos públicos atrelados à inflação tiveram comportamento compatível com o momento econômico e contribuíram para dar maior estabilidade à carteira diante do aumento da volatilidade.',
-      'Já os investimentos em ações da BRF foram impactados por uma combinação de fatores externos e setoriais. Entre eles, estiveram as expectativas de aumento nos preços dos insumos agrícolas em razão da possível ocorrência do fenômeno El Niño, o estabelecimento de cotas para exportações destinadas à China, as restrições na oferta de gado no mercado americano e as dificuldades logísticas relacionadas à navegação no Estreito de Ormuz.',
-      'Também influenciaram esse cenário a valorização do real frente ao dólar, moeda que representa mais de dois terços da receita da companhia, e, mais recentemente, as barreiras sanitárias impostas pelo mercado europeu, em um contexto de maior protecionismo comercial.',
+      'Os planos da BRF Prev ficaram abaixo das metas recentemente, em virtude dos impactos do conflito no sudoeste da Ásia. As aplicações em títulos públicos atrelados à inflação apresentaram comportamento compatível com o cenário. Já o investimento em ações no segmento de renda variável registrou desvalorização, principalmente em decorrência dos reflexos dos conflitos geopolíticos.',
     ],
-    desempenhoDestaque: {
-      icone: '📈',
-      titulo: 'Perspectivas mais positivas',
-      texto: 'Por outro lado, alguns fatores mais recentes contribuem para perspectivas mais positivas. A safra de soja colhida no fim do verão doméstico ajudou a reduzir os preços da commodity, enquanto a safra de milho do meio do ano tem expectativa de volume recorde. Além disso, há expectativa de flexibilização de algumas barreiras comerciais como forma de conter os impactos inflacionários relacionados ao petróleo. Somam-se a isso as oportunidades de captura de sinergias ainda relevantes com a fusão entre Marfrig e BRF.',
-    },
+    desempenhoDestaque: null,
     linhas: [
       { nome: 'II (Classe BD)',         meses: ['0,59', '1,11',  '1,46',  '0,47'],  acum: '3,68',  p12m: '9,35',   p24m: '19,74', p36m: '31,30', tipo: 'plano' },
       { nome: 'II (Classe CD)',         meses: ['0,61', '1,35',  '0,66',  '0,70'],  acum: '3,36',  p12m: '11,11',  p24m: '20,22', p36m: '35,31', tipo: 'plano' },
