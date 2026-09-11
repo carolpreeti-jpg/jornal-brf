@@ -1,15 +1,20 @@
 import { edition } from '../../data/edition.js'
+import { asset } from '../../utils/assets.js'
 
 const { redes } = edition
 
 export default function Redes() {
   return (
     <section className="section social" id="redes" data-screen-label="Redes">
+      <div className="social-bg-photo">
+        <img
+          src={asset('/social-media-trends.jpg')}
+          alt=""
+          style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+        />
+      </div>
       <div className="wrap inner">
         <div className="reveal">
-          <span className="eyebrow" style={{ color: 'rgba(255,255,255,.8)' }}>
-            Redes sociais · {edition.ano + 1}
-          </span>
           <h2 dangerouslySetInnerHTML={{ __html: redes.titulo }} />
           <p className="lead">{redes.lead}</p>
         </div>
@@ -22,13 +27,15 @@ export default function Redes() {
                 key={p.nome}
                 className={`social-card ${p.classe} reveal${delay}`}
                 href={p.href}
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <span className="ic">{p.ic}</span>
-                <span className="name">{p.nome}</span>
-                <span className={`num${!p.seguidores ? ' green' : ''}`}>
-                  {p.labelEspecial ?? p.seguidores}
+                <span className="ic">
+                  {p.logo
+                    ? <img src={asset(p.logo)} alt={p.nome} style={{ width: '85%', height: '85%', objectFit: 'contain' }} />
+                    : p.ic}
                 </span>
-                <span className="handle">{p.handle}</span>
+                <span className="social-btn">{p.labelEspecial ?? 'Acessar'}</span>
               </a>
             )
           })}

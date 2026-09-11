@@ -109,7 +109,7 @@ export default function Footer() {
 
             <div style={S.block}>
               <p style={S.label}>Comunicação e Marketing</p>
-              <p style={S.text}>Tatiani Leite</p>
+              <p style={S.text}>Rose Zanutto</p>
             </div>
 
             <div style={S.block}>

@@ -9,9 +9,12 @@ const logoScrolled = asset('/logo-horizontal-2.png')
 const navLinks = [
   { href: '#top', label: 'Início' },
   { href: '#editorial', label: 'Editorial' },
-  { href: '#compromisso', label: 'Compromisso' },
-  { href: '#relatorio', label: 'Relatório' },
-  { href: '#rentabilidade', label: 'Rentabilidade' },
+  { href: '#portabilidade', label: 'Portabilidade' },
+  { href: '#beneficiarios', label: 'Beneficiários' },
+  { href: '#reconhecimento', label: 'Selo Sintonia A+' },
+  { href: '#conexao', label: 'Conexão BRF Previdência' },
+  { href: '#planejamento', label: 'Planejamento' },
+  { href: '#plano-familia', label: 'Plano Família' },
   { href: '#contato', label: 'Contato' },
 ]
 

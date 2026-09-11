@@ -2,16 +2,13 @@ import { useSideIndex } from '../../hooks/useSideIndex.js'
 
 const items = [
   { href: '#editorial',       label: '01 Editorial' },
-  { href: '#compromisso',     label: '02 Compromisso' },
-  { href: '#fale-presidente', label: '03 Fale c/ Presidente', node: <><span style={{display:'block'}}>03 Fale com o</span><span style={{display:'block', paddingLeft:'1.1em'}}>Presidente</span></> },
-  { href: '#historias',       label: '04 Histórias' },
-  { href: '#relatorio',       label: '05 Relatório Anual', node: <><span style={{display:'block'}}>05 Relatório</span><span style={{display:'block', paddingLeft:'1.1em'}}>Anual 2025</span></> },
-  { href: '#webinar',         label: '06 Webinar IR' },
-  { href: '#encontros',       label: '07 Encontros' },
-  { href: '#patrimonio',      label: '08 Patrimônio' },
-  { href: '#aportes',         label: '09 Aportes' },
-  { href: '#rentabilidade',   label: '10 Rentabilidade' },
-  { href: '#renda-certa',     label: '11 Renda Certa' }
+  { href: '#portabilidade',   label: '02 Portabilidade' },
+  { href: '#beneficiarios',   label: '03 Beneficiários' },
+  { href: '#reconhecimento',  label: '04 Selo Sintonia A+', node: <><span style={{display:'block'}}>04 Selo</span><span style={{display:'block', paddingLeft:'1.1em'}}>Sintonia A+</span></> },
+  { href: '#conexao',         label: '05 Conexão BRF Prev', node: <><span style={{display:'block'}}>05 Conexão</span><span style={{display:'block', paddingLeft:'1.1em'}}>BRF Prev</span></> },
+  { href: '#planejamento',    label: '06 Planejamento' },
+  { href: '#plano-familia',   label: '07 Plano Família' },
+  { href: '#redes',           label: '08 Redes Sociais' },
 ]
 
 const sectionIds = items.map((i) => i.href.replace('#', ''))

@@ -48,7 +48,14 @@
       "PowerShell(cmd /c \"dir /a C:\\\\www\\\\jornal-jean\\\\src\\\\components\\\\sections\")",
       "PowerShell(head *)",
       "PowerShell(cmd /c \"dir /a C:\\\\www\\\\jornal-jean\\\\src\\\\components\\\\layout\")",
-      "PowerShell(cd \"C:\\\\www\\\\jornal-jean\"; git status --short | Where-Object { $_ -match \"\\\\.jsx|\\\\.css|\\\\.js\" })"
+      "PowerShell(cd \"C:\\\\www\\\\jornal-jean\"; git status --short | Where-Object { $_ -match \"\\\\.jsx|\\\\.css|\\\\.js\" })",
+      "PowerShell(cmd /c \"dir /aL C:\\\\www\\\\jornal-jean\\\\src\\\\components\")",
+      "PowerShell(cmd /c \"fsutil reparsepoint query C:\\\\www\\\\jornal-jean\\\\src\\\\components\\\\sections\" 2>&1)",
+      "PowerShell(cmd /c \"fsutil reparsepoint query C:\\\\www\\\\jornal-jean\\\\src\\\\components\" 2>&1; cmd /c \"fsutil reparsepoint query C:\\\\www\\\\jornal-jean\\\\src\" 2>&1)",
+      "PowerShell(cmd /c \"dir /b /a-d C:\\\\www\\\\jornal-jean\\\\src\\\\components\\\\sections\" 2>&1)",
+      "PowerShell(netstat *)",
+      "PowerShell(Get-Process *)",
+      "PowerShell(Get-WmiObject *)"
     ]
   }
 }
