@@ -33,7 +33,7 @@ export default function PlanoFamilia() {
           <img
             src={asset('/logo-plano-familia-white.png')}
             alt="Plano Família"
-            style={{ height: 48, width: 'auto', objectFit: 'contain', marginBottom: 16 }}
+            style={{ height: 48, width: 'auto', objectFit: 'contain', marginBottom: 16, transform: 'translateX(-15%)' }}
           />
           <h2 style={{ color: '#fff' }}>{f.titulo}</h2>
         </div>

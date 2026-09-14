@@ -12,18 +12,21 @@ export default function Reconhecimento() {
       <div className="wrap">
 
         {/* Cabeçalho — banner com espaço para foto e título sobreposto */}
-        <div className="recon-hero reveal">
-          <div className="recon-hero-bg">
-            <img
-              src={asset('/selo-sintonia-a-mais.png')}
-              alt="Selo Sintonia A+"
-              style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-            />
+        <div className="recon-hero-wrap reveal">
+          <div className="recon-hero">
+            <div className="recon-hero-bg">
+              <img
+                src={asset('/selo-sintonia-a-mais.png')}
+                alt="Selo Sintonia A+"
+                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+              />
+            </div>
+            <div className="recon-hero-overlay" />
+            <div className="recon-hero-content">
+              <h2>{r.titulo}</h2>
+            </div>
           </div>
-          <div className="recon-hero-overlay" />
-          <div className="recon-hero-content">
-            <h2>{r.titulo}</h2>
-          </div>
+          <span className="port-photo-label">Reconhecimento</span>
         </div>
 
         {r.paragrafos.map((txt, i) => (

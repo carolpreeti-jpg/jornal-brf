@@ -60,8 +60,10 @@ export default function Portabilidade() {
 
         {/* Painel de abertura */}
         <div className="port-hero reveal" style={{ marginBottom: 56 }}>
-          <div className="port-photo">
-            <img src={asset('/business-women.jpg')} alt="" />
+          <div className="port-hero-photo-wrap">
+            <div className="port-photo">
+              <img src={asset('/business-women.jpg')} alt="" />
+            </div>
             <span className="port-photo-label">Portabilidade</span>
           </div>
           <div className="port-hero-text">

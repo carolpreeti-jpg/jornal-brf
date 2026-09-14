@@ -36,12 +36,15 @@ export default function Beneficiarios() {
         </div>
 
         <div className="beneficiarios-intro-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1.6fr', gap: 32, alignItems: 'stretch', marginBottom: 48 }}>
-          <div style={{ borderRadius: 'var(--radius-card)', overflow: 'hidden', minHeight: 220 }}>
-            <img
-              src={asset('/mother-son-autumn-park.jpg')}
-              alt="Mãe com filho no parque"
-              style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-            />
+          <div style={{ position: 'relative', minHeight: 220 }}>
+            <div style={{ borderRadius: 'var(--radius-card)', overflow: 'hidden', width: '100%', height: '100%' }}>
+              <img
+                src={asset('/mother-son-autumn-park.jpg')}
+                alt="Mãe com filho no parque"
+                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+              />
+            </div>
+            <span className="port-photo-label">Planos Previdenciários</span>
           </div>
           <div>
             {b.intro.map((txt, i) => (

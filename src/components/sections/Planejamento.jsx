@@ -11,23 +11,24 @@ export default function Planejamento() {
     <section className="section" id="planejamento" data-screen-label="Planejamento Previdenciário" style={{ background: '#fff' }}>
       <div className="wrap">
 
-        {/* Cabeçalho */}
-        <div className="section-head reveal">
-          <h2>
-            {(() => {
-              const marker = 'investe no futuro das pessoas'
-              const idx = pl.titulo.indexOf(marker)
-              return idx === -1
-                ? pl.titulo
-                : <>{pl.titulo.slice(0, idx)}<span style={{ color: 'var(--brand-blue)' }}>{marker}</span>{pl.titulo.slice(idx + marker.length)}</>
-            })()}
-          </h2>
-        </div>
-
         <div style={{ display: 'grid', gridTemplateColumns: '1.6fr 1fr', gap: 48, alignItems: 'start' }}>
 
-          {/* Coluna esquerda — texto */}
+          {/* Coluna esquerda — cabeçalho + texto */}
           <div>
+            {/* Cabeçalho */}
+            <div className="section-head reveal" style={{ maxWidth: 'none' }}>
+              <span className="editorial-label" style={{ transform: 'none', maxWidth: 'none', whiteSpace: 'nowrap', fontSize: 17, padding: '15px 29px', boxShadow: 'none', marginBottom: 4 }}>Planejamento Previdenciário</span>
+              <h2>
+                {(() => {
+                  const marker = 'investe no futuro das pessoas'
+                  const idx = pl.titulo.indexOf(marker)
+                  return idx === -1
+                    ? pl.titulo
+                    : <>{pl.titulo.slice(0, idx)}<span style={{ color: 'var(--brand-blue)' }}>{marker}</span>{pl.titulo.slice(idx + marker.length)}</>
+                })()}
+              </h2>
+            </div>
+
             {pl.paragrafos.map((txt, i) => (
               <p key={i} style={{ ...TXT, marginBottom: 20 }}>{txt}</p>
             ))}
@@ -36,7 +37,7 @@ export default function Planejamento() {
           </div>
 
           {/* Coluna direita — depoimento Daniele Fernanda */}
-          <div className="testimonial-card" style={{ maxWidth: '100%', position: 'sticky', top: 120 }}>
+          <div className="testimonial-card" style={{ maxWidth: '100%', position: 'sticky', top: 24 }}>
             <div className="card-top">
               <img
                 src={asset('/daniele-fernanda.png')}
