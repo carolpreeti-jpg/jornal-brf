@@ -99,14 +99,51 @@ export default function PlanoFamilia() {
           borderRadius: 'var(--radius-card)',
           padding: '32px 36px',
         }}>
-          <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 24, color: 'var(--brand-coral)', margin: '0 0 16px' }}>
+          <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 24, color: 'var(--brand-coral)', margin: '0 0 12px' }}>
             {f.comoAderir.titulo}
           </h3>
-          {f.comoAderir.itens.map((item, i) => (
-            <p key={i} style={{ ...NOTO, fontSize: 16, lineHeight: 1.75, color: 'var(--text-secondary)', margin: i === 0 ? '0 0 12px' : 0 }}>
-              {item}
+          <p style={{ ...NOTO, fontSize: 16, lineHeight: 1.75, color: 'var(--text-secondary)', margin: '0 0 24px' }}>
+            {f.comoAderir.intro}
+          </p>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 20, marginBottom: 28 }}>
+            {f.comoAderir.canais.map((c) => (
+              <div key={c.n} style={{
+                display: 'flex', gap: 16, alignItems: 'flex-start',
+                background: 'var(--gray-50)', border: '1px solid var(--gray-200)',
+                borderRadius: 'var(--radius-card)', padding: '20px 22px',
+              }}>
+                <span style={{
+                  flex: 'none', width: 36, height: 36, borderRadius: '50%',
+                  background: 'var(--brand-coral)', color: '#fff',
+                  display: 'grid', placeItems: 'center',
+                  fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 16,
+                }}>
+                  {c.n}
+                </span>
+                <div>
+                  <p style={{ ...NOTO, fontWeight: 700, fontSize: 16, color: 'var(--text-primary)', margin: '0 0 6px' }}>
+                    {c.titulo}
+                  </p>
+                  <p style={{ ...NOTO, fontSize: 14.5, lineHeight: 1.7, color: 'var(--text-secondary)', margin: 0 }}>
+                    {c.texto}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div style={{
+            display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between',
+            gap: 16, background: 'var(--brand-blue)', borderRadius: 'var(--radius-card)', padding: '20px 28px',
+          }}>
+            <p style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 19, color: '#fff', margin: 0 }}>
+              {f.comoAderir.cta.texto}
             </p>
-          ))}
+            <a className="btn btn-coral" href={f.comoAderir.cta.href} target="_blank" rel="noopener noreferrer" style={{ boxShadow: 'none' }}>
+              {f.comoAderir.cta.label} <span className="arrow">→</span>
+            </a>
+          </div>
         </div>
 
       </div>

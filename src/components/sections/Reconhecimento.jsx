@@ -11,31 +11,41 @@ export default function Reconhecimento() {
     <section className="section" id="reconhecimento" data-screen-label="Reconhecimento" style={{ background: '#fff' }}>
       <div className="wrap">
 
-        {/* Cabeçalho — banner com espaço para foto e título sobreposto */}
-        <div className="recon-hero-wrap reveal">
-          <div className="recon-hero">
-            <div className="recon-hero-bg">
-              <img
-                src={asset('/selo-sintonia-a-mais.png')}
-                alt="Selo Sintonia A+"
-                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-              />
-            </div>
-            <div className="recon-hero-overlay" />
-            <div className="recon-hero-content">
-              <h2>{r.titulo}</h2>
-            </div>
+        {/* Cabeçalho — título com tag à esquerda, espaço reservado para PNG à direita */}
+        <div className="reveal" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24, alignItems: 'start', marginBottom: 20 }}>
+          <div>
+            <img
+              src={asset('/logo-programa-sintonia.png')}
+              alt="Programa Sintonia"
+              style={{ display: 'block', height: 56, width: 'auto', objectFit: 'contain', marginBottom: 16 }}
+            />
+            <h2 style={{ margin: '0 0 28px' }}>
+              {(() => {
+                const marker = 'Selo Sintonia A+'
+                const idx = r.titulo.indexOf(marker)
+                return idx === -1
+                  ? r.titulo
+                  : <>{r.titulo.slice(0, idx)}<span style={{ color: 'var(--brand-blue)' }}>{marker}</span>{r.titulo.slice(idx + marker.length)}</>
+              })()}
+            </h2>
+
+            <p style={{ ...TXT, margin: 0, maxWidth: '85%' }}>{r.paragrafos[0]}</p>
           </div>
-          <span className="port-photo-label">Reconhecimento</span>
+
+          <img
+            src={asset('/selo-a-mais-mais.png')}
+            alt="Selo Sintonia A+"
+            style={{ width: '100%', height: 'auto', objectFit: 'contain', display: 'block', transform: 'translate(-10%, -50px)' }}
+          />
         </div>
 
-        {r.paragrafos.map((txt, i) => (
+        {r.paragrafos.slice(1).map((txt, i) => (
           <p key={i} style={{ ...TXT, marginBottom: 20 }}>{txt}</p>
         ))}
 
         {/* Critérios */}
-        <div style={{ marginBottom: 48 }}>
-          <p style={{ ...NOTO, fontWeight: 700, fontSize: 16, color: 'var(--text-primary)', marginBottom: 16 }}>
+        <div style={{ marginBottom: 48, marginTop: 40 }}>
+          <p style={{ fontFamily: "'Co Headline', sans-serif", fontWeight: 400, fontSize: 24, color: 'var(--text-primary)', marginBottom: 16 }}>
             {r.criterios.titulo}
           </p>
           <div className="cu-analogias-grid" style={{ gridTemplateColumns: 'repeat(5, 1fr)', marginBottom: 0 }}>
@@ -63,7 +73,7 @@ export default function Reconhecimento() {
           <div className="quote-badge">"</div>
           <div className="card-bottom">
             <div>
-              <p className="card-author-name" style={{ fontFamily: "'Co Headline', sans-serif", fontWeight: 400, color: '#EE686D', fontSize: 20 }}>
+              <p className="card-author-name" style={{ fontFamily: "'Co Headline', sans-serif", fontWeight: 400, color: 'var(--brand-blue)', fontSize: 20 }}>
                 {r.citacaoAutor.split('\n')[0].replace(/,$/, '')}
               </p>
               <p className="card-author-role">

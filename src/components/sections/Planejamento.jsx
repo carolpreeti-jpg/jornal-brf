@@ -59,17 +59,40 @@ export default function Planejamento() {
 
         </div>
 
-        {/* Solicite uma visita */}
-        <div style={{
-          marginTop: 56,
-          background: 'var(--gray-50)',
-          borderRadius: 'var(--radius-card)',
-          padding: '32px 36px',
-        }}>
-          <h3 style={{ fontFamily: "'Co Headline', sans-serif", fontWeight: 400, fontSize: 24, color: 'var(--brand-coral)', margin: '0 0 12px' }}>
-            {pl.solicitarVisita.titulo}
-          </h3>
-          <p style={{ ...TXT, margin: 0 }}>{pl.solicitarVisita.texto}</p>
+        {/* Solicite uma visita + Por onde passamos */}
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24, marginTop: 56, alignItems: 'stretch' }}>
+
+          <div style={{
+            background: 'var(--gray-50)',
+            borderRadius: 'var(--radius-card)',
+            padding: '32px 36px',
+          }}>
+            <h3 style={{ fontFamily: "'Co Headline', sans-serif", fontWeight: 400, fontSize: 24, color: 'var(--brand-coral)', margin: '0 0 12px' }}>
+              {pl.solicitarVisita.titulo}
+            </h3>
+            <p style={{ ...TXT, margin: 0 }}>{pl.solicitarVisita.texto}</p>
+          </div>
+
+          <div style={{ position: 'relative', height: '100%' }}>
+            <span className="port-photo-label">{pl.porOndePassamos.titulo}</span>
+            <div style={{ position: 'relative', borderRadius: 'var(--radius-card)', overflow: 'hidden', height: '100%', minHeight: 220 }}>
+              <img
+                src={asset('/por-onde-passamos-encontro.jpeg')}
+                alt="Palestra do Programa Compromisso com Você"
+                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+              />
+              <div style={{
+                position: 'absolute', left: 16, right: 16, bottom: 16, zIndex: 1,
+                background: 'var(--brand-blue)', borderRadius: 'var(--radius-card)',
+                padding: '16px 20px',
+              }}>
+                <p style={{ ...NOTO, margin: 0, fontSize: 14, lineHeight: 1.6, color: '#fff', textAlign: 'center' }}>
+                  <strong>{pl.porOndePassamos.unidade}</strong>{'  '}{pl.porOndePassamos.texto}
+                </p>
+              </div>
+            </div>
+          </div>
+
         </div>
 
       </div>

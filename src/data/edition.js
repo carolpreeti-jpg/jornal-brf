@@ -116,7 +116,7 @@ export const edition = {
     { n: '03', tag: 'Reconhecimento',               titulo: 'BRF Prev conquista o Selo Sintonia A+',                  href: '#reconhecimento', variante: 'alt3' },
     { n: '04', tag: 'Conexão BRF Previdência',      titulo: 'Encontro Trimestral de Resultados — 34ª edição',        href: '#conexao',         variante: 'alt' },
     { n: '05', tag: 'Planejamento Previdenciário',  titulo: 'Quando a empresa investe no futuro das pessoas',        href: '#planejamento',    variante: 'alt2' },
-    { n: '06', tag: 'Plano Família',                titulo: 'O melhor presente pode ser o futuro',                    href: '#plano-familia',  variante: 'alt3' },
+    { n: '06', tag: 'Plano Família',                titulo: 'Plano Família: o melhor presente pode ser o futuro',    href: '#plano-familia',  variante: 'alt3' },
   ],
 
   // ─── Editorial ────────────────────────────────────────────────────────────
@@ -125,7 +125,7 @@ export const edition = {
     paragrafos: [
       'Nesta edição do Jornal da BRF Prev, mostramos como trazer para a BRF Prev recursos que podem estar em outras instituições financeiras ou outros planos de previdência. A portabilidade é uma excelente oportunidade para fortalecer seu plano na BRF Prev e uma opção inteligente para quem deseja construir um futuro financeiro mais seguro.',
       'Em outra matéria especial, aproveitamos para lembrar a importância de revisar periodicamente os seus dados cadastrais, em especial os beneficiários cadastrados no seu plano e como isso pode facilitar o seu planejamento sucessório.',
-      'Temos ainda a satisfação de compartilhar a conquista do Selo Sintonia A+ pela BRF Prev, o mais alto reconhecimento da Receita Federal em conformidade fiscal. Um resultado que reforça nosso compromisso com a transparência, a governança e a excelência na gestão.',
+      'Temos ainda a satisfação de compartilhar a conquista do Selo Sintonia A+ pela BRF Prev, o mais alto reconhecimento da Receita Federal em conformidade fiscal. Um resultado que reforça nosso compromisso com a transparência, a governança e a excelência na gestão.',
       'Falando em transparência, contamos também como foi o nosso Encontro Trimestral de Resultados, que aconteceu em agosto. As gravações estão disponíveis em nosso canal no Youtube e a agenda dos próximos encontros já está definida para o mês de outubro.',
       'O Programa Compromisso com Você continua percorrendo o país, e nesta edição você conhecerá o relato de quem viveu de perto essa experiência na unidade de Tatuí. E, encerramos a edição, antecipando a comemoração do Dia das Crianças, sugerindo um presente diferente: investir no futuro de quem a gente mais ama, com o Plano Família.',
       'Boa leitura!',
@@ -141,7 +141,7 @@ export const edition = {
     lead: 'Você possui recursos em outro plano de previdência? Conheça as vantagens de reunir sua reserva na BRF Prev.',
     intro: [
       'Você tem recursos investidos em previdência de bancos ou de empregadores anteriores? Muitas pessoas possuem recursos acumulados em planos de previdência de empregos anteriores ou de outras instituições financeiras e acabam não acompanhando regularmente a evolução desses valores.',
-      'A boa notícia é que dá para trazer esse dinheiro para a BRF Prev, , sem burocracia e sem custo tributário no momento da mudança. Isso se chama portabilidade, mecanismo que permite transferir os recursos de um plano de previdência complementar para outro, sem a necessidade de resgatar o dinheiro.',
+      'A boa notícia é que dá para trazer esse dinheiro para a BRF Prev, sem burocracia e sem custo tributário no momento da mudança. Isso se chama portabilidade, mecanismo que permite transferir os recursos de um plano de previdência complementar para outro, sem a necessidade de resgatar o dinheiro.',
     ],
     comoFunciona: {
       titulo: 'Como funciona na prática:',
@@ -392,21 +392,26 @@ export const edition = {
       'A Previdência complementar costuma ser lembrada como um benefício de longo prazo, algo que só vai ser efetivamente valorizado décadas depois. Mas, no dia a dia, ela também cumpre um papel mais imediato, proporcionando clareza e segurança para que o colaborador planeje sua vida financeira com mais tranquilidade, sabendo que tem, ao seu lado, uma empresa que investe junto com ele nesse futuro.',
       'Quando uma empresa oferece previdência complementar, ela está demonstrando que também se importa com o que acontece com seus colaboradores depois do expediente e depois da carreira. Esse tipo de benefício tende a ser percebido- como um investimento genuíno no bem-estar financeiro das pessoas, e não apenas como mais um item na folha de pagamento.',
       'Para a BRF Prev, essa percepção de valor se constrói com presença e esse é o propósito do Programa Compromisso com Você, criado para fortalecer o relacionamento com os participantes por meio de atendimentos presenciais, levando a entidade até as unidades da MBRF em diferentes regiões do país.',
-      'Várias unidades da MBRF já foram visitadas e o Programa seguirá percorrendo o país, levando a mensagem da previdência complementar para todos os colaboradores da patrocinadora, um contato direto para apoiar decisões sobre o futuro. Em 2026, 06 unidades da MBRF foram visitadas, com mais de  atendimentos realizados.Entre julho e agosto, o Compromisso com Você chegou também à unidade de Tatuí, da MBRF, e o resultado, mais uma vez, confirma que a proximidade é o que transforma um benefício em algo palpável na rotina das pessoas. Quem vive o dia a dia da relação entre RH e colaboradores também sente essa diferença. Daniele Fernanda, da área de Recursos Humanos da unidade de Tatuí, destaca o impacto do benefício corporativo na retenção e valorização dos colaboradores e a parceria da BRF Prev.',
+      'Várias unidades da MBRF já foram visitadas e o Programa seguirá percorrendo o país, levando a mensagem da previdência complementar para todos os colaboradores da patrocinadora, um contato direto para apoiar decisões sobre o futuro. Em 2026, 06 unidades da MBRF foram visitadas, com mais de 8.000 atendimentos realizados. Entre julho e agosto, o Compromisso com Você chegou também à unidade de Tatuí, da MBRF, e o resultado, mais uma vez, confirma que a proximidade é o que transforma um benefício em algo palpável na rotina das pessoas. Quem vive o dia a dia da relação entre RH e colaboradores também sente essa diferença. Daniele Fernanda, da área de Recursos Humanos da unidade de Tatuí, destaca o impacto do benefício corporativo na retenção e valorização dos colaboradores e a parceria da BRF Prev.',
     ],
     citacao: 'Há quatro anos trazemos a previdência complementar para a nossa unidade. No início, o trabalho foi apresentar o benefício na forma de palestras aos colaboradores, mostrando que é um investimento em que a empresa contribui na mesma proporção que o colaborador. A previdência é como uma poupança que, mesmo em caso de desligamento, ele pode levar consigo como investimento para o futuro. Por isso, considero um benefício fundamental para reter e valorizar quem trabalha com a gente. A BRF Previdência é uma parceira que caminha junto com o RH da empresa, promovendo este benefício para os colaboradores”.',
     citacaoAutor: 'Daniele Fernanda,\nRecursos Humanos · Unidade Tatuí, MBRF',
     paragrafoFinal: 'O depoimento de Daniele resume bem o que o Programa Compromisso com Você busca todos os dias, transformando um benefício corporativo em algo compreendido e valorizado por quem o utiliza. Quando a empresa investe no futuro das pessoas, e a previdência é apoiada por um atendimento próximo e acessível, o resultado é maior clareza na hora de decidir, mais segurança no planejamento de longo prazo e um vínculo mais forte entre participante e plano.',
     solicitarVisita: {
       titulo: 'Solicite uma visita',
-      texto: 'Qualquer participante pode solicitar atendimento personalizado em sua unidade. Basta entrar em contato com a BRF Prev para tirar dúvidas ou agendar uma ação do Programa Compromisso com Você. E, se você já conhece de perto os benefícios do seu plano, que tal compartilhar essa informação com um colega que ainda não aderiu? Muitas vezes, uma conversa é o que falta para alguém dar o primeiro passo.',
+      texto: 'Qualquer colaborador pode solicitar atendimento personalizado em sua unidade. Basta entrar em contato com a BRF Prev para tirar dúvidas ou agendar uma ação do Programa Compromisso com Você. E, se você já conhece de perto os benefícios do seu plano, que tal compartilhar essa informação com um colega que ainda não aderiu? Muitas vezes, uma conversa é o que falta para alguém dar o primeiro passo.',
+    },
+    porOndePassamos: {
+      titulo: 'Por onde passamos',
+      unidade: 'Unidade Marau (RS) · 14 a 18 de setembro de 2026',
+      texto: 'uma das 10 palestras do Programa Compromisso com Você, conduzidas por Vitória e Adriana.',
     },
   },
 
   // ─── Plano Família — Dia das Crianças ─────────────────────────────────────
   planoFamilia: {
     eyebrow: 'Plano Família',
-    titulo: 'O melhor presente pode ser o futuro',
+    titulo: 'Plano Família: o melhor presente pode ser o futuro',
     paragrafos: [
       'Tem presente que dura um dia e tem presente que continua fazendo diferença anos depois. Com o Dia das Crianças, em 12 de outubro, vale a pergunta: já pensou em investir no futuro de quem você mais ama?',
       'Além dos brinquedos, dos jogos e das surpresas de sempre, existe uma forma de presentear que cresce junto com a criançada. O Plano Família pode se tornar o primeiro passo para realizar os grandes sonhos de um filho, neto ou sobrinho. Imagine poder acumular, desde a primeira infância, os recursos para financiar a faculdade, o intercâmbio, o primeiro negócio e a construção de uma reserva financeira para os projetos que vierem pela frente. Isso é possível com o Plano Família da BRF Prev.',
@@ -430,10 +435,12 @@ export const edition = {
     fechamento: 'Então, neste Dia das Crianças, considere dar um presente que os pequenos vão entender e agradecer no futuro.',
     comoAderir: {
       titulo: 'Como aderir ao Plano Família',
-      itens: [
-        'O Plano Família está disponível para familiares de participantes e assistidos da BRF Prev.',
-        'Para saber quem pode aderir e iniciar o processo de inscrição, entre em contato com a equipe de Relacionamento ou acesse os canais digitais da BRF Prev.',
+      intro: 'O Plano Família está disponível para familiares de participantes e assistidos da BRF Prev. Veja por onde dar o próximo passo:',
+      canais: [
+        { n: '1', titulo: 'Equipe de Relacionamento', texto: 'Fale diretamente com o time da BRF Prev para tirar dúvidas e iniciar o processo de inscrição.' },
+        { n: '2', titulo: 'Canais digitais da BRF Prev', texto: 'Acesse o site ou o aplicativo da BRF Prev para conhecer o passo a passo completo de adesão.' },
       ],
+      cta: { texto: 'Pronto para presentear com o futuro?', label: 'Quero aderir ao Plano Família', href: 'https://adesao.brfprevidencia.com.br/' },
     },
   },
 

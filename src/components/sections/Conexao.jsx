@@ -68,42 +68,42 @@ export default function Conexao() {
         </div>
 
         {/* Próximos encontros */}
-        <div style={{
-          background: 'rgba(255,255,255,.08)',
-          border: '1px solid rgba(255,255,255,.18)',
-          borderRadius: 'var(--radius-card)',
-          padding: '32px 32px',
-          display: 'flex',
-          gap: 24,
-          alignItems: 'flex-start',
-        }}>
-          <div style={{ width: 190, height: 190, flexShrink: 0, position: 'relative' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: '1.3fr 1fr', gap: 24, alignItems: 'stretch' }}>
+
+          <div style={{ position: 'relative', minHeight: 180, borderRadius: 'var(--radius-card)', overflow: 'hidden' }}>
             <img
-              src={asset('/icone-calendario-3d.png')}
+              src={asset('/online-meeting-video-chat.jpg')}
               alt=""
-              style={{
-                position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)',
-                width: 384, height: 384, maxWidth: 'none', objectFit: 'contain',
-              }}
+              style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
             />
           </div>
 
-          <div style={{ marginLeft: 20 }}>
-            <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 400, fontSize: 20, color: '#fff', margin: '0 0 20px' }}>
-              {c.proximosEncontros.titulo}
-            </h3>
-            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 10 }}>
-              {c.proximosEncontros.itens.map((item, i) => (
-                <li key={i} style={{ display: 'flex', alignItems: 'center', gap: 12, fontSize: 17, color: '#fff' }}>
-                  <span style={{ color: '#FCD34D', fontWeight: 700, fontSize: 14 }}>✦</span>
-                  <span>
-                    <span style={{ fontFamily: 'var(--font-display)', fontWeight: 400 }}>{item.plano}</span>
-                    <span style={{ ...NOTO }}>{' – '}{item.data}</span>
-                  </span>
-                </li>
-              ))}
-            </ul>
+          <div style={{
+            background: 'rgba(255,255,255,.08)',
+            border: '1px solid rgba(255,255,255,.18)',
+            borderRadius: 'var(--radius-card)',
+            padding: '32px 32px',
+            display: 'flex',
+            alignItems: 'center',
+          }}>
+            <div>
+              <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 400, fontSize: 20, color: '#fff', margin: '0 0 20px' }}>
+                {c.proximosEncontros.titulo}
+              </h3>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 10 }}>
+                {c.proximosEncontros.itens.map((item, i) => (
+                  <li key={i} style={{ display: 'flex', alignItems: 'center', gap: 12, fontSize: 17, color: '#fff' }}>
+                    <span style={{ color: '#FCD34D', fontWeight: 700, fontSize: 14 }}>✦</span>
+                    <span>
+                      <span style={{ fontFamily: 'var(--font-display)', fontWeight: 400 }}>{item.plano}</span>
+                      <span style={{ ...NOTO }}>{' – '}{item.data}</span>
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
+
         </div>
 
       </div>

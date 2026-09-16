@@ -2744,7 +2744,7 @@ blockquote.quote cite { display: block; margin-top: 14px; font-family: 'Co Headl
 .port-info-grid .port-photo { min-height: 100%; }
 .port-info-card { border-radius: var(--radius-card-lg); padding: 30px 26px; }
 .port-info-card.blue { background: var(--brand-blue-light); }
-.port-info-card.coral { background: #FDEEEE; }
+.port-info-card.coral { background: rgba(125, 148, 252, .14); }
 .port-info-card .ic {
   width: 40px; height: 40px; border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
@@ -2786,11 +2786,13 @@ blockquote.quote cite { display: block; margin-top: 14px; font-family: 'Co Headl
 /* ── Destaques coloridos (Portabilidade) ── */
 #portabilidade .analogia-card:nth-child(odd) { border-top-color: var(--brand-blue); }
 #portabilidade .analogia-card:nth-child(even) { border-top-color: var(--brand-coral); }
-#reconhecimento { padding-top: 40px; }
-@media(min-width: 768px) { #reconhecimento { padding-top: 60px; } }
+#reconhecimento { padding-top: 100px; }
+@media(min-width: 768px) { #reconhecimento { padding-top: 140px; } }
 #reconhecimento .analogia-card { border-top: none; }
 #reconhecimento .analogia-card:nth-child(odd) { background: var(--brand-blue); }
-#reconhecimento .analogia-card:nth-child(even) { background: var(--brand-coral); }
+#reconhecimento .analogia-card:nth-child(even) { background: var(--brand-blue-mid); }
+#reconhecimento .quote-badge { color: var(--brand-blue); border-color: var(--brand-blue); }
+#reconhecimento .card-bottom > p.card-text { border-left-color: rgba(27, 70, 178, .4); }
 
 /* ── CTA final (Portabilidade) ── */
 .port-cta {
