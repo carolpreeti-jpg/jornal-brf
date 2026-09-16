@@ -15,9 +15,9 @@ export default function Reconhecimento() {
         <div className="reveal" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24, alignItems: 'start', marginBottom: 20 }}>
           <div>
             <img
-              src={asset('/logo-programa-sintonia.png')}
+              src={asset('/logo-receita-sintonia.png')}
               alt="Programa Sintonia"
-              style={{ display: 'block', height: 56, width: 'auto', objectFit: 'contain', marginBottom: 16 }}
+              style={{ display: 'block', height: 110, width: 'auto', objectFit: 'contain', objectPosition: 'left center', marginLeft: -40, marginBottom: 16 }}
             />
             <h2 style={{ margin: '0 0 28px' }}>
               {(() => {
