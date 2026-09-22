@@ -1450,6 +1450,59 @@ header.scrolled .hamburger span { background: var(--gray-900) }
 .rent-table tr.meta td { background: var(--gray-50) !important; font-weight: 700; color: var(--gray-900); border-top: 2px solid var(--brand-coral) }
 .rent-foot { margin-top: 14px; font-size: 12px; color: var(--text-muted) }
 
+/* ── Rentabilidade — seção escura (cenário + carrossel) ── */
+.rent-dark .section-head .eyebrow { color: rgba(255,255,255,.65) }
+.rent-dark .section-head h2 { color: #fff }
+.rent-cenario-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 40px }
+@media(max-width:880px) { .rent-cenario-grid { grid-template-columns: 1fr } }
+.rent-cenario-box {
+  position: relative; overflow: hidden;
+  background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.22);
+  border-top: 3px solid var(--rent-accent, rgba(255,255,255,.5));
+  border-radius: var(--radius-card); padding: 32px 28px;
+  transition: background .35s ease, border-color .35s ease, box-shadow .35s ease, transform .35s ease;
+}
+.rent-cenario-box-title {
+  position: relative; display: inline-block; padding-bottom: 12px; margin-bottom: 16px;
+  font-family: var(--font-display); font-weight: 700; font-size: 21px; letter-spacing: -.01em; color: #fff;
+  transition: color .35s ease;
+}
+.rent-cenario-box-title::after {
+  content: ''; position: absolute; left: 0; bottom: 0; height: 3px; width: 40px;
+  background: var(--rent-accent, #fff); border-radius: 99px;
+}
+.rent-cenario-box-text {
+  position: relative; color: rgba(255,255,255,.88); font-size: 17px; line-height: 1.8; margin: 0 0 14px;
+  transition: color .35s ease;
+}
+.rent-cenario-box-text:last-child { margin-bottom: 0 }
+/* Hover só em dispositivos com mouse real — evita ficar "travado" no branco após um toque no mobile */
+@media (hover: hover) and (pointer: fine) {
+  .rent-cenario-box:hover { background: #fff; box-shadow: var(--shadow-lg); transform: translateY(-3px) }
+  .rent-cenario-box:hover .rent-cenario-box-title { color: var(--text-primary) }
+  .rent-cenario-box:hover .rent-cenario-box-text { color: var(--text-secondary) }
+}
+
+.rent-invest-wrap { position: relative; margin-top: 176px; margin-left: -64px; margin-right: -64px }
+.rent-invest-image-wrap {
+  position: absolute; top: -70px; left: 0; right: 0; z-index: 2;
+  display: flex; justify-content: center; pointer-events: none;
+}
+.rent-invest-image { width: 416px; max-width: 80%; display: block }
+.rent-invest-card {
+  position: relative; background: #fff; border-radius: var(--radius-card);
+  padding: 28px 72px; box-shadow: var(--shadow-lg);
+}
+.rent-invest-text-wrap { margin: 96px 0 18px }
+.rent-invest-text { color: var(--text-secondary); font-size: 17px; line-height: 1.8; margin: 0 0 16px }
+.rent-invest-text:last-child { margin-bottom: 0 }
+@media(max-width:640px) {
+  .rent-invest-wrap { margin-top: 56px; margin-left: 0; margin-right: 0 }
+  .rent-invest-image { width: 300px }
+  .rent-invest-card { padding: 28px 20px 24px }
+  .rent-invest-text-wrap { margin-top: 64px }
+}
+
 /* ============================================================
    ESTATUTO
    ============================================================ */
@@ -2308,19 +2361,28 @@ blockquote.quote cite { display: block; margin-top: 14px; font-family: 'Co Headl
 }
 
 /* ── RentCarousel ── */
+.rent-carousel-root { max-width: 900px; margin: 0 auto }
 .rent-carousel-wrap {
   background: #fff;
   border-radius: 12px;
   padding: 8px 4px 32px;
   overflow-x: auto;
-  margin: 0 -32px;
+  margin: 0;
   -webkit-overflow-scrolling: touch;
   scrollbar-color: var(--brand-blue-light) transparent;
 }
-.rent-carousel-table { min-width: 760px; }
+.rent-carousel-table { min-width: 760px; margin: 0 auto }
+.rent-carousel-wrap.has-more {
+  mask-image: linear-gradient(to right, #000 90%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, #000 90%, transparent 100%);
+}
+.rent-carousel-hint {
+  text-align: center; font-family: var(--font-body); font-size: 12px; font-weight: 600;
+  color: var(--text-muted); letter-spacing: .02em; margin: 4px 0 0;
+}
 @media(max-width:720px) {
-  .rent-carousel-wrap { margin: 0; border-radius: 8px; }
-  .rent-carousel-table { min-width: 720px; }
+  .rent-carousel-wrap { margin: 0; border-radius: 8px }
+  .rent-carousel-table { min-width: 720px }
 }
 
 /* ── WebinarIR ── */

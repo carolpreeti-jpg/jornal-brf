@@ -62,8 +62,19 @@ export const edition = {
       imagem: '/menu-conexao.jpg',
     },
     {
-      id: 'planejamento',
+      id: 'rentabilidade',
       n: '06',
+      tag: 'Resultado dos Planos',
+      titulo: 'Desempenho dos\ninvestimentos',
+      subtitulo: 'Cenário econômico e rentabilidade dos planos da BRF Prev',
+      gradient: 'linear-gradient(135deg, #1B46B2 0%, #7D94FC 100%)',
+      placeholderLabel: 'Desempenho dos Investimentos',
+      imagem: '/menu-rentabilidade.jpg',
+      imagemPosition: '58% 50%',
+    },
+    {
+      id: 'planejamento',
+      n: '07',
       tag: 'Planejamento Previdenciário',
       titulo: 'Quando a empresa\ninveste no futuro',
       subtitulo: 'Compromisso com Você chega à unidade de Tatuí',
@@ -73,7 +84,7 @@ export const edition = {
     },
     {
       id: 'plano-familia',
-      n: '07',
+      n: '08',
       tag: 'Plano Família',
       titulo: 'O melhor presente\npode ser o futuro',
       subtitulo: 'Dia das Crianças · 12 de outubro',
@@ -382,6 +393,53 @@ export const edition = {
         { plano: 'Planos FAF e Família',  data: '28/10 - às 10h' },
       ],
     },
+  },
+
+  // ─── Desempenho dos Planos e Cenário Econômico ─────────────────────────────
+  rentabilidade: {
+    periodo: 'maio a agosto de 2026',
+    tituloPrefixo: 'Desempenho dos Planos e cenário econômico',
+    cenarioBoxes: [
+      {
+        accent: '#7D94FC',
+        titulo: 'Cenário Internacional',
+        paragrafos: [
+          'As tensões geopolíticas e seus impactos sobre o preço do petróleo continuaram influenciando os mercados ao longo do quadrimestre encerrado em agosto último, gerando momentos de instabilidade e maior cautela por parte dos investidores. Esse cenário manteve os mercados globais precificando elevação de inflação, juros maiores e crescimento econômico mais lento, influenciando o comportamento dos ativos financeiros em diversas regiões do mundo. Esta circunstância, em geral negativa para a maioria dos ativos de renda variável, foi atenuada pelo dinamismo das empresas de tecnologia com os resultados obtidos no começo do ano com a aceleração dos resultados com inteligência artificial.',
+        ],
+      },
+      {
+        accent: '#EE686D',
+        titulo: 'Brasil',
+        paragrafos: [
+          'No Brasil, a inflação permaneceu em patamar elevado durante boa parte do período, enquanto as decisões de política monetária mantiveram os juros elevados e a política fiscal seguia irrigando a economia com diversos mecanismos de incentivo a diversos segmentos da economia, em flagrante conflito entre ambas. Esse ambiente trouxe reflexos para os diferentes segmentos de investimentos, exigindo seletividade dos gestores e dos investidores diante das oscilações observadas ao longo do ano.',
+        ],
+      },
+    ],
+    desempenhoPrefixo: 'Desempenho dos',
+    desempenhoBadge: 'investimentos',
+    desempenhoSufixo: 'da BRF Prev',
+    desempenhoParagrafos: [
+      'Nesse contexto, os planos da BRF Prev atravessaram um período de maior oscilação, especialmente nos investimentos com exposição à renda variável. Já os ativos vinculados à inflação, cerca de 80% do patrimônio da entidade, e à renda fixa apresentaram comportamento mais aderente às características de proteção e longo prazo que compõem a estratégia dos investimentos da entidade.',
+      'É importante lembrar que a previdência complementar é uma construção de longo prazo. Por isso, oscilações de curto prazo fazem parte do processo de investimento e devem ser analisadas dentro de uma perspectiva mais ampla. A BRF Prev segue acompanhando continuamente o cenário econômico e de mercado, mantendo uma gestão alinhada aos objetivos de longo prazo dos participantes e assistidos.',
+    ],
+    meses: ['Mai/26', 'Jun/26', 'Jul/26', 'Ago/26'],
+    linhas: [
+      { nome: 'II (Classe BD)',         meses: ['0,69', '1,25', '0,54', '0,58'], acum: '6,89', p12m: '10,24', p24m: '17,60', p36m: '29,75', tipo: 'plano' },
+      { nome: 'II (Classe CD)',         meses: ['0,69', '0,94', '0,69', '1,40'], acum: '7,25', p12m: '11,36', p24m: '17,34', p36m: '31,39', tipo: 'plano' },
+      { nome: 'III',                    meses: ['0,73', '0,96', '0,78', '1,38'], acum: '7,59', p12m: '11,57', p24m: '18,29', p36m: '32,19', tipo: 'plano' },
+      { nome: 'Meta (IPCA + 5,00%a.a)', meses: ['0,97', '0,57', '0,52', '0,09'], acum: '6,47', p12m: '9,43',  p24m: '20,75', p36m: '32,01', tipo: 'meta'  },
+      { nome: 'FAF',                    meses: ['0,75', '1,35', '0,50', '0,87'], acum: '7,03', p12m: '10,85', p24m: '19,25', p36m: '35,06', tipo: 'plano' },
+      { nome: 'Meta (INPC + 5,00%a.a)', meses: ['1,04', '0,55', '0,44', '0,09'], acum: '6,54', p12m: '9,18',  p24m: '20,39', p36m: '30,94', tipo: 'meta'  },
+      { nome: 'FAMÍLIA',                meses: ['0,91', '1,40', '0,99', '1,35'], acum: '8,60', p12m: '13,29', p24m: '25,00', p36m: '41,27', tipo: 'plano' },
+      { nome: 'Meta (103% do CDI)',     meses: ['1,11', '1,15', '1,25', '1,13'], acum: '9,62', p12m: '15,10', p24m: '30,70', p36m: '46,89', tipo: 'meta'  },
+    ],
+    indices: [
+      { nome: 'IMA-B 5 +', meses: ['-0,20', '-2,05', '0,75',  '1,81'],  acum: '4,84',  p12m: '9,20',   p24m: '10,74', p36m: '14,19' },
+      { nome: 'CDI',       meses: ['1,07',  '1,12',  '1,22',  '1,09'],  acum: '9,33',  p12m: '14,63',  p24m: '29,38', p36m: '43,89' },
+      { nome: 'IBOVESPA',  meses: ['-7,22', '-1,01', '3,47',  '-0,33'], acum: '10,11', p12m: '25,45',  p24m: '30,45', p36m: '53,29' },
+      { nome: 'DÓLAR',     meses: ['1,37',  '2,37',  '-1,92', '2,05'],  acum: '-5,83', p12m: '-4,51',  p24m: '-8,39', p36m: '5,28'  },
+    ],
+    rodape: 'Fonte: BRF Previdência e Quantum · (em %)',
   },
 
   // ─── Planejamento Previdenciário — Compromisso com Você ───────────────────

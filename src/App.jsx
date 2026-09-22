@@ -9,6 +9,7 @@ import Portabilidade  from './components/sections/Portabilidade.jsx'
 import Beneficiarios  from './components/sections/Beneficiarios.jsx'
 import Reconhecimento from './components/sections/Reconhecimento.jsx'
 import Conexao        from './components/sections/Conexao.jsx'
+import Rentabilidade  from './components/sections/Rentabilidade.jsx'
 import Planejamento   from './components/sections/Planejamento.jsx'
 import PlanoFamilia   from './components/sections/PlanoFamilia.jsx'
 import Redes          from './components/sections/Redes.jsx'
@@ -27,6 +28,7 @@ export default function App() {
         <Beneficiarios />
         <Reconhecimento />
         <Conexao />
+        <Rentabilidade />
         <Planejamento />
         <PlanoFamilia />
         <Redes />

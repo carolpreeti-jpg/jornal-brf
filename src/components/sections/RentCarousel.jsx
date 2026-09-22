@@ -1,4 +1,4 @@
-﻿import { useState } from 'react'
+﻿import { useEffect, useRef, useState } from 'react'
 import { edition } from '../../data/edition.js'
 
 const { rentabilidade } = edition
@@ -33,21 +33,46 @@ const BORDER_DOTTED = { borderBottom: '1.5px dotted #ccc' }
 
 export default function RentCarousel() {
   const [current, setCurrent] = useState(0)
+  const [needsScroll, setNeedsScroll] = useState(false)
+  const [atScrollEnd, setAtScrollEnd] = useState(false)
+  const wrapRef = useRef(null)
 
   const prev = () => setCurrent(c => Math.max(0, c - 1))
   const next = () => setCurrent(c => Math.min(PLANOS.length - 1, c + 1))
 
   const p = PLANOS[current]
 
+  useEffect(() => {
+    const el = wrapRef.current
+    if (!el) return
+    function check() {
+      setNeedsScroll(el.scrollWidth > el.clientWidth + 4)
+      setAtScrollEnd(el.scrollLeft >= el.scrollWidth - el.clientWidth - 4)
+    }
+    check()
+    el.addEventListener('scroll', check, { passive: true })
+    window.addEventListener('resize', check)
+    return () => {
+      el.removeEventListener('scroll', check)
+      window.removeEventListener('resize', check)
+    }
+  }, [current])
+
   return (
-    <div style={{ paddingTop: 40 }}>
+    <div className="rent-carousel-root" style={{ paddingTop: 40 }}>
       {/* Slide label */}
       <p style={{ textAlign: 'center', fontFamily: "'Co Headline', sans-serif", fontWeight: 400, fontSize: 20, color: '#555', marginBottom: 20 }}>
         {p.label}
       </p>
 
+      {needsScroll && (
+        <p className="rent-carousel-hint">
+          {atScrollEnd ? '← arraste para voltar' : 'arraste para o lado para ver mais →'}
+        </p>
+      )}
+
       {/* Tabela */}
-      <div className="rent-carousel-wrap">
+      <div ref={wrapRef} className={`rent-carousel-wrap${needsScroll && !atScrollEnd ? ' has-more' : ''}`}>
         <table className="rent-carousel-table" style={{ width: '100%', borderCollapse: 'collapse', tableLayout: 'fixed' }}>
           <tbody>
             {/* Header rentabilidade */}
@@ -69,7 +94,7 @@ export default function RentCarousel() {
             </tr>
 
             {/* Spacer */}
-            <tr><td colSpan={9} style={{ padding: '4px 0' }} /></tr>
+            <tr><td colSpan={COLS.length + 1} style={{ padding: '4px 0' }} /></tr>
 
             {/* Header índices */}
             <tr>

@@ -9,7 +9,7 @@ const TXT  = { ...NOTO, fontSize: 17, lineHeight: 1.8, color: 'rgba(255,255,255,
 export default function Conexao() {
   return (
     <section className="section" id="conexao" data-screen-label="Conexão BRF Previdência"
-      style={{ background: 'linear-gradient(150deg, #1B46B2 0%, #1B46B2 60%, #7D94FC 100%)' }}>
+      style={{ background: '#7990F8' }}>
       <div className="wrap">
 
         {/* Cabeçalho */}
