@@ -48,7 +48,7 @@ export default function Portabilidade() {
 
         {/* Cabeçalho */}
         <div className="section-head reveal">
-          <span className="editorial-label" style={{ transform: 'rotate(-3deg)', whiteSpace: 'nowrap', maxWidth: 'none', fontSize: 17, padding: '15px 29px' }}>Portabilidade</span>
+          <span className="editorial-label" style={{ transform: 'none', whiteSpace: 'nowrap', maxWidth: 'none', minWidth: 158, fontSize: 13, padding: '11px 22px', boxShadow: 'none' }}>Portabilidade</span>
           <h2>
             {p.titulo.split('BRF Prev').map((part, i, arr) => (
               i < arr.length - 1

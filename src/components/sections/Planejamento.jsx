@@ -17,7 +17,7 @@ export default function Planejamento() {
           <div>
             {/* Cabeçalho */}
             <div className="section-head reveal" style={{ maxWidth: 'none' }}>
-              <span className="editorial-label" style={{ transform: 'rotate(-3deg)', whiteSpace: 'nowrap', maxWidth: 'none', fontSize: 17, padding: '15px 29px' }}>Planejamento Previdenciário</span>
+              <span className="editorial-label" style={{ transform: 'none', whiteSpace: 'nowrap', maxWidth: 'none', minWidth: 158, fontSize: 13, padding: '11px 22px', boxShadow: 'none' }}>Planejamento Previdenciário</span>
               <h2>
                 {(() => {
                   const marker = 'investe no futuro das pessoas'
