@@ -24,6 +24,7 @@ export default function Beneficiarios() {
 
         {/* Cabeçalho */}
         <div className="section-head reveal">
+          <span className="editorial-label" style={{ transform: 'rotate(-3deg)', whiteSpace: 'nowrap', maxWidth: 'none', fontSize: 17, padding: '15px 29px' }}>Planos Previdenciários</span>
           <h2>
             {(() => {
               const marker = 'última vez que você revisou seus beneficiários no plano?'
@@ -44,7 +45,6 @@ export default function Beneficiarios() {
                 style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
               />
             </div>
-            <span className="port-photo-label">Planos Previdenciários</span>
           </div>
           <div>
             {b.intro.map((txt, i) => (

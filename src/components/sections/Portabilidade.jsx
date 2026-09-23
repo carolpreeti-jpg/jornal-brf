@@ -48,6 +48,7 @@ export default function Portabilidade() {
 
         {/* Cabeçalho */}
         <div className="section-head reveal">
+          <span className="editorial-label" style={{ transform: 'rotate(-3deg)', whiteSpace: 'nowrap', maxWidth: 'none', fontSize: 17, padding: '15px 29px' }}>Portabilidade</span>
           <h2>
             {p.titulo.split('BRF Prev').map((part, i, arr) => (
               i < arr.length - 1
@@ -64,7 +65,6 @@ export default function Portabilidade() {
             <div className="port-photo">
               <img src={asset('/business-women.jpg')} alt="" />
             </div>
-            <span className="port-photo-label">Portabilidade</span>
           </div>
           <div className="port-hero-text">
             {p.intro.map((txt, i) => (
