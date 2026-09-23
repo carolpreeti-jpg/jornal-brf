@@ -14,7 +14,7 @@ export default function Redes() {
         />
       </div>
       <div className="wrap inner">
-        <div className="reveal">
+        <div className="reveal" style={{ textAlign: 'center' }}>
           <span className="editorial-label" style={{ transform: 'none', whiteSpace: 'nowrap', maxWidth: 'none', minWidth: 158, fontSize: 13, padding: '11px 22px', boxShadow: 'none' }}>Redes Sociais</span>
           <h2 dangerouslySetInnerHTML={{ __html: redes.titulo }} />
           <p className="lead">{redes.lead}</p>
