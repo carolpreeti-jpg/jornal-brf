@@ -133,17 +133,9 @@ export default function PlanoFamilia() {
             ))}
           </div>
 
-          <div style={{
-            display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between',
-            gap: 16, background: 'var(--brand-blue)', borderRadius: 'var(--radius-card)', padding: '20px 28px',
-          }}>
-            <p style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 19, color: '#fff', margin: 0 }}>
-              {f.comoAderir.cta.texto}
-            </p>
-            <a className="btn btn-coral" href={f.comoAderir.cta.href} target="_blank" rel="noopener noreferrer" style={{ boxShadow: 'none' }}>
-              {f.comoAderir.cta.label} <span className="arrow">→</span>
-            </a>
-          </div>
+          <a className="btn btn-coral" href={f.comoAderir.cta.href} target="_blank" rel="noopener noreferrer" style={{ boxShadow: 'none' }}>
+            {f.comoAderir.cta.label} <span className="arrow">→</span>
+          </a>
         </div>
 
       </div>

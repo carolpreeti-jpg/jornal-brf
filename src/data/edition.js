@@ -86,7 +86,7 @@ export const edition = {
       id: 'plano-familia',
       n: '08',
       tag: 'Plano Família',
-      titulo: 'O melhor presente\npode ser o futuro',
+      titulo: 'Desenhe o futuro\nde quem você ama',
       subtitulo: 'Dia das Crianças · 12 de outubro',
       gradient: 'linear-gradient(135deg, #7C3AED 0%, #F97316 100%)',
       placeholderLabel: 'Plano Família',
@@ -127,7 +127,7 @@ export const edition = {
     { n: '03', tag: 'Reconhecimento',               titulo: 'BRF Prev conquista o Selo Sintonia A+',                  href: '#reconhecimento', variante: 'alt3' },
     { n: '04', tag: 'Conexão BRF Previdência',      titulo: 'Encontro Trimestral de Resultados — 34ª edição',        href: '#conexao',         variante: 'alt' },
     { n: '05', tag: 'Planejamento Previdenciário',  titulo: 'Quando a empresa investe no futuro das pessoas',        href: '#planejamento',    variante: 'alt2' },
-    { n: '06', tag: 'Plano Família',                titulo: 'Plano Família: o melhor presente pode ser o futuro',    href: '#plano-familia',  variante: 'alt3' },
+    { n: '06', tag: 'Plano Família',                titulo: 'Plano Família: desenhe o futuro de quem você ama',    href: '#plano-familia',  variante: 'alt3' },
   ],
 
   // ─── Editorial ────────────────────────────────────────────────────────────
@@ -469,7 +469,7 @@ export const edition = {
   // ─── Plano Família — Dia das Crianças ─────────────────────────────────────
   planoFamilia: {
     eyebrow: 'Plano Família',
-    titulo: 'Plano Família: o melhor presente pode ser o futuro',
+    titulo: 'Plano Família: desenhe o futuro de quem você ama',
     paragrafos: [
       'Tem presente que dura um dia e tem presente que continua fazendo diferença anos depois. Com o Dia das Crianças, em 12 de outubro, vale a pergunta: já pensou em investir no futuro de quem você mais ama?',
       'Além dos brinquedos, dos jogos e das surpresas de sempre, existe uma forma de presentear que cresce junto com a criançada. O Plano Família pode se tornar o primeiro passo para realizar os grandes sonhos de um filho, neto ou sobrinho. Imagine poder acumular, desde a primeira infância, os recursos para financiar a faculdade, o intercâmbio, o primeiro negócio e a construção de uma reserva financeira para os projetos que vierem pela frente. Isso é possível com o Plano Família da BRF Prev.',
@@ -493,12 +493,12 @@ export const edition = {
     fechamento: 'Então, neste Dia das Crianças, considere dar um presente que os pequenos vão entender e agradecer no futuro.',
     comoAderir: {
       titulo: 'Como aderir ao Plano Família',
-      intro: 'O Plano Família está disponível para familiares de participantes e assistidos da BRF Prev. Veja por onde dar o próximo passo:',
+      intro: 'Desenhar esse futuro começa com um passo simples. Veja como aderir ao Plano Família:',
       canais: [
         { n: '1', titulo: 'Equipe de Relacionamento', texto: 'Fale diretamente com o time da BRF Prev para tirar dúvidas e iniciar o processo de inscrição.' },
         { n: '2', titulo: 'Canais digitais da BRF Prev', texto: 'Acesse o site ou o aplicativo da BRF Prev para conhecer o passo a passo completo de adesão.' },
       ],
-      cta: { texto: 'Pronto para presentear com o futuro?', label: 'Quero aderir ao Plano Família', href: 'https://adesao.brfprevidencia.com.br/' },
+      cta: { label: 'Quero fazer um Plano Família', href: 'https://adesao.brfprevidencia.com.br/' },
     },
   },
 
