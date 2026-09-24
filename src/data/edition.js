@@ -498,7 +498,7 @@ export const edition = {
         { n: '1', titulo: 'Equipe de Relacionamento', texto: 'Fale diretamente com o time da BRF Prev para tirar dúvidas e iniciar o processo de inscrição.' },
         { n: '2', titulo: 'Canais digitais da BRF Prev', texto: 'Acesse o site ou o aplicativo da BRF Prev para conhecer o passo a passo completo de adesão.' },
       ],
-      cta: { label: 'Quero fazer um Plano Família', href: 'https://adesao.brfprevidencia.com.br/' },
+      cta: { label: 'Quero fazer um Plano Família', href: 'https://adesao.brfprevidencia.com.br/contato' },
     },
   },
 
