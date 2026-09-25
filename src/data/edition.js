@@ -478,7 +478,7 @@ export const edition = {
     ],
     quemPodeContribuir: {
       titulo: 'Quem pode contribuir',
-      texto: 'Pais, mães, avós, padrinhos e outros parentes podem contribuir para o plano de um menor de idade por meio da Contribuição Eventual, que permite a terceiros fazer aportes, definindo livremente o valor e a periodicidade das contribuições. Assim, o responsável financeiro pode convidar outras pessoas a contribuir para o plano, incrementando ainda mais a poupança previdenciária da criança Dessa forma, familiares e pessoas próximas podem participar da construção dessa reserva ao longo do tempo por meio de contribuições eventuais.',
+      texto: 'Pais, mães, avós, padrinhos e outros parentes podem contribuir para o plano de um menor de idade por meio da Contribuição Eventual, que permite a terceiros fazer aportes, definindo livremente o valor e a periodicidade das contribuições. Assim, o responsável financeiro pode convidar outras pessoas a contribuir para o plano, incrementando ainda mais a poupança previdenciária da criança. Dessa forma, familiares e pessoas próximas podem participar da construção dessa reserva ao longo do tempo por meio de contribuições eventuais.',
     },
     pequenasContribuicoes: {
       titulo: 'Pequenas contribuições fazem diferença',
