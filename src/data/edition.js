@@ -99,7 +99,7 @@ export const edition = {
     badge: 'Edição 46 · Setembro 2026',
     titulo: 'Jornal',
     subtitulo: 'BRF Previdência',
-    lead: 'Nesta edição do Jornal da BRF Prev, mostramos como trazer para a BRF Prev recursos que podem estar em outras instituições financeiras ou outros planos de previdência. A portabilidade é uma excelente oportunidade para fortalecer seu plano na BRF Prev e uma opção inteligente para quem deseja construir um futuro financeiro mais seguro.',
+    lead: 'Nesta edição do Jornal da BRF Prev, mostramos como trazer para o seu plano recursos que podem estar em outras instituições financeiras ou em outros planos de previdência. A portabilidade é uma excelente oportunidade para fortalecer sua reserva na BRF Prev e uma opção inteligente para quem deseja construir um futuro financeiro mais seguro.',
     destaques: [
       { titulo: 'Portabilidade: saiba como transferir\nsua previdência para a BRF Prev', href: '#portabilidade', label: 'Ver matéria' },
       { titulo: 'Atualize os beneficiários\ndo seu plano', href: '#beneficiarios', label: 'Ver matéria' },
@@ -134,7 +134,7 @@ export const edition = {
   editorial: {
     titulo: 'O segundo semestre está a todo vapor na BRF Prev, cheio de novidades que reforçam nosso compromisso de estar cada vez mais perto de você',
     paragrafos: [
-      'Nesta edição do Jornal da BRF Prev, mostramos como trazer para a BRF Prev recursos que podem estar em outras instituições financeiras ou outros planos de previdência. A portabilidade é uma excelente oportunidade para fortalecer seu plano na BRF Prev e uma opção inteligente para quem deseja construir um futuro financeiro mais seguro.',
+      'Nesta edição do Jornal da BRF Prev, mostramos como trazer para o seu plano recursos que podem estar em outras instituições financeiras ou em outros planos de previdência. A portabilidade é uma excelente oportunidade para fortalecer sua reserva na BRF Prev e uma opção inteligente para quem deseja construir um futuro financeiro mais seguro.',
       'Em outra matéria especial, aproveitamos para lembrar a importância de revisar periodicamente os seus dados cadastrais, em especial os beneficiários cadastrados no seu plano e como isso pode facilitar o seu planejamento sucessório.',
       'Temos ainda a satisfação de compartilhar a conquista do Selo Sintonia A+ pela BRF Prev, o mais alto reconhecimento da Receita Federal em conformidade fiscal. Um resultado que reforça nosso compromisso com a transparência, a governança e a excelência na gestão.',
       'Falando em transparência, contamos também como foi o nosso Encontro Trimestral de Resultados, que aconteceu em agosto. As gravações estão disponíveis em nosso canal no Youtube e a agenda dos próximos encontros já está definida para o mês de outubro.',
@@ -151,7 +151,7 @@ export const edition = {
     titulo: 'Traga sua previdência de outra instituição para a BRF Prev',
     lead: 'Você possui recursos em outro plano de previdência? Conheça as vantagens de reunir sua reserva na BRF Prev.',
     intro: [
-      'Você tem recursos investidos em previdência de bancos ou de empregadores anteriores? Muitas pessoas possuem recursos acumulados em planos de previdência de empregos anteriores ou de outras instituições financeiras e acabam não acompanhando regularmente a evolução desses valores.',
+      'Você tem recursos investidos em previdência de outros bancos, seguradoras ou planos relacionados a empregos anteriores? Muitas pessoas possuem recursos acumulados em planos de previdência de empregos anteriores ou de outras instituições financeiras e acabam não acompanhando regularmente a evolução desses valores.',
       'A boa notícia é que dá para trazer esse dinheiro para a BRF Prev, sem burocracia e sem custo tributário no momento da mudança. Isso se chama portabilidade, mecanismo que permite transferir os recursos de um plano de previdência complementar para outro, sem a necessidade de resgatar o dinheiro.',
     ],
     comoFunciona: {
@@ -159,7 +159,7 @@ export const edition = {
       itens: [
         'O valor não passa pela sua conta corrente. A movimentação acontece diretamente entre as instituições de previdência.',
         'Não há incidência de Imposto de Renda no momento da transferência.',
-        'O valor portado passa a ser rentabilizado no plano, aumentando sua poupança previdenciária.',
+        'O valor portado passa a ser rentabilizado no plano, aumentando sua poupança previdenciária na BRF Prev.',
       ],
     },
     porQueTrazer: {

@@ -90,9 +90,9 @@ export default function Footer() {
             <div style={S.block}>
               <p style={S.label}>Conselho Deliberativo</p>
               <p style={S.text}>
-                <span style={{ display: 'block', marginBottom: 10 }}>Presidente: Daniel Luis Moreli Rocha</span>
-                <span style={{ display: 'block', marginBottom: 10 }}>Vice-Presidente: Indiara Kurtz Danelli Manfre</span>
-                <span style={{ display: 'block' }}>Conselheiros: Victor Rodrigues Antonio, Thiago Luiz de Freitas Pereira, Felipe Costa Ricciulli Soares, Antonio Carlos Cesco, Rafael Lando Menute, Luzia Goldbeck de Andrade, Jair Bondicz, José Carlos de Carvalho Martins, Júlio Cesar Cavasin, Hugo Saito</span>
+                <span style={{ display: 'block', marginBottom: 10 }}>Presidente: Daniel Moreli</span>
+                <span style={{ display: 'block', marginBottom: 10 }}>Vice-Presidente: Felipe Costa Ricciulli Soares</span>
+                <span style={{ display: 'block' }}>Conselheiros: Rafael Menute, Thiago Pereira, Jair Bondicz, Júlio Cesar Cavasin, Victor Antonio, Antonio Carlos Cesco, Luzia Goldbeck, José Carlos de Carvalho Martins, Hugo Saito</span>
               </p>
             </div>
           </div>
