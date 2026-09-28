@@ -99,7 +99,7 @@ export const edition = {
     badge: 'Edição 46 · Setembro 2026',
     titulo: 'Jornal',
     subtitulo: 'BRF Previdência',
-    lead: 'Nesta edição do Jornal da BRF Prev, mostramos como trazer para o seu plano recursos que podem estar em outras instituições financeiras ou em outros planos de previdência. A portabilidade é uma excelente oportunidade para fortalecer sua reserva na BRF Prev e uma opção inteligente para quem deseja construir um futuro financeiro mais seguro.',
+    lead: 'Nesta edição, você vai conhecer as vantagens de trazer recursos de outros planos de previdência ou instituições financeiras para a BRF Prev. A portabilidade permite concentrar sua reserva de aposentadoria em um único plano e pode proporcionar uma gestão mais eficiente dos seus recursos, com custos mais otimizados em comparação a outras opções disponíveis no mercado.',
     destaques: [
       { titulo: 'Portabilidade: saiba como transferir\nsua previdência para a BRF Prev', href: '#portabilidade', label: 'Ver matéria' },
       { titulo: 'Atualize os beneficiários\ndo seu plano', href: '#beneficiarios', label: 'Ver matéria' },
@@ -134,7 +134,7 @@ export const edition = {
   editorial: {
     titulo: 'O segundo semestre está a todo vapor na BRF Prev, cheio de novidades que reforçam nosso compromisso de estar cada vez mais perto de você',
     paragrafos: [
-      'Nesta edição do Jornal da BRF Prev, mostramos como trazer para o seu plano recursos que podem estar em outras instituições financeiras ou em outros planos de previdência. A portabilidade é uma excelente oportunidade para fortalecer sua reserva na BRF Prev e uma opção inteligente para quem deseja construir um futuro financeiro mais seguro.',
+      'Nesta edição, você vai conhecer as vantagens de trazer recursos de outros planos de previdência ou instituições financeiras para a BRF Prev. A portabilidade permite concentrar sua reserva de aposentadoria em um único plano e pode proporcionar uma gestão mais eficiente dos seus recursos, com custos mais otimizados em comparação a outras opções disponíveis no mercado.',
       'Em outra matéria especial, aproveitamos para lembrar a importância de revisar periodicamente os seus dados cadastrais, em especial os beneficiários cadastrados no seu plano e como isso pode facilitar o seu planejamento sucessório.',
       'Temos ainda a satisfação de compartilhar a conquista do Selo Sintonia A+ pela BRF Prev, o mais alto reconhecimento da Receita Federal em conformidade fiscal. Um resultado que reforça nosso compromisso com a transparência, a governança e a excelência na gestão.',
       'Falando em transparência, contamos também como foi o nosso Encontro Trimestral de Resultados, que aconteceu em agosto. As gravações estão disponíveis em nosso canal no Youtube e a agenda dos próximos encontros já está definida para o mês de outubro.',
@@ -166,7 +166,7 @@ export const edition = {
       titulo: 'Por que trazer sua previdência para a BRF Prev',
       paragrafos: [
         'Na BRF Prev não há cobrança de taxa de carregamento nem taxa de saída, o que contribui para que uma parcela maior dos recursos permaneça investida para o participante.',
-        'Além disso, as taxas administrativas da BRF Prev são competitivas em relação às praticadas no mercado. Isso porque as Entidades Fechadas de Previdência Complementar (EFPC), como a BRF Prev, são organizações sem fins lucrativos. Ou seja, existem para administrar os recursos dos participantes, não para gerar lucro a acionistas. Essa é uma diferença estrutural em relação à previdência aberta, oferecida por bancos e seguradoras.',
+        'Além disso, as taxas administrativas da BRF Prev são competitivas em relação às praticadas no mercado. Isso porque as Entidades Fechadas de Previdência Complementar (EFPC), como a BRF Prev, são organizações sem fins lucrativos. Essa é uma diferença estrutural importante em relação à previdência aberta, oferecida por bancos e seguradoras.',
         'Desta forma, as EFPCs apresentam resultados consistentes no longo prazo, como destaca o Relatório Gerencial de Previdência Complementar. As entidades fechadas acumularam rentabilidade de 163,3% entre 2016 e março de 2025, contra 118,8% do segmento aberto no mesmo período. O relatório associa essa diferença a fatores como menores taxas, gestão de longo prazo e o caráter não lucrativo das EFPCs.',
       ],
       destaque: {
