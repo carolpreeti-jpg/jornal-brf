@@ -151,7 +151,7 @@ export const edition = {
     titulo: 'Traga sua previdência de outra instituição para a BRF Prev',
     lead: 'Você possui recursos em outro plano de previdência? Conheça as vantagens de reunir sua reserva na BRF Prev.',
     intro: [
-      'Você tem recursos investidos em previdência de outros bancos, seguradoras ou planos relacionados a empregos anteriores? Muitas pessoas possuem recursos acumulados em planos de previdência de empregos anteriores ou de outras instituições financeiras e acabam não acompanhando regularmente a evolução desses valores.',
+      'Muitas pessoas possuem recursos acumulados em planos de previdência de empregos anteriores ou de outras instituições financeiras.',
       'A boa notícia é que dá para trazer esse dinheiro para a BRF Prev, sem burocracia e sem custo tributário no momento da mudança. Isso se chama portabilidade, mecanismo que permite transferir os recursos de um plano de previdência complementar para outro, sem a necessidade de resgatar o dinheiro.',
     ],
     comoFunciona: {
@@ -159,7 +159,7 @@ export const edition = {
       itens: [
         'O valor não passa pela sua conta corrente. A movimentação acontece diretamente entre as instituições de previdência.',
         'Não há incidência de Imposto de Renda no momento da transferência.',
-        'O valor portado passa a ser rentabilizado no plano, aumentando sua poupança previdenciária na BRF Prev.',
+        'O valor portado passa a ser rentabilizado nos planos da BRF Prev, concentrando todos os recursos destinados à aposentadoria.',
       ],
     },
     porQueTrazer: {
@@ -211,9 +211,10 @@ export const edition = {
     regras: {
       titulo: 'Regras importantes',
       itens: [
-        'Para portar, é necessário cumprir o prazo mínimo de permanência exigido no plano  de origem.',
+        'Para portar, é necessário cumprir o prazo mínimo de permanência exigido no plano de origem.',
         'O recurso precisa estar em fase de acumulação.',
         'O processo é normalmente concluído em até 10 dias úteis após o envio completo da documentação.',
+        'Após a transferência dos recursos para a BRF Previdência, o saldo passará a seguir as regras do plano escolhido para resgate e recebimento de benefícios.',
       ],
     },
     comoFazer: {

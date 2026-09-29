@@ -2568,12 +2568,16 @@ blockquote.quote cite { display: block; margin-top: 14px; font-family: 'Co Headl
 .port-photo-placeholder svg { opacity: .55; }
 
 /* ── Painel de abertura dinâmico (Portabilidade) ── */
-.port-hero { display: grid; grid-template-columns: 1fr 1.4fr; gap: 48px; align-items: center; }
-.port-hero-photo-wrap { position: relative; aspect-ratio: 4/3; }
+.port-hero { display: grid; grid-template-columns: 1fr 1.4fr; gap: 48px; align-items: stretch; }
+.port-hero-photo-wrap { position: relative; }
 .port-hero-photo-wrap .port-photo { position: absolute; inset: 0; }
+.port-hero-photo-wrap .port-photo img { object-position: center top; }
 .port-hero-text p { color: var(--text-secondary); font-size: 17px; line-height: 1.85; margin: 0 0 18px; }
 .port-hero-text p:last-child { margin-bottom: 0; }
-@media(max-width:880px) { .port-hero { grid-template-columns: 1fr; } }
+@media(max-width:880px) {
+  .port-hero { grid-template-columns: 1fr; }
+  .port-hero-photo-wrap { aspect-ratio: 4/3; }
+}
 
 /* ── Faixa "como funciona" (Portabilidade) — painel único com numerais grandes ── */
 .flow-band {
@@ -2802,8 +2806,7 @@ blockquote.quote cite { display: block; margin-top: 14px; font-family: 'Co Headl
 }
 
 /* ── Quem pode / Regras (Portabilidade) ── */
-.port-info-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; align-items: stretch; }
-.port-info-grid .port-photo { min-height: 100%; }
+.port-info-grid { display: grid; grid-template-columns: 3fr 7fr; gap: 24px; align-items: stretch; }
 .port-info-card { border-radius: var(--radius-card-lg); padding: 30px 26px; }
 .port-info-card.blue { background: var(--brand-blue-light); }
 .port-info-card.coral { background: rgba(125, 148, 252, .14); }
@@ -2814,10 +2817,6 @@ blockquote.quote cite { display: block; margin-top: 14px; font-family: 'Co Headl
 }
 .port-info-card.blue .ic { background: var(--brand-blue); }
 .port-info-card.coral .ic { background: var(--brand-coral); }
-@media(max-width:960px) {
-  .port-info-grid { grid-template-columns: 1fr 1fr; }
-  .port-info-grid .port-photo { grid-column: 1 / -1; min-height: 200px; }
-}
 @media(max-width:640px) { .port-info-grid { grid-template-columns: 1fr; } }
 
 /* ── FAQ em acordeão (Portabilidade) ── */

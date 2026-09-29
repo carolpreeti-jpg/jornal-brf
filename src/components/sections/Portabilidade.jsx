@@ -145,9 +145,6 @@ export default function Portabilidade() {
 
         {/* Quem pode + Regras */}
         <div className="port-info-grid" style={{ marginBottom: 56 }}>
-          <div className="port-photo">
-            <img src={asset('/person-texting-cell-phone.jpg')} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
-          </div>
           <div className="port-info-card blue">
             <span className="ic">✓</span>
             <h3 style={{ fontFamily: "'Co Headline', sans-serif", fontWeight: 400, fontSize: 22, color: 'var(--text-primary)', margin: 0 }}>
